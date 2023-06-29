@@ -9,3 +9,15 @@ Originally this theme was created and developed by Olivier Ffrench, but seems to
 Since I’ve updated this theme to fix usage of depreciated functions and added several new features, I’ve decided to make it available to others.
 
 New additions include: more flexibility for displaying content.
+
+version 1.2:
+
+ - Replaced depreciated functions
+ - Fixed typos
+ - Fixed pagination on Gallery page
+ - Meta tags: using Image Title for description tag, if no extended image description is available.
+ - Removed defunct services from options: Add This, Google+
+ - Added support for plugins: Featured Images, Image Markup Fields
+ - Option to use logo or text for site title
+ - Displaying Popular Tags in sidebar
+ - Updated to use Google Analytics GA4
