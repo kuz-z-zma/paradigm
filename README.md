@@ -10,14 +10,26 @@ Since I’ve updated this theme to fix usage of depreciated functions and added 
 
 New additions include: more flexibility for displaying content.
 
-version 1.2:
+version 1.3 and 1.3.1:
 
- - Replaced depreciated functions
- - Fixed typos
- - Fixed pagination on Gallery page
- - Meta tags: using Image Title for description tag, if no extended image description is available.
- - Removed defunct services from options: Add This, Google+
- - Added support for plugins: Featured Images, Image Markup Fields
- - Option to use logo or text for site title
- - Displaying Popular Tags in sidebar
- - Updated to use Google Analytics GA4
+ - Cleaned up and structured Theme Options.
+ - Control how many News Items are shown on Homepage.
+ - Control if Dropdown Menus are shown, separately for Albums, News, Pages.
+ - Option to display mix of Albums and various sets of Images on Homepage.
+ - Optional Sidebar in Archive.
+ - If Print_album_menu is enabled, Album List it’s shown in Sidebar for Contact, Search and Credits pages.
+ - Optional Popular Tags in Sidebar.
+ - Control how Popular Tags are displayed.
+ - Extended “Copyright Notice” field (HTML allowed), displayed on Image and Credits pages.
+ - Additional “Homepage Message” field (HTML allowed), to display on Homepage.
+ - Option to display “Gallery Description” as tagline under Text Logo in Header.
+ - Fixed noindex/nofollow for Tags pages.
+ - Favicon in [website root] folder will be linked in the Head section.
+ - If you use IMG Logo in Header, it will be automatically included as OpenGraph and Twitter Preview Image for Homepage.
+ - If logo not selected: img.png in [website root]/uploaded folder will used.
+ - Preview Images for other pages for OpenGraph and Twitter cards either use Default Size for Images in gallery or 800px width.
+ - Added glyphicons from Bootstap to Headings for more uniform look.
+ - New optional pages: Explore (lists all used Tags) and Sitemap (lists all News Categories, Pages and all Albums).
+ - Some code clean-up and updates for mobile presentation.
+ - fix getMainSiteURL() (depreciated function) in header, footer and breadcrumbs.
+ - fixed breadcrumbs for uniform look on all pages with home icon.

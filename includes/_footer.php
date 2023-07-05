@@ -1,7 +1,3 @@
-
-</div>
-
-
 <!-- footer -->
 
 <footer id="background-footer" class="background">
@@ -9,7 +5,7 @@
 		<div id="footer" class="row">
 			<div class="col-sm-9" id="footer-menu">
 				<ul class="list-inline">
-					<li><a href="<?php echo html_encode(getGalleryIndexURL()); ?>"><i class="glyphicon glyphicon-home">&nbsp;</i></a></li>
+					<li><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>"><i class="glyphicon glyphicon-home"></i></a></li>
 					<li><?php printCustomPageURL(gettext('Albums'), 'gallery'); ?></li>
 					<?php if (function_exists("printAllNewsCategories") && ((getNumNews(true)) > 0)) { ?>
 						<li><?php printNewsIndexURL(gettext('News'), '', gettext('News')); ?></li><?php } ?>
@@ -17,7 +13,12 @@
 					<?php if (getOption('display_archive')) { ?>
 					<li><?php printCustomPageURL(gettext('Archive'), 'archive'); ?></li><?php } ?>
 					<?php if (extensionEnabled('contact_form')) { ?><li><?php printCustomPageURL(gettext('Contact'), 'contact'); ?></li><?php } ?>
-					<li class="last"><?php printCustomPageURL(gettext('Credits'), 'credits'); ?></li>
+					<?php if (getOption('display_credits_page')) { ?>
+						<li><?php printCustomPageURL(gettext('Credits'), 'credits'); ?></li><?php } ?>
+					<?php if (getOption('display_explore_page')) { ?>
+					<li><?php printCustomPageURL(gettext('Explore'),'explore'); ?></li><?php } ?>
+					<?php if (getOption('display_sitemap_page')) { ?>
+					<li class="last"><?php printCustomPageURL(gettext('Sitemap'), 'sitemap'); ?></li><?php } ?>
 				</ul>
 			</div>
 			<div class="col-sm-3 text-right" id="social">

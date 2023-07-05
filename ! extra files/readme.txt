@@ -5,4 +5,4 @@ This theme is compatible with Zenphoto 1.6
 
 Theme description & instructions: https://www.blog.private-universe.net/web-and-tech/zenphoto-theme-paradigm
 
-Bugs and improvement ideas can be sent at: my@private-universe.net
+Bugs and improvement ideas can be sent at: kuzzzma@gmail.com, please include Paradigm in your letter subject!

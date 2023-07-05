@@ -66,6 +66,7 @@ if (class_exists('Zenpage')) {
 				
 				<p><?php printCodeblock(1); ?></p>
 
+				<br style="clear:both;" />
 
 			<ul class="pager">
 		  	<?php if(getPrevNewsURL()) { ?><li class="pull-left"><?php printPrevNewsLink(); ?></li><?php } ?>
@@ -76,7 +77,7 @@ if (class_exists('Zenpage')) {
 				<?php
 					if (extensionEnabled('rating')) { 
 						echo '<div id="rating">';
-						echo '<h2>' . gettext('Rating') . '</h2>';
+						echo '<h2><i class="glyphicon glyphicon-star"></i>' . gettext('Rating') . '</h2>';
 						printRating();
 						echo '</div>';
 					}

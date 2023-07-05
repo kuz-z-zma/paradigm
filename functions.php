@@ -238,9 +238,6 @@ function printImageMetadata_zb() {
 		return;
 	}
 	?>
-	<h2>
-		<?php echo (gettext('Image Info')); ?>
-	</h2>
 			<table class="table table-striped itemprop="exifData"">
 				<?php
 				foreach ($exif as $field => $value) {

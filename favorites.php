@@ -38,6 +38,6 @@
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_footer.php'); ?>
 	<?php
 } else {
-	include(SERVERPATH . '/' . ZENFOLDER . '/404.php');
+	include(SERVERPATH . '/' . THEMEFOLDER  . '/paradigm/404.php');
 }
 ?>

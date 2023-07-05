@@ -1,6 +1,6 @@
 <aside class="col-sm-3 hidden-xs"	id="sidebar">
 
-<?php if(function_exists("printAlbumMenu") && (($_zp_gallery_page == 'image.php')||($_zp_gallery_page == 'album.php')||($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'gallery.php')||($_zp_gallery_page == 'archive.php'))) { ?>
+<?php if(function_exists("printAlbumMenu") && (($_zp_gallery_page == 'image.php')||($_zp_gallery_page == 'album.php')||($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'gallery.php')||($_zp_gallery_page == 'archive.php')||($_zp_gallery_page == 'contact.php')||($_zp_gallery_page == 'credits.php')||($_zp_gallery_page == 'search.php'))) { ?>
 <!-- print album menu if in albums -->
 <div class="panel panel-default" id="nav-local">
 	<div class="panel-heading"><h2 class="panel-title"><?php echo gettext("Albums"); ?></h2></div>
@@ -36,13 +36,13 @@
 </div>	
 <?php } ?> 
 
-<?php if ((getAllTagsCount()) && (($_zp_gallery_page == 'search.php')||($_zp_gallery_page == 'image.php')||($_zp_gallery_page == 'album.php')||($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'gallery.php')||($_zp_gallery_page == 'news.php')||($_zp_gallery_page == 'pages.php')||($_zp_gallery_page == 'archive.php'))) { ?>
+<?php if ((getAllTagsCount()) && (getOption('display_tags-sidebar'))) { ?>
 <!-- Print tag cloud -->
 
 <div class="panel panel-default">
 	<div class="panel-heading"><h2 class="panel-title"><?php echo gettext('Popular Tags'); ?></h2></div>
 	<div id="tag_cloud"  class="panel-body">
-		<?php printAllTagsAs_zb('cloud', 'taglist', 'abc', false, true, 2, 500, 1, null); ?>
+		<?php printAllTagsAs_zb('cloud', 'taglist', 'abc', false, true,getOption('display_tags-maxfontsize'),getOption('display_tags-maxcount'),getOption('display_tags-mincount'), null); ?>
 	</div>
 	</div>
 <?php } ?>

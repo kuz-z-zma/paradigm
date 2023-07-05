@@ -30,24 +30,27 @@ if (class_exists('Zenpage')) {
 
 <!-- Codeblock1 -->	
 			<p><?php printCodeblock(1);	?> </p>
+			<br style="clear:both;" />
 <!-- Tags -->
-			<?php 	
-				if (getTags()) {
-					echo gettext('<strong>Tags:</strong>');
-				} 
-				printTags_zb('links', '', 'taglist', ', ');
-			?>
+			<?php
+					if (getTags()) {
+						echo '<div id="tags" class="block"><h2><i class="glyphicon glyphicon-tag"></i>' . gettext('Tags') . '</h2>';
+						printTags_zb('links', '', 'taglist', ', ');
+						echo '</div>';
+					}	
+				?>
 <!-- Rating -->	
 				<?php
 					if (extensionEnabled('rating')) { 
 						echo '<div id="rating">';
-						echo '<h2>' . gettext('Rating') . '</h2>';
+						echo '<h2><i class="glyphicon glyphicon-star"></i>' . gettext('Rating') . '</h2>';
 						printRating();
 						echo '</div>';
 					}
-				?>	
+				?>
 				
 <!-- Comments -->
+			<hr />
 			<?php @call_user_func('printCommentForm'); ?>
 			</section>
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>

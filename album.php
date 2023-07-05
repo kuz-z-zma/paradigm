@@ -15,7 +15,7 @@ if (!defined('WEBPATH'))
 		<div id="center" class="row" itemscope itemtype="https://schema.org/ImageGallery">
 			<section class="col-sm-9" id="main" itemprop="mainContentOfPage">
 				
-				<h1 itemprop="name"><?php printAlbumTitle(); ?></h1>
+				<h1 itemprop="name"><i class="glyphicon glyphicon-folder-open"></i><?php printAlbumTitle(); ?></h1>
 
 				<div itemprop="description" class="content"><?php printAlbumDesc(); ?></div>
 								
@@ -28,20 +28,22 @@ if (!defined('WEBPATH'))
 			<!-- Tags -->
 				<?php
 					if (getTags()) {
-						echo '<h2>' . gettext('Tags') . '</h2>';
+						echo '<div id="tags" class="block"><h2><i class="glyphicon glyphicon-tag"></i>' . gettext('Tags') . '</h2>';
 						printTags_zb('links', '', 'taglist', ', ');
+						echo '</div>';
 					}	
 				?>
 
 				<?php if ((function_exists('printAddToFavorites')) && ($_zp_gallery_page == 'album.php')) { ?>
-				<div id="favorites" class="block"><?php printAddToFavorites($_zp_current_album); ?></div>
+				<div id="favorites" class="block"><h2><i class="glyphicon glyphicon-heart"></i>Favorites</h2>
+				<?php printAddToFavorites($_zp_current_album); ?></div>
 				<?php } ?>
 
 			<!-- Rating -->	
 				<?php
 					if (extensionEnabled('rating')) { 
 						echo '<div id="rating">';
-						echo '<h2>' . gettext('Rating') . '</h2>';
+						echo '<h2><i class="glyphicon glyphicon-star"></i>' . gettext('Rating') . '</h2>';
 						printRating();
 						echo '</div>';
 					}
@@ -57,13 +59,17 @@ if (!defined('WEBPATH'))
 				
 				<?php
 					if (function_exists('printGoogleMap')) {
+						echo '<div id="location-google">';
 						printGoogleMap("","","show");
+						echo '</div>';			
 					}
 				?>
 
 				<?php
 					if (function_exists('printOpenStreetMap')) {
+						echo '<div id="location">';
 						openStreetMap::printOpenStreetMap();
+						echo '</div>';						
 					}
 				?>		
 

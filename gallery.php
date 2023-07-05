@@ -16,10 +16,11 @@ if (!defined('WEBPATH'))
 			
 			<section class="col-sm-9" id="main" itemprop="mainContentOfPage">
 				
-			<h1 itemprop="name"><?php echo gettext("Albums"); ?></h1>
+			<h1 itemprop="name"><i class="glyphicon glyphicon-folder-open"></i><?php echo gettext("Albums"); ?></h1>
 				
 				<?php include("includes/_albumlist.php"); ?>
-
+				
+				<?php printPageListWithNav("« " . gettext("prev"), gettext("next") . " »"); ?>
 			</section>
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>
 		</div>	

@@ -27,35 +27,40 @@
 </div>	
 <?php } ?>
 <div id="background-main" class="background">
-<?php if (getOption('zenphoto_logo') != '') { ?>
 	<div class="container<?php if (getOption('full_width')) {echo '-fluid';}?>">
 		<div class="row">
 			<div class="col-sm-12">
+				<?php if (getOption('zenphoto_logo') != '') { ?>
 				<h1 itemprop="name"><?php printGalleryTitle(); ?></h1>
-				<p class="tagline"><?php printGalleryDesc(); ?></p>
-			</div>
-		</div>
-	</div>
-	<?php } elseif (getGalleryTitle() != '') { ?>
-		<div class="container<?php if (getOption('full_width')) {echo '-fluid';}?>">
-			<div class="row">
-				<div class="col-sm-12">
-					<p class="tagline"><?php printGalleryDesc(); ?></p>
+				<div class="home-extended-message"><?php printGalleryDesc(); ?>
+				<?php if (getOption('extended_homepage_message') != '') { ?>
+						<?php echo getOption('extended_homepage_message'); ?>
+				<?php } ?>
 				</div>
-			</div>
+				<?php } elseif ((getOption('zenphoto_logo') == '') && (getOption('zenphoto_tagline'))) { ?>
+				<?php if (getOption('extended_homepage_message') != '') { ?>
+						<div class="home-extended-message"><?php echo getOption('extended_homepage_message'); ?></div>
+						<?php } ?>
+				<?php } elseif ((getOption('zenphoto_logo') == '') && (getGalleryTitle() != '')) { ?>
+				<div class="home-extended-message"><?php printGalleryDesc(); ?>
+					<?php if (getOption('extended_homepage_message') != '') { ?>
+						<?php echo getOption('extended_homepage_message'); ?>
+						<?php } ?>
+				</div>
+				<?php } ?>
+				</div>		
 		</div>
-<?php } ?>				
+					
 	
 <?php if (class_exists('Zenpage') && getNumNews(true) && (getOption('homepage_blog'))) { ?>
-	<div class="container<?php if (getOption('full_width')) {echo '-fluid';}?>">
 		<div class="row">
 			<div class="col-sm-12">
-			<h2><?php echo gettext("Blog"); ?></h2>
-				<div class="row">
+			<h2><i class="glyphicon glyphicon-pencil"></i><?php echo gettext("Blog"); ?></h2>
+				<div id="blog-style-homepage">
 					<?php  // news article loop
 						$cnt=0;					
-						while (next_news()&& $cnt<2): ;?>
-						<div class="col-sm-6">
+						while (next_news()&& $cnt<(getOption('news_number'))): ;?>
+						<div class="homepage-news-item">
 							<h3><?php printNewsURL(); ?></h3>
 							<?php $hasFeaturedImage = false; if (function_exists('getFeaturedImage')) $hasfeaturedimage = getFeaturedImage($_zp_current_zenpage_news);
 							?>
@@ -67,50 +72,27 @@
 										{echo getNewsCustomData();
 										echo '<p class="readmorelink"><a href="' . getNewsURL() . '" title="' . gettext('Read more') .'" >' . gettext('Read more') . '</a></p><hr />'; 
 										}
-									else {printNewsContent(250); echo "<hr />";} 
+									else {printNewsContent(250);} 
 								?>
 						</div>
 					<?php
 						$cnt++;
 						endwhile;
-					?>		
+					?>
+					</div>					
 				</div>
-			</div>
-		</div>
-	</div>	
+			</div>	
 <?php } ?>	
-	<div class="container<?php if (getOption('full_width')) {echo '-fluid';}?>">
 		<div class="row">
 			<div class="col-sm-12">
-			<?php	if (getOption('homepage_content')=='latest') { ?>
-				<h2><?php echo gettext("Latest images"); ?></h2>
-					<?php
-					if (function_exists('getImageStatistic'))  {
-						printLatestImages_zb(12, "", true, false, false, "", false,NULL,NULL,NULL, "", true); }
-					else	{
-						echo '<div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images</div>';
-						}
-						?>
-			<?php } ?>
-			<?php	if (getOption('homepage_content')=='random') { ?>
-				<h2><?php echo gettext("Random images"); ?></h2>					
-					<?php
-						if (function_exists('getImageStatistic')) {
-							printImageStatistic_zb(12,"random","", true, false, false, "", false,NULL,NULL,NULL, "", true);
-						}
-					else	{
-						echo '<div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images</div>';
-						}
-						?>
-				<?php } ?>
-			<?php	if ((getOption('homepage_content')=='albums') || (getOption('homepage_content')=='')) { ?>
-				<h2><?php echo gettext("Albums"); ?></h2>
-				<div class="row">
+			<?php	if (getOption('homepage_content_albums')) { ?>
+				<h2><i class="glyphicon glyphicon-folder-close"></i><?php echo gettext("Albums"); ?></h2>
+				
 					<?php while (next_album()): ?>
 						<div class="media col-lg-4 col-sm-6" style="height:<?php echo html_encode(getOption('thumb_size')+20);echo 'px'; ?>">
-							<a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>" class="pull-right"><?php printAlbumThumbImage(getBareAlbumTitle(),"media-object"); ?></a>						
-							<div class="media-body">
-								<h3 class="media-heading"><a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a></h3>
+						<h3 class="media-heading"><a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a></h3>
+						<div class="media-body">
+									<a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><?php printAlbumThumbImage(getBareAlbumTitle(),"media-object"); ?></a>
 									<p><?php 
 										if (getAlbumCustomData()!='') 
 										{echo shortenContent(getAlbumCustomData(), 200, '...');}
@@ -120,7 +102,7 @@
 							</div>	
 						</div>
 					<?php endwhile; ?>
-				</div>
+				
 					<div class="pagelist">
 						<ul class="pagelist">
 							<li><?php printCustomPageURL(gettext('All albums'), 'gallery'); ?></li>
@@ -128,9 +110,66 @@
 					</div>				
 			<?php } ?>
 			</div>
+			<div class="col-sm-12">
+			<?php if (getOption('homepage_content_uploads')) { ?>
+				<h2><i class="glyphicon glyphicon-upload"></i><?php echo gettext("Latest uploads"); ?></h2>
+					<?php
+					if (function_exists('getImageStatistic'))  {
+						printImageStatistic_zb(getOption('homepage_content_number'),"latest","",true,false,false,"",false,NULL,NULL,NULL,"", false);
+						}
+					else	{
+						echo '<div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images</div>';
+						}
+						?>
+			<?php } ?>
+			<?php if (getOption('homepage_content_recent')) { ?>
+				<h2><i class="glyphicon glyphicon-time"></i><?php echo gettext("Recent images"); ?></h2>
+					<?php
+					if (function_exists('getImageStatistic'))  {
+						printImageStatistic_zb(getOption('homepage_content_number'),"latest-date","",true,false,false,"",false,NULL,NULL,NULL,"", false);
+						}
+					else	{
+						echo '<div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images</div>';
+						}
+						?>
+			<?php } ?>
+			<?php if (getOption('homepage_content_popular')) { ?>
+				<h2><i class="glyphicon glyphicon-fire"></i><?php echo gettext("Most popular"); ?></h2>
+					<?php
+					if (function_exists('getImageStatistic'))  {
+						printImageStatistic_zb(getOption('homepage_content_number'),"popular","",true,false,false,"",false,NULL,NULL,NULL,"", false);
+						}
+					else	{
+						echo '<div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images</div>';
+						}
+						?>
+			<?php } ?>
+			<?php if (getOption('homepage_content_rated')) { ?>
+				<h2><i class="glyphicon glyphicon-star"></i><?php echo gettext("Top rated"); ?></h2>
+					<?php
+					if (function_exists('getImageStatistic'))  {
+						printImageStatistic_zb(getOption('homepage_content_number'),"toprated","",true, false, false,"",false,NULL,NULL,NULL,"", false);
+						}
+					else	{
+						echo '<div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images</div>';
+						}
+						?>
+			<?php } ?>
+			<?php if (getOption('homepage_content_random')) { ?>
+				<h2><i class="glyphicon glyphicon-random"></i><?php echo gettext("Random images"); ?></h2>					
+					<?php
+						if (function_exists('getImageStatistic')) {
+							printImageStatistic_zb(getOption('homepage_content_number'),"random","", true, false, false,"",false,NULL,NULL,NULL,"", false);
+							}
+					else	{
+						echo '<div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display random images</div>';
+						}
+						?>
+				<?php } ?>	
+			</div>	
 		</div>
 	</div>
-</div>	
+</div>
 
 
 

@@ -15,13 +15,15 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-			  
-			<?php if (getOption('zenphoto_logo') != '') { ?>
-				<a id="logo" href="<?php echo html_encode(getGalleryIndexURL()); ?>" title="<?php printGalleryTitle(); ?>"><img src="<?php echo pathurlencode(WEBPATH.'/'.UPLOAD_FOLDER.'/'.getOption('zenphoto_logo')); ?>" alt="<?php printGalleryTitle(); ?>" /></a>
+			<div class="logo-header"><?php if (getOption('zenphoto_logo') != '') { ?>
+				<a id="logo" href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php printGalleryTitle(); ?>"><img src="<?php echo pathurlencode(WEBPATH.'/'.UPLOAD_FOLDER.'/'.getOption('zenphoto_logo')); ?>" alt="<?php printGalleryTitle(); ?>" /></a>
 				<?php } elseif (getGalleryTitle() != '') { ?>
-				<h1 id="logo-text"><a href="<?php echo html_encode(getGalleryIndexURL()); ?>" title="<?php printGalleryTitle(); ?>"><?php printGalleryTitle(); ?></a></h1>
+				<h1 id="logo-text"><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php printGalleryTitle(); ?>"><?php printGalleryTitle(); ?></a></h1>
+					<?php if (getOption('zenphoto_tagline')) { ?>
+					<div class="tagline"><?php printGalleryDesc(); ?></div>
+					<?php } ?>
 				<?php } ?>
-				
+				</div>
 		    </div>
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -29,21 +31,27 @@
 			  		<!-- gallery -->
 			  		<li class="first level1 dropdown <?php if ($_zp_gallery_page == 'image.php' || $_zp_gallery_page == 'gallery.php' || $_zp_gallery_page == 'album.php') { ?> active<?php } ?>"><?php printCustomPageURL(gettext('Albums'), 'gallery'); ?>
 			  		<?php 
-					if(function_exists("printAlbumMenu")) {
+					if(function_exists("printAlbumMenu") && (getOption('dropdown_menu_albums'))) {
 						printAlbumMenuList("list-top",false,"","active","","","");} ?>
 					</li>
 					<?php if (function_exists("printAllNewsCategories") && ((getNumNews(true)) > 0)) { ?>
 						<!-- news -->
 						<li class="level1 dropdown<?php if ($_zp_gallery_page == 'news.php') { ?> active<?php } ?>"><a href="<?php echo getNewsIndexURL(); ?>"><?php echo gettext('Blog')?></a>
-								<?php printAllNewsCategories("", false, "", "open", true, "submenu", "open","list-top"); ?>	
-							</li>
+							<?php if (getOption('dropdown_menu_news')) { ?>
+								<?php printAllNewsCategories("", false, "", "open", true, "submenu", "open","list-top"); ?>
+							<?php } ?>
+					</li>
 					<?php } ?>
-
 						
 					<?php if (function_exists("printPageMenu") && ((getNumPages(true)) > 0)) { ?>
 						<!-- pages-->
-						<?php printPageMenu("list","","active","submenu","active","","2",false); ?>
-					<?php } ?>	
+						<?php if (getOption('dropdown_menu_pages')) { ?>
+							<?php printPageMenu("list","","active","submenu","active","","2",false); ?>
+						<?php } else { ?>
+							<?php printPageMenu("list-top","","active","submenu","active","","0",false); ?>
+						<?php } ?>	
+					<?php } ?>
+					
 					<?php if (getOption('display_archive')) { ?>
 						<!-- archive-->
 						<li class="level1<?php if ($_zp_gallery_page == 'archive.php') { ?> active<?php } ?>"><?php printCustomPageURL(gettext('Archive'), 'archive'); ?></li>

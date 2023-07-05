@@ -14,9 +14,10 @@ if (function_exists('printContactForm')) {
 	<div class="container<?php if (getOption('full_width')) {echo '-fluid';}?>">
 	<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_breadcrumbs.php'); ?>
 		<div id="center" class="row" itemscope itemtype="https://schema.org/ContactPage">
-			<section class="col-sm-9" id="main" itemprop="mainContentOfPage">
+				<?php if (function_exists("printAlbumMenu")) { ?>
+				<section class="col-sm-9" id="main" itemprop="mainContentOfPage">
 
-			<h1><?php echo gettext('Contact us') ?></h1>
+			<h1><i class="glyphicon glyphicon-envelope"></i><?php echo gettext('Contact') ?></h1>
 				
 			<p>						
 				<?php
@@ -25,7 +26,19 @@ if (function_exists('printContactForm')) {
 			</p>
 				
 			</section>
-<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>
+				<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>
+			<?php } else { ?>
+			<section class="col-sm-12" id="main" itemprop="mainContentOfPage">
+			<h1><i class="glyphicon glyphicon-envelope"></i><?php echo gettext('Contact') ?></h1>
+				
+			<p>						
+				<?php
+						printContactForm();
+				?>
+			</p>
+				
+			</section>
+			<?php } ?>
 		</div>
 	</div>
 </div>		

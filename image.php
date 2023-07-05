@@ -56,13 +56,13 @@ if (!defined('WEBPATH'))
 
 			</div>
 			<div class="row">
-				<div class="col-sm-9">
+				<div class="col-sm-12">
 					<?php 
 						if (getImageDesc()!='') {
-							echo '<h2>' . gettext('Caption') . '</h2>';
-							echo '<p itemprop="caption">';
+							echo '<h2><i class="glyphicon glyphicon-pencil"></i>' . gettext('Caption') . '</h2>';
+							echo '<div itemprop="caption">';
 							printImageDesc(); 
-							echo '</p>';
+							echo '</div>';
 						} 
 					?>
 				</div>
@@ -73,7 +73,7 @@ if (!defined('WEBPATH'))
 							
 					<?php 
 						if ((getImageData('location')!='') || (getImageData('city')!='') || (getImageData('state')!='') || (getImageData('country')!='')) {
-								echo '<h2>' . gettext('Location'). '</h2>';
+								echo '<h2><i class="glyphicon glyphicon-globe"></i>' . gettext('Location'). '</h2>';
 								if (getImageData('location')!='') {
 									echo '<p><strong>' . gettext('Location:'). '</strong>&nbsp;';
 									echo '<span  itemprop="contentLocation">';
@@ -100,40 +100,48 @@ if (!defined('WEBPATH'))
 
 					<?php
 						if (getTags()) {
-							echo '<h2>' . gettext('Tags') . '</h2>';
+							echo '<h2><i class="glyphicon glyphicon-tag"></i>' . gettext('Tags') . '</h2>';
 							printTags_zb('links', '', 'taglist', ', ');
 						}	
 					?>
 					
-					<?php if (function_exists('getHitCounter') || (getImageData('copyright')!='')) {
-						echo '<h2>' . gettext('Other info') . '</h2>';
-						if (function_exists('getHitCounter')) {
+					<?php if (function_exists('getHitCounter')) {
+						echo '<h2><i class="glyphicon glyphicon-eye-open"></i>' . gettext('Other info') . '</h2>';
 							echo '<p><strong>' . gettext('Views:') . '</strong>&nbsp;';
 							echo gethitcounter();
 							echo ' views</p>';
 						}?>	
-					<?php if (getImageData('copyright')!='') {
-							echo '<p itemprop="copyrightHolder"><strong>' . gettext('Copyright:') . '</strong>&nbsp;';
-							echo get_language_string(getImageData('copyright'));
-							echo '</p>';
-						}
-						?>				
-					<?php 
-						if (function_exists('printAddToFavorites')) {
-							printAddToFavorites($_zp_current_image);
-						}
-						if (extensionEnabled('rating')) { 
+					<?php if (getOption('extended_copyright_message') != '') { ?>
+						<h2><i class="glyphicon glyphicon-copyright-mark"></i>Copyright</h2>
+							<div itemprop="copyrightHolder" class="image-copy">
+								<?php echo getOption('extended_copyright_message'); ?>
+							</div>						
+						<?php } else { ?>
+							<?php (getImageData('copyright')!='') ?> 
+						<p itemprop="copyrightHolder"><strong>Copyright:</strong>
+							<?php echo get_language_string(getImageData('copyright')); ?>
+							</p>
+						<?php } ?>	
+				
+				<?php if (function_exists('printAddToFavorites')) { ?>
+				<div id="favorites" class="block"><h2><i class="glyphicon glyphicon-heart"></i>Favorites</h2>
+				<?php printAddToFavorites($_zp_current_image); ?></div>
+				<?php } ?>
+				
+					<!-- Rating -->	
+				<?php
+					if (extensionEnabled('rating')) { 
 						echo '<div id="rating">';
-						echo '<h2>' . gettext('Rating') . '</h2>';
+						echo '<h2><i class="glyphicon glyphicon-star"></i>' . gettext('Rating') . '</h2>';
 						printRating();
-						echo '</div>'; 
-						}
+						echo '</div>';
 					}
-					?>
+				?>	
+
 					<?php 
-						if (function_exists('printImageMarkupFields')) {
+						if (function_exists('printImageMarkupFields') && (zp_loggedin() OR (getOption('imageMarkup_permission') == 'everyone'))) {
 							echo '<div class="markup-copy-field">';
-							echo '<h2>Image code</h2>';
+							echo '<h2><i class="glyphicon glyphicon-paste"></i>Image code</h2>';
 							printImageMarkupFields(gettext('Code'));
 							echo '</div>';
 						}
@@ -142,26 +150,34 @@ if (!defined('WEBPATH'))
 				<div class="col-sm-6">
 				<?php
 					if (getImageMetaData()) {
+						echo '<h2><i class="glyphicon glyphicon-info-sign"></i>Image Info</h2>';
 						printImageMetadata_zb();
 					}
 				?>
+				
 				</div>	
 			</div>
 							
 		<!-- Codeblock 1 -->
 			<?php printCodeBlock(1);?>						
 
-			<?php
-				if (function_exists('printGoogleMap')) {
-					printGoogleMap("","","show");
-				}
-			?>
+				<?php
+					if (function_exists('printGoogleMap') && (getImageData('EXIFGPSLatitude')!='')) {
+						echo '<div id="location">';
+						echo '<h2><i class="glyphicon glyphicon-map-marker"></i>' . gettext('Map') . '</h2>';
+						printGoogleMap("","","show");
+						echo '</div>';			
+					}
+				?>
 
-			<?php
-				if (function_exists('printOpenStreetMap')) {
-					printOpenStreetMap();
-				}
-			?>			
+				<?php
+					if (function_exists('printOpenStreetMap') && (getImageData('EXIFGPSLatitude')!='')) {
+						echo '<div id="location">';
+						echo '<h2><i class="glyphicon glyphicon-map-marker"></i>' . gettext('Map') . '</h2>';
+						openStreetMap::printOpenStreetMap();
+						echo '</div>';						
+					}
+				?>					
 
 			<br style="clear:both" />
 			

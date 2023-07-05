@@ -1443,7 +1443,7 @@ ol ol {
 .content ul li, .content ul li {
 		background: url("../img/li-default.png") no-repeat scroll 0 9px;
     margin: 0 0 0 -5px;
-    padding: 3px 0 3px 15px
+    padding: 3px 0 3px 15px;
 }
 .list-unstyled {
   padding-left: 0;
@@ -4619,8 +4619,7 @@ ul.pagelist > li.current
   border: 1px solid #e6e9ea;
   text-decoration: none;
   background-color: #f4f5f6;
-
-}
+  }
 .pagination > li:first-child > a,
 .pagination > li:first-child > span,
 ul.pagelist > li.prev > a, 
