@@ -8,9 +8,6 @@ if (class_exists('Zenpage')) {
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_head.php'); ?>
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_header.php'); ?>
 
-<?php if (class_exists('RSS')) printRSSHeaderLink("News", "Zenpage news", ""); ?>
-
-
 <div id="background-main" class="background">
 	<div class="container<?php if (getOption('full_width')) {echo '-fluid';}?>">
 		<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_breadcrumbs.php'); ?>
@@ -47,7 +44,7 @@ if (class_exists('Zenpage')) {
 					<?php
 						if (getTags()) {
 							echo ' | ';
-						 		printTags_zb("links", "Tags: ", "list-inline news-info", ",");
+						 		printTags_zb("links", "Tags: ", "list-inline news-info", ",", getOption('tags-seo-nofollow'));
 						 }
 					?>
 				</div>
@@ -89,12 +86,19 @@ if (class_exists('Zenpage')) {
 		<!-- pagination -->
 		<?php
 			} else {
-				echo '<h1>';
-				printCurrentNewsCategory();
-				echo '</h1>';
-				printNewsCategoryDesc();
-			// news article loop
-			while (next_news()):;
+				if (in_context(ZP_ZENPAGE_NEWS_CATEGORY)) { ?>
+						<h1><?php printCurrentNewsCategory(); printCurrentPageAppendix(); ?></h1>
+				    <?php $hasFeaturedImage = false; if (function_exists('printSizedFeaturedImage')) $hasFeaturedImage = getFeaturedImage(); ?>
+						<?php if ($hasFeaturedImage) printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'remove-attributes center',null,true,null); ?>
+				    <?php printNewsCategoryDesc(); ?>
+			<?php	} else if (in_context(ZP_ZENPAGE_NEWS_DATE)) { ?>
+						<h1><?php printCurrentNewsArchive('News archive for ','plain'); printCurrentPageAppendix(); ?></h1>
+				<?php } else { ?>
+						<h1><?php echo $newsname; printCurrentPageAppendix(); ?></h1>
+						<?php } ?>
+				
+			<!-- news article loop --> 
+			<?php while (next_news()):;
 						?>
 			<div class="news-data">
 			<h2><?php printNewsURL(); ?></h2>
@@ -118,7 +122,7 @@ if (class_exists('Zenpage')) {
 					<?php
 						if (getTags()) {
 							echo ' | ';
-						 		printTags("links", "Tags: ", "list-inline news-info", ",");
+						 		printTags_zb("links", "Tags: ", "list-inline news-info", ",", getOption('tags-seo-nofollow'));
 						 }
 					?>
 				</div>
@@ -128,7 +132,7 @@ if (class_exists('Zenpage')) {
 				<?php 
 					if (getNewsCustomData()!='') 
 						{echo getNewsCustomData();
-						echo '<p class="readmorelink"><a href="' . getNewsURL() . '" title="' . gettext('Read more') .'" >' . gettext('Read more') . '</a></p>'; 
+						echo '<p class="readmorelink"><a href="' . getNewsURL() . '" title="' . getNewsReadMore() .'" >' . getNewsReadMore() . '</a></p>'; 
 						}
 					else {printNewsContent();} 
 				?>

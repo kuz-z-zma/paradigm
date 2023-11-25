@@ -18,7 +18,11 @@
 			<div class="logo-header"><?php if (getOption('zenphoto_logo') != '') { ?>
 				<a id="logo" href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php printGalleryTitle(); ?>"><img src="<?php echo pathurlencode(WEBPATH.'/'.UPLOAD_FOLDER.'/'.getOption('zenphoto_logo')); ?>" alt="<?php printGalleryTitle(); ?>" /></a>
 				<?php } elseif (getGalleryTitle() != '') { ?>
+				<?php if ($_zp_gallery_page == 'index.php' || $_zp_gallery_page == 'gallery.php') { ?>
 				<h1 id="logo-text"><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php printGalleryTitle(); ?>"><?php printGalleryTitle(); ?></a></h1>
+				<?php } else { ?>
+				<h2 id="logo-text"><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php printGalleryTitle(); ?>"><?php printGalleryTitle(); ?></a></h1>
+				<?php } ?>
 					<?php if (getOption('zenphoto_tagline')) { ?>
 					<div class="tagline"><?php printGalleryDesc(); ?></div>
 					<?php } ?>

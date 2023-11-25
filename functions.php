@@ -11,10 +11,15 @@
  * @param string $separator what charactor shall separate the tags
  * @since 1.1
  */
-function printTags_zb($option = 'links', $preText = NULL, $class = NULL, $separator = ', ') {
+function printTags_zb($option = 'links', $preText = NULL, $class = NULL, $separator = ', ', $nofollow=FALSE) {
 	global $_zp_current_search;
 	if (is_null($class)) {
 		$class = 'taglist';
+	}
+	if (!$nofollow) {
+		$nofollow = "";
+	} else {
+		$nofollow = " rel=\"nofollow\"";
 	}
 	$singletag = getTags();
 	$tagstring = implode(', ', $singletag);
@@ -47,7 +52,7 @@ function printTags_zb($option = 'links', $preText = NULL, $class = NULL, $separa
 				$separator = "";
 			}
 			if ($option === "links") {
-				$links1 = "<a href=\"" . html_encode(SearchEngine::getSearchURL(($atag),'', 'tags', 0, array('albums' => $albumlist))) . "\" title=\"" . html_encode($atag) . "\" >";
+				$links1 = "<a href=\"" . html_encode(SearchEngine::getSearchURL(($atag),'', 'tags', 0, array('albums' => $albumlist))) . "\" title=\"" . html_encode($atag) . "\"$nofollow>";
 				$links2 = "</a>";
 			} else {
 				$links1 = $links2 = '';
@@ -75,11 +80,17 @@ function printTags_zb($option = 'links', $preText = NULL, $class = NULL, $separa
  * @param int $minfontsize minimum font size the cloud should display
  * @since 1.1
  */
-function printAllTagsAs_zb ($option,$class='',$sort='abc',$counter=FALSE,$links=TRUE,$maxfontsize=2,$maxcount=50,$mincount=15, $limit=NULL,$minfontsize=0.8) {
+function printAllTagsAs_zb ($option,$class='',$sort='abc',$counter=FALSE,$links=TRUE,$maxfontsize=2,$maxcount=50,$mincount=15,$limit=NULL,$minfontsize=0.8,$nofollow=FALSE) {
 	global $_zp_current_search;
 	$option = strtolower($option);
 	if ($class != "") {
 		$class = "class=\"".$class."\"";
+	}
+	if (!$nofollow) {
+		$nofollow = "";
+	}
+		else {
+		$nofollow = "rel=\"nofollow\"";
 	}
 	$tagcount = getAllTagsCount();
 	if (!is_array($tagcount)) { return false; }
@@ -116,7 +127,7 @@ function printAllTagsAs_zb ($option,$class='',$sort='abc',$counter=FALSE,$links=
 					$albumlist = NULL;
 				}
 				$list .= "\t<li><a href=\"".
-									html_encode(SearchEngine::getSearchURL($key, '', 'tags', 0, array('albums'=>$albumlist)))."\"$size >".
+									html_encode(SearchEngine::getSearchURL($key, '', 'tags', 0, array('albums'=>$albumlist)))."\"$size $nofollow>".
 									$key.$counter."</a></li>\n";
 			} else {
 				$list .= "\t<li$size>".$key.$counter."</li>\n";
@@ -238,7 +249,7 @@ function printImageMetadata_zb() {
 		return;
 	}
 	?>
-			<table class="table table-striped itemprop="exifData"">
+			<table class="table table-striped" itemprop="exifData"">
 				<?php
 				foreach ($exif as $field => $value) {
 					$label = $_zp_exifvars[$field][2];

@@ -35,7 +35,7 @@ if (class_exists('Zenpage')) {
 			<?php
 					if (getTags()) {
 						echo '<div id="tags" class="block"><h2><i class="glyphicon glyphicon-tag"></i>' . gettext('Tags') . '</h2>';
-						printTags_zb('links', '', 'taglist', ', ');
+						printTags_zb('links', '', 'taglist', ', ', getOption('tags-seo-nofollow'));
 						echo '</div>';
 					}	
 				?>

@@ -5,7 +5,7 @@
 								<div class="thumbnail"  itemprop="thumbnail">
 									<?php
 									if ($_zp_current_image->isPhoto()) { ?>
-									<a href="<?php echo html_encode(getImageURL()); ?>" title="<?php printBareImageTitle(); ?>"><?php printImageThumb(getBareImageTitle()); ?></a>
+									<a href="<?php echo html_encode(getDefaultSizedImage()); ?>" rel="lightbox-<?php echo $_zp_current_album->getID();?> noopener nofollow" title="<?php printBareImageTitle(); ?>"><?php printImageThumb(getBareImageTitle()); ?></a>
 									<?php
 									} else { ?>
 									<a href="<?php echo html_encode(getImageURL()); ?>"><?php printImageThumb(getBareImageTitle()); ?></a>

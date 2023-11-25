@@ -18,14 +18,14 @@ if (!defined('WEBPATH'))
 				
 			<h1><i class="glyphicon glyphicon-calendar"></i><?php echo gettext('Archive'); ?></h1>
 			<h2 itemprop="name"><?php echo gettext('Gallery archive'); ?></h2>	
-			<div class="columns"><?php printAllDates(); ?></div>
+			<div class="columns"><?php printAllDates('archive','year','month','asc'); ?></div>
 							
 			<hr />
 			
 			<?php if (function_exists("printNewsArchive")) { ?>
 					<h2><?php echo gettext('News archive'); ?></h2>
 					<div class="columns">
-					<?php printNewsArchive("archive"); ?>
+					<?php printNewsArchive('archive', 'year', 'month', "archive-active", false, 'asc'); ?>
 					</div>
 					<hr />
 			<?php } ?>	

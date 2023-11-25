@@ -10,6 +10,7 @@
 
 
 <?php $searchwords = getSearchWords();?>
+<?php $searchdate = getSearchDate();?>
 
 <!-- meta -->
 
@@ -35,7 +36,7 @@
 	if ($_zp_gallery_page == 'credits.php') {echo gettext('Credits'); echo ' | ';}
 	if ($_zp_gallery_page == 'explore.php') {echo gettext('Explore'); echo ' | ';}
 	if ($_zp_gallery_page == 'sitemap.php') {echo gettext('Sitemap'); echo ' | ';}	
-	if ($_zp_gallery_page == 'search.php') {echo html_encode($searchwords); echo ' | ';}
+	if ($_zp_gallery_page == 'search.php') {echo html_encode($searchwords); echo html_encode($searchdate); echo ' | ';}
 	echo getParentSiteTitle();}
 	?>
 </title>
@@ -57,15 +58,16 @@
 
 
 <?php 	
-	if (isset($_GET["page"]) && $_zp_gallery_page == 'archive.php' || $_zp_gallery_page == 'favorites.php' || $_zp_gallery_page == 'password.php' || $_zp_gallery_page == 'register.php' || $_zp_gallery_page == 'contact.php') { 
+	if (isset($_GET["page"]) && $_zp_gallery_page == 'favorites.php' || $_zp_gallery_page == 'password.php' || $_zp_gallery_page == 'register.php' || $_zp_gallery_page == 'contact.php' || $_zp_gallery_page == 'search.php' || $_zp_gallery_page == 'archive.php' || $_zp_gallery_page == '404.php') { 
 		echo '<meta name="robots" content="noindex, follow">';
 	}
 	else {
 		echo '<meta name="robots" content="index, follow">';		
 	}
 ?>
-
-
+	
+<link rel="canonical" href="<?php echo (PROTOCOL."://".$_SERVER['HTTP_HOST'].$_SERVER["REQUEST_URI"]); ?>"/>
+	
 <!-- Open Graph -->
 
 <meta property="og:title" content="<?php
@@ -211,7 +213,8 @@ if ((($_zp_gallery_page == 'news.php') && (is_NewsArticle()) && getNewsCustomDat
 <!-- rss -->
 
 <?php if (class_exists('RSS')) printRSSHeaderLink('Gallery', gettext('Gallery RSS')); ?>
-
+<?php if (class_exists('RSS')) printRSSHeaderLink("News", "Zenpage news", ""); ?>
+	
 <?php zp_apply_filter('theme_head'); ?>
 
 </head>

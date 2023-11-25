@@ -23,7 +23,14 @@
 			</div>
 			<div class="col-sm-3 text-right" id="social">
 				<p>
-				<?php if (class_exists('RSS')) { ?>					
+				<?php if (class_exists('RSS')) { ?>
+					<?php if (($_zp_gallery_page == 'news.php') && (getOption('RSS_articles'))) {
+						printRSSLink('News','',gettext('RSS News'),'',false); 
+						} elseif ((getOption('RSS_pages') && ($_zp_gallery_page == 'pages.php'))) {
+						printRSSLink('Pages','',gettext('RSS Pages'),'',false);
+						} elseif (getOption('RSS_album_image')) {
+						printRSSLink('Gallery','',gettext('RSS Gallery'),'',false);
+						} ?>				
 				<?php } ?>
 					<?php if (getOption('facebook_url')!='') {
 						echo '<a href="';

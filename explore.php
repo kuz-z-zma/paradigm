@@ -18,7 +18,7 @@ if (!defined('WEBPATH'))
 			<h1 itemprop="name"><i class="glyphicon glyphicon-tags"></i>Tags</h1>				
 			<?php if (getAllTagsCount() >0) { ?>
 				<div id="sitemap-tags">
-				<?php printAllTagsAs_zb('cloud', 'list', 'abc', false, true,1,2,1, null); ?>
+				<?php printAllTagsAs_zb('cloud', 'list', 'abc', false, true,1,1,0,null,1,getOption('tags-seo-nofollow')); ?>
 				</div>
 			<?php } ?>
 				

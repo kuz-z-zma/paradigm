@@ -21,7 +21,7 @@
 		<h1><?php printAlbumTitle(); ?></h1>
 		<p class="lead"><?php printAlbumDesc(); ?></p>
 
-		<?php include("includes/_albums.php"); ?>
+		<?php include("includes/_albumlist.php"); ?>
 		
 		<?php printAddToFavorites($_zp_current_album, '', gettext('Remove')); ?>
 

@@ -38,15 +38,14 @@
 
 <?php if ((getAllTagsCount()) && (getOption('display_tags-sidebar'))) { ?>
 <!-- Print tag cloud -->
-
 <div class="panel panel-default">
 	<div class="panel-heading"><h2 class="panel-title"><?php echo gettext('Popular Tags'); ?></h2></div>
 	<div id="tag_cloud"  class="panel-body">
-		<?php printAllTagsAs_zb('cloud', 'taglist', 'abc', false, true,getOption('display_tags-maxfontsize'),getOption('display_tags-maxcount'),getOption('display_tags-mincount'), null); ?>
+		<?php printAllTagsAs_zb('cloud', 'taglist', 'abc', false, true,getOption('display_tags-maxfontsize'),getOption('display_tags-maxcount'),getOption('display_tags-mincount'), null, getOption('display_tags-minfont-size'), getOption('tags-seo-nofollow')); ?>
 	</div>
 	</div>
 <?php } ?>
-
+	
 <?php if (getcodeblock(1, $_zp_gallery)!='') { ?>
 <hr/>
 	<div class="well">
@@ -67,6 +66,3 @@
 <?php		} ?>
 
 </aside>
-
-
-

@@ -70,9 +70,9 @@
 							<?php 
 									if (getNewsCustomData()!='') 
 										{echo getNewsCustomData();
-										echo '<p class="readmorelink"><a href="' . getNewsURL() . '" title="' . gettext('Read more') .'" >' . gettext('Read more') . '</a></p><hr />'; 
+										echo '<p class="readmorelink"><a href="' . getNewsURL() . '" title="' . getNewsReadMore() .'" >' . getNewsReadMore() . '</a></p><hr />'; 
 										}
-									else {printNewsContent(250);} 
+									else {printNewsContent(getOption('homepage_news_length'));} 
 								?>
 						</div>
 					<?php
@@ -93,12 +93,14 @@
 						<h3 class="media-heading"><a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><?php printAlbumTitle(); ?></a></h3>
 						<div class="media-body">
 									<a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><?php printAlbumThumbImage(getBareAlbumTitle(),"media-object"); ?></a>
-									<p><?php 
+									<p><?php	if (getOption('homepage_content_albums_desc_show')) { ?>
+										<?php 
 										if (getAlbumCustomData()!='') 
-										{echo shortenContent(getAlbumCustomData(), 200, '...');}
+										{ echo getAlbumCustomData(); }
 										else 
-										{echo shortenContent(getAlbumDesc(), 200, '...');} 
+										{ echo shortenContent(getAlbumDesc(), (getOption('homepage_content_albums_desc_length')), '...'); } 
 									?></p>
+							<?php } ?>
 							</div>	
 						</div>
 					<?php endwhile; ?>
