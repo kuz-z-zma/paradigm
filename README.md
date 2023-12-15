@@ -10,14 +10,8 @@ Since I’ve updated this theme to fix usage of depreciated functions and added 
 
 New additions include: more flexibility for displaying content.
 
-version 1.4:
+version 1.4.1:
 
- - Added option to assign rel=”nofollow” to Tags links (works on every page, where they are displayed).
- - Added option to specify length to News Items on Homepage.
- - Added option to enable Album Descriptions on Homepage.
- - If Album Custom Data is present – it is shown in full, if it is not available, Album Description is used.
- - Added option to specify length of Album Descriptions on Homepage.
- - Fixed H1 on News Archive pages.
- - Added sorting parameters to Archive list.
- - Some code clean-up.
- - Changed theme preview.
+ - Added Image Number (within Album) to image Title and Description meta-tags, to combat identical Title and Description for images.
+ - Added auto-generated text to Albums (without descriptions) and Tags pages Description meta-tags, to combat identical Title and Description for those pages.
+ - Some code clean-up for usage with php 8.2 (thanks, fretzl)

@@ -62,7 +62,7 @@
 						while (next_news()&& $cnt<(getOption('news_number'))): ;?>
 						<div class="homepage-news-item">
 							<h3><?php printNewsURL(); ?></h3>
-							<?php $hasFeaturedImage = false; if (function_exists('getFeaturedImage')) $hasfeaturedimage = getFeaturedImage($_zp_current_zenpage_news);
+							<?php if (function_exists('getFeaturedImage')) $hasfeaturedimage = getFeaturedImage($_zp_current_zenpage_news);
 							?>
 							<?php if($hasfeaturedimage) {
 							echo '<a href="' . getNewsURL() . '"><img src="' . pathurlencode($hasfeaturedimage->getThumb()) . '" alt="' . html_encode($hasfeaturedimage->getTitle()) . '" class="feat-image-home"></a>';}

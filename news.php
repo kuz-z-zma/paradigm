@@ -49,7 +49,7 @@ if (class_exists('Zenpage')) {
 					?>
 				</div>
 				
-				<div itemprop="articleBody" class="content"><?php $hasFeaturedImage = false; if (function_exists('printSizedFeaturedImage')) $hasFeaturedImage = getFeaturedImage(); ?>
+				<div itemprop="articleBody" class="content"><?php if (function_exists('printSizedFeaturedImage')) $hasFeaturedImage = getFeaturedImage(); ?>
 				<?php if ($hasFeaturedImage) printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'feat-image',null,true,null); ?>
 					<?php printNewsContent();?></div>
 				
@@ -88,13 +88,13 @@ if (class_exists('Zenpage')) {
 			} else {
 				if (in_context(ZP_ZENPAGE_NEWS_CATEGORY)) { ?>
 						<h1><?php printCurrentNewsCategory(); printCurrentPageAppendix(); ?></h1>
-				    <?php $hasFeaturedImage = false; if (function_exists('printSizedFeaturedImage')) $hasFeaturedImage = getFeaturedImage(); ?>
+				    <?php if (function_exists('printSizedFeaturedImage')) $hasFeaturedImage = getFeaturedImage(); ?>
 						<?php if ($hasFeaturedImage) printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'remove-attributes center',null,true,null); ?>
 				    <?php printNewsCategoryDesc(); ?>
 			<?php	} else if (in_context(ZP_ZENPAGE_NEWS_DATE)) { ?>
 						<h1><?php printCurrentNewsArchive('News archive for ','plain'); printCurrentPageAppendix(); ?></h1>
 				<?php } else { ?>
-						<h1><?php echo $newsname; printCurrentPageAppendix(); ?></h1>
+						<h1>News <?php printCurrentPageAppendix(); ?></h1>
 						<?php } ?>
 				
 			<!-- news article loop --> 
@@ -127,7 +127,7 @@ if (class_exists('Zenpage')) {
 					?>
 				</div>
 			<article class="content">
-				<?php $hasFeaturedImage = false; if (function_exists('printSizedFeaturedImage')) $hasFeaturedImage = getFeaturedImage(); ?>
+				<?php if (function_exists('printSizedFeaturedImage')) $hasFeaturedImage = getFeaturedImage(); ?>
 				<?php if ($hasFeaturedImage) printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'feat-image',null,true,null); ?>
 				<?php 
 					if (getNewsCustomData()!='') 

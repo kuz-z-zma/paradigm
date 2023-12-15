@@ -21,7 +21,7 @@ class ThemeOptions {
 		setThemeOptionDefault('thumb_crop_height', 240);
 		setThemeOptionDefault('image_size', 800);
 		setThemeOptionDefault('image_use_side', 'longest');
-		setThemeOptionDefault('custom_index_page', 'gallery.php');
+		setThemeOptionDefault('custom_index_page', 'gallery');
 		
 		setOptionDefault('gmap_width', '100%');
 		setOptionDefault('htmlmeta_name-title', 0);

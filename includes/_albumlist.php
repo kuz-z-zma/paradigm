@@ -4,12 +4,13 @@
 								<h2 class="media-heading"><a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><i class="glyphicon glyphicon-folder-close"></i><?php printAlbumTitle(); ?></a></h2>		
 								<div class="media-body">
 									<a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext('View album:'); ?> <?php printBareAlbumTitle(); ?>"><?php printAlbumThumbImage(getBareAlbumTitle(),"media-object"); ?></a>
-										<p><?php 
+										<p>
+											<?php 
 											if (getAlbumCustomData()!='') 
-											{echo shortenContent(getAlbumCustomData(), 200, '...');}
+											{ echo getAlbumCustomData(); }
 											else 
-											{echo shortenContent(getAlbumDesc(), 200, '...');} 
-										?></p>
+											{ echo shortenContent(getAlbumDesc(), (getOption('homepage_content_albums_desc_length')), '...'); } ?>
+								    </p>
 								</div>	
 							</div>
 						<?php endwhile; ?>

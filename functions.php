@@ -114,7 +114,7 @@ function printAllTagsAs_zb ($option,$class='',$sort='abc',$counter=FALSE,$links=
 			} else {
 				$size = min(max(round(($maxfontsize*($val-$mincount))/($maxcount-$mincount), 2), $minfontsize), $maxfontsize);
 			}
-			$size = str_replace(',','.', $size);
+			$size = str_replace(',','.', strval($size));
 			$size = " style=\"font-size:".$size."em;\"";
 		} else {
 			$size = '';

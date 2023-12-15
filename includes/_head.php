@@ -26,7 +26,7 @@
 	if ($_zp_gallery_page == 'archive.php') {echo gettext('Archive View'); echo ' | ';}
 	if ($_zp_gallery_page == 'contact.php') {echo gettext('Contact'); echo ' | ';}
 	if ($_zp_gallery_page == 'favorites.php') {echo gettext('My favorites'); if ($_zp_page > 1) {echo ' [' . $_zp_page . ']'; }echo ' | ';}
-	if ($_zp_gallery_page == 'image.php') {echo getBareImageTitle() . ' - photo from album ' . getBareAlbumTitle(); echo ' | ';}
+	if ($_zp_gallery_page == 'image.php') {echo getBareImageTitle() . ' - photo ' . imageNumber() . ' from album ' . getBareAlbumTitle(); echo ' | ';}
 	if (($_zp_gallery_page == 'news.php') && (is_NewsPage())&& (!is_NewsCategory())&& (!is_NewsArticle())) {echo gettext('Blog'); echo ' | ';}	
 	if (($_zp_gallery_page == 'news.php') && (is_NewsCategory())) {printCurrentNewsCategory(); echo ' | '; echo gettext('Blog'); echo ' | ';}	
 	if (($_zp_gallery_page == 'news.php') && (is_NewsArticle())) {echo getBareNewsTitle(); echo ' | '; echo gettext('Blog'); echo ' | ';}
@@ -44,16 +44,18 @@
 <?php
 	if (($_zp_gallery_page == 'image.php') && getImageCustomData()!='') { echo '<meta name="Description" content="'; echo getImageCustomData(); echo '"/>'; }
 	elseif (($_zp_gallery_page == 'image.php') && getBareImageDesc()!='') { echo '<meta name="Description" content="'; echo getBareImageDesc(); echo '"/>'; }
-	elseif ($_zp_gallery_page == 'image.php') { echo '<meta name="Description" content="'; echo getBareImageTitle(); echo '"/>'; }
+	elseif ($_zp_gallery_page == 'image.php') { echo '<meta name="Description" content="'; echo getBareImageTitle() . ' - photo ' . imageNumber() . ' from album ' . getBareAlbumTitle(); echo '"/>'; }
 	?>
 	
 	<?php
 	if (($_zp_gallery_page == 'album.php') && getAlbumCustomData()!='') {echo '<meta name="Description" content="'; echo getAlbumCustomData(); echo '"/>';}	
 		elseif (($_zp_gallery_page == 'album.php') && getBareAlbumDesc()!='') {echo '<meta name="Description" content="'; echo getBareAlbumDesc(); echo '"/>';}
+	elseif ($_zp_gallery_page == 'album.php') { echo '<meta name="Description" content="'; echo getBareAlbumTitle(); echo ' photos"/>'; }
 	if (($_zp_gallery_page == 'index.php') && getBareGalleryDesc()!='') {echo '<meta name="Description" content="'; echo getBareGalleryDesc(); echo'"/>';}
 	if (($_zp_gallery_page == 'news.php') && getNewsCustomData()!='') {echo '<meta name="Description" content="'; echo getNewsCustomData(); echo'"/>';}	
 	if (($_zp_gallery_page == 'gallery.php') && getBareAlbumDesc()!='') {echo '<meta name="Description" content="'; echo getBareAlbumDesc(); echo '"/>';}
 	if (($_zp_gallery_page == 'pages.php') && getPageCustomData()!='') {echo '<meta name="Description" content="'; echo getPageCustomData(); echo '"/>';}	
+	if ($_zp_gallery_page == 'search.php') {echo '<meta name="Description" content="Photos of '; echo html_encode($searchwords); echo html_encode($searchdate);echo '"/>';}	
 ?>
 
 
