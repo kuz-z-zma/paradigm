@@ -27,7 +27,11 @@
 <?php } ?>
 <?php if ($_zp_gallery_page == 'news.php') { ?>		
 			<li><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php echo gettext('Index'); ?>" itemprop="url"><i class="glyphicon glyphicon-home"></i></a></li>
-			<li><?php printNewsIndexURL('Blog', ' '); ?></li>
+			<li><?php if (getOption('menu_text_news')!='') {printNewsIndexURL(getOption('menu_text_news'), ' ');
+							} else {
+								printNewsIndexURL('News', ' ');
+								} ?>
+			
 				<?php
 					printZenpageItemsBreadcrumb_zb();
 					printCurrentNewsCategory_zb();

@@ -26,7 +26,14 @@ if (!defined('WEBPATH'))
 					</ul>
 
 					<h1 itemprop="name"><?php printImageTitle(); ?></h1>
-
+				<?php 
+						if ((getImageDesc() != '') && ((getOption('display_caption')) == 'above')) {
+							echo '<div itemprop="caption" class="content">';
+							printImageDesc(); 
+							echo '</div>';
+						} 
+					?>
+				
 			<br clear="all"/>
 
 			<!-- The Image -->
@@ -58,8 +65,8 @@ if (!defined('WEBPATH'))
 			<div class="row">
 				<div class="col-sm-12">
 					<?php 
-						if (getImageDesc()!='') {
-							echo '<h2><i class="glyphicon glyphicon-pencil"></i>' . gettext('Caption') . '</h2>';
+						if ((getImageDesc() != '') && ((getOption('display_caption')) == 'below')) {
+							echo '<h2><i class="glyphicon glyphicon-pencil"></i>' . gettext('Caption') . '</h2>';					
 							echo '<div itemprop="caption">';
 							printImageDesc(); 
 							echo '</div>';

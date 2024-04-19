@@ -15,13 +15,13 @@ if (!defined('WEBPATH'))
 		<div id="center" class="row" itemscope itemtype="https://schema.org/ImageGallery">
 			<section class="col-sm-9" id="main" itemprop="mainContentOfPage">
 				
-				<h1 itemprop="name"><i class="glyphicon glyphicon-folder-open"></i><?php printAlbumTitle(); ?></h1>
+				<h1 itemprop="name"><i class="glyphicon glyphicon-folder-open"></i><?php printAlbumTitle(); ?></h1>				
 
 				<div itemprop="description" class="content"><?php printAlbumDesc(); ?></div>
 								
-				<?php include("includes/_albumlist.php"); ?>
+				<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_albumlist.php'); ?>
 
-				<?php include("includes/_imagethumbs.php"); ?>
+				<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_imagethumbs.php'); ?>
 				
 					<?php printPageListWithNav("« " . gettext("prev"), gettext("next") . " »"); ?>
 				

@@ -33,14 +33,35 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			  	<ul class="nav navbar-nav">		
 			  		<!-- gallery -->
-			  		<li class="first level1 dropdown <?php if ($_zp_gallery_page == 'image.php' || $_zp_gallery_page == 'gallery.php' || $_zp_gallery_page == 'album.php') { ?> active<?php } ?>"><?php printCustomPageURL(gettext('Albums'), 'gallery'); ?>
-			  		<?php 
+						<li class="first level1 dropdown <?php if ($_zp_gallery_page == 'image.php' || $_zp_gallery_page == 'gallery.php' || $_zp_gallery_page == 'album.php') { ?> active<?php } ?>">
+			  		<?php if (getOption('menu_text_gallery')!='') {
+								printCustomPageURL(getOption('menu_text_gallery'), 'gallery')
+							;}	else {
+								printCustomPageURL(gettext('Gallery'), 'gallery')
+								;}
+							?>
+							<?php 
 					if(function_exists("printAlbumMenu") && (getOption('dropdown_menu_albums'))) {
 						printAlbumMenuList("list-top",false,"","active","","","");} ?>
 					</li>
+						
 					<?php if (function_exists("printAllNewsCategories") && ((getNumNews(true)) > 0)) { ?>
 						<!-- news -->
-						<li class="level1 dropdown<?php if ($_zp_gallery_page == 'news.php') { ?> active<?php } ?>"><a href="<?php echo getNewsIndexURL(); ?>"><?php echo gettext('Blog')?></a>
+					<li class="level1 dropdown<?php if ($_zp_gallery_page == 'news.php') { ?> active<?php } ?>">
+							<?php if (getOption('menu_text_news')!='') {
+								echo '<a href="';
+								echo getNewsIndexURL();
+								echo '">';
+								echo getOption('menu_text_news');
+								echo '</a>'; 
+							;}	else {
+								echo '<a href="';
+								echo getNewsIndexURL();
+								echo '">';
+								echo gettext('News');
+								echo '</a>';
+								;}
+							?>
 							<?php if (getOption('dropdown_menu_news')) { ?>
 								<?php printAllNewsCategories("", false, "", "open", true, "submenu", "open","list-top"); ?>
 							<?php } ?>
@@ -56,7 +77,7 @@
 						<?php } ?>	
 					<?php } ?>
 					
-					<?php if (getOption('display_archive')) { ?>
+					<?php if (getOption('display_archive-main')) { ?>
 						<!-- archive-->
 						<li class="level1<?php if ($_zp_gallery_page == 'archive.php') { ?> active<?php } ?>"><?php printCustomPageURL(gettext('Archive'), 'archive'); ?></li>
 					<?php } ?>			

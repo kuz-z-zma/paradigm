@@ -69,10 +69,53 @@
 	font-size:110%;
 	line-height:1.1em;
 }
-	
+/* ===== navigation ===== */	
+.nav-local ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.nav-local ul > li  {
+  position: relative;
+  display: block;
+}
+.nav-local ul > li > a {
+  position: relative;
+  display: block;
+  padding: 6px 15px;
+}
+.nav-local ul > li > a:hover,
+.nav-local ul > li > a:focus {
+  text-decoration: none;
+  background-color: #e5e5e5;
+  border-radius: 4px;  
+}
+
+.nav-local ul a.open,
+.nav-local ul a.open:hover,
+.nav-local ul a.open:focus {
+  background-color: #e5e5e5;
+  border-radius: 4px;
+  color:#aaa;
+}
+
+.nav-stacked > li, 
+.nav-local ul > li {
+  float: none;
+}
+.nav-stacked > li + li, 
+.nav-local ul > li + li {
+  margin-top: 2px;
+  margin-left: 0;
+}
 /* ===== nav stacked ===== */
 /* allow nav stacked with multiple levels */
 
+.nav-local ul li ul {
+	font-size:0.9em;
+	padding-left:20px;
+}
+	
 #nav-local ul li ul {
 	font-size:0.9em;
 	padding-left:20px;
@@ -285,7 +328,9 @@ h2.media-heading i {
 
 
 /* ===== Albums and image thumbnails ===== */
-
+.media-body {
+	clear:both;
+}
 #logo img {
   max-width: 100%;
   height: auto;
@@ -449,6 +494,17 @@ ul.taglist > li {
 	display: none
 }
 
+/* ===== Favorites ===== */
+
+.favorites {}
+.fav-images {}
+.fav-albums {
+	float:right;
+	margin:5px;
+}
+.albumsFavorites_remove, .albumsFavorites_add, .imagesFavorites_remove, .imagesFavorites_add {
+	margin:5px;
+}
 /* ====Explore and Sitemaps page lists==== */
 
 #sitemap-albums-output,
@@ -461,7 +517,8 @@ ul.taglist > li {
 	}
 
 #sitemap-albums-output li,
-#sitemap-news-output li {
+#sitemap-news-output li,
+.columns li {
 	overflow: hidden;
 	break-inside: avoid;
 	-webkit-column-break-inside: avoid;	

@@ -66,11 +66,12 @@ function printTags_zb($option = 'links', $preText = NULL, $class = NULL, $separa
 }
 
 /**
- * SEO version of the printAllTagsAs function: nofollow removed
+ * SEO version of the printAllTagsAs function: nofollow added
+ Either prints all of the galleries tgs as a UL list or a cloud
  *
  * @param string $option "cloud" for tag cloud, "list" for simple list
  * @param string $class CSS class
- * @param string $sort "results" for relevance list, "abc" for alphabetical, blank for unsorted
+ * @param string $sort "results" for relevance list, "random" for random ordering, otherwise the list is alphabetical
  * @param bool $counter TRUE if you want the tag count within brackets behind the tag
  * @param bool $links set to TRUE to have tag search links included with the tag.
  * @param int $maxfontsize largest font size the cloud should display
@@ -78,71 +79,94 @@ function printTags_zb($option = 'links', $preText = NULL, $class = NULL, $separa
  * @param int $mincount the minimum count for a tag to appear in the output
  * @param int $limit set to limit the number of tags displayed to the top $numtags
  * @param int $minfontsize minimum font size the cloud should display
+ * @param bool $exclude_unassigned True or false if you wish to exclude tags that are not assigne to any item (default: true)
+ * @param bool $checkaccess True or false (default: false) if you wish to exclude tags that are assigned to items (or are not assigned at all) the visitor is not allowed to see
+ * Beware that this may cause overhead on large sites. Usage of the static_html_cache is strongely recommended then.
+ * @param bool $nofollow True or false (default: false) if you wish to add nofollow attribute to tag links
  * @since 1.1
  */
-function printAllTagsAs_zb ($option,$class='',$sort='abc',$counter=FALSE,$links=TRUE,$maxfontsize=2,$maxcount=50,$mincount=15,$limit=NULL,$minfontsize=0.8,$nofollow=FALSE) {
+function printAllTagsAs_zb ($option, $class = '', $sort = NULL, $counter = FALSE, $links = TRUE, $maxfontsize = 3, $maxcount = 100, $mincount = 1, $limit = NULL, $minfontsize = 1, $exclude_unassigned = true, $checkaccess = false, $nofollow=FALSE) {
 	global $_zp_current_search;
 	$option = strtolower($option);
 	if ($class != "") {
-		$class = "class=\"".$class."\"";
+		$class = ' class="' . $class . '"';
 	}
 	if (!$nofollow) {
 		$nofollow = "";
 	}
 		else {
-		$nofollow = "rel=\"nofollow\"";
+		$nofollow = ' rel="nofollow"';
 	}
-	$tagcount = getAllTagsCount();
-	if (!is_array($tagcount)) { return false; }
-	if ($sort == "results") {
+	$tagcount = getAllTagsCount($exclude_unassigned, $checkaccess);
+	if (!is_array($tagcount)) {
+		return false;
+	}
+	switch ($sort) {
+		case 'results':
 			arsort($tagcount);
-	}
-	if (!is_null($limit)) {
-		$tagcount = array_slice($tagcount, 0, $limit);
-	}
-	$list = '';
-	echo "<ul ".$class.">\n";
-	foreach ($tagcount as $key=>$val) {
-		if(!$counter) {
-			$counter = "";
-		} else {
-			$counter = " (".$val.") ";
-		}
-		if ($option == "cloud") { // calculate font sizes, formula from wikipedia
-			if ($val <= $mincount) {
-				$size = $minfontsize;
-			} else {
-				$size = min(max(round(($maxfontsize*($val-$mincount))/($maxcount-$mincount), 2), $minfontsize), $maxfontsize);
+			if (!is_null($limit)) {
+				$tagcount = array_slice($tagcount, 0, $limit);
 			}
-			$size = str_replace(',','.', strval($size));
-			$size = " style=\"font-size:".$size."em;\"";
-		} else {
-			$size = '';
-		}
-		if ($val >= $mincount) {
-			if($links) {
-				if (is_object($_zp_current_search)) {
-					$albumlist = $_zp_current_search->getAlbumList();
+			break;
+		case 'random':
+			if (!is_null($limit)) {
+				$tagcount = array_slice($tagcount, 0, $limit);
+			}
+			shuffle_assoc($tagcount);
+			break;
+		default:
+			break;
+	}
+	?>
+	<ul<?php echo $class; ?>>
+		<?php
+		if (count($tagcount) > 0) {
+			foreach ($tagcount as $key => $val) {
+				if (!$counter) {
+					$counter = "";
 				} else {
-					$albumlist = NULL;
+					$counter = " (" . $val . ") ";
 				}
-				$list .= "\t<li><a href=\"".
-									html_encode(SearchEngine::getSearchURL($key, '', 'tags', 0, array('albums'=>$albumlist)))."\"$size $nofollow>".
-									$key.$counter."</a></li>\n";
-			} else {
-				$list .= "\t<li$size>".$key.$counter."</li>\n";
-			}
+				if ($option == "cloud") { // calculate font sizes, formula from wikipedia
+					if ($val <= $mincount) {
+						$size = $minfontsize;
+					} else {
+						$size = min(max(round(($maxfontsize * ($val - $mincount)) / ($maxcount - $mincount), 2), $minfontsize), $maxfontsize);
+					}
+					$size = str_replace(',', '.', $size);
+					$size = ' style="font-size:' . $size . 'em;"';
+				} else {
+					$size = '';
+				}
+				if ($val >= $mincount) {
+					if ($links) {
+						if (is_object($_zp_current_search)) {
+							$albumlist = $_zp_current_search->getAlbumList();
+						} else {
+							$albumlist = NULL;
+						}
+						$link = SearchEngine::getSearchURL(SearchEngine::getSearchQuote($key), '', 'tags', 0, array('albums' => $albumlist));
+						?>
+						<li>
+							<a href="<?php echo html_encode($link); ?>"<?php echo $size; echo $nofollow; ?>><?php echo $key . $counter; ?></a>
+						</li>
+						<?php
+					} else {
+						?>
+						<li<?php echo $size; ?>><?php echo $key . $counter; ?></li>
+						<?php
+					}
+				}
+			} // while end
+		} else {
+			?>
+			<li><?php echo gettext('No popular tags'); ?></li>
+			<?php
 		}
-
-	} // while end
-	if ($list) {
-		echo $list;
-	} else {
-		echo '<li>'.gettext('No popular tags')."</li>\n";
-	}
-	echo "</ul>\n";
+		?>
+	</ul>
+	<?php
 }
-
 /**
  * Bootstrap breadcrumb. Based on an unordered list. Includes link to root and microdata
  * Prints the breadcrumb navigation for album, gallery and image view.
@@ -256,7 +280,10 @@ function printImageMetadata_zb() {
 					echo "<tr><th>$label:</th><td>";
 					switch ($_zp_exifvars[$field][6]) {
 						case 'time':
-							echo zpFormattedDate(DATE_FORMAT, strtotime($value));
+							if (!is_int($value) && strpos($value, 'T') !== false) {
+								$value = str_replace('T', ' ', substr($value, 0, 19));
+							}
+							echo zpFormattedDate(DATE_FORMAT, $value);
 							break;
 						default:
 							echo html_encode($value);
@@ -351,6 +378,7 @@ function my_checkPageValidity($request, $gallery_page, $page) {
 		case 'news.php':
 		case 'album.php':
 		case 'search.php':
+		case 'favorites.php':
 			break;
 		default:
 			if ($page != 1) {

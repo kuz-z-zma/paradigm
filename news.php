@@ -87,14 +87,17 @@ if (class_exists('Zenpage')) {
 		<?php
 			} else {
 				if (in_context(ZP_ZENPAGE_NEWS_CATEGORY)) { ?>
-						<h1><?php printCurrentNewsCategory(); printCurrentPageAppendix(); ?></h1>
+						<h1><i class="glyphicon glyphicon-pencil"></i><?php if (getOption('menu_text_news')!='') { echo (getOption('menu_text_news')); echo gettext(' category:');
+							} else { echo gettext('News category:');} ?> <?php printCurrentNewsCategory(); printCurrentPageAppendix(' (Page ', ')'); ?></h1>
 				    <?php if (function_exists('printSizedFeaturedImage')) $hasFeaturedImage = getFeaturedImage(); ?>
 						<?php if ($hasFeaturedImage) printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'remove-attributes center',null,true,null); ?>
 				    <?php printNewsCategoryDesc(); ?>
 			<?php	} else if (in_context(ZP_ZENPAGE_NEWS_DATE)) { ?>
-						<h1><?php printCurrentNewsArchive('News archive for ','plain'); printCurrentPageAppendix(); ?></h1>
+						<h1><i class="glyphicon glyphicon-pencil"></i><?php printCurrentNewsArchive('Archive for ','plain'); printCurrentPageAppendix('(Page ', ')'); ?></h1>
 				<?php } else { ?>
-						<h1>News <?php printCurrentPageAppendix(); ?></h1>
+						<h1><i class="glyphicon glyphicon-pencil"></i><?php if (getOption('menu_text_news')!='') {echo (getOption('menu_text_news'));
+							} else { echo gettext('News');} ?>
+							<?php printCurrentPageAppendix('(Page ', ')'); ?></h1>
 						<?php } ?>
 				
 			<!-- news article loop --> 

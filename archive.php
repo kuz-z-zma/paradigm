@@ -17,10 +17,6 @@ if (!defined('WEBPATH'))
 			<section class="col-sm-9" id="main" itemprop="mainContentOfPage">
 				
 			<h1><i class="glyphicon glyphicon-calendar"></i><?php echo gettext('Archive'); ?></h1>
-			<h2 itemprop="name"><?php echo gettext('Gallery archive'); ?></h2>	
-			<div class="columns"><?php printAllDates('archive','year','month','asc'); ?></div>
-							
-			<hr />
 			
 			<?php if (function_exists("printNewsArchive")) { ?>
 					<h2><?php echo gettext('News archive'); ?></h2>
@@ -29,18 +25,18 @@ if (!defined('WEBPATH'))
 					</div>
 					<hr />
 			<?php } ?>	
-
+				
+			<h2 itemprop="name"><?php echo gettext('Gallery archive'); ?></h2>	
+			<div class="columns"><?php printAllDates('archive','year','month','asc'); ?></div>
+							
+			<hr />
+			
 			<br style="clear:both;" />
 			</section>
 			<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>
 			<?php } else { ?>
 			<section class="col-sm-12" id="main" itemprop="mainContentOfPage">
 			<h1><i class="glyphicon glyphicon-folder-close"></i><?php echo gettext('Archive'); ?></h1>	
-			<h2 itemprop="name"><?php echo gettext('Gallery archive'); ?></h2>
-				
-			<div class="columns"><?php printAllDates(); ?></div>
-							
-			<hr />
 			
 			<?php if (function_exists("printNewsArchive")) { ?>
 					<h2><?php echo gettext('News archive'); ?></h2>
@@ -49,7 +45,13 @@ if (!defined('WEBPATH'))
 					</div>
 					<hr />
 			<?php } ?>	
-
+				
+			<h2 itemprop="name"><?php echo gettext('Gallery archive'); ?></h2>
+				
+			<div class="columns"><?php printAllDates(); ?></div>
+							
+			<hr />
+			
 			<br style="clear:both;" />
 			</section>
 			<?php } ?>	

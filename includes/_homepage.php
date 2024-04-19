@@ -55,11 +55,11 @@
 <?php if (class_exists('Zenpage') && getNumNews(true) && (getOption('homepage_blog'))) { ?>
 		<div class="row">
 			<div class="col-sm-12">
-			<h2><i class="glyphicon glyphicon-pencil"></i><?php echo gettext("Blog"); ?></h2>
+			<h2><i class="glyphicon glyphicon-pencil"></i><?php if (getOption('menu_text_news')!='') {echo getOption('menu_text_news');} else { echo gettext('News');} ?></h2>
 				<div id="blog-style-homepage">
 					<?php  // news article loop
 						$cnt=0;					
-						while (next_news()&& $cnt<(getOption('news_number'))): ;?>
+						while (next_news() && $cnt<(getOption('news_number'))): ;?>
 						<div class="homepage-news-item">
 							<h3><?php printNewsURL(); ?></h3>
 							<?php if (function_exists('getFeaturedImage')) $hasfeaturedimage = getFeaturedImage($_zp_current_zenpage_news);

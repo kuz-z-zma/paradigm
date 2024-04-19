@@ -117,26 +117,14 @@ if (!defined('WEBPATH'))
 								?>
 							</h3>
 							<?php if (getNumAlbums() != 0) { ?>
-								<?php include("includes/_albumlist.php"); ?>
-
-							<hr />
+								<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_albumlist.php'); ?>
 
 							<?php } ?>
-							<?php if (getNumImages() > 0) { ?>
-							<div id="images" class="row">
-								<?php while (next_image()): ?>
-									<div class="col-lg-3 col-md-4 col-sm-6" style="height:<?php echo html_encode(getOption('thumb_size')+55);echo 'px'; ?>">
-										<div class="thumbnail" itemtype="https://schema.org/image"><a href="<?php echo html_encode(getFullImageURL()); ?>" title="<?php printBareImageTitle(); ?>" rel="lightbox-search"><?php printImageThumb(getBareImageTitle()); ?></a>
-											<div class="caption">
-												<p><a href="<?php echo html_encode(getImageURL()); ?>"><?php printBareImageTitle(); ?></a></p>
-											</div>	
-										</div>
-									</div>
-								<?php endwhile; ?>
-							</div>
+				
+							<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_imagethumbs.php'); ?>
 				
 								<br class="clearall" />
-							<?php } ?>
+							
 							<?php
 							if ($total == 0) {
 								echo "<p>" . gettext("Sorry, no matches found. Try refining your search.") . "</p>";
@@ -249,26 +237,13 @@ if (!defined('WEBPATH'))
 								?>
 							</h3>
 							<?php if (getNumAlbums() != 0) { ?>
-								<?php include("includes/_albumlist.php"); ?>
-
-							<hr />
-
+								<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_albumlist.php'); ?>
 							<?php } ?>
-							<?php if (getNumImages() > 0) { ?>
-							<div id="images" class="row">
-								<?php while (next_image()): ?>
-									<div class="col-lg-3 col-md-4 col-sm-6" style="height:<?php echo html_encode(getOption('thumb_size')+55);echo 'px'; ?>">
-										<div class="thumbnail" itemtype="https://schema.org/image"><a href="<?php echo html_encode(getFullImageURL()); ?>" title="<?php printBareImageTitle(); ?>" rel="lightbox-search"><?php printImageThumb(getBareImageTitle()); ?></a>
-											<div class="caption">
-												<p><a href="<?php echo html_encode(getImageURL()); ?>"><?php printBareImageTitle(); ?></a></p>
-											</div>	
-										</div>
-									</div>
-								<?php endwhile; ?>
-							</div>
+							
+							<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_imagethumbs.php'); ?>
 				
 								<br class="clearall" />
-							<?php } ?>
+					
 							<?php
 							if ($total == 0) {
 								echo "<p>" . gettext("Sorry, no matches found. Try refining your search.") . "</p>";

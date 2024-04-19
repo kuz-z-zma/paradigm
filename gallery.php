@@ -18,7 +18,7 @@ if (!defined('WEBPATH'))
 				
 			<h1 itemprop="name"><i class="glyphicon glyphicon-folder-open"></i><?php echo gettext("Albums"); ?></h1>
 				
-				<?php include("includes/_albumlist.php"); ?>
+				<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_albumlist.php'); ?>
 				
 				<?php printPageListWithNav("« " . gettext("prev"), gettext("next") . " »"); ?>
 			</section>
