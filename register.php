@@ -2,38 +2,36 @@
 // force UTF-8 Ø
 
 if (!defined('WEBPATH'))
-	die();
+die();
 if (function_exists('printRegistrationForm')) {	
 ?>
 
 <!DOCTYPE html>
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_head.php'); ?>
-<meta name="robots" content="noindex, nofollow">
+
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_header.php'); ?>
 
 <div id="background-main" class="background">
-	<div class="container<?php if (getOption('full_width')) {echo '-fluid';}?>">
+<div class="container<?php if (getOption('paradigm_full-width')) {echo '-fluid'; } ?>">
+
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_breadcrumbs.php'); ?>
 
-		<div id="center" class="row">
+<div id="center" class="row">
+<section id="main" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-10 '; } ?>col-lg-9 col-md-9 col-sm-9 col-xs-12" itemprop="mainContentOfPage">
 
-			<section class="col-sm-9" id="main">
-				
-			<h1><?php echo gettext('User Registration') ?></h1>
-			
-			<?php printRegistrationForm(); ?>
-			
-			</section>
+<h1><?php echo gettext('User Registration') ?></h1>
+
+<?php printRegistrationForm(); ?>
+
+</section>
+
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>
-		</div>
-	</div>	
-</div>			
 
-<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_footer.php'); ?>
+</div
+</div>
+</div>
 
-	<?php
-} else {
-	include(SERVERPATH . '/' . ZENFOLDER . '/404.php');
-}
-	?>
+<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_footer.php'); ?>		
+
+<?php } else {include(SERVERPATH . '/' . ZENFOLDER . '/404.php'); } ?>

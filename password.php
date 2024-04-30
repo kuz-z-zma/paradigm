@@ -2,37 +2,38 @@
 // force UTF-8 Ø
 
 if (!defined('WEBPATH'))
-	die();
+die();
 ?>
 
 <!DOCTYPE html>
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_head.php'); ?>
-<meta name="robots" content="noindex, nofollow">
+
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_header.php'); ?>
 
 <div id="background-main" class="background">
-	<div class="container<?php if (getOption('full_width')) {echo '-fluid';}?>">
-	<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_breadcrumbs.php'); ?>
-		<div id="center" class="row">
+<div class="container<?php if (getOption('paradigm_full-width')) {echo '-fluid';}?>">
 
-			<section class="col-sm-9" id="main">
+<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_breadcrumbs.php'); ?>
 
-			<strong><?php echo gettext("A password is required for the page you requested"); ?></strong>
-				
-			<p><?php printPasswordForm($hint, $show); ?></p>
-							
-			<?php
-				if (!zp_loggedin() && function_exists('printRegisterURL') && $_zp_gallery->isUnprotectedPage('register')) {
-					printRegisterURL(gettext('Register for this site'), '<br />');
-				echo '<br />';
-				}
-			?>
-				
-			</section>
-<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>
-		</div>
-	</div>
+<div id="center" class="row">
+<section id="main" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-10 '; } ?>col-lg-9 col-md-9 col-sm-9 col-xs-12" itemprop="mainContentOfPage">
+
+<div id="caption" class="content" itemprop="description"><strong><?php echo gettext("A password is required for the page you requested"); ?></strong></div>
+
+<div id="password-form"><?php printPasswordForm('', true, false); ?></div>
+
+<div><?php if (!zp_loggedin() && function_exists('printRegisterURL') && $_zp_gallery->isUnprotectedPage('register')) { ?>
+<?php printRegisterURL(gettext('Register for this site'), '<br />'); ?>
+<?php } ?>
 </div>
 
-<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_footer.php'); ?>
+</section>
+
+<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>
+
+</div>
+</div>
+</div>
+
+<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_footer.php'); ?>		

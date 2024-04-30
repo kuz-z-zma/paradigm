@@ -30,39 +30,65 @@ class ThemeOptions {
 		setOptionDefault('htmlmeta_opengraph', 0);
 		setOptionDefault('htmlmeta_twittercard', 0);
 		
-		setThemeOptionDefault('display_lightbox', false);
-		setThemeOptionDefault('Dropdown_albums', true);
-		setThemeOptionDefault('Dropdown_news', true);
-		setThemeOptionDefault('Dropdown_pages', true);
-		setThemeOptionDefault('menu_text_gallery', 'Gallery');
-		setThemeOptionDefault('menu_text_news', 'News');
-		setThemeOptionDefault('zenphoto_logo', '');
-		setThemeOptionDefault('zenphoto_tagline', false);
-		setThemeOptionDefault('extended_homepage_message', false);
-		setThemeOptionDefault('carousel_number', '5');
-		setThemeOptionDefault('homepage_content_albums_desc_show', true);
-		setThemeOptionDefault('homepage_content_albums_desc_length', 250);
-		setThemeOptionDefault('news_number', '4');
-		setThemeOptionDefault('homepage_news_length', 250);
-		setThemeOptionDefault('Allow_search', true);
-		setThemeOptionDefault('display_archive-main', true);
-		setThemeOptionDefault('display_archive-footer', true);
-		setThemeOptionDefault('display_archive-sidebar', true);
-		setThemeOptionDefault('display_caption', 'below');
-		setThemeOptionDefault('display_albums-sidebar-gallery', true);
-		setThemeOptionDefault('display_albums-sidebar-depth', '2');
-		setThemeOptionDefault('display_news-sidebar-news', true);
-		setThemeOptionDefault('display_news-sidebar-depth', '2');
-		setThemeOptionDefault('display_pages-sidebar-pages', true);
-		setThemeOptionDefault('display_pages-sidebar-depth', '2');
-		setThemeOptionDefault('display_tags-sidebar', true);
-		setThemeOptionDefault('tags-seo-nofollow', false);
-		setThemeOptionDefault('display_tags-maxfontsize', 2);
-		setThemeOptionDefault('display_tags-minfontsize', 0.8);
-		setThemeOptionDefault('display_tags-maxcount', 50);
-		setThemeOptionDefault('display_tags-mincount', 1);
-		setThemeOptionDefault('display_footer_menu-sitemap', true);
-		setThemeOptionDefault('display_rss_links', true);
+		setThemeOptionDefault('paradigm_lightbox', false);
+		setThemeOptionDefault('paradigm_nav_menu-albums', true);
+		setThemeOptionDefault('paradigm_nav_menu-news', true);
+		setThemeOptionDefault('paradigm_nav_menu-pages', true);
+		setThemeOptionDefault('paradigm_logo', '');
+		setThemeOptionDefault('paradigm_tagline', false);
+		setThemeOptionDefault('paradigm_search', true);
+		setThemeOptionDefault('paradigm_homepage-message', false);
+		setThemeOptionDefault('paradigm_homepage-slideshow-number', '5');
+		setThemeOptionDefault('paradigm_homepage-blog-number', '4');
+		setThemeOptionDefault('paradigm_homepage-blog-length', 250);
+		setThemeOptionDefault('paradigm_homepage-albums-desc', true);
+		setThemeOptionDefault('paradigm_homepage-albums-desc-length', 250);
+		setThemeOptionDefault('paradigm_homepage-image-number', '8');
+		setThemeOptionDefault('paradigm_nav_menu-archive', true);
+		setThemeOptionDefault('paradigm_nav_footer-archive', true);
+		setThemeOptionDefault('paradigm_archive-sidebar', true);
+    setThemeOptionDefault('paradigm_album-related-enable',true);
+    setThemeOptionDefault('paradigm_album-related-thumb',true);
+    setThemeOptionDefault('paradigm_album-related-date',true);
+    setThemeOptionDefault('paradigm_album-related-number',4);
+    setThemeOptionDefault('paradigm_album-related-type','albums');
+    setThemeOptionDefault('paradigm_album-related-length','');
+		setThemeOptionDefault('paradigm_image-caption', 'below');
+		setThemeOptionDefault('paradigm_image-download', false);
+    setThemeOptionDefault('paradigm_image-related-enable',true);
+    setThemeOptionDefault('paradigm_image-related-thumb',true);
+    setThemeOptionDefault('paradigm_image-related-date',true);
+    setThemeOptionDefault('paradigm_image-related-number',4);
+    setThemeOptionDefault('paradigm_image-related-type','images');
+    setThemeOptionDefault('paradigm_image-related-length','');
+		setThemeOptionDefault('paradigm_news-feat-image-size', 'thumb_size');
+    setThemeOptionDefault('paradigm_news-related-enable',true);
+    setThemeOptionDefault('paradigm_news-related-thumb',true);
+    setThemeOptionDefault('paradigm_news-related-date',true);
+    setThemeOptionDefault('paradigm_news-related-number',3);
+    setThemeOptionDefault('paradigm_news-related-type','news');
+    setThemeOptionDefault('paradigm_news-related-length',250);
+		setThemeOptionDefault('paradigm_page-feat-image-size', 'thumb_size');
+    setThemeOptionDefault('paradigm_page-related-enable',true);
+    setThemeOptionDefault('paradigm_page-related-thumb',true);
+    setThemeOptionDefault('paradigm_page-related-date',true);
+    setThemeOptionDefault('paradigm_page-related-number',3);
+    setThemeOptionDefault('paradigm_page-related-type','all');
+    setThemeOptionDefault('paradigm_page-related-length','');
+		setThemeOptionDefault('paradigm_sidebar-albums-gallery', true);
+		setThemeOptionDefault('paradigm_sidebar-albums-depth', '2');
+		setThemeOptionDefault('paradigm_sidebar-news-news', true);
+		setThemeOptionDefault('paradigm_sidebar-news-depth', '2');
+		setThemeOptionDefault('paradigm_sidebar-pages-pages', true);
+		setThemeOptionDefault('paradigm_sidebar-pages-depth', '2');
+		setThemeOptionDefault('paradigm_sidebar-tags', true);
+		setThemeOptionDefault('paradigm_tags-nofollow', false);
+		setThemeOptionDefault('paradigm_tags-maxfontsize', 2);
+		setThemeOptionDefault('paradigm_tags-minfontsize', 0.8);
+		setThemeOptionDefault('paradigm_tags-maxcount', 50);
+		setThemeOptionDefault('paradigm_tags-mincount', 1);
+		setThemeOptionDefault('paradigm_footer_menu-sitemap', true);
+		setThemeOptionDefault('paradigm_footer_rss', true);
 		
 		if (class_exists('cacheManager')) {
 			$me = basename(dirname(__FILE__));
@@ -90,114 +116,129 @@ class ThemeOptions {
 			array('key' => 'paradigm_site_options',
 				'type' => OPTION_TYPE_NOTE, 
 				'order' => 1,
-				'desc' => gettext('<h2>Site options</h2><hr />')),
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Site options</h2>')),
 			/*------------------------------------------------------------------------------*/
 			
-          gettext('Fluid layout') => array('key' => 'full_width', 'type' => OPTION_TYPE_CHECKBOX,
+          gettext('Fluid layout') => array('key' => 'paradigm_full-width', 'type' => OPTION_TYPE_CHECKBOX,
             'order' => 2, 
             'desc' => gettext('Check to enable fluid full width layout.')),
-					gettext('Preview in Lightbox') => array('key' => 'display_lightbox', 'type' => OPTION_TYPE_CHECKBOX,
+					gettext('Preview in Lightbox') => array('key' => 'paradigm_lightbox', 'type' => OPTION_TYPE_CHECKBOX,
 							'order' => 3,
 							'desc' => gettext('Use Lightbox preview for images throughoot the site .')),
 			/* Set of OPTIONS for the site HEADER */
 			
 			array('key' => 'paradigm_header_options',
 				'type' => OPTION_TYPE_NOTE, 
-				'order' => 10,
-				'desc' => gettext('<h2>Site Header options</h2><hr />')),
+				'order' => 20,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Site Header options</h2>')),
 			/*------------------------------------------------------------------------------*/
 			
-					gettext('Header logo') => array('key' => 'zenphoto_logo', 'type' => OPTION_TYPE_CUSTOM, 
-						'order' => 11, 
-						'desc' => sprintf(gettext('Select a logo (files in the <em>%s</em> folder) or select to use a text logo of your gallery name. You can use FTP to upload your logo file and then select it here.'),UPLOAD_FOLDER)),
-					gettext('Header tagline') => array('key' => 'zenphoto_tagline', 'type' => OPTION_TYPE_CHECKBOX, 
-						'order' => 12, 
-						'desc' => gettext('Check to display Gallery description in header alongside Gallery Title.')),
-					gettext('Allow search')=> array('key' => 'Allow_search', 'type' => OPTION_TYPE_CHECKBOX,
-						'order' => 13,
+					gettext('Header logo') => array('key' => 'paradigm_logo', 'type' => OPTION_TYPE_CUSTOM, 
+						'order' => 21, 
+						'desc' => sprintf(gettext('Select a logo (from files in the <em>%s</em> folder) or select to use a text logo of your Gallery Title.<br>If you use elFinder plugin for Uploads - it can upload files to this folder, alternatively you can use FTP to upload your logo file and then select it here.<br>Different sizes might need adjustments in CSS*!<br>
+            *custom CSS: see file "paradigm/css/! rename-to-custom.css" for instructions.'),UPLOAD_FOLDER)),
+					gettext('Display Gallery Decription') => array('key' => 'paradigm_tagline', 'type' => OPTION_TYPE_SELECTOR,
+                  'order' => 22,
+                  'selections' => array(
+                    gettext('Do not display') => 'none',
+                    gettext('Header') => 'header', 
+                    gettext('Homepage') => 'homepage'), 
+                  'desc' => gettext('Coose where to display Gallery Description (taken from Options->Gallery->Gallery description).')),		
+					gettext('Allow search')=> array('key' => 'paradigm_search', 'type' => OPTION_TYPE_CHECKBOX,
+						'order' => 23,
 						'desc' => gettext('Check to enable search form.')),
 						
 			/* Set of OPTIONS for the site NAVIGATION */
 			
-			array('key' => 'paradigm_navigation_options',
+			array('key' => 'paradigm_nav_options',
 				'type' => OPTION_TYPE_NOTE, 
-				'order' => 20,
-				'desc' => gettext('<h2>Main navigation options</h2><hr />')),
+				'order' => 40,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Main navigation options</h2>')),
 			/*------------------------------------------------------------------------------*/
 			
-					gettext('Show Dropdown menus') => array(
-						'key' => 'dropdown_menu',
-						'type' => OPTION_TYPE_CHECKBOX_UL,
-						'order' => 21,
+					gettext('Show Dropdown menus in Top Navigation') => array(
+						'key' => 'paradigm_nav_menu',
+						'type' => OPTION_TYPE_CHECKBOX_ARRAY,
+						'order' => 41,
 						'checkboxes' => array(
-							gettext('Albums') => 'dropdown_menu_albums',
-							gettext('News Categories') => 'dropdown_menu_news',
-							gettext('Pages') => 'dropdown_menu_pages'),
-						'desc' => gettext('Choose what Dropdown menus to display in Main Menu')),
-					gettext('Menu text for Gallery') => array('key' => 'menu_text_gallery', 'type' => OPTION_TYPE_CLEARTEXT,
-						'order' => 22,
-						'desc' => gettext('Option to rename the title of main GALLERY page, to anything that suits your site, Albums for example.  Note this does not change the url from "page/gallery", it changes the title used in various places on website only. Default is Gallery.')),
-					gettext('Menu text for News') => array('key' => 'menu_text_news', 'type' => OPTION_TYPE_CLEARTEXT,
-						'order' => 23,
-						'desc' => gettext('Option to rename the title of main NEWS page, to anything that suits your site, Blog for example.  Note this does not change the url from "news", it changes the title used in various places on website only. Default is News.')),
+								gettext('Albums') => 'paradigm_nav_menu-albums', 
+								gettext('News Categories') => 'paradigm_nav_menu-news',
+								gettext('Pages') => 'paradigm_nav_menu-pages'),
+						'desc' => gettext('Choose what Dropdown menus to display in Main Menu.<br>Multi-choice.')),
+					gettext('Menu text for Gallery') => array('key' => 'paradigm_nav_text-gallery', 'type' => OPTION_TYPE_CLEARTEXT,
+						'order' => 42,
+						'desc' => gettext('Option to rename the title of main GALLERY page, to anything that suits your site, Albums for example.<br>Note this does not change the url from "page/gallery", it changes the title used in various places on website only.<br>If EMPTY - Default is used (Gallery).')),
+					gettext('Menu text for News') => array('key' => 'paradigm_nav_text-news', 'type' => OPTION_TYPE_CLEARTEXT,
+						'order' => 43,
+						'desc' => gettext('Option to rename the title of main NEWS page, to anything that suits your site, Blog for example.<br>Note this does not change the url from "news", it changes the title used in various places on website only.<br>If EMPTY - Default is used (News).')),
 			
 			/* Set of OPTIONS for the site HOMEPAGE */
 			
 			array('key' => 'paradigm_homepage_options',
 				'type' => OPTION_TYPE_NOTE, 
-				'order' => 30,
-				'desc' => gettext('<h2>Homepage options</h2><hr />')),
+				'order' => 60,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Homepage options</h2>')),
 			/*------------------------------------------------------------------------------*/
 			
-					gettext('Homepage Message') => array(
-								'key' => 'extended_homepage_message',
+		      gettext('Homepage Message') => array(
+								'key' => 'paradigm_homepage-message',
 								'type' => OPTION_TYPE_TEXTAREA,
 								'texteditor' => 1,
 								'multilingual' => 0,
-								'order' => 31,
-								'desc' => gettext('Extended message for your homepage, different from Gallery Description. HTML can be used.')),
-			
+								'order' => 61,
+								'desc' => gettext('Extended message for your Homepage, different from Gallery Description.<br>HTML can be used.')),
+      
 			/*--------------------- HOMEPAGE Slideshow*/
+			array('key' => 'paradigm_homepage_options',
+				'type' => OPTION_TYPE_NOTE, 
+				'order' => 70,
+				'desc' => gettext('<h3 style="font-weight: bold;">Homepage Slideshow options</h3><hr>')),
+			/*------------------------------------------------------------------------------*/
+          gettext('Enable Homepage slideshow') => array('key' => 'paradigm_homepage-slideshow', 'type' => OPTION_TYPE_CHECKBOX,
+            'order' => 71,
+            'desc' => gettext('Check to include a slideshow on the Homepage.')),
+          gettext('Slideshow Type') => array('key' => 'paradigm_homepage-slideshow-type', 'type' => OPTION_TYPE_SELECTOR,
+            'order' => 72, 
+            'selections' => array(
+              gettext('Random') => 'random', 
+              gettext('Popular') => 'popular', 
+              gettext('Latest by ID') => 'latestbyid', 
+              gettext('Latest by Date') => 'latestbydate', 
+              gettext('Latest by mtime') => 'latestbymtime', 
+              gettext('Latest by Publish Date') => 'latestbypdate', 
+              gettext('Most Rated') => 'mostrated', 
+              gettext('Top Rated') => 'toprated'), 
+            'desc' => gettext('Select how the pictures will be chosen for the Homepage slideshow.')),
+          gettext('Album to choose from') => array('key' => 'paradigm_homepage-slideshow-album', 'type' => OPTION_TYPE_SELECTOR,
+            'order' => 73, 
+            'selections' => $albumlist, 
+            'desc' => gettext('Choose a specific album to display its pictures. Album needs to be published, Dynamic albums work too.<br>Images should be preferably in panoramic format (or you can adjust styling via custom CSS*).<br>
+            *custom CSS: see file paradigm/css/! rename-to-custom.css for instructions.')),
+          gettext('Number of slides') => array('key' => 'paradigm_homepage-slideshow-number', 'type' => OPTION_TYPE_SELECTOR,
+            'order' => 74, 
+            'selections' => array(
+              gettext('3') => '3', 
+              gettext('4') => '4', 
+              gettext('5') => '5', 
+              gettext('6') => '6', 
+              gettext('7') => '7', 
+              gettext('8') => '8', 
+              gettext('9') => '9', 
+              gettext('10') => '10'), 
+            'desc' => gettext('Select how the pictures will be chosen for the Homepage slideshow.<br>Default is 5')),
 			
-					gettext('Homepage slideshow') => array('key' => 'homepage_slideshow', 'type' => OPTION_TYPE_CHECKBOX,
-						'order' => 32,
-						'desc' => gettext('Check to include a slideshow on the homepage.')),
-					gettext('Slideshow Type') => array('key' => 'carousel_type', 'type' => OPTION_TYPE_SELECTOR,
-						'order' => 33, 
-						'selections' => array(
-							gettext('Random') => 'random', 
-							gettext('Popular') => 'popular', 
-							gettext('Latest by ID') => 'latestbyid', 
-							gettext('Latest by Date') => 'latestbydate', 
-							gettext('Latest by mtime') => 'latestbymtime', 
-							gettext('Latest by Publish Date') => 'latestbypdate', 
-							gettext('Most Rated') => 'mostrated', 
-							gettext('Top Rated') => 'toprated'), 
-						'desc' => gettext('Select how the pictures will be chosen for the homepage slideshow.')),
-					gettext('Album to choose from') => array('key' => 'carousel_album', 'type' => OPTION_TYPE_SELECTOR,
-						'order' => 34, 
-						'selections' => $albumlist, 
-						'desc' => gettext('Choose a specific album to display its pictures.Album needs to be published, Dynamic albums work too.<br>Images should be preferably in panoramic format (or you can adjust styling via custom CSS).')),
-					gettext('Number of slides') => array('key' => 'carousel_number', 'type' => OPTION_TYPE_SELECTOR,
-						'order' => 35, 
-						'selections' => array(
-							gettext('3') => '3', 
-							gettext('4') => '4', 
-							gettext('5') => '5', 
-							gettext('6') => '6', 
-							gettext('7') => '7', 
-							gettext('8') => '8', 
-							gettext('9') => '9', 
-							gettext('10') => '10'), 
-						'desc' => gettext('Select how the pictures will be chosen for the homepage slideshow. Default is 5')),
+			/*--------------------- HOMEPAGE Blog */
+			array('key' => 'paradigm_homepage_options',
+				'type' => OPTION_TYPE_NOTE, 
+				'order' => 80,
+				'desc' => gettext('<h3 style="font-weight: bold;">Homepage Blog options</h3><hr>')),
+			/*------------------------------------------------------------------------------*/
 			
-			/*---------------------  HOMEPAGE Blog*/
-			
-					gettext('Homepage blog') => array('key' => 'homepage_blog', 'type' => OPTION_TYPE_CHECKBOX,
-						'order' => 36, 
-						'desc' => gettext('Check to enable blog posts as main content of the homepage.')),
-					gettext('Number of news items to show on homepage') => array('key' => 'news_number', 'type' => OPTION_TYPE_SELECTOR,
-						'order' => 37, 
+					gettext('Enable Homepage blog') => array('key' => 'paradigm_homepage-blog', 'type' => OPTION_TYPE_CHECKBOX,
+						'order' => 81, 
+						'desc' => gettext('Check to enable showing blog posts/news items on the Homepage.')),
+					gettext('Number of news items to show on Homepage') => array('key' => 'paradigm_homepage-blog-number', 'type' => OPTION_TYPE_SELECTOR,
+						'order' => 82, 
 						'selections' => array(
 							gettext('2') => '2', 
 							gettext('4') => '4', 
@@ -206,287 +247,473 @@ class ThemeOptions {
 							gettext('10') => '10', 
 							gettext('12') => '12', 
 							gettext('14') => '14'), 
-						'desc' => gettext('Select how many news items will be shown on the homepage. Default is 4')),	
-					gettext('Number characters for homepage news items to show') => array('key' => 'homepage_news_length', 'type' => OPTION_TYPE_CLEARTEXT,
-						'order' => 38, 
-						'desc' => gettext('Select default length for homepage news items. Default is 250 characters.')),
-			
-			/*---------------------  HOMEPAGE Content*/
-			
-					gettext('Homepage content') => array(
-						'key' => 'homepage_content',
-						'type' => OPTION_TYPE_CHECKBOX_UL,
-						'order' => 39,
-						'checkboxes' => array(
-							gettext('Albums') => 'homepage_content_albums',
-							gettext('Recently uploaded images') => 'homepage_content_uploads',
-							gettext('Recently taken images') => 'homepage_content_recent',
-							gettext('Most popular images') => 'homepage_content_popular',
-							gettext('Top rated images') => 'homepage_content_rated',
-							gettext('Random images') => 'homepage_content_random'),
-						'desc' => gettext('Choose what to display on the homepage. Multi-choice.')),
-					gettext('Descriptions for homepage albums') => array('key' => 'homepage_content_albums_desc_show', 'type' => OPTION_TYPE_CHECKBOX,
-						'order' => 40, 
-						'desc' => gettext('Select to show description for homepage albums. If Album Custom Data is present - it is shown in full, if it is not available, Album Description is used.')),
-					gettext('Length of homepage albums descriptions') => array('key' => 'homepage_content_albums_desc_length', 'type' => OPTION_TYPE_CLEARTEXT,
-						'order' => 41, 
-						'desc' => gettext('Select default length for homepage album descriptions. Default is 250 characters.')),
-					gettext('Number of images') => array('key' => 'homepage_content_number', 'type' => OPTION_TYPE_SELECTOR,
-						'order' => 42, 
-						'selections' => array(
-							gettext('4') => '4', 
-							gettext('8') => '8', 
-							gettext('12') => '12', 
-							gettext('16') => '16',
-							gettext('20') => '20',
-							gettext('24') => '24'), 
-						'desc' => gettext('Select how the pictures will be chosen for the homepage display of images. Default is 12.')),
-						
+						'desc' => gettext('Select how many news items will be shown on the Homepage.<br>Default is 4')),	
+					gettext('Number characters for Homepage news items to show') => array('key' => 'paradigm_homepage-blog-length', 'type' => OPTION_TYPE_CLEARTEXT,
+						'order' => 83, 
+						'desc' => gettext('Select default length for Homepage news items.<br>Default is 250 characters.')),
+      
+			/*--------------------- HOMEPAGE Content*/
+			array('key' => 'paradigm_homepage_options',
+				'type' => OPTION_TYPE_NOTE, 
+				'order' => 90,
+				'desc' => gettext('<h3 style="font-weight: bold;">Homepage Content options</h3><hr>')),
+			/*------------------------------------------------------------------------------*/
+          gettext('Homepage content') => array(
+                'key' => 'paradigm_homepage',
+                'type' => OPTION_TYPE_CHECKBOX_UL,
+                'order' => 91,
+                'checkboxes' => array(
+                  gettext('Albums') => 'paradigm_homepage-albums',
+                  gettext('Recently uploaded images') => 'paradigm_homepage-image-uploads',
+                  gettext('Recently taken images') => 'paradigm_homepage-image-recent',
+                  gettext('Most popular images') => 'paradigm_homepage-image-popular',
+                  gettext('Top rated images') => 'paradigm_homepage-image-rated',
+                  gettext('Random images') => 'paradigm_homepage-image-random'),
+                'desc' => gettext('Choose what to display on the homepage.<br>Multi-choice.')),
+          gettext('Descriptions for Homepage albums') => array('key' => 'paradigm_homepage-albums-desc', 'type' => OPTION_TYPE_CHECKBOX,
+                'order' => 92, 
+                'desc' => gettext('Select to show description for Homepage albums.<br>If Album Custom Data is present - it is shown in full, if it is not available, Album Description is used.')),
+          gettext('Length of Homepage albums descriptions') => array('key' => 'paradigm_homepage-albums-desc-length', 'type' => OPTION_TYPE_CLEARTEXT,
+                'order' => 93, 
+                'desc' => gettext('Select default length for Homepage album descriptions.<br>Default is 250 characters.')),
+          gettext('Number of images') => array('key' => 'paradigm_homepage-image-number', 'type' => OPTION_TYPE_SELECTOR,
+                'order' => 94, 
+                'selections' => array(
+                  gettext('4') => '4', 
+                  gettext('8') => '8', 
+                  gettext('12') => '12', 
+                  gettext('16') => '16',
+                  gettext('20') => '20',
+                  gettext('24') => '24'), 
+                'desc' => gettext('Select how the pictures will be chosen for the Homepage display of images.<br>Default is 8.')),
+
 			/* Set of OPTIONS for the site ALBUM PAGES */
 			
 			array('key' => 'paradigm_album_options',
 				'type' => OPTION_TYPE_NOTE, 
-				'order' => 60,
-				'desc' => gettext('<h2>Album Page options</h2><hr />')),
+				'order' => 110,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Album Page options</h2>')),
 			/*------------------------------------------------------------------------------*/
-		array('key' => 'paradigm_album_notice',
+          gettext('Display Custom Data for Album') => array('key' => 'paradigm_album-custom', 'type' => OPTION_TYPE_CHECKBOX, 
+                'order' => 111,
+                'desc' => gettext("Check to display info from Album Custom Data (if set).")),
+      
+      /*--------------------- Related Items: Album--*/
+			array('key' => 'paradigm_album-related_options',
 				'type' => OPTION_TYPE_NOTE, 
-				'order' => 61,
-				'desc' => gettext('No additional Album Page options yet.')),
-						
-			/* Set of OPTIONS for the site IMAGE PAGES */
+				'order' => 125,
+				'desc' => gettext('<h3 style="font-weight: bold;">Related Items for Albums</h3><hr>')),
+      /*------------------------------------------------------------------------------*/
+          gettext('Options for Related Items on Album pages') => array('key' => 'paradigm_album-related','type' => OPTION_TYPE_CHECKBOX_ARRAY,
+                'order' => 126,
+                'checkboxes' => array(
+                    gettext('Show Related Items') => 'paradigm_album-related-enable', 
+                    gettext('Show Thumb') => 'paradigm_album-related-thumb',
+                    gettext('Show Date') => 'paradigm_album-related-date'),
+                'desc' => gettext('Related Items plugin must be enabled, for options to take effect. Multi-choice.')),
+          gettext('Number of Related Items to show on Album pages') => array('key' => 'paradigm_album-related-number', 'type' => OPTION_TYPE_CLEARTEXT,
+                'order' => 127, 
+                'desc' => gettext('Number of Related Items to show on Album pages.<br>Default is 4.')),
+          gettext('Types of Related Items to show on Album pages') => array('key' => 'paradigm_album-related-type', 'type' => OPTION_TYPE_SELECTOR,
+                'order' => 128,
+                'selections' => array(
+                  gettext('All') => 'all', 
+                  gettext('Images') => 'images', 
+                  gettext('Albums') => 'albums',
+                  gettext('News') => 'news', 
+                  gettext('Pages') => 'pages'), 
+                'desc' => gettext('What content to show among Related Items on Album pages.<br>Default is Albums.')),	
+          gettext('Content description for Album Related Items (Length+Enable)') => array('key' => 'paradigm_album-related-length', 'type' => OPTION_TYPE_CLEARTEXT,
+                'order' => 129, 
+                'desc' => gettext('Select length of item description to ENABLE.<br>If EMPTY, they are disabled.')),			
+			
+      /* Set of OPTIONS for the site IMAGE PAGES */
 			
 			array('key' => 'paradigm_image_options',
 				'type' => OPTION_TYPE_NOTE, 
-				'order' => 70,
-				'desc' => gettext('<h2>Image Page options</h2><hr />')),
+				'order' => 130,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Image Page options</h2>')),
 			/*------------------------------------------------------------------------------*/
 						
-					gettext('Image caption display') => array('key' => 'display_caption', 'type' => OPTION_TYPE_SELECTOR,
-						'order' => 71,
-						'selections' => array(
-							gettext('Above image') => 'above', 
-							gettext('Below image') => 'below'), 
-						'desc' => gettext('Display Image Caption data above Image on image pages. Default is Below image.')),		
-			
+          gettext('Image caption display') => array('key' => 'paradigm_image-caption', 'type' => OPTION_TYPE_SELECTOR,
+                  'order' => 131,
+                  'selections' => array(
+                    gettext('Above image') => 'above', 
+                    gettext('Below image') => 'below'), 
+                  'desc' => gettext('Display Image Caption data above Image on image pages.<br>Default is Below image.')),		
+            gettext('Download Button') => array('key' => 'paradigm_image-download', 'type' => OPTION_TYPE_CHECKBOX, 
+                  'order' => 132,
+                  'desc' => gettext("Check to enable users ability to download original image from image details page.<br>
+                  If you want a save dialog, you will need to set the appropriate option in Options->Image as well (choose: protected, download).")),
+            gettext('Display Custom Data for Image') => array('key' => 'paradigm_image-custom', 'type' => OPTION_TYPE_CHECKBOX, 
+                  'order' => 133,
+                  'desc' => gettext("Check to display info from Image Custom Data (if set).")),
+      
+       /*--------------------- Related Items: Images--*/
+			array('key' => 'paradigm_image-related_options',
+				'type' => OPTION_TYPE_NOTE, 
+				'order' => 145,
+				'desc' => gettext('<h3 style="font-weight: bold;">Related Items for Images</h3><hr>')),
+      /*------------------------------------------------------------------------------*/
+            gettext('Options for Related Items on Image pages') => array('key' => 'paradigm_image-related','type' => OPTION_TYPE_CHECKBOX_ARRAY,
+                  'order' => 146,
+                  'checkboxes' => array(
+                      gettext('Show Related Items') => 'paradigm_image-related-enable', 
+                      gettext('Show Thumb') => 'paradigm_image-related-thumb',
+                      gettext('Show Date') => 'paradigm_image-related-date'),
+                  'desc' => gettext('Related Items plugin must be enabled, for options to take effect.<br>Multi-choice.')),
+            gettext('Number of Related Items to show on Image pages') => array('key' => 'paradigm_image-related-number', 'type' => OPTION_TYPE_CLEARTEXT,
+                  'order' => 147, 
+                  'desc' => gettext('Number of Related Items to show on Image pages.<br>Default is 4.')),
+            gettext('Types of Related Items to show on Image pages') => array('key' => 'paradigm_image-related-type', 'type' => OPTION_TYPE_SELECTOR,
+                  'order' => 148,
+                  'selections' => array(
+                    gettext('All') => 'all', 
+                    gettext('Images') => 'images', 
+                    gettext('Albums') => 'albums',
+                    gettext('News') => 'news', 
+                    gettext('Pages') => 'pages'), 
+                  'desc' => gettext('What content to show among Related Items on Image pages.<br>Default is Images.')),	
+            gettext('Content description for Image Related Items (Length+Enable)') => array('key' => 'paradigm_image-related-length', 'type' => OPTION_TYPE_CLEARTEXT,
+                  'order' => 149, 
+                  'desc' => gettext('Select length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
 			/* Set of OPTIONS for the site ARCHIVE */
 			
 			array('key' => 'paradigm_archive_options',
 				'type' => OPTION_TYPE_NOTE, 
-				'order' => 80,
-				'desc' => gettext('<h2>Archive options</h2><hr />')),
+				'order' => 150,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Archive options</h2>')),
 			/*------------------------------------------------------------------------------*/
 			
 			gettext('Display Archive in menu') => array(
-						'key' => 'display_archive-menus',
+						'key' => 'paradigm_nav_archive',
 						'type' => OPTION_TYPE_CHECKBOX_ARRAY,
-						'order' => 81,
+						'order' => 151,
 						'checkboxes' => array(
-								gettext('Main menu') => 'display_archive-main', 
-								gettext('Footer') => 'display_archive-footer'
-						),
-						'desc' => gettext('Display where links to Archive will be displayed. Multi-choice.')),
-			gettext('Sidebar in archive') => array('key' => 'display_archive-sidebar', 'type' => OPTION_TYPE_CHECKBOX,
-						'order' => 82,
+								gettext('Main menu') => 'paradigm_nav_menu-archive', 
+								gettext('Footer') => 'paradigm_nav_footer-archive'),
+						'desc' => gettext('Display where links to Archive will be displayed.<br>Multi-choice.')),
+			gettext('Sidebar in archive') => array('key' => 'paradigm_archive-sidebar', 'type' => OPTION_TYPE_CHECKBOX,
+						'order' => 152,
 						'desc' => gettext('Display Sidebar on Archive page.')),
 			
+			/* Set of OPTIONS for the site NEWS */
+			
+			array('key' => 'paradigm_blog_options',
+				'type' => OPTION_TYPE_NOTE, 
+				'order' => 160,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">News options</h2>')),
+			/*------------------------------------------------------------------------------*/
+				
+			gettext('Featured Image in News article') => array('key' => 'paradigm_news-feat-image', 'type' => OPTION_TYPE_CHECKBOX,
+						'order' => 161,
+						'desc' => gettext('Display Featured Image on a News Article page (if set).')),
+			gettext('Size of Featured Image in News article') => array('key' => 'paradigm_news-feat-image-size', 'type' => OPTION_TYPE_SELECTOR,
+						'order' => 162,
+						'selections' => array(
+							gettext('Thumb size image') => 'thumb_size', 
+							gettext('Default size image') => 'image_size'), 
+						'desc' => gettext('What size of Featured Image to display on a single News Article page (if set).<br>Default is Thumb Size.')),		
+			gettext('News Article Extra features') => array(
+						'key' => 'paradigm_news_options',
+						'type' => OPTION_TYPE_CHECKBOX_UL,
+						'order' => 163,
+						'checkboxes' => array(
+								gettext('Custom data') => 'paradigm_news-custom', 
+								gettext('Rating') => 'paradigm_news-rating', 
+								gettext('Hitcounter') => 'paradigm_news-hitcounter'),
+						'desc' => gettext('<p>Choose what extra features to display for a single News Article. Multi-choice.<br>
+						Custom data setting works for both News single article and News Categories (if it exists).<br>
+						Rating and Hitcounter plugins must be enabled, otherwise those features are disabled.</p>')),
+			
+      /*--------------------- Related Items: News--*/
+			array('key' => 'paradigm_news-related_options',
+				'type' => OPTION_TYPE_NOTE, 
+				'order' => 175,
+				'desc' => gettext('<h3 style="font-weight: bold;">Related Items for News</h3><hr>')),
+      /*------------------------------------------------------------------------------*/
+      gettext('Options for Related Items for News') => array('key' => 'paradigm_news-related','type' => OPTION_TYPE_CHECKBOX_ARRAY,
+						'order' => 176,
+						'checkboxes' => array(
+								gettext('Show Related Items') => 'paradigm_news-related-enable', 
+								gettext('Show Thumb') => 'paradigm_news-related-thumb',
+								gettext('Show Date') => 'paradigm_news-related-date'),
+						'desc' => gettext('Related Items plugin must be enabled, for options to take effect.<br>Multi-choice.')),
+      gettext('Number of Related Items to show in News') => array('key' => 'paradigm_news-related-number', 'type' => OPTION_TYPE_CLEARTEXT,
+						'order' => 177, 
+						'desc' => gettext('Number of related Items to show in Pages.<br>Default is 3.')),
+      gettext('Types of Related Items to show in News') => array('key' => 'paradigm_news-related-type', 'type' => OPTION_TYPE_SELECTOR,
+						'order' => 178,
+						'selections' => array(
+              gettext('All') => 'all', 
+							gettext('Images') => 'images', 
+							gettext('Albums') => 'albums',
+              gettext('News') => 'news', 
+							gettext('Pages') => 'pages'), 
+						'desc' => gettext('What content to show among Related Items in Pages.<br>Default is News.')),	
+    gettext('Content description in for News Related Items (Length+Enable)') => array('key' => 'paradigm_news-related-length', 'type' => OPTION_TYPE_CLEARTEXT,
+						'order' => 179, 
+						'desc' => gettext('Select length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
+      
+			/* Set of OPTIONS for the site PAGES */
+			
+			array('key' => 'paradigm_pages_options',
+				'type' => OPTION_TYPE_NOTE, 
+				'order' => 180,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Pages options</h2>')),
+			/*------------------------------------------------------------------------------*/
+			
+			gettext('Featured Image in Page') => array('key' => 'paradigm_page-feat-image', 'type' => OPTION_TYPE_CHECKBOX,
+						'order' => 181,
+						'desc' => gettext('Display Featured Image on a Page (if set).')),
+			gettext('Size of Featured Image in Page') => array('key' => 'paradigm_page-feat-image-size', 'type' => OPTION_TYPE_SELECTOR,
+						'order' => 182,
+						'selections' => array(
+							gettext('Thumb size image') => 'thumb_size', 
+							gettext('Default size image') => 'image_size'), 
+						'desc' => gettext('What size of Featured Image to display on a Page (if set).<br>Default is Thumb Size.')),	
+			gettext('Page Extra features') => array(
+						'key' => 'paradigm_page_options',
+						'type' => OPTION_TYPE_CHECKBOX_UL,
+						'order' => 183,
+						'checkboxes' => array(
+								gettext('Custom data') => 'paradigm_page-custom', 
+								gettext('Rating') => 'paradigm_page-rating', 
+								gettext('Hitcounter') => 'paradigm_page-hitcounter'),
+						'desc' => gettext('<p>Choose what extra features to display for a single Page. Multi-choice.<br>Rating and Hitcounter plugins must be enabled, otherwise those features are disabled.</p>')),
+			
+      /*--------------------- Related Items: Pages--*/
+			array('key' => 'paradigm_image-related_options',
+				'type' => OPTION_TYPE_NOTE, 
+				'order' => 195,
+				'desc' => gettext('<h3 style="font-weight: bold;">Related Items for Pages</h3><hr>')),
+      /*------------------------------------------------------------------------------*/
+      gettext('Options for Related Items for Pages') => array('key' => 'paradigm_page-related','type' => OPTION_TYPE_CHECKBOX_ARRAY,
+						'order' => 196,
+						'checkboxes' => array(
+								gettext('Show Related Items') => 'paradigm_page-related-enable', 
+								gettext('Show Thumb') => 'paradigm_page-related-thumb',
+								gettext('Show Date') => 'paradigm_page-related-date'),
+						'desc' => gettext('Related Items plugin must be enabled, for options to take effect.<br>Multi-choice.')),
+      gettext('Number of Related Items to show') => array('key' => 'paradigm_page-related-number', 'type' => OPTION_TYPE_CLEARTEXT,
+						'order' => 197, 
+						'desc' => gettext('Number of related Items to show in Pages.<br>Default is 3.')),
+      gettext('Types of Related Items to show in Page') => array('key' => 'paradigm_page-related-type', 'type' => OPTION_TYPE_SELECTOR,
+						'order' => 198,
+						'selections' => array(
+              gettext('All') => 'all', 
+							gettext('Images') => 'images', 
+							gettext('Albums') => 'albums',
+              gettext('News') => 'news', 
+							gettext('Pages') => 'pages'), 
+						'desc' => gettext('What content to show among Related Items in Pages.<br>Default is All.')),
+      gettext('Content description for Pages Related Items (Length+Enable)') => array('key' => 'paradigm_page-related-length', 'type' => OPTION_TYPE_CLEARTEXT,
+						'order' => 199, 
+						'desc' => gettext('Select length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
+      
+      
 			/* Set of OPTIONS for the site SIDEBAR */
 			
 			array('key' => 'paradigm_sidebar_options',
 				'type' => OPTION_TYPE_NOTE, 
-				'order' => 90,
-				'desc' => gettext('<h2>Sidebar options</h2><hr />')),
+				'order' => 200,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Sidebar options</h2>')),
 			/*------------------------------------------------------------------------------*/
 			
 					gettext('Display Albums menu in Sidebar') => array(
-						'key' => 'display_albums-sidebar',
+						'key' => 'paradigm_sidebar-albums',
 						'type' => OPTION_TYPE_CHECKBOX_ARRAY,
-						'order' => 91,
+						'order' => 201,
 						'checkboxes' => array(
-								gettext('Gallery') => 'display_albums-sidebar-gallery', 
-								gettext('News') => 'display_albums-sidebar-news',
-								gettext('Pages') => 'display_albums-sidebar-pages',
-								gettext('Archive') => 'display_albums-sidebar-archive'
+								gettext('Gallery') => 'paradigm_sidebar-albums-gallery', 
+								gettext('News') => 'paradigm_sidebar-albums-news',
+								gettext('Pages') => 'paradigm_sidebar-albums-pages',
+								gettext('Archive') => 'paradigm_sidebar-albums-archive'
 						),
-						'desc' => gettext('Choose when to display Albums menu in Sidebar. Multi-choice.')),
-			gettext('Nested lists of Album menu to display:') => array('key' => 'display_albums-sidebar-depth', 'type' => OPTION_TYPE_SELECTOR,
-						'order' => 92, 
+						'desc' => gettext('Choose when to display Albums menu in Sidebar.<br>Multi-choice.')),
+			gettext('Nested lists of Album menu to display:') => array('key' => 'paradigm_sidebar-albums-depth', 'type' => OPTION_TYPE_SELECTOR,
+						'order' => 202, 
 						'selections' => array(
 							gettext('Top-level only') => '0',
 							gettext('Depth of 2') => '2', 
 							gettext('Depth of 3') => '3', 
 							gettext('Depth of 4') => '4', 
 							gettext('All levels') => 'true'), 
-						'desc' => gettext('Select how many levels of nested lists of Album menu to display in Sidebar in Gallery. Default is "Depth of 2". "Top-level only" is also used for display of Albums menu in News, Pages and Archives.')),	
+						'desc' => gettext('Select how many levels of nested lists of Album menu to display in Sidebar in Gallery. Default is "Depth of 2".<br>"Top-level only" is also used for display of Albums menu in News, Pages and Archives.')),	
 			
 					gettext('Display News Categories menu in Sidebar') => array(
-						'key' => 'display_news-sidebar',
+						'key' => 'paradigm_sidebar-news',
 						'type' => OPTION_TYPE_CHECKBOX_ARRAY,
-						'order' => 93,
+						'order' => 203,
 						'checkboxes' => array(
-								gettext('Gallery') => 'display_news-sidebar-gallery', 
-								gettext('News') => 'display_news-sidebar-news',
-								gettext('Pages') => 'display_news-sidebar-pages',
-								gettext('Archive') => 'display_news-sidebar-archive'
+								gettext('Gallery') => 'paradigm_sidebar-news-gallery', 
+								gettext('News') => 'paradigm_sidebar-news-news',
+								gettext('Pages') => 'paradigm_sidebar-news-pages',
+								gettext('Archive') => 'paradigm_sidebar-news-archive'
 						),
-						'desc' => gettext('Choose when to display News Categories menu in Sidebar. Multi-choice.')),
-						gettext('Nested lists of News Categories menu to display:') => array('key' => 'display_news-sidebar-depth', 'type' => OPTION_TYPE_SELECTOR,
-									'order' => 94, 
+						'desc' => gettext('Choose when to display News Categories menu in Sidebar.<br>Multi-choice.')),
+						gettext('Nested lists of News Categories menu to display:') => array('key' => 'paradigm_sidebar-news-depth', 'type' => OPTION_TYPE_SELECTOR,
+									'order' => 204, 
 									'selections' => array(
 										gettext('Top-level only') => '0', 
 										gettext('Depth of 2') => '2', 
 										gettext('Depth of 3') => '3', 
 										gettext('Depth of 4') => '4', 
 										gettext('All levels') => 'true'), 
-									'desc' => gettext('Select how many levels of nested lists of News Categories menu to display in Sidebar in News, Gallery, Pages and Archives. Default is "Depth of 2".')),	
+									'desc' => gettext('Select how many levels of nested lists of News Categories menu to display in Sidebar in News, Gallery, Pages and Archives.<br>Default is "Depth of 2".')),	
 			
 					gettext('Display Pages menu in Sidebar') => array(
-						'key' => 'display_pages-sidebar',
+						'key' => 'paradigm_sidebar-pages',
 						'type' => OPTION_TYPE_CHECKBOX_ARRAY,
-						'order' => 95,
+						'order' => 205,
 						'checkboxes' => array(
-								gettext('Gallery') => 'display_pages-sidebar-gallery', 
-								gettext('News') => 'display_pages-sidebar-news',
-								gettext('Pages') => 'display_pages-sidebar-pages',
-								gettext('Archive') => 'display_pages-sidebar-archive'
+								gettext('Gallery') => 'paradigm_sidebar-pages-gallery', 
+								gettext('News') => 'paradigm_sidebar-pages-news',
+								gettext('Pages') => 'paradigm_sidebar-pages-pages',
+								gettext('Archive') => 'paradigm_sidebar-pages-archive'
 						),
-						'desc' => gettext('Choose when to display Pages menu in Sidebar. Multi-choice.')),
-						gettext('Nested lists of Pages menu to display:') => array('key' => 'display_pages-sidebar-depth', 'type' => OPTION_TYPE_SELECTOR,
-						'order' => 96, 
+						'desc' => gettext('Choose when to display Pages menu in Sidebar.<br>Multi-choice.')),
+						gettext('Nested lists of Pages menu to display:') => array('key' => 'paradigm_sidebar-pages-depth', 'type' => OPTION_TYPE_SELECTOR,
+						'order' => 206, 
 						'selections' => array(
 							gettext('Top-level only') => '0', 
 							gettext('Depth of 2') => '2', 
 							gettext('Depth of 3') => '3', 
 							gettext('Depth of 4') => '4', 
 							gettext('All levels') => 'true'), 
-						'desc' => gettext('Select how many levels of nested lists of Pages menu to display in Sidebar in Pages, News, Gallery and Archives. Default is "Depth of 2".')),	
-			gettext('Sidebar menu header for Pages') => array('key' => 'menu_text_pages', 'type' => OPTION_TYPE_CLEARTEXT,
-						'order' => 97,
-						'desc' => gettext('Option to rename the title of Pages menu header in the Sidebar to anything that suits your site.  Default is Pages.')),
-					gettext('Tags in sidebar') => array('key' => 'display_tags-sidebar', 'type' => OPTION_TYPE_CHECKBOX,
-						'order' => 99,
+						'desc' => gettext('Select how many levels of nested lists of Pages menu to display in Sidebar in Pages, News, Gallery and Archives.<br>Default is "Depth of 2".')),	
+			gettext('Sidebar menu header for Pages') => array('key' => 'paradigm_nav_text-pages', 'type' => OPTION_TYPE_CLEARTEXT,
+						'order' => 207,
+						'desc' => gettext('Option to rename the title of Pages menu header in the Sidebar to anything that suits your site.<br>If EMPTY - Default is used (Pages).')),
+				gettext('User menu in sidebar') => array('key' => 'paradigm_sidebar-user-menu', 'type' => OPTION_TYPE_CHECKBOX,
+						'order' => 208,
+						'desc' => gettext('Display User menu in Sidebar.')),
+			gettext('Tags in sidebar') => array('key' => 'paradigm_sidebar-tags', 'type' => OPTION_TYPE_CHECKBOX,
+						'order' => 209,
 						'desc' => gettext('Display Popular Tags in Sidebar.')),
 			
 			/* Set of OPTIONS for the site Copyright Info */
 			
 			array('key' => 'paradigm_copyright_options',
 				'type' => OPTION_TYPE_NOTE, 
-				'order' => 100,
-				'desc' => gettext('<h2>Options for Copyright notice on Image pages</h2><hr />')),
+				'order' => 230,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Options for Copyright notice on Image pages</h2>')),
 			/*------------------------------------------------------------------------------*/
 			
 					gettext('Copyright Notice') => array(
-								'key' => 'extended_copyright_message',
+								'key' => 'paradigm_copyright_message',
 								'type' => OPTION_TYPE_TEXTAREA,
 								'texteditor' => 0,
 								'multilingual' => 0,
-								'order' => 101,
-								'desc' => gettext('Extended copyright notice to display on Solo Image page and Credits page if enabled. HTML can be used. 
-								If Empty - "Image copyright rightsholder" from Image Options is used instead.')),
+								'order' => 231,
+								'desc' => gettext('Extended copyright notice to display on Solo Image page and Credits page if enabled.<br>HTML can be used.<br>
+								If Empty - "Image copyright rightsholder" from Options->Image is used instead.')),
 			
 			/* Set of OPTIONS for the site TAGS Display */
 			
 			array('key' => 'paradigm_tags_options',
 				'type' => OPTION_TYPE_NOTE, 
-				'order' => 110,
-				'desc' => gettext('<h2>Options for Popular Tags display</h2><hr />')),
+				'order' => 240,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Options for Popular Tags display</h2>')),
 			/*------------------------------------------------------------------------------*/
 			
-					gettext('Maximum font size for popular tags:') => array('key' => 'display_tags-maxfontsize', 'type' => OPTION_TYPE_CLEARTEXT,
-						'order' => 111,
-						'desc' => gettext('Font-size to use for most common tags. Adjust based on your tags usage. Default is 2.')),
-					gettext('Minimum font size for popular tags:') => array('key' => 'display_tags-minfontsize', 'type' => OPTION_TYPE_CLEARTEXT,
-						'order' => 112,
-						'desc' => gettext('Font-size to use for less common tags. Adjust based on your tags usage. Default is 0,8em.')),
-					gettext('Maximum font size for tags with count over:') => array('key' => 'display_tags-maxcount', 'type' => OPTION_TYPE_CLEARTEXT,
-						'order' => 113,
-						'desc' => gettext('Tags with tag count over this number will be shown with maximum font-size. Adjust based on your tags usage. Default is 50.')),
-					gettext('Minimal tag count to include:') => array('key' => 'display_tags-mincount', 'type' => OPTION_TYPE_CLEARTEXT,
-						'order' => 114,
-						'desc' => gettext('Tags with tag count over this number will be included in Popular Tag list. Default is 1.')),
+					gettext('Maximum font size for popular tags:') => array('key' => 'paradigm_tags-maxfontsize', 'type' => OPTION_TYPE_CLEARTEXT,
+						'order' => 241,
+						'desc' => gettext('Font-size to use for most common tags. Adjust based on your tags usage.<br>Default is 2.')),
+					gettext('Minimum font size for popular tags:') => array('key' => 'paradigm_tags-minfontsize', 'type' => OPTION_TYPE_CLEARTEXT,
+						'order' => 242,
+						'desc' => gettext('Font-size to use for less common tags. Adjust based on your tags usage.<br>Default is 0,8em.')),
+					gettext('Maximum font size for tags with count over:') => array('key' => 'paradigm_tags-maxcount', 'type' => OPTION_TYPE_CLEARTEXT,
+						'order' => 243,
+						'desc' => gettext('Tags with tag count over this number will be shown with maximum font-size. Adjust based on your tags usage.<br>Default is 50.')),
+					gettext('Minimal tag count to include:') => array('key' => 'paradigm_tags-mincount', 'type' => OPTION_TYPE_CLEARTEXT,
+						'order' => 244,
+						'desc' => gettext('Tags with tag count over this number will be included in Popular Tag list.<br>Default is 1.')),
 			
 			/* Set of OPTIONS for the site FOOTER */
 			
 			array('key' => 'paradigm_footer_options',
 				'type' => OPTION_TYPE_NOTE, 
-				'order' => 120,
-				'desc' => gettext('<h2>Footer options</h2><hr />')),
-			/*------------------------------------------------------------------------------*/
+				'order' => 250,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Footer options</h2>')),
+			/*----------------------------paradigm_nav_menu---------------------------------------------------*/
 			
 		gettext('Main Footer menu') => array(
-						'key' => 'display_footer_menu',
+						'key' => 'paradigm_footer_menu',
 						'type' => OPTION_TYPE_CHECKBOX_UL,
-						'order' => 121,
+						'order' => 251,
 						'checkboxes' => array(
-								gettext('Credits page') => 'display_footer_menu-credits', 
-								gettext('Explore page') => 'display_footer_menu-explore',
-								gettext('Sitemap page') => 'display_footer_menu-sitemap'),
-						'desc' => gettext('<p>Choose what extra pages to display in main Footer menu. Multi-choice.</p>
+								gettext('Credits page') => 'paradigm_footer_menu-credits', 
+								gettext('Explore page') => 'paradigm_footer_menu-explore',
+								gettext('Sitemap page') => 'paradigm_footer_menu-sitemap'),
+						'desc' => gettext('<p>Choose what extra pages to display in main Footer menu.<br>Multi-choice.</p>
 						<p>Credits page - uses Copyright notice (see option for that above) to inform visitors about authorship and your copyright policy + gives credit to Zenphoto and author of this Theme.<br>
 						Explore page - lists all tags, used throughout website.<br>
 						Sitemap page - lists all News categories, Pages and Albums.</p>')),
-			
-				gettext('Display RSS Links') => array('key' => 'display_rss_links', 'type' => OPTION_TYPE_CHECKBOX,
-							'order' => 124,
-							'desc' => gettext('Display RSS Links in Footer.')),
-					gettext('Display Social profiles') => array('key' => 'display_social_links', 'type' => OPTION_TYPE_CHECKBOX,
-							'order' => 125,
+			gettext('User menu in Footer') => array('key' => 'paradigm_footer_user-menu', 'type' => OPTION_TYPE_CHECKBOX,
+						'order' => 252,
+						'desc' => gettext('Display User menu in Footer.')),
+				gettext('Display RSS Links') => array('key' => 'paradigm_footer_rss', 'type' => OPTION_TYPE_CHECKBOX,
+							'order' => 253,
+							'desc' => gettext('Display RSS Links in Footer. Channels are set in RSS plugins settings.')),
+					gettext('Display Social profiles') => array('key' => 'paradigm_footer_social', 'type' => OPTION_TYPE_CHECKBOX,
+							'order' => 254,
 							'desc' => gettext('Display Social Links in Footer as linked in Links & Services section below.')),
 			
 			/* Set of OPTIONS for the linked external SERVICES */
 			
 			array('key' => 'paradigm_external_options',
 				'type' => OPTION_TYPE_NOTE, 
-				'order' => 130,
-				'desc' => gettext('<h2>Links and Services</h2><hr />')),
+				'order' => 270,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Links and Services</h2>')),
 			/*------------------------------------------------------------------------------*/
 			
 					gettext('Google Analytics id') => array('key' => 'analytics_code', 'type' => OPTION_TYPE_CLEARTEXT,
-						'order' => 131,
-						'desc' => gettext('If you use Google Analytics, paste your ID here. Works with UA and GA4 properties. Use according to your local laws.')),
+						'order' => 271,
+						'desc' => gettext('If you use Google Analytics, paste your ID here. Works with UA and GA4 properties.<br>Use according to your local laws.')),
 					gettext('ShareThis id') => array('key' => 'sharethis_id', 'type' => OPTION_TYPE_TEXTBOX,
-						'order' => 132,
+						'order' => 272,
 						'desc' => gettext('Provide your ShareThis ID')),
 					gettext('URL to Facebook') => array('key' => 'facebook_url', 'type' => OPTION_TYPE_TEXTBOX,
-						'order' => 133,
+						'order' => 273,
 						'desc' => gettext('Provide your Facebook page or profile URL')),
 					gettext('Twitter profile name') => array('key' => 'twitter_profile', 'type' => OPTION_TYPE_TEXTBOX,
-						'order' => 134,
+						'order' => 274,
 						'desc' => gettext('Provide your Twitter profile name (without the @)')),
 					gettext('URL to FlickR') => array('key' => 'flickr_url', 'type' => OPTION_TYPE_TEXTBOX, 
-						'order' => 135,
+						'order' => 275,
 						'desc' => gettext('Provide your FlickR gallery URL')),
 					gettext('URL to 500px')	=> array('key' => '500px_url', 'type' => OPTION_TYPE_TEXTBOX, 
-						'order' => 136,
+						'order' => 276,
 						'desc' => gettext('Provide your 500px gallery URL')),	
 					gettext('URL to Instagram')	=> array('key' => 'instagram_url', 'type' => OPTION_TYPE_TEXTBOX, 
-						'order' => 137,
-						'desc' => gettext('Provide your Instagram')),											
+						'order' => 277,
+						'desc' => gettext('Provide your Instagram URL')),											
 					gettext('URL to Pinterest')	=> array('key' => 'pinterest_url', 'type' => OPTION_TYPE_TEXTBOX, 
-						'order' => 138,
-						'desc' => gettext('Provide your Pinterest board or page')),											
+						'order' => 278,
+						'desc' => gettext('Provide your Pinterest board or page URL')),											
 					gettext('URL to Deviantart') => array('key' => 'deviantart_url', 'type' => OPTION_TYPE_TEXTBOX,
-						'order' => 139,
-						'desc' => gettext('Provide your Deviantart page')),
+						'order' => 279,
+						'desc' => gettext('Provide your Deviantart page URL')),
 					gettext('URL to Tumblr') => array('key' => 'tumblr_url', 'type' => OPTION_TYPE_TEXTBOX, 
-						'order' => 140,
+						'order' => 280,
 						'desc' => gettext('Provide your Tumblr page URL')),
 			
 			/* Set of OPTIONS for the site METADATA */
 			
 			array('key' => 'paradigm_meta_options',
 				'type' => OPTION_TYPE_NOTE, 
-				'order' => 160,
-				'desc' => gettext('<h2>Metadata options</h2><hr />')),
+				'order' => 290,
+				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Metadata options</h2>')),
 			/*------------------------------------------------------------------------------*/
-			gettext('Add Nofollow to Tags links') => array('key' => 'tags-seo-nofollow', 'type' => OPTION_TYPE_CHECKBOX,
-						'order' => 161,
+			gettext('Add Nofollow to Tags links') => array('key' => 'paradigm_tags-nofollow', 'type' => OPTION_TYPE_CHECKBOX,
+						'order' => 291,
 						'desc' => gettext('Adds rel="nofollow" to Tag links everywhere so they are not scanned by Search Engines.')),
-			gettext('Remove Tags Pages from Index by search engines') => array('key' => 'meta-tags-noindex', 'type' => OPTION_TYPE_CHECKBOX,
-						'order' => 162,
+			gettext('Remove Tags Pages from Index by search engines') => array('key' => 'paradigm_meta-tags-noindex', 'type' => OPTION_TYPE_CHECKBOX,
+						'order' => 292,
 						'desc' => gettext('Adds "noindex, follow" to Tags pages so they are removed from Search Engines Index.')),
-			gettext('Remove Archive Pages from Index by search engines') => array('key' => 'meta-archive-noindex', 'type' => OPTION_TYPE_CHECKBOX,
-						'order' => 163,
+			gettext('Remove Archive Pages from Index by search engines') => array('key' => 'paradigm_meta-archive-noindex', 'type' => OPTION_TYPE_CHECKBOX,
+						'order' => 293,
 						'desc' => gettext('Adds "noindex, follow" to Archive pages so they are removed from Search Engines Index.')),
 		);	
 	}
@@ -494,8 +721,8 @@ class ThemeOptions {
 		return array('custom_index_page', 'paradigm_zp_index_news','paradigm_homepage');
 	}
 	function handleOption($option, $currentValue) {
-		if($option == "zenphoto_logo") { ?>
-			<select id="zenphoto_logo" name="zenphoto_logo">
+		if($option == "paradigm_logo") { ?>
+			<select id="paradigm_logo" name="paradigm_logo">
 				<option value="" style="background-color:LightGray"><?php echo gettext('*Use Gallery Name Text'); ?></option>';
 				<?php zp_apply_filter('theme_head');
 				generateListFromFiles($currentValue, SERVERPATH.'/'.UPLOAD_FOLDER,'');

@@ -57,7 +57,7 @@ function printTags_zb($option = 'links', $preText = NULL, $class = NULL, $separa
 			} else {
 				$links1 = $links2 = '';
 			}
-			echo "\t<li>" . $links1 . $atag . $links2 . $separator . "</li>\n";
+			echo "<li>". $links1 . $atag . $links2 . $separator ."</li>\n";
 		}
 		echo "</ul>";
 	} else {
@@ -147,9 +147,7 @@ function printAllTagsAs_zb ($option, $class = '', $sort = NULL, $counter = FALSE
 						}
 						$link = SearchEngine::getSearchURL(SearchEngine::getSearchQuote($key), '', 'tags', 0, array('albums' => $albumlist));
 						?>
-						<li>
-							<a href="<?php echo html_encode($link); ?>"<?php echo $size; echo $nofollow; ?>><?php echo $key . $counter; ?></a>
-						</li>
+						<li><a href="<?php echo html_encode($link); ?>"<?php echo $size; echo $nofollow; ?>><?php echo $key . $counter; ?></a></li>
 						<?php
 					} else {
 						?>
@@ -161,9 +159,7 @@ function printAllTagsAs_zb ($option, $class = '', $sort = NULL, $counter = FALSE
 		} else {
 			?>
 			<li><?php echo gettext('No popular tags'); ?></li>
-			<?php
-		}
-		?>
+			<?php }	?>
 	</ul>
 	<?php
 }
@@ -271,13 +267,13 @@ function printImageMetadata_zb() {
 	global $_zp_exifvars, $_zp_current_image;
 	if (false === ($exif = getImageMetaData($_zp_current_image, true))) {
 		return;
-	}
-	?>
-			<table class="table table-striped" itemprop="exifData"">
-				<?php
+	}	?>
+
+			<table class="table table-striped" itemprop="exifData">
+			<?php
 				foreach ($exif as $field => $value) {
 					$label = $_zp_exifvars[$field][2];
-					echo "<tr><th>$label:</th><td>";
+					echo '<tr><th>' . $label . ':</th><td>';
 					switch ($_zp_exifvars[$field][6]) {
 						case 'time':
 							if (!is_int($value) && strpos($value, 'T') !== false) {
@@ -289,9 +285,8 @@ function printImageMetadata_zb() {
 							echo html_encode($value);
 							break;
 					}
-					echo "</td></tr>\n";
-				}
-				?>
+					echo '</td></tr>';
+					echo "\n"; } ?>
 			</table>
 	<?php
 }
@@ -466,66 +461,160 @@ function printImageStatistic_zb($number, $option, $albumfolder = '', $showtitle 
 			$crop = (int) $crop && true;
 		}
 	}
-	echo '<div id="images" class="row">';
+	echo '<div id="images-' . $option . '" class="row">';
+  echo "\n";
 	foreach ($images as $image) {
 		if ($fullimagelink) {
 			$imagelink = $image->getFullImageURL();
 		} else {
 			$imagelink = $image->getLink();
 		}
-		echo '<div class="col-lg-3 col-md-4 col-sm-6" style="height:' . html_encode(getOption("thumb_size")+55) . 'px;" ><div class="thumbnail" itemtype="https://schema.org/image" itemscope><a href="' . html_encode($imagelink) . '" title="' . html_encode($image->getTitle()) . '" ';  
+    if (getOption('paradigm_full-width')) {
+      echo '<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">'; }
+    else {echo '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">'; }
+    echo "\n";
+    echo '<div class="thumbnail" itemtype="https://schema.org/image" itemscope>';
+    echo "\n";
+    echo '<a href="' . html_encode($imagelink) . '" title="' . html_encode($image->getTitle()) . '"';  
 		if ($fullimagelink) {
-			echo 'rel="lightbox-latest"';
+			echo ' rel="lightbox-latest"';
 		}
 		echo '>';
+    
 		switch ($crop) {
 			case 0:
 				$sizes = getSizeCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, $image);
-				echo '<img src="' . html_encode(pathurlencode($image->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE))) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($image->getTitle()) . "\" /></a>\n";
+				echo '<img src="' . html_encode(pathurlencode($image->getCustomImage($width, NULL, NULL, NULL, NULL, NULL, NULL, TRUE))) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($image->getTitle()) . '">';
 				break;
 			case 1:
 				$sizes = getSizeCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, $image);
-				echo '<img src="' . html_encode(pathurlencode($image->getCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, TRUE))) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($image->getTitle()) . "\" width=\"" . $width . "\" height=\"" . $height . "\" /></a>\n";
+				echo '<img src="' . html_encode(pathurlencode($image->getCustomImage(NULL, $width, $height, $width, $height, NULL, NULL, TRUE))) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($image->getTitle()) . '" width="'. $width . '" height="' . $height . '">';
 				break;
 			case 2:
 				$sizes = getSizeDefaultThumb($image);
-				echo '<img src="' . html_encode(pathurlencode($image->getThumb())) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($image->getTitle()) . "\" /></a>\n";
+				echo '<img src="' . html_encode(pathurlencode($image->getThumb())) . '" width="' . $sizes[0] . '" height="' . $sizes[1] . '" alt="' . html_encode($image->getTitle()) . '">';
 				break;
 		}
+    echo '</a>';
+    echo "\n";
+    
 		if ($showtitle) {
 			echo '<div class="caption">';
-			echo '<a href="' . html_encode(pathurlencode($image->getLink())) . '" title="' . html_encode($image->getTitle()) . "\">\n";
-			echo $image->getTitle() . "</a>\n";
+			echo '<a href="' . html_encode(pathurlencode($image->getLink())) . '" title="' . html_encode($image->getTitle()) . '">';
+			echo $image->getTitle() . '</a>';
 			echo '</div>';
+      echo "\n";
 		}
+    
 		if ($showdate) {
-			echo "<p>" . zpFormattedDate(DATE_FORMAT, strtotime($image->getDateTime())) . "</p>";
+			echo '<p>' . zpFormattedDate(DATE_FORMAT, strtotime($image->getDateTime())) . '</p>';
+      echo "\n";
 		}
+    
 		if ($showstatistic === "rating" OR $showstatistic === "rating+hitcounter") {
 			$votes = $image->get("total_votes");
 			$value = $image->get("total_value");
 			if ($votes != 0) {
 				$rating = round($value / $votes, 1);
 			}
-			echo "<p>" . sprintf(gettext('Rating: %1$u (Votes: %2$u)'), $rating, $votes) . "</p>";
+			echo '<p>' . sprintf(gettext('Rating: %1$u (Votes: %2$u)'), $rating, $votes) . '</p>';
+      echo "\n";
 		}
+    
 		if ($showstatistic === "hitcounter" OR $showstatistic === "rating+hitcounter") {
 			$hitcounter = $image->getHitcounter();
 			if (empty($hitcounter)) {
 				$hitcounter = "0";
 			}
-			echo "<p>" . sprintf(gettext("Views: %u"), $hitcounter) . "</p>";
+			echo '<p>' . sprintf(gettext("Views: %u"), $hitcounter) . '</p>';
+      echo "\n";
 		}
+    
 		if ($showdesc) {
 			echo shortenContent($image->getDesc(), $desclength, ' (...)');
+      echo "\n";
 		}
-	echo '</div></div>';
+    
+	echo '</div>';
+  echo "\n";
+  echo '</div>';
+  echo "\n\n";
 	}
 	echo '</div>';
+  echo "\n";
 }
 
-
-
+function printNewsPageListWithNav_zb ($next, $prev, $nextprev = true, $class = 'pagelist', $firstlast = true, $navlen = 9) {
+	global $_zp_zenpage, $_zp_current_category, $_zp_page;
+	if (in_context(ZP_ZENPAGE_NEWS_CATEGORY)) {
+		$total = $_zp_current_category->getTotalNewsPages();
+	} else {
+		$total = $_zp_zenpage->getTotalNewsPages();
+	}
+	if ($total > 1) {
+		if ($navlen == 0)
+			$navlen = $total;
+		$extralinks = 2;
+		if ($firstlast)
+			$extralinks = $extralinks + 2;
+		$len = floor(($navlen - $extralinks) / 2);
+		$j = max(round($extralinks / 2), min($_zp_page - $len - (2 - round($extralinks / 2)), $total - $navlen + $extralinks - 1));
+		$ilim = min($total, max($navlen - round($extralinks / 2), $_zp_page + floor($len)));
+		$k1 = round(($j - 2) / 2) + 1;
+		$k2 = $total - round(($total - $ilim) / 2);
+		echo "<div class=\"$class\">\n<ul class=\"$class\">\n";
+		if ($nextprev) {
+			echo "<li class=\"prev\">";
+			printPrevNewsPageLink($prev);
+			echo "</li>\n";
+		}
+		if ($firstlast) {
+			echo '<li class = "' . ($_zp_page == 1 ? 'current' : 'first') . '">';
+			if ($_zp_page == 1) {
+				echo "1";
+			} else {
+				echo '<a href = "' . html_encode(getNewsPathNav(1)) . '" title = "' . gettext("Page") . ' 1">1</a>';
+			}
+			echo "</li>\n";
+			if ($j > 2) {
+				echo "<li>";
+				$linktext = ($j - 1 > 2) ? '...' : $k1;
+				echo '<a href = "' . html_encode(getNewsPathNav($k1)) . '" title = "' . sprintf(ngettext('Page %u', 'Page %u', $k1), $k1) . '">' . $linktext . '</a>';
+				echo "</li>\n";
+			}
+		}
+		for ($i = $j; $i <= $ilim; $i++) {
+			echo "<li" . (($i == $_zp_page) ? " class=\"current\"" : "") . ">";
+			if ($i == $_zp_page) {
+				echo $i;
+			} else {
+				echo '<a href = "' . html_encode(getNewsPathNav($i)) . '" title = "' . sprintf(ngettext('Page %1$u', 'Page %1$u', $i), $i) . '">' . $i . '</a>';
+			}
+			echo "</li>\n";
+		}
+		if ($i < $total) {
+			echo "<li>";
+			$linktext = ($total - $i > 1) ? '...' : $k2;
+			echo '<a href = "' . html_encode(getNewsPathNav($k2)) . '" title = "' . sprintf(ngettext('Page %u', 'Page %u', $k2), $k2) . '">' . $linktext . '</a>';
+			echo "</li>\n";
+		}
+		if ($firstlast && $i <= $total) {
+			echo "\n  <li class=\"last\">";
+			if ($_zp_page == $total) {
+				echo $total;
+			} else {
+				echo '<a href = "' . html_encode(getNewsPathNav($total)) . '" title = "' . sprintf(ngettext('Page {%u}', 'Page {%u}', $total), $total) . '">' . $total . '</a>';
+			}
+			echo "</li>\n";
+		}
+		if ($nextprev) {
+			echo '<li class = "next">';
+			printNextNewsPageLink($next);
+			echo "</li>\n";
+		}
+		echo "</ul>\n</div>\n";
+	}
+}
 
 
 /**
@@ -549,6 +638,139 @@ function printImageStatistic_zb($number, $option, $albumfolder = '', $showtitle 
  */
 function printLatestImages_zb($number = 5, $albumfolder = '', $showtitle = false, $showdate = false, $showdesc = false, $desclength = 40, $showstatistic = '', $width = NULL, $height = NULL, $crop = NULL, $collection = false, $fullimagelink = false) {
 	printImageStatistic_zb($number, "latest", $albumfolder, $showtitle, $showdate, $showdesc, $desclength, $showstatistic, $width, $height, $crop, $collection, $fullimagelink);
+}
+
+/**
+ * Prints the x related articles based on a tag search
+ *
+ * @param int $number Number of items to get
+ * @param string $type 'albums', 'images','news','pages', "all" for all combined.
+ * @param string $specific If $type = 'albums' or 'images' name of album
+ * @param bool $excerpt If a text excerpt (gallery items: description; Zenpage items: content) should be shown. NULL for none or number of length
+ * @param bool $thumb For $type = 'albums' or 'images' if a thumb should be shown (default size as set on the options)
+ */
+function printRelatedItems_zb($number = 5, $type = 'news', $specific = NULL, $excerpt = NULL, $thumb = false, $date = false) {
+	global $_zp_gallery, $_zp_current_album, $_zp_current_image, $_zp_current_zenpage_page, $_zp_current_zenpage_news;
+	$label = array('albums' => gettext('Albums'), 'images' => gettext('Images'), 'news' => gettext('News'), 'pages' => gettext('Pages'));
+	$result = getRelatedItems($type, $specific);
+	$resultcount = count($result);
+	if ($resultcount != 0) {
+		?>
+		<h2 class="related-items"><i class="glyphicon glyphicon-link"></i><?php printf(gettext('Related %s'),$type); ?></h2>
+		<ul id="related-items">
+			<?php
+			$count = 0;
+			foreach ($result as $item) {
+				$count++;
+				?>
+				<li class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-2 '; } ?>col-lg-3 col-md-4 col-sm-6 col-xs-12 related-<?php echo $item['type']; ?>">
+					<?php
+					$category = '';
+					switch ($item['type']) {
+						case 'albums':
+							$obj = AlbumBase::newAlbum($item['name']);
+							$url = $obj->getLink();
+							$text = $obj->getDesc();
+							$textshort = $obj->getCustomData();
+							$category = gettext('Album');
+							break;
+						case 'images':
+							$alb = AlbumBase::newAlbum($item['album']);
+							$obj = Image::newImage($alb, $item['name']);
+							$url = $obj->getLink();
+							$text = $obj->getDesc();
+							$textshort = $obj->getCustomData();
+							$category = gettext('Image');
+							break;
+						case 'news':
+							$obj = new ZenpageNews($item['name']);
+							$url = $obj->getLink();
+							$text = $obj->getContent();
+							$textshort = $obj->getCustomData();
+							$category = gettext('News');
+							break;
+						case 'pages':
+							$obj = new ZenpagePage($item['name']);
+							$url = $obj->getLink();
+							$text = $obj->getContent();
+							$textshort = $obj->getCustomData();
+							$category = gettext('Page');
+							break;
+					}
+					?>
+					<?php
+					if ($thumb) {
+						$thumburl = false;
+						switch ($item['type']) {
+							case 'albums':
+								$thumburl = $obj->getThumb();
+								break;
+							case 'images':
+								$thumburl = $obj->getThumb();
+								break;
+							case 'news':
+								if ($hasFeaturedImage = getFeaturedImage($obj)) {;
+								$featimage = getFeaturedImage($obj);
+								$thumburl = $featimage->getCustomImage(getOption('thumb_size'),null,null,null,null,null,null,true,null);}
+                else {
+                $thumburl = false; }
+								break;
+							case 'pages':
+								if ($hasFeaturedImage = getFeaturedImage($obj)) {;
+								$featimage = getFeaturedImage($obj);
+								$thumburl = $featimage->getCustomImage(getOption('thumb_size'),null,null,null,null,null,null,true,null); }
+                else {
+                $thumburl = false; }
+								break;
+						}
+						if ($thumburl) {
+							?>
+							<a href="<?php echo html_encode(pathurlencode($url)); ?>" title="<?php echo html_encode($obj->getTitle()); ?>" class="related-items_thumb">
+								<img src="<?php echo html_encode(pathurlencode($thumburl)); ?>" alt="<?php echo html_encode($obj->getTitle()); ?>" />
+							</a>
+							<?php
+						}
+					}
+					?>
+					<h3><?php if ($type == 'all') { ?>
+					<?php if ($category == 'Image') { ?><i class="glyphicon glyphicon-picture"></i>
+					<?php } elseif ($category == 'Album') { ?><i class="glyphicon glyphicon-folder-close"></i>
+          <?php } elseif ($category == 'News') { ?><i class="glyphicon glyphicon-pencil"></i>
+          <?php } else { ?><i class="glyphicon glyphicon-file"></i><?php } ?><?php } ?><a href="<?php echo html_encode(pathurlencode($url)); ?>" title="<?php echo html_encode($obj->getTitle()); ?>"><?php echo html_encode($obj->getTitle()); ?></a></h3>
+					
+					
+					<?php if ($date) {
+							switch ($item['type']) {
+								case 'albums':
+								case 'images':
+									$d = $obj->getDateTime();
+									break;
+								case 'news':
+								case 'pages':
+									$d = $obj->getDateTime();
+									break;
+							} ?>
+							<p class="related-items_date">
+								<?php echo zpFormattedDate(DATE_FORMAT, strtotime($d)); ?>
+							</p>
+							<?php }	?>
+					
+					<?php if (($excerpt) && ($textshort != '')) { ?>
+          <p class="excerpt"><?php echo strip_tags(preg_replace( "/\r|\n/", "",(str_replace('<br>','. ',$textshort)))); ?></p>
+					<?php } elseif ($excerpt) { ?>
+						<p class="excerpt"><?php echo shortenContent(strip_tags(preg_replace( "/\r|\n/", "",(str_replace('</p>',' ',$text)))), $excerpt, '...', true); ?></p>
+          <?php } ?>
+				</li>
+				<?php
+				if ($count == $number) {
+					break;
+				}
+			} // foreach
+			if ($count) {
+				?>
+			</ul>
+			<?php	}
+	}
 }
 
 ?>

@@ -2,50 +2,35 @@
 // force UTF-8 Ø
 
 if (!defined('WEBPATH'))
-	die();
+die();
 if (function_exists('printContactForm')) {
-	?>
+?>
 <!DOCTYPE html>
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_head.php'); ?>
+
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_header.php'); ?>
 
 <div id="background-main" class="background">
-	<div class="container<?php if (getOption('full_width')) {echo '-fluid';}?>">
-	<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_breadcrumbs.php'); ?>
-		<div id="center" class="row" itemscope itemtype="https://schema.org/ContactPage">
-				<?php if (function_exists("printAlbumMenu")) { ?>
-				<section class="col-sm-9" id="main" itemprop="mainContentOfPage">
+<div class="container<?php if (getOption('paradigm_full-width')) {echo '-fluid'; } ?>">
 
-			<h1><i class="glyphicon glyphicon-envelope"></i><?php echo gettext('Contact') ?></h1>
-				
-			<p>						
-				<?php
-						printContactForm();
-				?>
-			</p>
-				
-			</section>
-				<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>
-			<?php } else { ?>
-			<section class="col-sm-12" id="main" itemprop="mainContentOfPage">
-			<h1><i class="glyphicon glyphicon-envelope"></i><?php echo gettext('Contact') ?></h1>
-				
-			<p>						
-				<?php
-						printContactForm();
-				?>
-			</p>
-				
-			</section>
-			<?php } ?>
-		</div>
-	</div>
-</div>		
+<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_breadcrumbs.php'); ?>
+
+<div id="center" class="row" itemscope itemtype="https://schema.org/ContactPage">
+<section id="main" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-10 '; } ?>col-lg-9 col-md-9 col-sm-9 col-xs-12" itemprop="mainContentOfPage">
+<h1><i class="glyphicon glyphicon-envelope"></i>Contact</h1>
+
+<?php	printContactForm();	?>
+
+</section>
+
+<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>
+
+</div>
+</div>
+</div>
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_footer.php'); ?>
-	<?php
-} else {
-	include(SERVERPATH . '/' . ZENFOLDER . '/404.php');
-}
-	?>
+
+<?php } else {
+include(SERVERPATH . '/' . ZENFOLDER . '/404.php'); } ?>

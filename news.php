@@ -1,165 +1,220 @@
 <?php
 // force UTF-8 Ø
 if (!defined('WEBPATH'))
-	die();
+die();
 if (class_exists('Zenpage')) {
-	?>
-	
+?>
+<!DOCTYPE html>
+
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_head.php'); ?>
+
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_header.php'); ?>
 
 <div id="background-main" class="background">
-	<div class="container<?php if (getOption('full_width')) {echo '-fluid';}?>">
-		<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_breadcrumbs.php'); ?>
-		<div id="center" class="row" itemscope itemtype="https://schema.org/WebPage">
-			<section class="col-sm-9" id="main" itemprop="mainContentOfPage">
+<div class="container<?php if (getOption('paradigm_full-width')) {echo '-fluid'; } ?>">
 
-		<?php
-			// single news article
-			if (is_NewsArticle()) { ?>
-			<article itemscope itemtype="https://schema.org/Article"> 
-				<h1 itemprop="name"><?php printNewsTitle(); ?></h1>
-				<div class="news-data">
-					<?php
-						echo '<span itemprop="datePublished">';
-						printNewsDate();
-						echo '</span>';
-						if (function_exists('getCommentCount')) {
-						?>
-						|
-					<?php
-						echo gettext("Comments:");
-					?>
-					<?php
-						echo '<span itemprop="commentCount">';
-						echo getCommentCount();
-						echo '</span>';
-							}
-						?>
-					<?php
-						echo ' | <span itemprop="articleSection">';
-							printNewsCategories(", " ,"Categories: ", "list-inline news-info");
-						echo '</span>'	
-					?>
-					<?php
-						if (getTags()) {
-							echo ' | ';
-						 		printTags_zb("links", "Tags: ", "list-inline news-info", ",", getOption('tags-seo-nofollow'));
-						 }
-					?>
-				</div>
-				
-				<div itemprop="articleBody" class="content"><?php if (function_exists('printSizedFeaturedImage')) $hasFeaturedImage = getFeaturedImage(); ?>
-				<?php if ($hasFeaturedImage) printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'feat-image',null,true,null); ?>
-					<?php printNewsContent();?></div>
-				
-		<!-- Extra content -->
-				<?php if (getNewsExtraContent()!='') {
-					echo '<div class="content">';
-					printNewsExtraContent();
-					echo "</div>";
-				} 
-				?>
-				
-				<p><?php printCodeblock(1); ?></p>
+<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_breadcrumbs.php'); ?>
 
-				<br style="clear:both;" />
+<div id="center" class="row" itemscope itemtype="https://schema.org/WebPage">
+<section id="main" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-10 '; } ?>col-lg-9 col-md-9 col-sm-9 col-xs-12" itemprop="mainContentOfPage">
 
-			<ul class="pager">
-		  	<?php if(getPrevNewsURL()) { ?><li class="pull-left"><?php printPrevNewsLink(); ?></li><?php } ?>
-		  	<?php if(getNextNewsURL()) { ?><li class="pull-right"><?php printNextNewsLink(); ?></li><?php } ?>
-			</ul>
+<?php
+// single news article
+if (is_NewsArticle()) { ?>
+<article itemscope itemtype="https://schema.org/Article"> 
+<h1 itemprop="name"><?php printNewsTitle(); ?></h1>
+<div class="news-data">
+<span itemprop="datePublished"><?php printNewsDate(); ?></span>
+<?php if (function_exists('getCommentCount')) { ?>
+<?php echo ' | Comments: '; ?><span itemprop="commentCount"><?php echo getCommentCount(); ?></span>
+<?php } ?>
+<?php echo ' | '; ?><span itemprop="articleSection"><?php printNewsCategories(',','Categories: ','list-inline news-info'); ?></span>
+</div>
 
-				<!-- Rating -->	
-				<?php
-					if (extensionEnabled('rating')) { 
-						echo '<div id="rating">';
-						echo '<h2><i class="glyphicon glyphicon-star"></i>' . gettext('Rating') . '</h2>';
-						printRating();
-						echo '</div>';
-					}
-				?>	
-				<hr/>
-		<!-- Comments -->
-			<?php @call_user_func('printCommentForm'); ?>
-		</article>
-		<!-- pagination -->
-		<?php
-			} else {
-				if (in_context(ZP_ZENPAGE_NEWS_CATEGORY)) { ?>
-						<h1><i class="glyphicon glyphicon-pencil"></i><?php if (getOption('menu_text_news')!='') { echo (getOption('menu_text_news')); echo gettext(' category:');
-							} else { echo gettext('News category:');} ?> <?php printCurrentNewsCategory(); printCurrentPageAppendix(' (Page ', ')'); ?></h1>
-				    <?php if (function_exists('printSizedFeaturedImage')) $hasFeaturedImage = getFeaturedImage(); ?>
-						<?php if ($hasFeaturedImage) printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'remove-attributes center',null,true,null); ?>
-				    <?php printNewsCategoryDesc(); ?>
-			<?php	} else if (in_context(ZP_ZENPAGE_NEWS_DATE)) { ?>
-						<h1><i class="glyphicon glyphicon-pencil"></i><?php printCurrentNewsArchive('Archive for ','plain'); printCurrentPageAppendix('(Page ', ')'); ?></h1>
-				<?php } else { ?>
-						<h1><i class="glyphicon glyphicon-pencil"></i><?php if (getOption('menu_text_news')!='') {echo (getOption('menu_text_news'));
-							} else { echo gettext('News');} ?>
-							<?php printCurrentPageAppendix('(Page ', ')'); ?></h1>
-						<?php } ?>
-				
-			<!-- news article loop --> 
-			<?php while (next_news()):;
-						?>
-			<div class="news-data">
-			<h2><?php printNewsURL(); ?></h2>
-				<div class="news-data">
-					<?php
-						printNewsDate();
-						if (function_exists('getCommentCount')) {
-						?>
-						|
-					<?php
-						echo gettext("Comments:");
-					?>
-					<?php
-						echo getCommentCount();
-							}
-						?>
-					<?php
-						echo ' | ';
-							printNewsCategories(", " ,"Categories: ", "list-inline news-info");
-					?>
-					<?php
-						if (getTags()) {
-							echo ' | ';
-						 		printTags_zb("links", "Tags: ", "list-inline news-info", ",", getOption('tags-seo-nofollow'));
-						 }
-					?>
-				</div>
-			<article class="content">
-				<?php if (function_exists('printSizedFeaturedImage')) $hasFeaturedImage = getFeaturedImage(); ?>
-				<?php if ($hasFeaturedImage) printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'feat-image',null,true,null); ?>
-				<?php 
-					if (getNewsCustomData()!='') 
-						{echo getNewsCustomData();
-						echo '<p class="readmorelink"><a href="' . getNewsURL() . '" title="' . getNewsReadMore() .'" >' . getNewsReadMore() . '</a></p>'; 
-						}
-					else {printNewsContent();} 
-				?>
-			</article>
-			<div><?php printCodeblock(1); ?></div>
+<div id="article-content" class="content" itemprop="articleBody">
+<?php if (function_exists('printSizedFeaturedImage') && getOption('paradigm_news-feat-image')) { $hasFeaturedImage = getFeaturedImage(); ?>
+<?php if ($hasFeaturedImage && (getOption('paradigm_news-feat-image-size') == 'thumb_size')) { printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'feat-image',null,true,null);} ?>
+<?php if ($hasFeaturedImage && (getOption('paradigm_news-feat-image-size') == 'image_size')) { printSizedFeaturedImage(null,null,getOption('image_size'),null,null,null,null,null,null,'zenpage_fullimage',null,true,null);} ?>
+<?php } ?>
 
-		 </div>
-			 <hr/>
-				<?php
-			endwhile;
-			printNewsPageListWithNav(gettext('next »'), gettext('« prev'), true, 'pagelist', true);
-					}
-					?>
-				<?php printNewsCategoryCustomData(); ?>
-		</section>
+<?php printNewsContent(); ?>
+</div>
+
+<?php if (getNewsExtraContent()!='') { ?>
+<!-- Extra content -->
+<div id="article-extra-content" class="content">
+<?php printNewsExtraContent(); ?>
+</div>
+<?php } ?>
+
+</article>
+
+<!-- Previous and next articles -->
+
+<div class="pagelist col-sm-12">
+<ul class="pager">
+<?php if (getPrevNewsURL()) { ?><li class="pull-left"><?php printPrevNewsLink(); ?></li>
+<?php } ?>
+<?php if (getNextNewsURL()) { ?><li class="pull-right"><?php printNextNewsLink(); ?></li>
+<?php } ?>
+</ul>
+</div>
+
+<div id="article-details" class="row">
+<div id="article-info" class="col-sm-12">
+<h2><i class="glyphicon glyphicon-info-sign"></i>Info</h2>
+<?php if ((getNewsCustomData()!='') && getOption('paradigm_news-custom')){ ?>
+<!-- Custom data -->
+<div id="article-data" class="block">
+<?php printNewsCustomData(); ?>
+</div>
+<?php } ?>
+
+<?php if (getCodeBlock(1,$_zp_current_zenpage_news)!='') { ?>
+<!-- Page Codeblock 1 -->
+<div class="codeblock-data block">
+<?php printCodeBlock(1,$_zp_current_zenpage_news); ?>
+</div>
+<?php } ?>
+</div>
+
+<div class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-3 col-lg-4 '; } ?>col-sm-6">
+<?php if (getTags()) { ?>
+<!-- Tags -->
+<div id="tags" class="block">
+<h3><i class="glyphicon glyphicon-tag"></i>Tags</h3>
+<?php printTags_zb('links', '', 'taglist', ', ',getOption('paradigm_tags-nofollow')); ?>
+</div>
+<?php } ?>
+
+<?php if (function_exists('getHitCounter') && getOption('paradigm_news-hitcounter')){ ?>
+<!-- Hitcounter -->
+<div id="hitcounter" class="block">
+<h3><i class="glyphicon glyphicon-eye-open"></i>Other info</h3>
+<p><strong>Views:</strong> <?php echo gethitcounter(); ?> views</p>
+</div>
+<?php } ?>
+
+</div>
+
+<div class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-3 col-lg-4 '; } ?>col-sm-6">
+
+<?php if (extensionEnabled('rating') && getOption('paradigm_news-rating')) { ?>
+<!-- Rating -->
+<div id="rating" class="block">
+<h3><i class="glyphicon glyphicon-star"></i>Rating</h3>
+<?php printRating(); ?>
+</div>
+<?php } ?>
+
+<?php if (getCodeBlock(2,$_zp_current_zenpage_news)!='') { ?>
+<!-- Page Codeblock 2 -->
+<div class="codeblock-data block">
+<?php printCodeBlock(2,$_zp_current_zenpage_news); ?>
+</div>
+<?php } ?>
+</div>
+
+ <?php if (getCodeBlock(3,$_zp_current_zenpage_news)!='') { ?>
+<!-- News Codeblock 3 -->
+<div id="articles-extras" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-6 col-lg-4 '; } ?>col-sm-12">
+<?php printCodeBlock(3,$_zp_current_zenpage_news); ?>
+</div>
+<?php } ?>
+
+<?php if (function_exists('printRelatedItems') && getOption('paradigm_news-related-enable')) { ?>
+<div id="article-related" class="col-sm-12">
+<?php printRelatedItems_zb(getOption('paradigm_news-related-number'),getOption('paradigm_news-related-type'),NULL,getOption('paradigm_news-related-length'),getOption('paradigm_news-related-thumb'),getOption('paradigm_news-related-date')); ?>
+</div>
+<?php } ?>
+ 
+</div>
+
+<!-- Comments -->
+<?php printCommentForm(); ?>
+
+<?php } else { ?>
+
+<?php if (in_context(ZP_ZENPAGE_NEWS_CATEGORY)) { ?>
+<h1><i class="glyphicon glyphicon-pencil"></i>
+<?php if (getOption('paradigm_nav_text-news')!='') { echo (getOption('paradigm_nav_text-news')); echo gettext(' category:'); ?>
+<?php } else { ?>
+<?php echo gettext('News category:');} ?> <?php printCurrentNewsCategory(); printCurrentPageAppendix(' (Page ',')'); ?></h1>
+
+<div id="news-category-caption" class="content">
+
+<?php if (function_exists('printSizedFeaturedImage')) { $hasFeaturedImage = getFeaturedImage(); ?>
+<?php if ($hasFeaturedImage) { printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'feat-image',null,true,null);} ?>
+<?php } ?>
+
+<?php printNewsCategoryDesc(); ?>
+</div>
+
+<?php if ((getNewsCategoryCustomData()!='') && getOption('paradigm_news-custom')) { ?>
+<div id="news-category-info" class="content">
+<h2><i class="glyphicon glyphicon-info-sign"></i>Info</h2>
+<!-- Custom data -->
+<?php printNewsCategoryCustomData(); ?>
+</div>
+<?php } ?>
+
+<h2><i class="glyphicon glyphicon-time"></i>Latest:</h2>
+
+<?php } else if (in_context(ZP_ZENPAGE_NEWS_DATE)) { ?>
+
+<h1><i class="glyphicon glyphicon-pencil"></i><?php printCurrentNewsArchive('Archive for ','plain'); printCurrentPageAppendix('(Page ', ')'); ?></h1>
+
+<?php } else { ?>
+
+<h1><i class="glyphicon glyphicon-pencil"></i>
+<?php if (getOption('paradigm_nav_text-news')!='') { echo (getOption('paradigm_nav_text-news')); ?>
+<?php } else { ?>
+<?php echo gettext('News'); } ?><?php printCurrentPageAppendix(' (Page ',')'); ?></h1>
+
+<?php } ?>
+
+<!-- news article loop --> 
+<?php while (next_news()):; ?>
+
+<article class="news-excerpt">
+<h2><?php printNewsURL(); ?></h2>
+
+<div class="news-data">
+<?php printNewsDate(); ?>
+<?php if (function_exists('getCommentCount')) { ?>
+<?php echo ' | Comments: '; ?><?php echo getCommentCount(); ?>
+<?php } ?>
+
+<?php echo ' | '; ?><?php printNewsCategories(',','Categories: ','list-inline news-info'); ?>
+
+<?php if (getTags()) { ?>
+<?php echo ' | '; ?><?php printTags_zb("links", "Tags: ", "list-inline news-info", ",", getOption('paradigm_tags-nofollow')); ?>
+<?php } ?>
+</div>
+
+<div class="excerpt">
+<?php if (function_exists('printSizedFeaturedImage')) { $hasFeaturedImage = getFeaturedImage(); ?>
+<?php if ($hasFeaturedImage) { printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'feat-image',null,true,null); } ?>
+<?php } ?>
+<?php printNewsContent(); ?>
+</div>
+
+</article>
+
+<?php endwhile; ?>
+
+<!-- pagination -->
+<?php printNewsPageListWithNav_zb(gettext('next »'), gettext('« prev'), true, 'pagelist', true); ?>
+<?php } ?>
+
+</section>
+
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>
-		</div>
-	</div>
-</div>		
+
+</div>
+</div>
+</div>
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_footer.php'); ?>
 
-<?php
-} else {
-	include(SERVERPATH . '/' . ZENFOLDER . '/404.php');
-}
-?>
+<?php } else { include(SERVERPATH . '/' . ZENFOLDER . '/404.php'); } ?>
