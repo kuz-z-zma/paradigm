@@ -10,35 +10,41 @@ Since I’ve updated this theme to fix usage of depreciated functions and added 
 
 New additions include: more flexibility for displaying content.
 
-version 1.5:
+version 1.6:
 
- - Reworked all Options groupings and settings.
- - Fixed Lightbox pop-up with image previews in Albums, Archive, Search etc.
- - Links to Lightbox previews were assigned with rel=”nofollow” to exclude generated links to preview images from indexing.
- - Added option to disable usage of Lightbox previews.
- - Option to choose custom text for Gallery link in Main Menu (it’s also used in Footer menu and Sidebar panel).
- - Option to choose custom text for News link in Main Menu (it’s also used in Footer menu and Sidebar panel).
- - Option to choose custom text for Pages header in Sidebar navigation panel.
- - Options to choose when to display Album Menu in Sidebar (multi-choice: Gallery, News, Pages, Archives).
- - Options to choose when to display News Categories Menu in Sidebar (multi-choice: Gallery, News, Pages, Archives).
- - Options to choose when to display Pages Menu in Sidebar (multi-choice: Gallery, News, Pages, Archives).
- - Change of CSS for Albums, News Categories & Pages Menu navigational panels in Sidebar from id=”nav-local” to class=”nav-local”.
- - Option to specify number of levels of Album menu to display in Sidebar (for Gallery; News, Pages, Archives use “Top-level only” setting).
- - Option to specify number of levels of News Categories Menu in Sidebar (used for Gallery, News, Pages, Archives).
- - Option to specify number of levels of Pages Menu in Sidebar (used for Gallery, News, Pages, Archives).
- - Fixed font-size calculation for Popular Tags cloud in Sidebar.
- - Option to display Image Caption above or below Image on Image Page.
- - Updated Theme functions to use correct time from metadata for Photos in Metadata section on Image Pages (without added timezone of server).
- - Reworked settings for additional pages in Main Footer menu.
- - Option to display RSS Links in Footer.
- - Option to display Social Media Links in Footer (if linked in “Links and Services” section of Paradigm Options).
- - Option to remove Tags pages from Search Engines Index by adding “noindex, follow” to Head section.
- - Option to remove Archive pages from Search Engines Index by adding “noindex, follow” to Head section.
- - Moved News Archive links before Gallery links in Archive.
+MAJOR WORK on Theme Options
+Paradigm now has more than 100 options, so it had to be done!
+You have to BACKUP all TEXT FIELDS and setup Paradigm from scratch!
+
+*MAJOR CODE CLEAN-UP**
+ - Fixed Responsive Behaviour throughout for both Fluid and Fixed layout.
+ - Added rules for Extra-Large screens (>1900px) for both Fluid and Fixed layout.
+ - Reworked all H1-H2 Headers for clean outlines throughout.
+ - Removed all BR and HR tags from pages, now all of that is done via CSS.
+ - Removed all style=height parameters from Image/Albums Thumbs, now all of that is done via CSS.
+ - Added flexible styling to Images on Homepage and in Albums
+ - Reworked Images/Albums/News/Pages Details Sections for consistency.
+ - All content-zones now have corresponding #ID for ease of CSS styling.
  - Some fixes in Breadcrumbs section (typos, leftover code).
- - Added missing icon for H1 in News/News categories pages
- - Enabled automatic generation of Description meta-tags from sanitized Custom Data for Pages.
- - Other clean-up of rules for auto-generating Meta tags: titles, descriptions etc.
- - Reworked auto-generation of Open Graph meta-tags.
- - Reworked auto-generation of Twitter-cards meta-tags.
- - Favorites plugin now works (with Zenphoto 1.6.3), therefore I’ve completely reworked Favorites page.
+ - All code was cleaned-up, W3.org-validated, checked for typos, stray tags and other inconsistencies.
+ - Options were all renamed according to naming rules for Zenphoto themes and plugins.
+ - Reworked all Options groupings and settings, to make it easier to set up your website and add new options.
+ - Reworked descriptions for Options.
+ - Cleaned up Contact Form, fixed errors/warnings
+ - Cleaned up Comment Form, fixed errors/warnings
+ - Fixed missing Page indicator for H1 Headers/Head Title tags
+ - Added options to display Custom Data for Images/Albums/News/Pages separately
+ - Added options to display Rating for News/Pages
+ - Added options to display Hitcounter for News/Pages
+ - Added option to display Download button for fullsize Images
+ - Added Links to more RSS feeds in Footer/Head [work in progress]
+ - Support for Related Items plugin:
+ - Options to control behaviour for Related Items in Images/Albums/News/Pages separately.
+ - Enabled support of Featured Images as thumbs for News and Pages for Related Items.
+ - Extended Featured Images plugin support:
+ - Option to display Featured Image on a Page
+ - Option to choose size of Featured Image displayed on Page or News Article separately (Full or Thumb)
+ - Support for User Login-Out and Register User plugins.
+ - Login and Register pages clean-up.
+ - Options to show User Menu in Footer and Sidebar separately.
+ - Added support for Default Codeblocks plugin [work in progress]
