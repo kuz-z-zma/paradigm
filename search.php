@@ -63,10 +63,10 @@ $c = 0;
 <h3><?php printPageURL(); ?></h3>
 <p class="excerpt"><?php if (getPageCustomData()!=''){ ?>
 <?php echo strip_tags(preg_replace( "/\r|\n/", "",(str_replace('<br>','. ',getPageCustomData())))); ?>
-<span class="readmorelink"><a href="<?php echo getPageURL(); ?>" title="<?php echo getNewsReadMore(); ?>"><?php echo getNewsReadMore(); ?></a></span> 
+<?php echo ' '; ?><span class="readmorelink"><a href="<?php echo getPageURL(); ?>" title="<?php echo getNewsReadMore(); ?>"><?php echo getNewsReadMore(); ?></a></span> 
 <?php } else { ?>
-<?php echo shortenContent(strip_tags(preg_replace( "/\r|\n/", "",(str_replace('</p>',' ',getPageContent())))),getOption('paradigm_homepage-blog-length'),'...'); ?>
-<span class="readmorelink"><a href="<?php echo getPageURL(); ?>" title="<?php echo getNewsReadMore(); ?>"><?php echo getNewsReadMore(); ?></a></span>
+<?php echo shortenContent(strip_tags(preg_replace( "/\r|\n/", "",(str_replace('</p>',' ',getPageContent())))),getOption('paradigm_homepage-blog-length'),'...'); ?> 
+<?php echo ' '; ?><span class="readmorelink"><a href="<?php echo getPageURL(); ?>" title="<?php echo getNewsReadMore(); ?>"><?php echo getNewsReadMore(); ?></a></span>
 <?php } ?>
 </p></li>
 <?php }	?>
@@ -88,10 +88,10 @@ $c = 0;
 <h3><?php printNewsURL(); ?></h3>
 <p class="excerpt"><?php if (getNewsCustomData()!='')	{ ?>
 <?php echo strip_tags(preg_replace( "/\r|\n/", "",(str_replace('<br>','. ',getNewsCustomData())))); ?>
-<span class="readmorelink"><a href="<?php echo getNewsURL(); ?>" title="<?php echo getNewsReadMore(); ?>"><?php echo getNewsReadMore(); ?></a></span>
+<?php echo ' '; ?><span class="readmorelink"><a href="<?php echo getNewsURL(); ?>" title="<?php echo getNewsReadMore(); ?>"><?php echo getNewsReadMore(); ?></a></span>
 <?php } else { ?>
 <?php echo shortenContent(strip_tags(preg_replace( "/\r|\n/", "",(str_replace('</p>',' ',getNewsContent())))),getOption('paradigm_homepage-blog-length'),'...'); ?>
-<span class="readmorelink"><a href="<?php echo getNewsURL(); ?>" title="<?php echo getNewsReadMore(); ?>"><?php echo getNewsReadMore(); ?></a></span><?php }	?>
+<?php echo ' '; ?><span class="readmorelink"><a href="<?php echo getNewsURL(); ?>" title="<?php echo getNewsReadMore(); ?>"><?php echo getNewsReadMore(); ?></a></span><?php }	?>
 </p></li>
 <?php } ?>
 </ul>
