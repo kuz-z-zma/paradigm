@@ -89,8 +89,8 @@ if ((($_zp_gallery_page == 'pages.php') && (is_Pages()) && getPageCustomData()!=
 <?php if ($_zp_gallery_page == 'image.php' && ($_zp_current_image->isPhoto())) {echo '<meta property="og:image" content="';echo (PROTOCOL."://".$_SERVER['HTTP_HOST']); echo (getFullImageURL()); echo '" />'; }
 elseif ($_zp_gallery_page == 'image.php' && !($_zp_current_image->isPhoto())) {echo '<meta property="og:image" content="';echo (PROTOCOL."://".$_SERVER['HTTP_HOST']); echo (getImageThumb()); echo '" />'; }
 elseif ($_zp_gallery_page == 'album.php') {echo '<meta property="og:image" content="'; echo (PROTOCOL."://".$_SERVER['HTTP_HOST']); echo getCustomAlbumThumb(Null, 800); echo '" />'; }
-elseif ($_zp_gallery_page == 'index.php' && (getOption('paradigm_logo') != '')) { echo '<meta property="og:image" content="'; echo (PROTOCOL."://".$_SERVER['HTTP_HOST']."/".UPLOAD_FOLDER."/"); echo (getOption('paradigm_logo')); echo '" />'; } 
-else {echo '<meta property="og:image" content="'; echo (PROTOCOL."://".$_SERVER['HTTP_HOST']."/".UPLOAD_FOLDER."/"); echo 'logo.png" />'; }	?>
+elseif ((($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'news.php')||($_zp_gallery_page == 'pages.php')) && (getOption('paradigm_logo-preview') != '')) { echo '<meta property="og:image" content="'; echo (PROTOCOL."://".$_SERVER['HTTP_HOST']."/".UPLOAD_FOLDER."/design/"); echo (getOption('paradigm_logo-preview')); echo '" />'; } 
+elseif ((($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'news.php')||($_zp_gallery_page == 'pages.php')) && (getOption('paradigm_logo') != '')) { echo '<meta property="og:image" content="'; echo (PROTOCOL."://".$_SERVER['HTTP_HOST']."/".UPLOAD_FOLDER."/design/"); echo (getOption('paradigm_logo')); echo '" />'; } ?>
 
 <!-- twitter cards -->
 
@@ -100,38 +100,39 @@ else {echo '<meta property="og:image" content="'; echo (PROTOCOL."://".$_SERVER[
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="<?php printImageTitle(); ?>" />
 <meta name="twitter:description" content="<?php echo getBareImageTitle(); ?> <?php echo getBareImageDesc(); ?>" />
-<?php	} ?>
+<?php } ?>
 <?php if (($_zp_gallery_page == 'image.php') && !($_zp_current_image->isPhoto())) { ?>
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="<?php printImageTitle(); ?>" />
 <meta name="twitter:description" content="<?php echo getBareImageDesc(); ?>" />
-<?php	} ?>
+<?php } ?>
 <?php if ($_zp_gallery_page == 'album.php') { ?>
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="<?php printAlbumTitle(); echo (' '); echo gettext('album');?>" />
 <meta name="twitter:description" content="<?php if (getAlbumCustomData()!='') { echo strip_tags(preg_replace( "/\r|\n/","",(str_replace('<br>','. ',getAlbumCustomData())))); } else {echo getBareAlbumDesc();} ?>" />
-<?php	} ?>
+<?php } ?>
 <?php if ((($_zp_gallery_page == 'news.php') && (is_NewsArticle()) )) { ?>
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="<?php echo getBareNewsTitle() ?>" />
 <meta name="twitter:description" content="<?php if (getNewsCustomData()!='') {echo strip_tags(preg_replace( "/\r|\n/","",(str_replace('<br>','. ',getNewsCustomData())))); } else {echo strip_tags(preg_replace( "/\r|\n/","",(str_replace('</p>',' ',getNewsContent(120)))));} ?>" />
-<?php	} ?>
+<?php } ?>
 <?php if ((($_zp_gallery_page == 'pages.php') && (is_Pages()) )) { ?>
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="<?php echo getBarePageTitle() ?>" />
 <?php if (getPageCustomData()!='') {echo '<meta name="twitter:description" content="'; echo strip_tags(preg_replace( "/\r|\n/","",(str_replace('<br>','. ',getPageCustomData())))); echo '" />'; } ?>
-<?php	} ?>
+<?php } ?>
 <?php if (($_zp_gallery_page == 'index.php')) { ?>
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="<?php echo gettext('Home') . ' | '; echo getParentSiteTitle(); ?>" />
 <meta name="twitter:description" content="<?php printBareGalleryDesc(); ?>" />
-<?php	} ?>
+<?php } ?>
+
 <meta name="twitter:url" content="<?php echo (PROTOCOL."://".$_SERVER['HTTP_HOST'].$_SERVER["REQUEST_URI"]); ?>" />
 <?php if ($_zp_gallery_page == 'image.php' && ($_zp_current_image->isPhoto())) {echo '<meta property="twitter:image" content="';echo (PROTOCOL."://".$_SERVER['HTTP_HOST']); echo (getFullImageURL()); echo '" />'; }
 elseif ($_zp_gallery_page == 'image.php' && !($_zp_current_image->isPhoto())) {echo '<meta property="twitter:image" content="';echo (PROTOCOL."://".$_SERVER['HTTP_HOST']); echo (getImageThumb()); echo '" />'; }
 elseif ($_zp_gallery_page == 'album.php') {echo '<meta property="twitter:image" content="'; echo (PROTOCOL."://".$_SERVER['HTTP_HOST']); echo getCustomAlbumThumb(Null, 800); echo '" />'; }
-elseif ($_zp_gallery_page == 'index.php' && (getOption('paradigm_logo') != '')) { echo '<meta property="twitter:image" content="'; echo (PROTOCOL."://".$_SERVER['HTTP_HOST']."/".UPLOAD_FOLDER."/"); echo (getOption('paradigm_logo')); echo '" />'; }
-else {echo '<meta property="twitter:image" content="'; echo (PROTOCOL."://".$_SERVER['HTTP_HOST']."/".UPLOAD_FOLDER."/"); echo 'logo.png" />'; } ?>
+elseif ((($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'news.php')||($_zp_gallery_page == 'pages.php')) && (getOption('paradigm_logo-preview') != '')) { echo '<meta property="twitter:image" content="'; echo (PROTOCOL."://".$_SERVER['HTTP_HOST']."/".UPLOAD_FOLDER."/design/"); echo (getOption('paradigm_logo-preview')); echo '" />'; } 
+elseif ((($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'news.php')||($_zp_gallery_page == 'pages.php')) && (getOption('paradigm_logo') != '')) { echo '<meta property="twitter:image" content="'; echo (PROTOCOL."://".$_SERVER['HTTP_HOST']."/".UPLOAD_FOLDER."/design/"); echo (getOption('paradigm_logo')); echo '" />'; } ?>
 
 
 <!-- css -->
@@ -140,7 +141,9 @@ else {echo '<meta property="twitter:image" content="'; echo (PROTOCOL."://".$_SE
 <link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/css/site.css" type="text/css" media="screen"/>
 <link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/css/icons.css" type="text/css" media="screen"/>
 <link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/css/slimbox2.css" type="text/css" media="screen"/>
-<link rel="stylesheet" href="<?php echo $_zp_themeroot; ?>/css/custom.css" type="text/css" media="screen"/>
+<?php if (getOption('paradigm_css-custom') != '') { ?>
+<link rel="stylesheet" href="<?php echo (PROTOCOL."://".$_SERVER['HTTP_HOST']."/".UPLOAD_FOLDER."/design/"); echo (getOption('paradigm_css-custom')); ?>.css" type="text/css" media="screen"/>
+<?php } ?>
 
 <!-- favicon -->
 

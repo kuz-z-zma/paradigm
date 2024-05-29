@@ -19,7 +19,7 @@
 
 <div class="logo-header">
 <?php if (getOption('paradigm_logo') != '') { ?>
-<a id="logo" href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php printGalleryTitle(); ?>"><img src="<?php echo pathurlencode(WEBPATH.'/'.UPLOAD_FOLDER.'/'.getOption('paradigm_logo')); ?>" alt="<?php printGalleryTitle(); ?>" /></a>
+<a id="logo" href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php printGalleryTitle(); ?>"><img src="<?php echo pathurlencode(WEBPATH.'/'.UPLOAD_FOLDER.'/design/'.getOption('paradigm_logo')); ?>" alt="<?php printGalleryTitle(); ?>" /></a>
 <?php } elseif (getGalleryTitle() != '') { ?>
 <h1 id="logo-text"><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php printGalleryTitle(); ?>"><?php printGalleryTitle(); ?></a></h1>
 <?php } else { ?>
