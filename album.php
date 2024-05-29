@@ -50,7 +50,7 @@ die();
 <!-- Tags -->
 <div id="tags" class="block">
 <h3><i class="glyphicon glyphicon-tag"></i>Tags</h3>
-<?php printTags_zb('links', '', 'taglist', ', ',getOption('paradigm_tags-nofollow')); ?>
+<?php printTags_pd('links', '', 'taglist', ', ',getOption('paradigm_tags-nofollow')); ?>
 </div>
 <?php } ?>
 
@@ -127,7 +127,7 @@ die();
 
 <?php if (function_exists('printRelatedItems') && getOption('paradigm_album-related-enable')) { ?>
 <div id="album-related" class="col-sm-12">
-<?php printRelatedItems_zb(getOption('paradigm_album-related-number'),getOption('paradigm_album-related-type'),NULL,getOption('paradigm_album-related-length'),getOption('paradigm_album-related-thumb'),getOption('paradigm_album-related-date')); ?>
+<?php printRelatedItems_pd(getOption('paradigm_album-related-number'),getOption('paradigm_album-related-type'),NULL,getOption('paradigm_album-related-length'),getOption('paradigm_album-related-thumb'),getOption('paradigm_album-related-date')); ?>
 </div>
 <?php	} ?>
 

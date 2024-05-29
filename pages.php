@@ -58,7 +58,7 @@ if (class_exists('Zenpage')) {
 <!-- Tags -->
 <div id="tags" class="block">
 <h3><i class="glyphicon glyphicon-tag"></i>Tags</h3>
-<?php printTags_zb('links', '', 'taglist', ', ',getOption('paradigm_tags-nofollow')); ?>
+<?php printTags_pd('links', '', 'taglist', ', ',getOption('paradigm_tags-nofollow')); ?>
 </div>
 <?php } ?>
 
@@ -96,7 +96,7 @@ if (class_exists('Zenpage')) {
 
 <?php if (function_exists('printRelatedItems') && getOption('paradigm_page-related-enable')) { ?>
 <div id="page-related" class="col-sm-12">
-<?php printRelatedItems_zb(getOption('paradigm_page-related-number'),getOption('paradigm_page-related-type'),NULL,getOption('paradigm_page-related-length'),getOption('paradigm_page-related-thumb'),getOption('paradigm_page-related-date')); ?>
+<?php printRelatedItems_pd(getOption('paradigm_page-related-number'),getOption('paradigm_page-related-type'),NULL,getOption('paradigm_page-related-length'),getOption('paradigm_page-related-thumb'),getOption('paradigm_page-related-date')); ?>
 </div>
 <?php	} ?>
 

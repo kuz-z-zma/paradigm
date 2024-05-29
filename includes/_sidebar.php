@@ -102,7 +102,7 @@
 <div class="panel panel-default">
 <div class="panel-heading"><h3 class="panel-title"><?php echo gettext('Popular Tags'); ?></h3></div>
 <div id="tag_cloud" class="panel-body">
-<?php printAllTagsAs_zb('cloud','taglist','', false, true, getOption('paradigm_tags-maxfontsize'), getOption('paradigm_tags-maxcount'), getOption('paradigm_tags-mincount'), null, getOption('paradigm_tags-minfontsize'), false, false, getOption('paradigm_tags-nofollow')); ?>
+<?php printAllTagsAs_pd('cloud','taglist','', false, true, getOption('paradigm_tags-maxfontsize'), getOption('paradigm_tags-maxcount'), getOption('paradigm_tags-mincount'), null, getOption('paradigm_tags-minfontsize'), false, false, getOption('paradigm_tags-nofollow')); ?>
 </div>
 </div>
 <?php } ?>

@@ -83,7 +83,7 @@ if (is_NewsArticle()) { ?>
 <!-- Tags -->
 <div id="tags" class="block">
 <h3><i class="glyphicon glyphicon-tag"></i>Tags</h3>
-<?php printTags_zb('links', '', 'taglist', ', ',getOption('paradigm_tags-nofollow')); ?>
+<?php printTags_pd('links', '', 'taglist', ', ',getOption('paradigm_tags-nofollow')); ?>
 </div>
 <?php } ?>
 
@@ -124,7 +124,7 @@ if (is_NewsArticle()) { ?>
 
 <?php if (function_exists('printRelatedItems') && getOption('paradigm_news-related-enable')) { ?>
 <div id="article-related" class="col-sm-12">
-<?php printRelatedItems_zb(getOption('paradigm_news-related-number'),getOption('paradigm_news-related-type'),NULL,getOption('paradigm_news-related-length'),getOption('paradigm_news-related-thumb'),getOption('paradigm_news-related-date')); ?>
+<?php printRelatedItems_pd(getOption('paradigm_news-related-number'),getOption('paradigm_news-related-type'),NULL,getOption('paradigm_news-related-length'),getOption('paradigm_news-related-thumb'),getOption('paradigm_news-related-date')); ?>
 </div>
 <?php } ?>
  
@@ -188,7 +188,7 @@ if (is_NewsArticle()) { ?>
 <?php echo ' | '; ?><?php printNewsCategories(',','Categories: ','list-inline news-info'); ?>
 
 <?php if (getTags()) { ?>
-<?php echo ' | '; ?><?php printTags_zb("links", "Tags: ", "list-inline news-info", ",", getOption('paradigm_tags-nofollow')); ?>
+<?php echo ' | '; ?><?php printTags_pd("links", "Tags: ", "list-inline news-info", ",", getOption('paradigm_tags-nofollow')); ?>
 <?php } ?>
 </div>
 
@@ -204,7 +204,7 @@ if (is_NewsArticle()) { ?>
 <?php endwhile; ?>
 
 <!-- pagination -->
-<?php printNewsPageListWithNav_zb(gettext('next »'), gettext('« prev'), true, 'pagelist', true); ?>
+<?php printNewsPageListWithNav_pd(gettext('next »'), gettext('« prev'), true, 'pagelist', true); ?>
 <?php } ?>
 
 </section>

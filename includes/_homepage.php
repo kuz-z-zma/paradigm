@@ -92,7 +92,7 @@ while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 <?php if (getOption('paradigm_homepage-image-uploads')) { ?>
 <h2><i class="glyphicon glyphicon-upload"></i><?php echo gettext("Latest uploads"); ?></h2>
 <?php if (function_exists('getImageStatistic')) { ?>
-<?php printImageStatistic_zb(getOption('paradigm_homepage-image-number'),"latest","",true,false,false,"",false,NULL,NULL,NULL,"", false); ?>
+<?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"latest","",true,false,false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
 <div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images.</div>
 <?php }	?>
@@ -101,7 +101,7 @@ while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 <?php if (getOption('paradigm_homepage-image-recent')) { ?>
 <h2><i class="glyphicon glyphicon-time"></i><?php echo gettext("Recent images"); ?></h2>
 <?php if (function_exists('getImageStatistic')) { ?>
-<?php printImageStatistic_zb(getOption('paradigm_homepage-image-number'),"latest-date","",true,false,false,"",false,NULL,NULL,NULL,"", false); ?>
+<?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"latest-date","",true,false,false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
 <div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images.</div>
 <?php }	?>
@@ -110,7 +110,7 @@ while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 <?php if (getOption('paradigm_homepage-image-popular')) { ?>
 <h2><i class="glyphicon glyphicon-fire"></i><?php echo gettext("Most popular"); ?></h2>
 <?php if (function_exists('getImageStatistic')) { ?>
-<?php printImageStatistic_zb(getOption('paradigm_homepage-image-number'),"popular","",true,false,false,"",false,NULL,NULL,NULL,"", false); ?>
+<?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"popular","",true,false,false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
 <div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images.</div>
 <?php }	?>
@@ -119,7 +119,7 @@ while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 <?php if (getOption('paradigm_homepage-image-rated')) { ?>
 <h2><i class="glyphicon glyphicon-star"></i><?php echo gettext("Top rated"); ?></h2>
 <?php if (function_exists('getImageStatistic')) { ?>
-<?php printImageStatistic_zb(getOption('paradigm_homepage-image-number'),"toprated","",true, false, false,"",false,NULL,NULL,NULL,"", false); ?>
+<?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"toprated","",true, false, false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
 <div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images.</div>
 <?php }	?>
@@ -128,7 +128,7 @@ while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 <?php if (getOption('paradigm_homepage-image-random')) { ?>
 <h2><i class="glyphicon glyphicon-random"></i><?php echo gettext("Random images"); ?></h2>					
 <?php if (function_exists('getImageStatistic')) { ?>
-<?php printImageStatistic_zb(getOption('paradigm_homepage-image-number'),"random","", true, false, false,"",false,NULL,NULL,NULL,"", false); ?>
+<?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"random","", true, false, false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
 <div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images.</div>
 <?php }	?>

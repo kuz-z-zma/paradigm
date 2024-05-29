@@ -76,7 +76,7 @@ if (!empty($fullimage)) { ?>
 <!-- Tags -->
 <?php if (getTags()) { ?>
 <div id="tags" class="block"><h3><i class="glyphicon glyphicon-tag"></i>Tags</h3>
-<?php printTags_zb('links', '', 'taglist', ', ',getOption('paradigm_tags-nofollow')); ?>
+<?php printTags_pd('links', '', 'taglist', ', ',getOption('paradigm_tags-nofollow')); ?>
 </div>
 <?php } ?>
 
@@ -95,7 +95,7 @@ if (!empty($fullimage)) { ?>
 <?php if (getImageMetaData()) { ?>
 <div id="image-metadata" class="block">
 <h3><i class="glyphicon glyphicon glyphicon-camera"></i>Metadata</h3>
-<?php printImageMetadata_zb(); ?>
+<?php printImageMetadata_pd(); ?>
 </div>
 <?php } ?>
 
@@ -192,7 +192,7 @@ if (!empty($fullimage)) { ?>
 
 <?php if (function_exists('printRelatedItems') && getOption('paradigm_image-related-enable')) { ?>
 <div id="image-related" class="row col-sm-12">
-<?php printRelatedItems_zb(getOption('paradigm_image-related-number'),getOption('paradigm_image-related-type'),NULL,getOption('paradigm_image-related-length'),getOption('paradigm_image-related-thumb'),getOption('paradigm_image-related-date')); ?>
+<?php printRelatedItems_pd(getOption('paradigm_image-related-number'),getOption('paradigm_image-related-type'),NULL,getOption('paradigm_image-related-length'),getOption('paradigm_image-related-thumb'),getOption('paradigm_image-related-date')); ?>
 </div>
 <?php	} ?>
 
