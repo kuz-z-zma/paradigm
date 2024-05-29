@@ -16,7 +16,7 @@ MAJOR WORK on Theme Options
 Paradigm now has more than 100 options, so it had to be done!
 You have to BACKUP all TEXT FIELDS and setup Paradigm from scratch!
 
-*MAJOR CODE CLEAN-UP**
+**MAJOR CODE CLEAN-UP**
  - Fixed Responsive Behaviour throughout for both Fluid and Fixed layout.
  - Added rules for Extra-Large screens (>1900px) for both Fluid and Fixed layout.
  - Reworked all H1-H2 Headers for clean outlines throughout.
