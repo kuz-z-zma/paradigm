@@ -2,8 +2,8 @@
 // force UTF-8 Ø
 
 if (!defined('WEBPATH'))
-die();
-if (function_exists('printContactForm')) {
+	die();
+if (extensionEnabled('contact_form')) {
 ?>
 <!DOCTYPE html>
 
@@ -20,7 +20,7 @@ if (function_exists('printContactForm')) {
 <section id="main" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-10 '; } ?>col-lg-9 col-md-9 col-sm-9 col-xs-12" itemprop="mainContentOfPage">
 <h1><i class="glyphicon glyphicon-envelope"></i>Contact</h1>
 
-<?php	printContactForm();	?>
+<?php contactForm::printContactForm(); ?>
 
 </section>
 
