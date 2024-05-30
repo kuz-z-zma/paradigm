@@ -141,10 +141,11 @@ if (is_NewsArticle()) { ?>
 <?php } else { ?>
 <?php echo gettext('News category:');} ?> <?php printCurrentNewsCategory(); printCurrentPageAppendix(' (Page ',')'); ?></h1>
 
-<div id="news-category-caption" class="content">
-
-<?php if (function_exists('printFeaturedImageThumb')) { printFeaturedImageThumb(null,'feat-image',null,null,null); } ?>
-
+<div id="news-category-caption" class="content">	
+<?php if (function_exists('printFeaturedImageThumb')){ ?>
+<?php if (getOption('paradigm_news-feat-image-size-cat') == 'thumb_size') { printFeaturedImageThumb(null,'feat-image',null,null,null); } ?>
+<?php if (getOption('paradigm_news-feat-image-size-cat') == 'image_size') { printSizedFeaturedImage(null,null,getOption('image_size'),null,null,null,null,null,null,'zenpage_fullimage',null,true,null); } ?>
+<?php } ?>
 <?php printNewsCategoryDesc(); ?>
 </div>
 

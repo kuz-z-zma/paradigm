@@ -62,6 +62,7 @@ class ThemeOptions {
 		setThemeOptionDefault('paradigm_image-related-type','images');
 		setThemeOptionDefault('paradigm_image-related-length','');
 		setThemeOptionDefault('paradigm_news-feat-image-size', 'thumb_size');
+		setThemeOptionDefault('paradigm_news-feat-image-size-cat', 'thumb_size');
 		setThemeOptionDefault('paradigm_news-related-enable',true);
 		setThemeOptionDefault('paradigm_news-related-thumb',true);
 		setThemeOptionDefault('paradigm_news-related-date',true);
@@ -409,8 +410,14 @@ class ThemeOptions {
 					gettext('Thumb size image') => 'thumb_size',
 					gettext('Default size image') => 'image_size'),
 						'desc' => gettext('What size of Featured Image to display on a single News Article page (if set).<br>Default is Thumb Size.')),
-			gettext('News Article Extra features') => array('key' => 'paradigm_news_options', 'type' => OPTION_TYPE_CHECKBOX_UL,
+			gettext('Size of Featured Image in News Category') => array('key' => 'paradigm_news-feat-image-size-cat', 'type' => OPTION_TYPE_SELECTOR,
 				'order' => 163,
+				'selections' => array(
+					gettext('Thumb size image') => 'thumb_size',
+					gettext('Default size image') => 'image_size'),
+						'desc' => gettext('What size of Featured Image to display on a single News Category page (if set).<br>Default is Thumb Size.')),
+			gettext('News Article Extra features') => array('key' => 'paradigm_news_options', 'type' => OPTION_TYPE_CHECKBOX_UL,
+				'order' => 164,
 				'checkboxes' => array(
 					gettext('Custom data') => 'paradigm_news-custom',
 					gettext('Rating') => 'paradigm_news-rating',
