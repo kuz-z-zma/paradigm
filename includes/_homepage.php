@@ -31,7 +31,7 @@ echo '</div>';
 <div class="container<?php if (getOption('paradigm_full-width')) {echo '-fluid'; } ?>">
 
 <?php if ((getOption('paradigm_logo') != '')||(getOption('paradigm_tagline') == 'homepage')||(getOption('paradigm_homepage-message') != '')) { ?>
-<div class="home-extended-message col-sm-12">
+<div id="extended-message-homepage" class="col-sm-12">
 <?php if (getOption('paradigm_logo') != '') { ?>
 <h1><?php printGalleryTitle(); ?></h1> 
 <?php } ?>
@@ -47,7 +47,7 @@ echo '</div>';
 <?php } ?>
 
 <?php if (class_exists('Zenpage') && getNumNews(true) && (getOption('paradigm_homepage-blog'))) { ?>
-<div class="col-sm-12">
+<div id="news-homepage" class="col-sm-12">
 <h2 class="homepage-blog-heading"><i class="glyphicon glyphicon-pencil"></i><?php if (getOption('paradigm_nav_text-news')!='') {echo getOption('paradigm_nav_text-news');} else { echo gettext('News'); } ?></h2>
 
 <div id="blog-style-homepage">

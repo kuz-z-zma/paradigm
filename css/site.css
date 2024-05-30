@@ -70,6 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #albums-homepage, #images-homepage {}
 
+#news-homepage {}
 #albums-homepage {}
 #images-homepage {}
 
@@ -344,7 +345,7 @@ div.pagelist {
 
 #paradigm-carousel {}
 
-.home-extended-message {
+#extended-message-homepage {
 	margin:30px 15px;
 	font-size:110%;
 	line-height:1.3em;
