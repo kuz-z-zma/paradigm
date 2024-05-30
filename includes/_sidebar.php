@@ -96,7 +96,15 @@
 <?php printcodeblock (2, $_zp_gallery);	?>
 <?php		} ?>
 
-
+<?php if (getOption('paradigm_sidebar-flickr')) { ?>
+<div class="panel panel-default">
+<div class="panel-heading"><h3 class="panel-title">Flickr</h3></div>
+<div class="panel-body">
+	<?php flickrFeed::printFeed(6,'flickrfeed'); ?>
+</div>
+</div>
+<?php } ?>
+	
 <?php if (getAllTagsCount() && getOption('paradigm_sidebar-tags')) { ?>
 <!-- Tag cloud in Sidebar-->
 <div class="panel panel-default">

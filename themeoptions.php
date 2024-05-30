@@ -575,7 +575,9 @@ class ThemeOptions {
 			gettext('Tags in sidebar') => array('key' => 'paradigm_sidebar-tags', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 209,
 				'desc' => gettext('Display Popular Tags in Sidebar.')),
-
+			gettext('FlickrFeed in sidebar') => array('key' => 'paradigm_sidebar-flickr', 'type' => OPTION_TYPE_CHECKBOX,
+				'order' => 210,
+				'desc' => gettext('Display Flickr Feed Items in Sidebar (Needs FlickrFeed plugin installed, enabled & User ID provided).')),
 /*================ Set of OPTIONS for the site Copyright Info ================*/
 
 			array('key' => 'paradigm_copyright_options', 'type' => OPTION_TYPE_NOTE, 

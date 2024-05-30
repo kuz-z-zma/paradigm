@@ -522,9 +522,27 @@ h2.sidebar-header {
 }
 
 .panel img {
-	  vertical-align: baseline; 
+	vertical-align: baseline; 
 }
 
+.flickrfeed {
+	padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+.flickrfeed li {
+	margin: auto;
+}
+.flickrfeed img {
+	width:75px;
+	height:75px;
+}
 
 /* ========== Articles ========== */
 
