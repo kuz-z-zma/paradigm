@@ -21,9 +21,9 @@ if (class_exists('Zenpage')) {
 <h1 itemprop="name"><?php printPageTitle(); ?></h1>
 
 <div id="page-content" class="content" itemprop="text">
-<?php if (function_exists('printSizedFeaturedImage') && getOption('paradigm_page-feat-image')) { $hasFeaturedImage = getFeaturedImage(); ?>
-<?php if ($hasFeaturedImage && (getOption('paradigm_page-feat-image-size') == 'thumb_size')) { printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'feat-image',null,true,null); } ?>
-<?php if ($hasFeaturedImage && (getOption('paradigm_page-feat-image-size') == 'image_size')) { printSizedFeaturedImage(null,null,getOption('image_size'),null,null,null,null,null,null,'zenpage_fullimage',null,true,null); } ?>
+<?php if (function_exists('printFeaturedImageThumb') && getOption('paradigm_page-feat-image')) { ?>
+<?php if (getOption('paradigm_page-feat-image-size') == 'thumb_size') { printFeaturedImageThumb(null,'feat-image',null,null,null); } ?>
+<?php if (getOption('paradigm_page-feat-image-size') == 'image_size') { printSizedFeaturedImage(null,null,getOption('image_size'),null,null,null,null,null,null,'zenpage_fullimage',null,true,null); } ?>
 <?php } ?>
 
 <?php printPageContent(); ?>

@@ -32,9 +32,9 @@ if (is_NewsArticle()) { ?>
 </div>
 
 <div id="article-content" class="content" itemprop="articleBody">
-<?php if (function_exists('printSizedFeaturedImage') && getOption('paradigm_news-feat-image')) { $hasFeaturedImage = getFeaturedImage(); ?>
-<?php if ($hasFeaturedImage && (getOption('paradigm_news-feat-image-size') == 'thumb_size')) { printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'feat-image',null,true,null);} ?>
-<?php if ($hasFeaturedImage && (getOption('paradigm_news-feat-image-size') == 'image_size')) { printSizedFeaturedImage(null,null,getOption('image_size'),null,null,null,null,null,null,'zenpage_fullimage',null,true,null);} ?>
+<?php if (function_exists('printFeaturedImageThumb') && getOption('paradigm_news-feat-image')) { ?>
+<?php if (getOption('paradigm_news-feat-image-size') == 'thumb_size') { printFeaturedImageThumb(null,'feat-image',null,null,null); } ?>
+<?php if (getOption('paradigm_news-feat-image-size') == 'image_size') { printSizedFeaturedImage(null,null,getOption('image_size'),null,null,null,null,null,null,'zenpage_fullimage',null,true,null); } ?>
 <?php } ?>
 
 <?php printNewsContent(); ?>
@@ -143,9 +143,7 @@ if (is_NewsArticle()) { ?>
 
 <div id="news-category-caption" class="content">
 
-<?php if (function_exists('printSizedFeaturedImage')) { $hasFeaturedImage = getFeaturedImage(); ?>
-<?php if ($hasFeaturedImage) { printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'feat-image',null,true,null);} ?>
-<?php } ?>
+<?php if (function_exists('printFeaturedImageThumb')) { printFeaturedImageThumb(null,'feat-image',null,null,null); } ?>
 
 <?php printNewsCategoryDesc(); ?>
 </div>
@@ -193,9 +191,7 @@ if (is_NewsArticle()) { ?>
 </div>
 
 <div class="excerpt">
-<?php if (function_exists('printSizedFeaturedImage')) { $hasFeaturedImage = getFeaturedImage(); ?>
-<?php if ($hasFeaturedImage) { printSizedFeaturedImage(null,null,getOption('thumb_size'),null,null,null,null,null,null,'feat-image',null,true,null); } ?>
-<?php } ?>
+<?php if (function_exists('printFeaturedImageThumb')) { printFeaturedImageThumb(null,'feat-image',null,null,null); } ?>
 <?php printNewsContent(); ?>
 </div>
 

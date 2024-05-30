@@ -56,8 +56,9 @@ $cnt=0;
 while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 <div class="homepage-news-item col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12">
 <h3><?php printNewsURL(); ?></h3>
-<?php if (function_exists('getFeaturedImage')) $hasfeaturedimage = getFeaturedImage($_zp_current_zenpage_news); ?>
-<?php if($hasfeaturedimage) {echo '<a href="' . getNewsURL() . '"><img src="' . pathurlencode($hasfeaturedimage->getThumb()) . '" alt="' . html_encode($hasfeaturedimage->getTitle()) . '" class="feat-image-home"></a>'; } ?>
+<?php if (function_exists('printFeaturedImageThumb')) { $hasfeaturedimage = getFeaturedImage($_zp_current_zenpage_news); ?>
+<?php if($hasfeaturedimage) { echo '<a href="' . getNewsURL() . '" title="' . getNewsTitle() . '">'; printFeaturedImageThumb(null,'feat-image-home',null,null,$_zp_current_zenpage_news); echo '</a>'; } ?>
+<?php } ?>
 
 <?php if (getNewsCustomData()!='') { ?>
 <div class="excerpt"><?php printNewsCustomData(); ?></div>
