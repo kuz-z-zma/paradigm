@@ -159,17 +159,19 @@ class ThemeOptions {
 /*========================================================================*/
 
 			gettext('Show Dropdown menus in Top Navigation') => array('key' => 'paradigm_nav_menu', 'type' => OPTION_TYPE_CHECKBOX_ARRAY,
-				'order' => 41,
+				'order' => 42,
 				'checkboxes' => array(
 					gettext('Albums') => 'paradigm_nav_menu-albums',
 					gettext('News Categories') => 'paradigm_nav_menu-news',
 					gettext('Pages') => 'paradigm_nav_menu-pages'),
 						'desc' => gettext('Choose what Dropdown menus to display in Main Menu.<br>Multi-choice.')),
-			gettext('Menu text for Gallery') => array('key' => 'paradigm_nav_text-gallery', 'type' => OPTION_TYPE_CLEARTEXT,
-				'order' => 42,
-				'desc' => gettext('Option to rename the title of main GALLERY page, to anything that suits your site, Albums for example.<br>Note this does not change the url from "page/gallery", it changes the title used in various places on website only.<br>If EMPTY - Default is used (Gallery).')),
-			gettext('Menu text for News') => array('key' => 'paradigm_nav_text-news', 'type' => OPTION_TYPE_CLEARTEXT,
+			gettext('Menu text for Gallery') => array('key' => 'paradigm_nav_text-gallery', 'type' => OPTION_TYPE_TEXTBOX,
 				'order' => 43,
+				'multilingual' => 0,
+				'desc' => gettext('Option to rename the title of main GALLERY page, to anything that suits your site, Albums for example.<br>Note this does not change the url from "page/gallery", it changes the title used in various places on website only.<br>If EMPTY - Default is used (Gallery).')),
+			gettext('Menu text for News') => array('key' => 'paradigm_nav_text-news', 'type' => OPTION_TYPE_TEXTBOX,
+				'order' => 44,
+				'multilingual' => 0,
 				'desc' => gettext('Option to rename the title of main NEWS page, to anything that suits your site, Blog for example.<br>Note this does not change the url from "news", it changes the title used in various places on website only.<br>If EMPTY - Default is used (News).')),
 
 /*================ Set of OPTIONS for the site HOMEPAGE ================*/
@@ -566,8 +568,9 @@ class ThemeOptions {
 					gettext('Depth of 4') => '4',
 					gettext('All levels') => 'true'),
 				'desc' => gettext('Select how many levels of nested lists of Pages menu to display in Sidebar in Pages, News, Gallery and Archives.<br>Default is "Depth of 2".')),
-			gettext('Sidebar menu header for Pages') => array('key' => 'paradigm_nav_text-pages', 'type' => OPTION_TYPE_CLEARTEXT,
+			gettext('Sidebar menu header for Pages') => array('key' => 'paradigm_nav_text-pages', 'type' => OPTION_TYPE_TEXTBOX,
 				'order' => 207,
+				'multilingual' => 0,
 				'desc' => gettext('Option to rename the title of Pages menu header in the Sidebar to anything that suits your site.<br>If EMPTY - Default is used (Pages).')),
 			gettext('User menu in sidebar') => array('key' => 'paradigm_sidebar-user-menu', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 208,
