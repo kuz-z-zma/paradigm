@@ -41,7 +41,7 @@
 		<div class="form-group">
 			<label for="website" class="col-sm-3 control-label"><?php printf(gettext("Website%s"), getCommentFormRequiredFieldMark('comment_web_required')); ?></label>
 		<div class="col-sm-9">
-			<input<?php printCommentFormFieldAttributes('comment_web_required', $disabled['website']); ?> type="url" id="website" name="website"<?php printCommentformAutocompleteAttr('url'); ?>size="22" value="<?php echo html_encode($stored['website']); ?>" class="form-control" />
+			<input<?php printCommentFormFieldAttributes('comment_web_required', $disabled['website']); ?> type="url" id="website" name="website"<?php printCommentformAutocompleteAttr('url'); ?> size="22" value="<?php echo html_encode($stored['website']); ?>" class="form-control" />
 		</div>
 		</div>
 	<?php } ?>
