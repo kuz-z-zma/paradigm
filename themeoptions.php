@@ -325,7 +325,7 @@ class ThemeOptions {
 				'desc' => gettext('What content to show among Related Items on Album pages.<br>Default is Albums.')),
 			gettext('Content description for Album Related Items (Length+Enable)') => array('key' => 'paradigm_album-related-length', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 129,
-				'desc' => gettext('Select length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
+				'desc' => gettext('Specify length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
 
 /*================ Set of OPTIONS for the site IMAGE PAGES ================*/
 
@@ -377,7 +377,7 @@ class ThemeOptions {
 				'desc' => gettext('What content to show among Related Items on Image pages.<br>Default is Images.')),
 			gettext('Content description for Image Related Items (Length+Enable)') => array('key' => 'paradigm_image-related-length', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 149,
-				'desc' => gettext('Select length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
+				'desc' => gettext('Specify length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
 
 /*================ Set of OPTIONS for the site ARCHIVE ================*/
 
@@ -454,7 +454,7 @@ class ThemeOptions {
 				'desc' => gettext('What content to show among Related Items in Pages.<br>Default is News.')),
 			gettext('Content description in for News Related Items (Length+Enable)') => array('key' => 'paradigm_news-related-length', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 179,
-				'desc' => gettext('Select length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
+				'desc' => gettext('Specify length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
 
 /*================ Set of OPTIONS for the site PAGES ================*/
 
@@ -508,7 +508,7 @@ class ThemeOptions {
 				'desc' => gettext('What content to show among Related Items in Pages.<br>Default is All.')),
 			gettext('Content description for Pages Related Items (Length+Enable)') => array('key' => 'paradigm_page-related-length', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 199, 
-				'desc' => gettext('Select length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
+				'desc' => gettext('Specify length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
 
 /*================ Set of OPTIONS for the site SIDEBAR ================*/
 
