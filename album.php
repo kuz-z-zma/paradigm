@@ -67,9 +67,8 @@ die();
 <?php echo getOption('paradigm_copyright_message'); ?>
 </div>
 <?php } else { ?>
-<?php (getImageData('copyright')!='') ?>
 <div id="copyright" class="image-copy block"><h3><i class="glyphicon glyphicon-copyright-mark"></i>Copyright</h3>
-<p itemprop="copyrightHolder"><?php echo get_language_string(getImageData('copyright')); ?></p>
+<p itemprop="copyrightHolder"><?php printCopyrightNotice ('','',false,'gallery'); ?></p>
 </div>
 <?php } ?>
 

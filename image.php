@@ -12,9 +12,9 @@ die();
 
 <div id="background-main" class="background">
 <div class="container<?php if (getOption('paradigm_full-width')) {echo '-fluid'; } ?>">
-  
+
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_breadcrumbs.php'); ?>
-  
+
 <div id="center" class="row" itemscope itemtype="https://schema.org/WebPage">
 <section id="main" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-10 '; } ?>col-lg-9 col-md-9 col-sm-9 col-xs-12" itemscope itemtype="https://schema.org/ImageObject">
 
@@ -31,7 +31,7 @@ die();
 
 <?php if ((getImageDesc() != '') && (getOption('paradigm_image-caption') == 'above')) { ?>
 <div id="image-caption" class="content" itemprop="caption">
-<?php	printImageDesc(); ?>
+<?php printImageDesc(); ?>
 </div>
 <?php } ?>
 
@@ -43,7 +43,7 @@ $fullimage = getFullImageURL(); } else { $fullimage = NULL; }
 if (!empty($fullimage)) { ?>
 <?php } ?>
 <?php if ($_zp_current_image->isPhoto()) {
-echo '<img src="'. getFullImageURL() . '" alt="'. getImageTitle() . '" class="full-image"/>';
+echo '<img src="'. getFullImageURL() . '" alt="'. getImageTitle() . '" class="full-image">';
 } else { printDefaultSizedImage(getImageTitle()); }
 if (!empty($fullimage)) { ?>
 <?php } ?>
@@ -58,7 +58,7 @@ if (!empty($fullimage)) { ?>
 
 <div id="image-info" class="col-sm-12">
 <h2><i class="glyphicon glyphicon-info-sign"></i>Image Info</h2>
-<?php if ((getImageCustomData()!='') && getOption('paradigm_image-custom'))  { ?>
+<?php if ((getImageCustomData()!='') && getOption('paradigm_image-custom')) { ?>
 <!-- Custom data -->
 <?php printImageCustomData(); ?>
 <?php } ?>
@@ -72,7 +72,7 @@ if (!empty($fullimage)) { ?>
 </div>
 
 <div class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-3 col-lg-4 '; } ?>col-sm-6">
-  
+
 <!-- Tags -->
 <?php if (getTags()) { ?>
 <div id="tags" class="block"><h3><i class="glyphicon glyphicon-tag"></i>Tags</h3>
@@ -88,7 +88,7 @@ if (!empty($fullimage)) { ?>
 <?php } else { ?>
 <?php (getImageData('copyright')!='') ?> 
 <div id="copyright" class="image-copy block"><h3><i class="glyphicon glyphicon-copyright-mark"></i>Copyright</h3>
-<p itemprop="copyrightHolder"><?php echo get_language_string(getImageData('copyright')); ?></p>
+<p itemprop="copyrightHolder"><?php echo (getImageData('copyright')); ?></p>
 </div>
 <?php } ?>	
 
@@ -103,7 +103,7 @@ if (!empty($fullimage)) { ?>
 
 <div class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-3 col-lg-4 '; } ?>col-sm-6">
 
-<?php if (function_exists('getHitCounter'))  { ?>
+<?php if (function_exists('getHitCounter')) { ?>
 <!-- Hitcounter -->
 <div id="hitcounter" class="block"><h3><i class="glyphicon glyphicon-eye-open"></i>Other info</h3>
 <p><strong>Views:</strong> <?php echo gethitcounter(); ?> views</p>
@@ -173,11 +173,11 @@ if (!empty($fullimage)) { ?>
 <?php } ?>
 
 
-<?php if (function_exists('printGoogleMap') && (getImageData('EXIFGPSLatitude')!=''))  { ?>
+<?php if (function_exists('printGoogleMap') && (getImageData('EXIFGPSLatitude')!='')) { ?>
 <?php printGoogleMap("","","show"); ?>
 <?php } ?>
 
-<?php if (function_exists('printOpenStreetMap') && (getImageData('EXIFGPSLatitude')!=''))  { ?>
+<?php if (function_exists('printOpenStreetMap') && (getImageData('EXIFGPSLatitude')!='')) { ?>
 <?php openStreetMap::printOpenStreetMap(); ?>			
 <?php } ?>
 </div>
