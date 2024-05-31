@@ -537,11 +537,11 @@ h2.sidebar-header {
     flex-direction: row;
 }
 .flickrfeed li {
-	margin: auto;
+	margin: 2px;
 }
 .flickrfeed img {
-	width:75px;
-	height:75px;
+	width:70px;
+	height:70px;
 }
 
 /* ========== Articles ========== */
@@ -564,9 +564,16 @@ hr {
 .content {
 	display: inline-block;
 	width: 100%;
-	margin:20px auto;
-	padding-bottom: 5px;
+	margin:20px auto 10px;
+	padding-bottom: 15px;
 	border-bottom: 1px dashed #ccc;
+}
+
+.image-caption {
+	display: inline-block;
+	width: 100%;
+	margin:20px auto 10px;
+	padding-bottom: 15px;
 }
 
 .readmorelink {
