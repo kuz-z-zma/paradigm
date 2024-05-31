@@ -159,19 +159,17 @@ class ThemeOptions {
 /*========================================================================*/
 
 			gettext('Show Dropdown menus in Top Navigation') => array('key' => 'paradigm_nav_menu', 'type' => OPTION_TYPE_CHECKBOX_ARRAY,
-				'order' => 42,
+				'order' => 41,
 				'checkboxes' => array(
 					gettext('Albums') => 'paradigm_nav_menu-albums',
 					gettext('News Categories') => 'paradigm_nav_menu-news',
 					gettext('Pages') => 'paradigm_nav_menu-pages'),
 						'desc' => gettext('Choose what Dropdown menus to display in Main Menu.<br>Multi-choice.')),
-			gettext('Menu text for Gallery') => array('key' => 'paradigm_nav_text-gallery', 'type' => OPTION_TYPE_TEXTBOX,
-				'order' => 43,
-				'multilingual' => 1,
+			gettext('Menu text for Gallery') => array('key' => 'paradigm_nav_text-gallery', 'type' => OPTION_TYPE_CLEARTEXT,
+				'order' => 42,
 				'desc' => gettext('Option to rename the title of main GALLERY page, to anything that suits your site, Albums for example.<br>Note this does not change the url from "page/gallery", it changes the title used in various places on website only.<br>If EMPTY - Default is used (Gallery).')),
-			gettext('Menu text for News') => array('key' => 'paradigm_nav_text-news', 'type' => OPTION_TYPE_TEXTBOX,
-				'order' => 44,
-				'multilingual' => 1,
+			gettext('Menu text for News') => array('key' => 'paradigm_nav_text-news', 'type' => OPTION_TYPE_CLEARTEXT,
+				'order' => 43,
 				'desc' => gettext('Option to rename the title of main NEWS page, to anything that suits your site, Blog for example.<br>Note this does not change the url from "news", it changes the title used in various places on website only.<br>If EMPTY - Default is used (News).')),
 
 /*================ Set of OPTIONS for the site HOMEPAGE ================*/
@@ -183,7 +181,7 @@ class ThemeOptions {
 
 			gettext('Homepage Message') => array('key' => 'paradigm_homepage-message','type' => OPTION_TYPE_TEXTAREA,
 				'texteditor' => 1,
-				'multilingual' => 1,
+				'multilingual' => 0,
 				'order' => 61,
 				'desc' => gettext('Extended message for your Homepage, different from Gallery Description.<br>HTML can be used.')),
 
@@ -568,9 +566,8 @@ class ThemeOptions {
 					gettext('Depth of 4') => '4',
 					gettext('All levels') => 'true'),
 				'desc' => gettext('Select how many levels of nested lists of Pages menu to display in Sidebar in Pages, News, Gallery and Archives.<br>Default is "Depth of 2".')),
-			gettext('Sidebar menu header for Pages') => array('key' => 'paradigm_nav_text-pages', 'type' => OPTION_TYPE_TEXTBOX,
+			gettext('Sidebar menu header for Pages') => array('key' => 'paradigm_nav_text-pages', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 207,
-				'multilingual' => 1,
 				'desc' => gettext('Option to rename the title of Pages menu header in the Sidebar to anything that suits your site.<br>If EMPTY - Default is used (Pages).')),
 			gettext('User menu in sidebar') => array('key' => 'paradigm_sidebar-user-menu', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 208,
@@ -590,7 +587,7 @@ class ThemeOptions {
 
 			gettext('Copyright Notice') => array( 'key' => 'paradigm_copyright_message', 'type' => OPTION_TYPE_TEXTAREA,
 				'texteditor' => 0,
-				'multilingual' => 1,
+				'multilingual' => 0,
 				'order' => 231,
 				'desc' => gettext('Extended copyright notice to display on Solo Image page and Credits page if enabled.<br>HTML can be used.<br>If Empty - "Image copyright rightsholder" from Options->Image is used instead.')),
 
