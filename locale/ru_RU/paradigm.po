@@ -1,0 +1,1553 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Paradigm v2.0\n"
+"POT-Creation-Date: 2024-06-01 21:42+0300\n"
+"PO-Revision-Date: 2024-06-01 22:55+0300\n"
+"Last-Translator: kuzzzma <kuzzzma@gmail.com>\n"
+"Language-Team: kuzzzma\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:20 includes/_head.php:22 includes/_head.php:66
+msgid "Object not found"
+msgstr "Объект не найден"
+
+#: album.php:29 album_story.php:64 favorites.php:31 gallery.php:24
+#: search.php:122
+msgid "prev"
+msgstr "назад"
+
+#: album.php:29 album_story.php:64 favorites.php:31 gallery.php:24
+#: search.php:122
+msgid "next"
+msgstr "далее"
+
+#: archive.php:26 includes/_footer.php:23 includes/_header.php:72
+#: themeoptions.php:526 themeoptions.php:543 themeoptions.php:560
+msgid "Archive"
+msgstr "Архив"
+
+#: archive.php:30
+msgid "News archive"
+msgstr "Архив новостей"
+
+#: archive.php:38
+msgid "Gallery archive"
+msgstr "Архив галереи"
+
+#: comment_form/comment_form.php:13 contact_form/form.php:22
+#, php-format
+msgid "Name%s"
+msgstr "Имя%s"
+
+#: comment_form/comment_form.php:22
+msgid "<em>anonymous</em>"
+msgstr "<em>анонимно</em>"
+
+#: comment_form/comment_form.php:32 contact_form/form.php:92
+#, php-format
+msgid "E-Mail%s"
+msgstr "E-Mail%s"
+
+#: comment_form/comment_form.php:42 contact_form/form.php:101
+#, php-format
+msgid "Website%s"
+msgstr "Веб-сайт%s"
+
+#: comment_form/comment_form.php:51 contact_form/form.php:47
+#, php-format
+msgid "Street%s"
+msgstr "Улица%s"
+
+#: comment_form/comment_form.php:58 contact_form/form.php:56
+#, php-format
+msgid "City%s"
+msgstr "Город%s"
+
+#: comment_form/comment_form.php:65 contact_form/form.php:65
+#, php-format
+msgid "State%s"
+msgstr "Область/Край/Регион/Штат%s"
+
+#: comment_form/comment_form.php:72 contact_form/form.php:74
+#, php-format
+msgid "Country%s"
+msgstr "Страна%s"
+
+#: comment_form/comment_form.php:79 contact_form/form.php:83
+#, php-format
+msgid "Postal code%s"
+msgstr "Индекс%s"
+
+#: comment_form/comment_form.php:87 contact_form/form.php:118
+msgid "Enter CAPTCHA<strong>*</strong>"
+msgstr "Введите CAPTCHA<strong>*</strong>"
+
+#: comment_form/comment_form.php:104
+msgid "Private comment (do not publish)"
+msgstr "Приватный комментарий<br>(не публиковать)"
+
+#: comment_form/comment_form.php:114
+msgid "Remember me"
+msgstr "Запомнить меня"
+
+#: comment_form/comment_form.php:129
+msgid "<strong>*</strong> Required fields"
+msgstr "<strong>*</strong>Обязательные поля"
+
+#: comment_form/comment_form.php:132
+msgid "Comment"
+msgstr "Комментарии"
+
+#: comment_form/comment_form.php:142
+msgid "Add Comment"
+msgstr "Добавить комментарий"
+
+#: contact_form/form.php:13
+#, php-format
+msgid "Title%s"
+msgstr "Обращение%s"
+
+#: contact_form/form.php:30
+msgid "Username:"
+msgstr "Имя пользователя:"
+
+#: contact_form/form.php:38
+#, php-format
+msgid "Company%s"
+msgstr "Компания%s"
+
+#: contact_form/form.php:110
+#, php-format
+msgid "Phone%s"
+msgstr "Телефон%s"
+
+#: contact_form/form.php:133
+msgid "Subject<strong>*</strong>"
+msgstr "Тема<strong>*</strong>"
+
+#: contact_form/form.php:140
+msgid "Message<strong>*</strong>"
+msgstr "Сообщение<strong>*</strong>"
+
+#: contact_form/form.php:163
+msgid "Send e-mail"
+msgstr "Отправить e-mail"
+
+#: contact_form/form.php:164
+msgid "Reset"
+msgstr "Сбросить"
+
+#: functions.php:161
+msgid "No popular tags"
+msgstr "Нет популярных тегов для отображения"
+
+#: functions.php:337
+msgid "Show more results"
+msgstr "Показать больше результатов"
+
+#: functions.php:338
+msgid "Show fewer results"
+msgstr "Показать меньше результатов"
+
+#: functions.php:520
+#, php-format
+msgid "Rating: %1$u (Votes: %2$u)"
+msgstr ""
+
+#: functions.php:529
+#, php-format
+msgid "Views: %u"
+msgstr "Просмотров: %u"
+
+#: functions.php:576 functions.php:702
+msgid "Page"
+msgstr "Страница"
+
+#: functions.php:582 functions.php:598
+#, php-format
+msgid "Page %u"
+msgid_plural "Page %u"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: functions.php:591
+#, php-format
+msgid "Page %1$u"
+msgid_plural "Page %1$u"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: functions.php:606
+#, php-format
+msgid "Page {%u}"
+msgid_plural "Page {%u}"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: functions.php:654
+msgid "Related albums"
+msgstr ""
+
+#: functions.php:655
+msgid "Related images"
+msgstr ""
+
+#: functions.php:656
+msgid "Related news"
+msgstr ""
+
+#: functions.php:657
+msgid "Related pages"
+msgstr ""
+
+#: functions.php:658
+msgid "Related"
+msgstr ""
+
+#: functions.php:680
+msgid "Album"
+msgstr "Альбом"
+
+#: functions.php:688
+msgid "Image"
+msgstr ""
+
+#: functions.php:695 includes/_footer.php:17 includes/_head.php:28
+#: includes/_head.php:30 includes/_head.php:32 includes/_header.php:55
+#: includes/_homepage.php:51 includes/_sidebar.php:54 news.php:171
+#: themeoptions.php:323 themeoptions.php:375 themeoptions.php:452
+#: themeoptions.php:506 themeoptions.php:524 themeoptions.php:541
+#: themeoptions.php:558
+msgid "News"
+msgstr "Новости"
+
+#: gallery.php:20 includes/_breadcrumbs.php:7 includes/_breadcrumbs.php:10
+#: includes/_breadcrumbs.php:13 includes/_head.php:65 includes/_homepage.php:78
+#: includes/_sidebar.php:38 includes/_sidebar.php:86 themeoptions.php:164
+#: themeoptions.php:265 themeoptions.php:322 themeoptions.php:374
+#: themeoptions.php:451 themeoptions.php:505
+msgid "Albums"
+msgstr "Альбомы"
+
+#: image.php:24
+msgid "Previous Image"
+msgstr ""
+
+#: image.php:24
+msgid "&laquo; prev"
+msgstr ""
+
+#: image.php:26
+msgid "Next Image"
+msgstr "Следующее изображение"
+
+#: image.php:26
+msgid "next &raquo;"
+msgstr "далее &raquo;"
+
+#: image.php:134
+msgid "Code"
+msgstr ""
+
+#: includes/_albumlist.php:6
+msgid "View album:"
+msgstr ""
+
+#: includes/_albumlist.php:9 includes/_albumlist.php:13
+#: includes/_albumlist.php:17
+msgid "View album: "
+msgstr ""
+
+#: includes/_albumlist.php:12 includes/_imagethumbs.php:23
+msgid "Remove"
+msgstr ""
+
+#: includes/_breadcrumbs.php:6 includes/_breadcrumbs.php:9
+#: includes/_breadcrumbs.php:12 includes/_breadcrumbs.php:15
+#: includes/_breadcrumbs.php:18 includes/_breadcrumbs.php:21
+#: includes/_breadcrumbs.php:24 includes/_breadcrumbs.php:27
+#: includes/_breadcrumbs.php:33 includes/_breadcrumbs.php:37
+#: includes/_breadcrumbs.php:40 includes/_breadcrumbs.php:43
+#: includes/_breadcrumbs.php:46 includes/_breadcrumbs.php:49
+#: includes/_breadcrumbs.php:52
+msgid "Index"
+msgstr ""
+
+#: includes/_breadcrumbs.php:16 includes/_head.php:23 includes/_head.php:67
+msgid "Archive View"
+msgstr ""
+
+#: includes/_breadcrumbs.php:19
+msgid "Not found"
+msgstr "Не найдено"
+
+#: includes/_breadcrumbs.php:22
+msgid "Contact us"
+msgstr ""
+
+#: includes/_breadcrumbs.php:38 includes/_footer.php:29 includes/_head.php:36
+msgid "Credits"
+msgstr ""
+
+#: includes/_breadcrumbs.php:41 includes/_footer.php:32 includes/_head.php:37
+msgid "Explore"
+msgstr ""
+
+#: includes/_breadcrumbs.php:44 includes/_footer.php:35 includes/_head.php:38
+msgid "Sitemap"
+msgstr ""
+
+#: includes/_breadcrumbs.php:47
+msgid "Login"
+msgstr ""
+
+#: includes/_breadcrumbs.php:50 register.php:23
+msgid "User Registration"
+msgstr ""
+
+#: includes/_footer.php:15 includes/_head.php:21 includes/_header.php:42
+#: themeoptions.php:523 themeoptions.php:540 themeoptions.php:557
+msgid "Gallery"
+msgstr ""
+
+#: includes/_footer.php:26 includes/_head.php:24 includes/_head.php:68
+#: includes/_header.php:77
+msgid "Contact"
+msgstr ""
+
+#: includes/_footer.php:45 includes/_head.php:35 includes/_head.php:76
+#: includes/_sidebar.php:16
+msgid "Register"
+msgstr ""
+
+#: includes/_head.php:25 includes/_head.php:69
+msgid "My favorites"
+msgstr ""
+
+#: includes/_head.php:34 includes/_head.php:75
+msgid "Password required"
+msgstr ""
+
+#: includes/_head.php:63 includes/_head.php:126
+msgid "Home"
+msgstr ""
+
+#: includes/_head.php:71 includes/_head.php:72 includes/_head.php:73
+msgid "Blog"
+msgstr "Блог"
+
+#: includes/_head.php:77 includes/_header.php:82
+msgid "Search"
+msgstr "Поиск"
+
+#: includes/_head.php:111
+msgid "album"
+msgstr "альбом"
+
+#: includes/_homepage.php:84
+msgid "All albums"
+msgstr ""
+
+#: includes/_homepage.php:94
+msgid "Latest uploads"
+msgstr ""
+
+#: includes/_homepage.php:103
+msgid "Recent images"
+msgstr ""
+
+#: includes/_homepage.php:112
+msgid "Most popular"
+msgstr ""
+
+#: includes/_homepage.php:121
+msgid "Top rated"
+msgstr ""
+
+#: includes/_homepage.php:130 themeoptions.php:270
+msgid "Random images"
+msgstr ""
+
+#: includes/_sidebar.php:70 themeoptions.php:166 themeoptions.php:324
+#: themeoptions.php:376 themeoptions.php:453 themeoptions.php:507
+#: themeoptions.php:525 themeoptions.php:542 themeoptions.php:559
+msgid "Pages"
+msgstr "Страницы"
+
+#: includes/_sidebar.php:111
+msgid "Popular Tags"
+msgstr "Популярные теги"
+
+#: news.php:140
+msgid " category:"
+msgstr " :"
+
+#: news.php:142
+msgid "News category:"
+msgstr "Новостная категория:"
+
+#: news.php:204
+msgid "next »"
+msgstr "далее »"
+
+#: news.php:204
+msgid "« prev"
+msgstr "« назад"
+
+#: password.php:22
+msgid "A password is required for the page you requested"
+msgstr ""
+
+#: password.php:27
+msgid "Register for this site"
+msgstr ""
+
+#: search.php:48
+#, php-format
+msgid "Results for"
+msgstr "Результаты поиска среди"
+
+#: search.php:59
+#, php-format
+msgid "Pages (%s)"
+msgstr ""
+
+#: search.php:84
+#, php-format
+msgid "Articles (%s)"
+msgstr ""
+
+#: search.php:104
+#, php-format
+msgid "Images (%s)"
+msgstr ""
+
+#: search.php:108
+#, php-format
+msgid "Albums (%s)"
+msgstr ""
+
+#: search.php:109
+#, php-format
+msgid "Albums (%1$s) &amp; Images (%2$s)"
+msgstr ""
+
+#: sitemap.php:25
+msgid "News categories"
+msgstr "Категории новостей"
+
+#: theme_description.php:10
+msgid ""
+"A responsive, Bootstrap-based, highly customizable Zenphoto theme (with more "
+"than 100 options), optimized for SEO and social sharing.<br>Latest version: "
+"<a href=\"https://www.blog.private-universe.net/web-and-tech/zenphoto-theme-"
+"paradigm/\" title=\"Paradigm theme by kuzzzma\" rel=\"nofollow\">Paradigm "
+"theme page</a>."
+msgstr ""
+
+#: themeoptions.php:120
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Site "
+"options</h2>"
+msgstr ""
+
+#: themeoptions.php:123
+msgid "Fluid layout"
+msgstr ""
+
+#: themeoptions.php:125
+msgid "Check to enable fluid full width layout."
+msgstr ""
+
+#: themeoptions.php:126
+msgid "Preview in Lightbox"
+msgstr ""
+
+#: themeoptions.php:128
+msgid "Use Lightbox preview for images throughoot the site ."
+msgstr ""
+
+#: themeoptions.php:129
+msgid "Custom CSS File"
+msgstr ""
+
+#: themeoptions.php:131
+#, php-format
+msgid ""
+"Select your custom CSS file (from CSS files in the <em>%s</em> folder)."
+"<br>If you use elFinder plugin for Uploads - it can upload files to this "
+"folder, alternatively you can use FTP to upload your CSS files and then "
+"select it here."
+msgstr ""
+
+#: themeoptions.php:137
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Site "
+"Header options</h2>"
+msgstr ""
+
+#: themeoptions.php:140
+msgid "Header logo"
+msgstr ""
+
+#: themeoptions.php:142
+#, php-format
+msgid ""
+"Select a Logo (from image files in the <em>%s</em> folder) or select to use "
+"a text H1 of your Gallery Title.<br>If you use elFinder plugin for Uploads - "
+"it can upload files to this folder, alternatively you can use FTP to upload "
+"your Logo file and then select it here.<br>Different sizes might need "
+"adjustments in CSS! (Use custom CSS file: see above option to select CSS "
+"file)."
+msgstr ""
+
+#: themeoptions.php:143
+msgid "Display Gallery Decription"
+msgstr ""
+
+#: themeoptions.php:146
+msgid "Do not display"
+msgstr "Не показывать"
+
+#: themeoptions.php:147
+msgid "Header"
+msgstr ""
+
+#: themeoptions.php:148
+msgid "Homepage"
+msgstr ""
+
+#: themeoptions.php:149
+msgid ""
+"Coose where to display Gallery Description (taken from Options->Gallery-"
+">Gallery description)."
+msgstr ""
+
+#: themeoptions.php:150
+msgid "Allow search"
+msgstr ""
+
+#: themeoptions.php:152
+msgid "Check to enable search form."
+msgstr ""
+
+#: themeoptions.php:158
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Main "
+"navigation options</h2>"
+msgstr ""
+
+#: themeoptions.php:161
+msgid "Show Dropdown menus in Top Navigation"
+msgstr ""
+
+#: themeoptions.php:165
+msgid "News Categories"
+msgstr ""
+
+#: themeoptions.php:167
+msgid "Choose what Dropdown menus to display in Main Menu.<br>Multi-choice."
+msgstr ""
+
+#: themeoptions.php:168
+msgid "Menu text for Gallery"
+msgstr ""
+
+#: themeoptions.php:171
+msgid ""
+"Option to rename the title of main GALLERY page, to anything that suits your "
+"site, Albums for example.<br>Note this does not change the url from \"page/"
+"gallery\", it changes the title used in various places on website only."
+"<br>If EMPTY - Default is used (Gallery)."
+msgstr ""
+
+#: themeoptions.php:172
+msgid "Menu text for News"
+msgstr ""
+
+#: themeoptions.php:175
+msgid ""
+"Option to rename the title of main NEWS page, to anything that suits your "
+"site, Blog for example.<br>Note this does not change the url from \"news\", "
+"it changes the title used in various places on website only.<br>If EMPTY - "
+"Default is used (News)."
+msgstr ""
+
+#: themeoptions.php:181
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Homepage "
+"options</h2>"
+msgstr ""
+
+#: themeoptions.php:184
+msgid "Homepage Message"
+msgstr ""
+
+#: themeoptions.php:188
+msgid ""
+"Extended message for your Homepage, different from Gallery Description."
+"<br>HTML can be used."
+msgstr ""
+
+#: themeoptions.php:195
+msgid "<h3 style=\"font-weight: bold;\">Homepage Slideshow options</h3><hr>"
+msgstr ""
+
+#: themeoptions.php:198
+msgid "Enable Homepage slideshow"
+msgstr ""
+
+#: themeoptions.php:200
+msgid "Check to include a slideshow on the Homepage."
+msgstr ""
+
+#: themeoptions.php:201
+msgid "Slideshow Type"
+msgstr ""
+
+#: themeoptions.php:204
+msgid "Random"
+msgstr ""
+
+#: themeoptions.php:205
+msgid "Popular"
+msgstr ""
+
+#: themeoptions.php:206
+msgid "Latest by ID"
+msgstr ""
+
+#: themeoptions.php:207
+msgid "Latest by Date"
+msgstr ""
+
+#: themeoptions.php:208
+msgid "Latest by mtime"
+msgstr ""
+
+#: themeoptions.php:209
+msgid "Latest by Publish Date"
+msgstr ""
+
+#: themeoptions.php:210
+msgid "Most Rated"
+msgstr ""
+
+#: themeoptions.php:211
+msgid "Top Rated"
+msgstr ""
+
+#: themeoptions.php:212
+msgid "Select how the pictures will be chosen for the Homepage slideshow."
+msgstr ""
+
+#: themeoptions.php:213
+msgid "Album to choose from"
+msgstr ""
+
+#: themeoptions.php:216
+msgid ""
+"Choose a specific album to display its pictures. Album needs to be "
+"published, Dynamic albums work too.<br>Images should be preferably in "
+"panoramic format (or you can adjust styling via custom CSS*).<br>\n"
+"            *custom CSS: see file paradigm/css/! rename-to-custom.css for "
+"instructions."
+msgstr ""
+
+#: themeoptions.php:218
+msgid "Number of slides"
+msgstr ""
+
+#: themeoptions.php:221
+msgid "3"
+msgstr "3"
+
+#: themeoptions.php:222 themeoptions.php:244 themeoptions.php:281
+msgid "4"
+msgstr "4"
+
+#: themeoptions.php:223
+msgid "5"
+msgstr "5"
+
+#: themeoptions.php:224 themeoptions.php:245
+msgid "6"
+msgstr "6"
+
+#: themeoptions.php:225
+msgid "7"
+msgstr "7"
+
+#: themeoptions.php:226 themeoptions.php:246 themeoptions.php:282
+msgid "8"
+msgstr "8"
+
+#: themeoptions.php:227
+msgid "9"
+msgstr "9"
+
+#: themeoptions.php:228 themeoptions.php:247
+msgid "10"
+msgstr "10"
+
+#: themeoptions.php:229
+msgid ""
+"Select how the pictures will be chosen for the Homepage slideshow."
+"<br>Default is 5"
+msgstr ""
+
+#: themeoptions.php:235
+msgid "<h3 style=\"font-weight: bold;\">Homepage Blog options</h3><hr>"
+msgstr ""
+
+#: themeoptions.php:237
+msgid "Enable Homepage blog"
+msgstr ""
+
+#: themeoptions.php:239
+msgid "Check to enable showing blog posts/news items on the Homepage."
+msgstr ""
+
+#: themeoptions.php:240
+msgid "Number of news items to show on Homepage"
+msgstr ""
+
+#: themeoptions.php:243
+msgid "2"
+msgstr "2"
+
+#: themeoptions.php:248 themeoptions.php:283
+msgid "12"
+msgstr "12"
+
+#: themeoptions.php:249
+msgid "14"
+msgstr "14"
+
+#: themeoptions.php:250
+msgid ""
+"Select how many news items will be shown on the Homepage.<br>Default is 4"
+msgstr ""
+
+#: themeoptions.php:251
+msgid "Number characters for Homepage news items to show"
+msgstr ""
+
+#: themeoptions.php:253
+msgid ""
+"Select default length for Homepage news items.<br>Default is 250 characters."
+msgstr ""
+
+#: themeoptions.php:259
+msgid "<h3 style=\"font-weight: bold;\">Homepage Content options</h3><hr>"
+msgstr ""
+
+#: themeoptions.php:262
+msgid "Homepage content"
+msgstr ""
+
+#: themeoptions.php:266
+msgid "Recently uploaded images"
+msgstr ""
+
+#: themeoptions.php:267
+msgid "Recently taken images"
+msgstr ""
+
+#: themeoptions.php:268
+msgid "Most popular images"
+msgstr ""
+
+#: themeoptions.php:269
+msgid "Top rated images"
+msgstr ""
+
+#: themeoptions.php:271
+msgid "Choose what to display on the homepage.<br>Multi-choice."
+msgstr ""
+
+#: themeoptions.php:272
+msgid "Descriptions for Homepage albums"
+msgstr ""
+
+#: themeoptions.php:274
+msgid ""
+"Select to show description for Homepage albums.<br>If Album Custom Data is "
+"present - it is shown in full, if it is not available, Album Description is "
+"used."
+msgstr ""
+
+#: themeoptions.php:275
+msgid "Length of Homepage albums descriptions"
+msgstr ""
+
+#: themeoptions.php:277
+msgid ""
+"Select default length for Homepage album descriptions.<br>Default is 250 "
+"characters."
+msgstr ""
+
+#: themeoptions.php:278
+msgid "Number of images"
+msgstr ""
+
+#: themeoptions.php:284
+msgid "16"
+msgstr "16"
+
+#: themeoptions.php:285
+msgid "20"
+msgstr "20"
+
+#: themeoptions.php:286
+msgid "24"
+msgstr "24"
+
+#: themeoptions.php:287
+msgid ""
+"Select how the pictures will be chosen for the Homepage display of images."
+"<br>Default is 8."
+msgstr ""
+
+#: themeoptions.php:293
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Album Page "
+"options</h2>"
+msgstr ""
+
+#: themeoptions.php:296
+msgid "Display Custom Data for Album"
+msgstr ""
+
+#: themeoptions.php:298
+msgid "Check to display info from Album Custom Data (if set)."
+msgstr ""
+
+#: themeoptions.php:304
+msgid "<h3 style=\"font-weight: bold;\">Related Items for Albums</h3><hr>"
+msgstr ""
+
+#: themeoptions.php:307
+msgid "Options for Related Items on Album pages"
+msgstr ""
+
+#: themeoptions.php:310 themeoptions.php:362 themeoptions.php:439
+#: themeoptions.php:493
+msgid "Show Related Items"
+msgstr ""
+
+#: themeoptions.php:311 themeoptions.php:363 themeoptions.php:440
+#: themeoptions.php:494
+msgid "Show Thumb"
+msgstr ""
+
+#: themeoptions.php:312 themeoptions.php:364 themeoptions.php:441
+#: themeoptions.php:495
+msgid "Show Date"
+msgstr ""
+
+#: themeoptions.php:313
+msgid ""
+"Related Items plugin must be enabled, for options to take effect. Multi-"
+"choice."
+msgstr ""
+
+#: themeoptions.php:314
+msgid "Number of Related Items to show on Album pages"
+msgstr ""
+
+#: themeoptions.php:316
+msgid "Number of Related Items to show on Album pages.<br>Default is 4."
+msgstr ""
+
+#: themeoptions.php:317
+msgid "Types of Related Items to show on Album pages"
+msgstr ""
+
+#: themeoptions.php:320 themeoptions.php:372 themeoptions.php:449
+#: themeoptions.php:503
+msgid "All"
+msgstr ""
+
+#: themeoptions.php:321 themeoptions.php:373 themeoptions.php:450
+#: themeoptions.php:504
+msgid "Images"
+msgstr ""
+
+#: themeoptions.php:325
+msgid ""
+"What content to show among Related Items on Album pages.<br>Default is "
+"Albums."
+msgstr ""
+
+#: themeoptions.php:326
+msgid "Content description for Album Related Items (Length+Enable)"
+msgstr ""
+
+#: themeoptions.php:328 themeoptions.php:380 themeoptions.php:457
+#: themeoptions.php:511
+msgid ""
+"Specify length of item description to ENABLE.<br>If EMPTY, they are disabled."
+msgstr ""
+
+#: themeoptions.php:335
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Image Page "
+"options</h2>"
+msgstr ""
+
+#: themeoptions.php:338
+msgid "Image caption display"
+msgstr ""
+
+#: themeoptions.php:341
+msgid "Above image"
+msgstr ""
+
+#: themeoptions.php:342
+msgid "Below image"
+msgstr ""
+
+#: themeoptions.php:343
+msgid ""
+"Display Image Caption data above Image on image pages.<br>Default is Below "
+"image."
+msgstr ""
+
+#: themeoptions.php:344
+msgid "Download Button"
+msgstr ""
+
+#: themeoptions.php:346
+msgid ""
+"Check to enable users ability to download original image from image details "
+"page.<br>If you want a save dialog, you will need to set the appropriate "
+"option in Options->Image as well (choose: protected, download)."
+msgstr ""
+
+#: themeoptions.php:347
+msgid "Display Custom Data for Image"
+msgstr ""
+
+#: themeoptions.php:349
+msgid "Check to display info from Image Custom Data (if set)."
+msgstr ""
+
+#: themeoptions.php:356
+msgid "<h3 style=\"font-weight: bold;\">Related Items for Images</h3><hr>"
+msgstr ""
+
+#: themeoptions.php:359
+msgid "Options for Related Items on Image pages"
+msgstr ""
+
+#: themeoptions.php:365 themeoptions.php:442 themeoptions.php:496
+msgid ""
+"Related Items plugin must be enabled, for options to take effect.<br>Multi-"
+"choice."
+msgstr ""
+
+#: themeoptions.php:366
+msgid "Number of Related Items to show on Image pages"
+msgstr ""
+
+#: themeoptions.php:368
+msgid "Number of Related Items to show on Image pages.<br>Default is 4."
+msgstr ""
+
+#: themeoptions.php:369
+msgid "Types of Related Items to show on Image pages"
+msgstr ""
+
+#: themeoptions.php:377
+msgid ""
+"What content to show among Related Items on Image pages.<br>Default is "
+"Images."
+msgstr ""
+
+#: themeoptions.php:378
+msgid "Content description for Image Related Items (Length+Enable)"
+msgstr ""
+
+#: themeoptions.php:386
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Archive "
+"options</h2>"
+msgstr ""
+
+#: themeoptions.php:389
+msgid "Display Archive in menu"
+msgstr ""
+
+#: themeoptions.php:392
+msgid "Main menu"
+msgstr ""
+
+#: themeoptions.php:393
+msgid "Footer"
+msgstr ""
+
+#: themeoptions.php:394
+msgid "Display where links to Archive will be displayed.<br>Multi-choice."
+msgstr ""
+
+#: themeoptions.php:395
+msgid "Sidebar in archive"
+msgstr ""
+
+#: themeoptions.php:397
+msgid "Display Sidebar on Archive page."
+msgstr ""
+
+#: themeoptions.php:403
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">News "
+"options</h2>"
+msgstr ""
+
+#: themeoptions.php:406
+msgid "Featured Image in News article"
+msgstr ""
+
+#: themeoptions.php:408
+msgid "Display Featured Image on a News Article page (if set)."
+msgstr ""
+
+#: themeoptions.php:409
+msgid "Size of Featured Image in News article"
+msgstr ""
+
+#: themeoptions.php:412 themeoptions.php:418 themeoptions.php:472
+msgid "Thumb size image"
+msgstr ""
+
+#: themeoptions.php:413 themeoptions.php:419 themeoptions.php:473
+msgid "Default size image"
+msgstr ""
+
+#: themeoptions.php:414
+msgid ""
+"What size of Featured Image to display on a single News Article page (if "
+"set).<br>Default is Thumb Size."
+msgstr ""
+
+#: themeoptions.php:415
+msgid "Size of Featured Image in News Category"
+msgstr ""
+
+#: themeoptions.php:420
+msgid ""
+"What size of Featured Image to display on a single News Category page (if "
+"set).<br>Default is Thumb Size."
+msgstr ""
+
+#: themeoptions.php:421
+msgid "News Article Extra features"
+msgstr ""
+
+#: themeoptions.php:424 themeoptions.php:478
+msgid "Custom data"
+msgstr ""
+
+#: themeoptions.php:425 themeoptions.php:479
+msgid "Rating"
+msgstr ""
+
+#: themeoptions.php:426 themeoptions.php:480
+msgid "Hitcounter"
+msgstr ""
+
+#: themeoptions.php:427
+msgid ""
+"<p>Choose what extra features to display for a single News Article. Multi-"
+"choice.<br>Custom data setting works for both News single article and News "
+"Categories (if it exists).<br>Rating and Hitcounter plugins must be enabled, "
+"otherwise those features are disabled.</p>"
+msgstr ""
+
+#: themeoptions.php:433
+msgid "<h3 style=\"font-weight: bold;\">Related Items for News</h3><hr>"
+msgstr ""
+
+#: themeoptions.php:436
+msgid "Options for Related Items for News"
+msgstr ""
+
+#: themeoptions.php:443
+msgid "Number of Related Items to show in News"
+msgstr ""
+
+#: themeoptions.php:445 themeoptions.php:499
+msgid "Number of related Items to show in Pages.<br>Default is 3."
+msgstr ""
+
+#: themeoptions.php:446
+msgid "Types of Related Items to show in News"
+msgstr ""
+
+#: themeoptions.php:454
+msgid "What content to show among Related Items in Pages.<br>Default is News."
+msgstr ""
+
+#: themeoptions.php:455
+msgid "Content description in for News Related Items (Length+Enable)"
+msgstr ""
+
+#: themeoptions.php:463
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Pages "
+"options</h2>"
+msgstr ""
+
+#: themeoptions.php:466
+msgid "Featured Image in Page"
+msgstr ""
+
+#: themeoptions.php:468
+msgid "Display Featured Image on a Page (if set)."
+msgstr ""
+
+#: themeoptions.php:469
+msgid "Size of Featured Image in Page"
+msgstr ""
+
+#: themeoptions.php:474
+msgid ""
+"What size of Featured Image to display on a Page (if set).<br>Default is "
+"Thumb Size."
+msgstr ""
+
+#: themeoptions.php:475
+msgid "Page Extra features"
+msgstr ""
+
+#: themeoptions.php:481
+msgid ""
+"<p>Choose what extra features to display for a single Page. Multi-choice."
+"<br>Rating and Hitcounter plugins must be enabled, otherwise those features "
+"are disabled.</p>"
+msgstr ""
+
+#: themeoptions.php:487
+msgid "<h3 style=\"font-weight: bold;\">Related Items for Pages</h3><hr>"
+msgstr ""
+
+#: themeoptions.php:490
+msgid "Options for Related Items for Pages"
+msgstr ""
+
+#: themeoptions.php:497
+msgid "Number of Related Items to show"
+msgstr ""
+
+#: themeoptions.php:500
+msgid "Types of Related Items to show in Page"
+msgstr ""
+
+#: themeoptions.php:508
+msgid "What content to show among Related Items in Pages.<br>Default is All."
+msgstr ""
+
+#: themeoptions.php:509
+msgid "Content description for Pages Related Items (Length+Enable)"
+msgstr ""
+
+#: themeoptions.php:517
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Sidebar "
+"options</h2>"
+msgstr ""
+
+#: themeoptions.php:520
+msgid "Display Albums menu in Sidebar"
+msgstr ""
+
+#: themeoptions.php:527
+msgid "Choose when to display Albums menu in Sidebar.<br>Multi-choice."
+msgstr ""
+
+#: themeoptions.php:528
+msgid "Nested lists of Album menu to display:"
+msgstr ""
+
+#: themeoptions.php:531 themeoptions.php:548 themeoptions.php:565
+msgid "Top-level only"
+msgstr ""
+
+#: themeoptions.php:532 themeoptions.php:549 themeoptions.php:566
+msgid "Depth of 2"
+msgstr ""
+
+#: themeoptions.php:533 themeoptions.php:550 themeoptions.php:567
+msgid "Depth of 3"
+msgstr ""
+
+#: themeoptions.php:534 themeoptions.php:551 themeoptions.php:568
+msgid "Depth of 4"
+msgstr ""
+
+#: themeoptions.php:535 themeoptions.php:552 themeoptions.php:569
+msgid "All levels"
+msgstr ""
+
+#: themeoptions.php:536
+msgid ""
+"Select how many levels of nested lists of Album menu to display in Sidebar "
+"in Gallery. Default is \"Depth of 2\".<br>\"Top-level only\" is also used "
+"for display of Albums menu in News, Pages and Archives."
+msgstr ""
+
+#: themeoptions.php:537
+msgid "Display News Categories menu in Sidebar"
+msgstr ""
+
+#: themeoptions.php:544
+msgid ""
+"Choose when to display News Categories menu in Sidebar.<br>Multi-choice."
+msgstr ""
+
+#: themeoptions.php:545
+msgid "Nested lists of News Categories menu to display:"
+msgstr ""
+
+#: themeoptions.php:553
+msgid ""
+"Select how many levels of nested lists of News Categories menu to display in "
+"Sidebar in News, Gallery, Pages and Archives.<br>Default is \"Depth of 2\"."
+msgstr ""
+
+#: themeoptions.php:554
+msgid "Display Pages menu in Sidebar"
+msgstr ""
+
+#: themeoptions.php:561
+msgid "Choose when to display Pages menu in Sidebar.<br>Multi-choice."
+msgstr ""
+
+#: themeoptions.php:562
+msgid "Nested lists of Pages menu to display:"
+msgstr ""
+
+#: themeoptions.php:570
+msgid ""
+"Select how many levels of nested lists of Pages menu to display in Sidebar "
+"in Pages, News, Gallery and Archives.<br>Default is \"Depth of 2\"."
+msgstr ""
+
+#: themeoptions.php:571
+msgid "Sidebar menu header for Pages"
+msgstr ""
+
+#: themeoptions.php:574
+msgid ""
+"Option to rename the title of Pages menu header in the Sidebar to anything "
+"that suits your site.<br>If EMPTY - Default is used (Pages)."
+msgstr ""
+
+#: themeoptions.php:575
+msgid "User menu in sidebar"
+msgstr ""
+
+#: themeoptions.php:577
+msgid "Display User menu in Sidebar."
+msgstr ""
+
+#: themeoptions.php:578
+msgid "Tags in sidebar"
+msgstr ""
+
+#: themeoptions.php:580
+msgid "Display Popular Tags in Sidebar."
+msgstr ""
+
+#: themeoptions.php:581
+msgid "FlickrFeed in sidebar"
+msgstr ""
+
+#: themeoptions.php:583
+msgid ""
+"Display Flickr Feed Items in Sidebar (Needs FlickrFeed plugin installed, "
+"enabled & User ID provided)."
+msgstr ""
+
+#: themeoptions.php:588
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Options "
+"for Copyright notice on Image pages</h2>"
+msgstr ""
+
+#: themeoptions.php:591
+msgid "Copyright Notice"
+msgstr ""
+
+#: themeoptions.php:595
+msgid ""
+"Extended copyright notice to display on Solo Image page and Credits page if "
+"enabled.<br>HTML can be used.<br>If Empty - \"Image copyright rightsholder\" "
+"from Options->Image is used instead."
+msgstr ""
+
+#: themeoptions.php:601
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Options "
+"for Popular Tags display</h2>"
+msgstr ""
+
+#: themeoptions.php:604
+msgid "Maximum font size for popular tags:"
+msgstr ""
+
+#: themeoptions.php:606
+msgid ""
+"Font-size to use for most common tags. Adjust based on your tags usage."
+"<br>Default is 2."
+msgstr ""
+
+#: themeoptions.php:607
+msgid "Minimum font size for popular tags:"
+msgstr ""
+
+#: themeoptions.php:609
+msgid ""
+"Font-size to use for less common tags. Adjust based on your tags usage."
+"<br>Default is 0,8em."
+msgstr ""
+
+#: themeoptions.php:610
+msgid "Maximum font size for tags with count over:"
+msgstr ""
+
+#: themeoptions.php:612
+msgid ""
+"Tags with tag count over this number will be shown with maximum font-size. "
+"Adjust based on your tags usage.<br>Default is 50."
+msgstr ""
+
+#: themeoptions.php:613
+msgid "Minimal tag count to include:"
+msgstr ""
+
+#: themeoptions.php:615
+msgid ""
+"Tags with tag count over this number will be included in Popular Tag list."
+"<br>Default is 1."
+msgstr ""
+
+#: themeoptions.php:621
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Footer "
+"options</h2>"
+msgstr ""
+
+#: themeoptions.php:624
+msgid "Main Footer menu"
+msgstr ""
+
+#: themeoptions.php:627
+msgid "Credits page"
+msgstr ""
+
+#: themeoptions.php:628
+msgid "Explore page"
+msgstr ""
+
+#: themeoptions.php:629
+msgid "Sitemap page"
+msgstr ""
+
+#: themeoptions.php:630
+msgid ""
+"<p>Choose what extra pages to display in main Footer menu. Multi-choice.</"
+"p><p>Credits page - uses Copyright notice (see option for that above) to "
+"inform visitors about authorship and your copyright policy + gives credit to "
+"Zenphoto and author of this Theme.<br>Explore page - lists all tags, used "
+"throughout website.<br>Sitemap page - lists all News categories, Pages and "
+"Albums.</p>"
+msgstr ""
+
+#: themeoptions.php:631
+msgid "User menu in Footer"
+msgstr ""
+
+#: themeoptions.php:633
+msgid "Display User menu in Footer."
+msgstr ""
+
+#: themeoptions.php:634
+msgid "Display RSS Links"
+msgstr ""
+
+#: themeoptions.php:636
+msgid "Display RSS Links in Footer. Channels are set in RSS plugins settings."
+msgstr ""
+
+#: themeoptions.php:637
+msgid "Display Social profiles"
+msgstr ""
+
+#: themeoptions.php:639
+msgid ""
+"Display Social Links in Footer as linked in Links & Services section below."
+msgstr ""
+
+#: themeoptions.php:646
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Links and "
+"Services</h2>"
+msgstr ""
+
+#: themeoptions.php:649
+msgid "Google Analytics id"
+msgstr ""
+
+#: themeoptions.php:651
+msgid ""
+"If you use Google Analytics, paste your ID here. Works with UA and GA4 "
+"properties.<br>Use according to your local laws."
+msgstr ""
+
+#: themeoptions.php:652
+msgid "ShareThis id"
+msgstr ""
+
+#: themeoptions.php:654
+msgid "Provide your ShareThis ID"
+msgstr ""
+
+#: themeoptions.php:655
+msgid "URL to Facebook"
+msgstr ""
+
+#: themeoptions.php:657
+msgid "Provide your Facebook page or profile URL"
+msgstr ""
+
+#: themeoptions.php:658
+msgid "Twitter profile name"
+msgstr ""
+
+#: themeoptions.php:660
+msgid "Provide your Twitter profile name (without the @)"
+msgstr ""
+
+#: themeoptions.php:661
+msgid "URL to FlickR"
+msgstr ""
+
+#: themeoptions.php:663
+msgid "Provide your FlickR gallery URL"
+msgstr ""
+
+#: themeoptions.php:664
+msgid "URL to 500px"
+msgstr ""
+
+#: themeoptions.php:666
+msgid "Provide your 500px gallery URL"
+msgstr ""
+
+#: themeoptions.php:667
+msgid "URL to Instagram"
+msgstr ""
+
+#: themeoptions.php:669
+msgid "Provide your Instagram URL"
+msgstr ""
+
+#: themeoptions.php:670
+msgid "URL to Pinterest"
+msgstr ""
+
+#: themeoptions.php:672
+msgid "Provide your Pinterest board or page URL"
+msgstr ""
+
+#: themeoptions.php:673
+msgid "URL to Deviantart"
+msgstr ""
+
+#: themeoptions.php:675
+msgid "Provide your Deviantart page URL"
+msgstr ""
+
+#: themeoptions.php:676
+msgid "URL to Tumblr"
+msgstr ""
+
+#: themeoptions.php:678
+msgid "Provide your Tumblr page URL"
+msgstr ""
+
+#: themeoptions.php:684
+msgid ""
+"<h2 style=\"font-size: 110%; background: #bac9cf; padding: 7px;\">Metadata "
+"options</h2>"
+msgstr ""
+
+#: themeoptions.php:686
+msgid "Add Nofollow to Tags links"
+msgstr ""
+
+#: themeoptions.php:688
+msgid ""
+"Adds rel=\"nofollow\" to Tag links everywhere so they are not scanned by "
+"Search Engines."
+msgstr ""
+
+#: themeoptions.php:689
+msgid "Remove Tags Pages from Index by search engines"
+msgstr ""
+
+#: themeoptions.php:691
+msgid ""
+"Adds \"noindex, follow\" to Tags pages so they are removed from Search "
+"Engines Index."
+msgstr ""
+
+#: themeoptions.php:692
+msgid "Remove Archive Pages from Index by search engines"
+msgstr ""
+
+#: themeoptions.php:694
+msgid ""
+"Adds \"noindex, follow\" to Archive pages so they are removed from Search "
+"Engines Index."
+msgstr ""
+
+#: themeoptions.php:695
+msgid "Site preview for Open Graph/Twitter cards"
+msgstr ""
+
+#: themeoptions.php:697
+#, php-format
+msgid ""
+"Select an image (from files in the <em>%s</em> folder) that will serve as an "
+"preview/banner for your site<br>It is used in Open Graph or Twitter cards "
+"when sharing content from Index, News or Pages.<br>If you use elFinder "
+"plugin for Uploads - it can upload files to this folder, alternatively you "
+"can use FTP to upload your logo file and then select it here."
+msgstr ""
+
+#: themeoptions.php:706
+msgid "* Use Gallery Name Text"
+msgstr "* Использовать название Галереи"
+
+#: themeoptions.php:714
+msgid "* no site preview selected"
+msgstr "* превью сайта не выбрано"
+
+#: themeoptions.php:722
+msgid "* no custom CSS"
+msgstr "* CSS-файл не выбран"
