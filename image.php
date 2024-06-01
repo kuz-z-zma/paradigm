@@ -21,9 +21,9 @@ die();
 <!-- pagination -->
 <ul class="pagination pull-right">
 <?php if (hasPrevImage()) { ?>
-<li><a href="<?php echo html_encode(getPrevImageURL()); ?>" title="<?php echo gettext("Previous Image"); ?>"><?php echo gettext("&laquo; prev"); ?></a></li>
+<li><a href="<?php echo html_encode(getPrevImageURL()); ?>" title="<?php echo gettext("Previous Image"); ?>"><?php echo gettext("« prev"); ?></a></li>
 <?php } if (hasNextImage()) { ?>
-<li><a href="<?php echo html_encode(getNextImageURL()); ?>" title="<?php echo gettext("Next Image"); ?>"><?php echo gettext("next &raquo;"); ?></a></li>
+<li><a href="<?php echo html_encode(getNextImageURL()); ?>" title="<?php echo gettext("Next Image"); ?>"><?php echo gettext("next »"); ?></a></li>
 <?php } ?>
 </ul>
 

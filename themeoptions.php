@@ -146,7 +146,7 @@ class ThemeOptions {
 					gettext('Do not display') => 'none',
 					gettext('Header') => 'header',
 					gettext('Homepage') => 'homepage'),
-				'desc' => gettext('Coose where to display Gallery Description (taken from Options->Gallery->Gallery description).')),
+				'desc' => gettext('Choose where to display Gallery Description (taken from Options->Gallery->Gallery description).')),
 			gettext('Allow search')=> array('key' => 'paradigm_search', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 23,
 				'desc' => gettext('Check to enable search form.')),
@@ -310,10 +310,10 @@ class ThemeOptions {
 					gettext('Show Related Items') => 'paradigm_album-related-enable',
 					gettext('Show Thumb') => 'paradigm_album-related-thumb',
 					gettext('Show Date') => 'paradigm_album-related-date'),
-				'desc' => gettext('Related Items plugin must be enabled, for options to take effect. Multi-choice.')),
-			gettext('Number of Related Items to show on Album pages') => array('key' => 'paradigm_album-related-number', 'type' => OPTION_TYPE_CLEARTEXT,
+				'desc' => gettext('Related Items plugin must be enabled, for options to take effect.<br>Multi-choice.')),
+			gettext('Number of Related Items on Album pages') => array('key' => 'paradigm_album-related-number', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 127,
-				'desc' => gettext('Number of Related Items to show on Album pages.<br>Default is 4.')),
+				'desc' => gettext('Enter number of Related Items to show on Album pages.<br>Default is 4.')),
 			gettext('Types of Related Items to show on Album pages') => array('key' => 'paradigm_album-related-type', 'type' => OPTION_TYPE_SELECTOR,
 				'order' => 128,
 				'selections' => array(
@@ -340,7 +340,7 @@ class ThemeOptions {
 				'selections' => array(
 					gettext('Above image') => 'above',
 					gettext('Below image') => 'below'),
-				'desc' => gettext('Display Image Caption data above Image on image pages.<br>Default is Below image.')),
+				'desc' => gettext('Choose where to display Image Caption data: above or below Image on image pages.<br>Default is Below image.')),
 			gettext('Download Button') => array('key' => 'paradigm_image-download', 'type' => OPTION_TYPE_CHECKBOX, 
 				'order' => 132,
 				'desc' => gettext("Check to enable users ability to download original image from image details page.<br>If you want a save dialog, you will need to set the appropriate option in Options->Image as well (choose: protected, download).")),
@@ -363,9 +363,9 @@ class ThemeOptions {
 					gettext('Show Thumb') => 'paradigm_image-related-thumb',
 					gettext('Show Date') => 'paradigm_image-related-date'),
 				'desc' => gettext('Related Items plugin must be enabled, for options to take effect.<br>Multi-choice.')),
-			gettext('Number of Related Items to show on Image pages') => array('key' => 'paradigm_image-related-number', 'type' => OPTION_TYPE_CLEARTEXT,
+			gettext('Number of Related Items on Image pages') => array('key' => 'paradigm_image-related-number', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 147,
-				'desc' => gettext('Number of Related Items to show on Image pages.<br>Default is 4.')),
+				'desc' => gettext('Enter number of Related Items to show on Image pages.<br>Default is 4.')),
 			gettext('Types of Related Items to show on Image pages') => array('key' => 'paradigm_image-related-type', 'type' => OPTION_TYPE_SELECTOR,
 				'order' => 148,
 				'selections' => array(
@@ -391,10 +391,10 @@ class ThemeOptions {
 				'checkboxes' => array(
 					gettext('Main menu') => 'paradigm_nav_menu-archive',
 					gettext('Footer') => 'paradigm_nav_footer-archive'),
-				'desc' => gettext('Display where links to Archive will be displayed.<br>Multi-choice.')),
+				'desc' => gettext('Choose where links to Archive will be displayed.<br>Multi-choice.')),
 			gettext('Sidebar in archive') => array('key' => 'paradigm_archive-sidebar', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 152,
-				'desc' => gettext('Display Sidebar on Archive page.')),
+				'desc' => gettext('Check to display Sidebar on Archive page.')),
 
 /*================ Set of OPTIONS for the site NEWS ================*/
 
@@ -405,7 +405,7 @@ class ThemeOptions {
 
 			gettext('Featured Image in News article') => array('key' => 'paradigm_news-feat-image', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 161,
-				'desc' => gettext('Display Featured Image on a News Article page (if set).')),
+				'desc' => gettext('Check to display Featured Image on a News Article page (if set).')),
 			gettext('Size of Featured Image in News article') => array('key' => 'paradigm_news-feat-image-size', 'type' => OPTION_TYPE_SELECTOR,
 				'order' => 162,
 				'selections' => array(
@@ -424,7 +424,7 @@ class ThemeOptions {
 					gettext('Custom data') => 'paradigm_news-custom',
 					gettext('Rating') => 'paradigm_news-rating',
 					gettext('Hitcounter') => 'paradigm_news-hitcounter'),
-				'desc' => gettext('<p>Choose what extra features to display for a single News Article. Multi-choice.<br>Custom data setting works for both News single article and News Categories (if it exists).<br>Rating and Hitcounter plugins must be enabled, otherwise those features are disabled.</p>')),
+				'desc' => gettext('Choose what extra features to display for a single News Article. Multi-choice.<br>Custom data setting works for both News single article and News Categories (if it exists).<br>Rating and Hitcounter plugins must be enabled, otherwise those features are disabled.')),
 
 /*--------------------- Related Items: News--*/
 
@@ -465,7 +465,7 @@ class ThemeOptions {
 
 			gettext('Featured Image in Page') => array('key' => 'paradigm_page-feat-image', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 181,
-				'desc' => gettext('Display Featured Image on a Page (if set).')),
+				'desc' => gettext('Check to display Featured Image on a Page (if set).')),
 			gettext('Size of Featured Image in Page') => array('key' => 'paradigm_page-feat-image-size', 'type' => OPTION_TYPE_SELECTOR,
 				'order' => 182,
 				'selections' => array(
@@ -478,7 +478,7 @@ class ThemeOptions {
 					gettext('Custom data') => 'paradigm_page-custom',
 					gettext('Rating') => 'paradigm_page-rating',
 					gettext('Hitcounter') => 'paradigm_page-hitcounter'),
-				'desc' => gettext('<p>Choose what extra features to display for a single Page. Multi-choice.<br>Rating and Hitcounter plugins must be enabled, otherwise those features are disabled.</p>')),
+				'desc' => gettext('Choose what extra features to display for a single Page. Multi-choice.<br>Rating and Hitcounter plugins must be enabled, otherwise those features are disabled.')),
 
 /*--------------------- Related Items: Pages--*/
 
@@ -572,15 +572,15 @@ class ThemeOptions {
 				'order' => 207,
 				'multilingual' => 0,
 				'desc' => gettext('Option to rename the title of Pages menu header in the Sidebar to anything that suits your site.<br>If EMPTY - Default is used (Pages).')),
-			gettext('User menu in sidebar') => array('key' => 'paradigm_sidebar-user-menu', 'type' => OPTION_TYPE_CHECKBOX,
+			gettext('User menu in Sidebar') => array('key' => 'paradigm_sidebar-user-menu', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 208,
-				'desc' => gettext('Display User menu in Sidebar.')),
-			gettext('Tags in sidebar') => array('key' => 'paradigm_sidebar-tags', 'type' => OPTION_TYPE_CHECKBOX,
+				'desc' => gettext('Check to display User menu in Sidebar.')),
+			gettext('Tags in Sidebar') => array('key' => 'paradigm_sidebar-tags', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 209,
-				'desc' => gettext('Display Popular Tags in Sidebar.')),
-			gettext('FlickrFeed in sidebar') => array('key' => 'paradigm_sidebar-flickr', 'type' => OPTION_TYPE_CHECKBOX,
+				'desc' => gettext('Check to display Popular Tags in Sidebar. Options for presentation of Tag cloud are below.')),
+			gettext('FlickrFeed in Sidebar') => array('key' => 'paradigm_sidebar-flickr', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 210,
-				'desc' => gettext('Display Flickr Feed Items in Sidebar (Needs FlickrFeed plugin installed, enabled & User ID provided).')),
+				'desc' => gettext('Check to display Flickr Feed Items in Sidebar (Needs FlickrFeed plugin installed, enabled & User ID provided).')),
 /*================ Set of OPTIONS for the site Copyright Info ================*/
 
 			array('key' => 'paradigm_copyright_options', 'type' => OPTION_TYPE_NOTE, 
@@ -627,16 +627,16 @@ class ThemeOptions {
 					gettext('Credits page') => 'paradigm_footer_menu-credits',
 					gettext('Explore page') => 'paradigm_footer_menu-explore',
 					gettext('Sitemap page') => 'paradigm_footer_menu-sitemap'),
-				'desc' => gettext('<p>Choose what extra pages to display in main Footer menu. Multi-choice.</p><p>Credits page - uses Copyright notice (see option for that above) to inform visitors about authorship and your copyright policy + gives credit to Zenphoto and author of this Theme.<br>Explore page - lists all tags, used throughout website.<br>Sitemap page - lists all News categories, Pages and Albums.</p>')),
+				'desc' => gettext('Choose what extra pages to display in main Footer menu. Multi-choice.</p><p>Credits page - uses Copyright notice (see option for that above) to inform visitors about authorship and your copyright policy + gives credit to Zenphoto and author of this Theme.<br>Explore page - lists all tags, used throughout website.<br>Sitemap page - lists all News categories, Pages and Albums.')),
 			gettext('User menu in Footer') => array('key' => 'paradigm_footer_user-menu', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 252,
-				'desc' => gettext('Display User menu in Footer.')),
+				'desc' => gettext('Check to display User menu in Footer.')),
 			gettext('Display RSS Links') => array('key' => 'paradigm_footer_rss', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 253,
-				'desc' => gettext('Display RSS Links in Footer. Channels are set in RSS plugins settings.')),
+				'desc' => gettext('Check to display RSS Links in Footer. Channels are set in RSS plugins settings.')),
 			gettext('Display Social profiles') => array('key' => 'paradigm_footer_social', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 254,
-				'desc' => gettext('Display Social Links in Footer as linked in Links & Services section below.')),
+				'desc' => gettext('Check to display Social Links in Footer as linked in Links & Services section below.')),
 
 /*================ Set of OPTIONS for the linked external SERVICES ================*/
 
@@ -646,10 +646,10 @@ class ThemeOptions {
 				'desc' => gettext('<h2 style="font-size: 110%; background: #bac9cf; padding: 7px;">Links and Services</h2>')),
 /*=================================================================================*/
 
-			gettext('Google Analytics id') => array('key' => 'analytics_code', 'type' => OPTION_TYPE_CLEARTEXT,
+			gettext('Google Analytics ID') => array('key' => 'analytics_code', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 271,
 				'desc' => gettext('If you use Google Analytics, paste your ID here. Works with UA and GA4 properties.<br>Use according to your local laws.')),
-			gettext('ShareThis id') => array('key' => 'sharethis_id', 'type' => OPTION_TYPE_TEXTBOX,
+			gettext('ShareThis ID') => array('key' => 'sharethis_id', 'type' => OPTION_TYPE_TEXTBOX,
 				'order' => 272,
 				'desc' => gettext('Provide your ShareThis ID')),
 			gettext('URL to Facebook') => array('key' => 'facebook_url', 'type' => OPTION_TYPE_TEXTBOX,
