@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Paradigm v2.0\n"
-"POT-Creation-Date: 2024-06-02 00:57+0300\n"
-"PO-Revision-Date: 2024-06-02 00:57+0300\n"
+"POT-Creation-Date: 2024-06-05 01:37+0300\n"
+"PO-Revision-Date: 2024-06-05 02:29+0300\n"
 "Last-Translator: kuzzzma <kuzzzma@gmail.com>\n"
 "Language-Team: kuzzzma\n"
 "Language: ru_RU\n"
@@ -263,12 +263,12 @@ msgstr "Код"
 
 #: includes/_albumlist.php:6
 msgid "View album:"
-msgstr "Просмотреть альбом"
+msgstr "Просмотреть альбом:"
 
 #: includes/_albumlist.php:9 includes/_albumlist.php:13
 #: includes/_albumlist.php:17
 msgid "View album: "
-msgstr "Просмотреть альбом"
+msgstr "Просмотреть альбом: "
 
 #: includes/_albumlist.php:12 includes/_imagethumbs.php:23
 msgid "Remove"
@@ -299,11 +299,11 @@ msgstr "Связаться"
 
 #: includes/_breadcrumbs.php:38 includes/_footer.php:29 includes/_head.php:36
 msgid "Credits"
-msgstr ""
+msgstr "Авторы"
 
 #: includes/_breadcrumbs.php:41 includes/_footer.php:32 includes/_head.php:37
 msgid "Explore"
-msgstr ""
+msgstr "Обзор"
 
 #: includes/_breadcrumbs.php:44 includes/_footer.php:35 includes/_head.php:38
 msgid "Sitemap"
@@ -311,7 +311,7 @@ msgstr "Карта сайта"
 
 #: includes/_breadcrumbs.php:47
 msgid "Login"
-msgstr ""
+msgstr "Вход"
 
 #: includes/_breadcrumbs.php:50 register.php:23
 msgid "User Registration"
@@ -338,7 +338,7 @@ msgstr "Избраное"
 
 #: includes/_head.php:34 includes/_head.php:75
 msgid "Password required"
-msgstr ""
+msgstr "Требуется пароль"
 
 #: includes/_head.php:63 includes/_head.php:126
 msgid "Home"
@@ -366,15 +366,15 @@ msgstr ""
 
 #: includes/_homepage.php:103
 msgid "Recent images"
-msgstr ""
+msgstr "Последние изображения"
 
 #: includes/_homepage.php:112
 msgid "Most popular"
-msgstr ""
+msgstr "Самые популярные"
 
 #: includes/_homepage.php:121
 msgid "Top rated"
-msgstr ""
+msgstr "Топ-рейтинг"
 
 #: includes/_homepage.php:130 themeoptions.php:270
 msgid "Random images"
@@ -400,7 +400,7 @@ msgstr "Категория:"
 
 #: password.php:22
 msgid "A password is required for the page you requested"
-msgstr ""
+msgstr "Для запрошенной вами страницы требуется пароль"
 
 #: password.php:27
 msgid "Register for this site"
@@ -414,7 +414,7 @@ msgstr "Результаты поиска среди"
 #: search.php:59
 #, php-format
 msgid "Pages (%s)"
-msgstr ""
+msgstr "Страницы (%s)"
 
 #: search.php:84
 #, php-format
@@ -443,11 +443,14 @@ msgstr "Категории новостей"
 #: theme_description.php:10
 msgid ""
 "A responsive, Bootstrap-based, highly customizable Zenphoto theme (with more "
-"than 100 options), optimized for SEO and social sharing.<br>Latest version: "
-"<a href=\"https://www.blog.private-universe.net/web-and-tech/zenphoto-theme-"
-"paradigm/\" title=\"Paradigm theme by kuzzzma\" rel=\"nofollow\">Paradigm "
-"theme page</a>."
+"than 100 options), optimized for SEO and social sharing.<br>Latest version "
+"is available on <a href=\"https://github.com/kuz-z-zma/paradigm\" "
+"title=\"Paradigm theme by kuzzzma\" rel=\"nofollow\">Github</a>."
 msgstr ""
+"Адаптивная тема оформления, основанная на фреймворке Bootstrap, с более чем "
+"100 опциями в настройках. Оптимизирована для SEO и соц.сетей. Последняя "
+"версия Paradigm доступна на <a href=\"https://github.com/kuz-z-zma/"
+"paradigm\" title=\"Paradigm theme by kuzzzma\" rel=\"nofollow\">Github</a>."
 
 #: themeoptions.php:120
 msgid ""
@@ -459,11 +462,11 @@ msgstr ""
 
 #: themeoptions.php:123
 msgid "Fluid layout"
-msgstr ""
+msgstr "Полноэкранный режим"
 
 #: themeoptions.php:125
 msgid "Check to enable fluid full width layout."
-msgstr ""
+msgstr "Отметьте, если хотите включить полноэкранный режим для сайта."
 
 #: themeoptions.php:126
 msgid "Preview in Lightbox"
@@ -512,7 +515,7 @@ msgstr ""
 
 #: themeoptions.php:143
 msgid "Display Gallery Decription"
-msgstr ""
+msgstr "Отображать Описание галереи"
 
 #: themeoptions.php:146
 msgid "Do not display"
@@ -520,7 +523,7 @@ msgstr "Не показывать"
 
 #: themeoptions.php:147
 msgid "Header"
-msgstr ""
+msgstr "\"Шапка\" сайта"
 
 #: themeoptions.php:148
 msgid "Homepage"
@@ -540,7 +543,7 @@ msgstr "Разрешить Поиск"
 
 #: themeoptions.php:152
 msgid "Check to enable search form."
-msgstr ""
+msgstr "Отметьте, если хотите включить поиск для сайта."
 
 #: themeoptions.php:158
 msgid ""
@@ -552,7 +555,7 @@ msgstr ""
 
 #: themeoptions.php:161
 msgid "Show Dropdown menus in Top Navigation"
-msgstr ""
+msgstr "Показывать выпадающие меню в Главном меню"
 
 #: themeoptions.php:165
 msgid "News Categories"
@@ -566,7 +569,7 @@ msgstr ""
 
 #: themeoptions.php:168
 msgid "Menu text for Gallery"
-msgstr ""
+msgstr "Текст в меню для Галереи"
 
 #: themeoptions.php:171
 msgid ""
@@ -578,7 +581,7 @@ msgstr ""
 
 #: themeoptions.php:172
 msgid "Menu text for News"
-msgstr ""
+msgstr "Текст в меню для Новостей"
 
 #: themeoptions.php:175
 msgid ""
@@ -609,11 +612,11 @@ msgstr ""
 #: themeoptions.php:195
 msgid "<h3 style=\"font-weight: bold;\">Homepage Slideshow options</h3><hr>"
 msgstr ""
-"<h3 style=\"font-weight: bold;\">Слайдшоу на Домашней странице</h3><hr>"
+"<h3 style=\"font-weight: bold;\">Слайд-шоу на Домашней странице</h3><hr>"
 
 #: themeoptions.php:198
 msgid "Enable Homepage slideshow"
-msgstr ""
+msgstr "Включить слайд-шоу на Домашней странице"
 
 #: themeoptions.php:200
 msgid "Check to include a slideshow on the Homepage."
@@ -621,7 +624,7 @@ msgstr ""
 
 #: themeoptions.php:201
 msgid "Slideshow Type"
-msgstr ""
+msgstr "Тип слайд-шоу"
 
 #: themeoptions.php:204
 msgid "Random"
@@ -629,7 +632,7 @@ msgstr "Cлучайный порядок"
 
 #: themeoptions.php:205
 msgid "Popular"
-msgstr ""
+msgstr "По популярности"
 
 #: themeoptions.php:206
 msgid "Latest by ID"
@@ -649,11 +652,11 @@ msgstr ""
 
 #: themeoptions.php:210
 msgid "Most Rated"
-msgstr ""
+msgstr "По количеству голосов"
 
 #: themeoptions.php:211
 msgid "Top Rated"
-msgstr ""
+msgstr "По оценке"
 
 #: themeoptions.php:212
 msgid "Select how the pictures will be chosen for the Homepage slideshow."
@@ -720,7 +723,7 @@ msgstr "<h3 style=\"font-weight: bold;\">Новости на Домашней с
 
 #: themeoptions.php:237
 msgid "Enable Homepage blog"
-msgstr ""
+msgstr "Включить Блог на Домашней странице"
 
 #: themeoptions.php:239
 msgid "Check to enable showing blog posts/news items on the Homepage."
@@ -767,19 +770,19 @@ msgstr "Содержимое Домашней страницы"
 
 #: themeoptions.php:266
 msgid "Recently uploaded images"
-msgstr ""
+msgstr "Последние изображения по загрузке"
 
 #: themeoptions.php:267
 msgid "Recently taken images"
-msgstr ""
+msgstr "Последние изображения по дате"
 
 #: themeoptions.php:268
 msgid "Most popular images"
-msgstr ""
+msgstr "Самые популярные изображения"
 
 #: themeoptions.php:269
 msgid "Top rated images"
-msgstr ""
+msgstr "Топ-рейтинг изображений"
 
 #: themeoptions.php:271
 msgid "Choose what to display on the homepage.<br>Multi-choice."
@@ -787,7 +790,7 @@ msgstr "Выберите, что показывать на Домашней ст
 
 #: themeoptions.php:272
 msgid "Descriptions for Homepage albums"
-msgstr ""
+msgstr "Описания для альбомов на Домашней странице"
 
 #: themeoptions.php:274
 msgid ""
@@ -838,11 +841,13 @@ msgstr ""
 
 #: themeoptions.php:296
 msgid "Display Custom Data for Album"
-msgstr ""
+msgstr "Отображать \"Пользовательские данные\" Альбомов"
 
 #: themeoptions.php:298
 msgid "Check to display info from Album Custom Data (if set)."
 msgstr ""
+"Отметьте, если хотите показывать информацию из \"Пользовательских данных\" "
+"Альбомов (если она задана)."
 
 #: themeoptions.php:304
 msgid "<h3 style=\"font-weight: bold;\">Related Items for Albums</h3><hr>"
@@ -855,17 +860,17 @@ msgstr "Настройки для схожих объектов на стран�
 #: themeoptions.php:310 themeoptions.php:362 themeoptions.php:439
 #: themeoptions.php:493
 msgid "Show Related Items"
-msgstr ""
+msgstr "Показывать схожие объекты"
 
 #: themeoptions.php:311 themeoptions.php:363 themeoptions.php:440
 #: themeoptions.php:494
 msgid "Show Thumb"
-msgstr ""
+msgstr "Показывать миниатюру"
 
 #: themeoptions.php:312 themeoptions.php:364 themeoptions.php:441
 #: themeoptions.php:495
 msgid "Show Date"
-msgstr ""
+msgstr "Показывать дату"
 
 #: themeoptions.php:313 themeoptions.php:365 themeoptions.php:442
 #: themeoptions.php:496
@@ -886,7 +891,7 @@ msgstr ""
 
 #: themeoptions.php:317
 msgid "Types of Related Items to show on Album pages"
-msgstr ""
+msgstr "Типы схожих объектов для страниц Альбомов"
 
 #: themeoptions.php:320 themeoptions.php:372 themeoptions.php:449
 #: themeoptions.php:503
@@ -913,6 +918,8 @@ msgstr ""
 msgid ""
 "Specify length of item description to ENABLE.<br>If EMPTY, they are disabled."
 msgstr ""
+"Укажите количество символов для отображения описания элемента.<br>Если "
+"оставить поле ПУСТЫМ, отображение описания будет отключено."
 
 #: themeoptions.php:335
 msgid ""
@@ -953,11 +960,13 @@ msgstr ""
 
 #: themeoptions.php:347
 msgid "Display Custom Data for Image"
-msgstr ""
+msgstr "Отображать \"Пользовательские данные\" Изображений"
 
 #: themeoptions.php:349
 msgid "Check to display info from Image Custom Data (if set)."
 msgstr ""
+"Отметьте, если хотите показывать информацию из \"Пользовательских данных\" "
+"Изображений (если она задана)."
 
 #: themeoptions.php:356
 msgid "<h3 style=\"font-weight: bold;\">Related Items for Images</h3><hr>"
@@ -978,7 +987,7 @@ msgstr ""
 
 #: themeoptions.php:369
 msgid "Types of Related Items to show on Image pages"
-msgstr ""
+msgstr "Типы схожих объектов для страниц Изображений"
 
 #: themeoptions.php:377
 msgid ""
@@ -1000,15 +1009,15 @@ msgstr ""
 
 #: themeoptions.php:389
 msgid "Display Archive in menu"
-msgstr ""
+msgstr "Отображать Архива в меню"
 
 #: themeoptions.php:392
 msgid "Main menu"
-msgstr ""
+msgstr "Главное меню"
 
 #: themeoptions.php:393
 msgid "Footer"
-msgstr ""
+msgstr "\"Подвал\" сайта"
 
 #: themeoptions.php:394
 msgid "Choose where links to Archive will be displayed.<br>Multi-choice."
@@ -1017,11 +1026,11 @@ msgstr ""
 
 #: themeoptions.php:395
 msgid "Sidebar in archive"
-msgstr ""
+msgstr "Боковая панель в Архиве"
 
 #: themeoptions.php:397
 msgid "Check to display Sidebar on Archive page."
-msgstr ""
+msgstr "Отметьте, если хотите показывать Боковую панель на страницах Архива."
 
 #: themeoptions.php:403
 msgid ""
@@ -1033,15 +1042,17 @@ msgstr ""
 
 #: themeoptions.php:406
 msgid "Featured Image in News article"
-msgstr ""
+msgstr "Превью-изображение в Новостях"
 
 #: themeoptions.php:408
 msgid "Check to display Featured Image on a News Article page (if set)."
 msgstr ""
+"Отметьте, если хотите показывать превью-изображение на странице Новости "
+"(если оно назначено)."
 
 #: themeoptions.php:409
 msgid "Size of Featured Image in News article"
-msgstr ""
+msgstr "Размер превью-изображения в Новостях"
 
 #: themeoptions.php:412 themeoptions.php:418 themeoptions.php:472
 msgid "Thumb size image"
@@ -1061,7 +1072,7 @@ msgstr ""
 
 #: themeoptions.php:415
 msgid "Size of Featured Image in News Category"
-msgstr ""
+msgstr "Размер превью-изображения в Категории"
 
 #: themeoptions.php:420
 msgid ""
@@ -1073,7 +1084,7 @@ msgstr ""
 
 #: themeoptions.php:421
 msgid "News Article Extra features"
-msgstr ""
+msgstr "Дополнительный функционал для Новостей"
 
 #: themeoptions.php:424 themeoptions.php:478
 msgid "Custom data"
@@ -1119,7 +1130,7 @@ msgstr ""
 
 #: themeoptions.php:446
 msgid "Types of Related Items to show in News"
-msgstr ""
+msgstr "Типы схожих объектов для Новостей"
 
 #: themeoptions.php:454
 msgid ""
@@ -1140,15 +1151,17 @@ msgstr ""
 
 #: themeoptions.php:466
 msgid "Featured Image in Page"
-msgstr ""
+msgstr "Превью-изображение в Страницах"
 
 #: themeoptions.php:468
 msgid "Check to display Featured Image on a Page (if set)."
 msgstr ""
+"Отметьте, если хотите показывать превью-изображение на Странице (если оно "
+"назначено)."
 
 #: themeoptions.php:469
 msgid "Size of Featured Image in Page"
-msgstr ""
+msgstr "Размер превью-изображения на Странице"
 
 #: themeoptions.php:474
 msgid ""
@@ -1160,7 +1173,7 @@ msgstr ""
 
 #: themeoptions.php:475
 msgid "Page Extra features"
-msgstr ""
+msgstr "Дополнительный функционал для Страниц"
 
 #: themeoptions.php:481
 msgid ""
@@ -1191,7 +1204,7 @@ msgstr ""
 
 #: themeoptions.php:500
 msgid "Types of Related Items to show in Page"
-msgstr ""
+msgstr "Типы схожих объектов для Страниц"
 
 #: themeoptions.php:508
 msgid ""
@@ -1212,7 +1225,7 @@ msgstr ""
 
 #: themeoptions.php:520
 msgid "Display Albums menu in Sidebar"
-msgstr ""
+msgstr "Отображать Альбомы в Боковой панели"
 
 #: themeoptions.php:527
 msgid "Choose when to display Albums menu in Sidebar.<br>Multi-choice."
@@ -1226,19 +1239,19 @@ msgstr ""
 
 #: themeoptions.php:531 themeoptions.php:548 themeoptions.php:565
 msgid "Top-level only"
-msgstr ""
+msgstr "Только верхнего уровня"
 
 #: themeoptions.php:532 themeoptions.php:549 themeoptions.php:566
 msgid "Depth of 2"
-msgstr ""
+msgstr "Глубина: 2 уровня"
 
 #: themeoptions.php:533 themeoptions.php:550 themeoptions.php:567
 msgid "Depth of 3"
-msgstr ""
+msgstr "Глубина: 3 уровня"
 
 #: themeoptions.php:534 themeoptions.php:551 themeoptions.php:568
 msgid "Depth of 4"
-msgstr ""
+msgstr "Глубина: 4 уровня"
 
 #: themeoptions.php:535 themeoptions.php:552 themeoptions.php:569
 msgid "All levels"
@@ -1253,7 +1266,7 @@ msgstr ""
 
 #: themeoptions.php:537
 msgid "Display News Categories menu in Sidebar"
-msgstr ""
+msgstr "Отображать Категории новостей в Боковой панели"
 
 #: themeoptions.php:544
 msgid ""
@@ -1274,7 +1287,7 @@ msgstr ""
 
 #: themeoptions.php:554
 msgid "Display Pages menu in Sidebar"
-msgstr ""
+msgstr "Отображать Страницы в Боковой панели"
 
 #: themeoptions.php:561
 msgid "Choose when to display Pages menu in Sidebar.<br>Multi-choice."
@@ -1294,7 +1307,7 @@ msgstr ""
 
 #: themeoptions.php:571
 msgid "Sidebar menu header for Pages"
-msgstr ""
+msgstr "Заголовок списка страниц в Боковой панели"
 
 #: themeoptions.php:574
 msgid ""
@@ -1304,21 +1317,25 @@ msgstr ""
 
 #: themeoptions.php:575
 msgid "User menu in Sidebar"
-msgstr ""
+msgstr "Меню пользователя в Боковой панели"
 
 #: themeoptions.php:577
 msgid "Check to display User menu in Sidebar."
 msgstr ""
+"Отметьте, если хотите показывать Меню для зарегистрированных пользователей "
+"на Боковой панели."
 
 #: themeoptions.php:578
 msgid "Tags in Sidebar"
-msgstr ""
+msgstr "Теги на Боковой панели"
 
 #: themeoptions.php:580
 msgid ""
 "Check to display Popular Tags in Sidebar. Options for presentation of Tag "
 "cloud are below."
 msgstr ""
+"Отметьте, если хотите показывать облако популярных Тегов в Боковой панели. "
+"Настройки для отображения Тегов - чуть ниже на странице."
 
 #: themeoptions.php:581
 msgid "FlickrFeed in Sidebar"
@@ -1329,6 +1346,9 @@ msgid ""
 "Check to display Flickr Feed Items in Sidebar (Needs FlickrFeed plugin "
 "installed, enabled & User ID provided)."
 msgstr ""
+"Отметьте, если хотите показывать превью последних фото из вашего аккаунта на "
+"Flickr (Требуется последняя версия плагина FlickrFeed и указанный ID "
+"пользователя Flickr)."
 
 #: themeoptions.php:588
 msgid ""
@@ -1340,7 +1360,7 @@ msgstr ""
 
 #: themeoptions.php:591
 msgid "Copyright Notice"
-msgstr ""
+msgstr "Авторские права"
 
 #: themeoptions.php:595
 msgid ""
@@ -1369,7 +1389,7 @@ msgstr ""
 
 #: themeoptions.php:607
 msgid "Minimum font size for popular tags:"
-msgstr ""
+msgstr "Минимальный размер шрифта для тегов"
 
 #: themeoptions.php:609
 msgid ""
@@ -1386,16 +1406,22 @@ msgid ""
 "Tags with tag count over this number will be shown with maximum font-size. "
 "Adjust based on your tags usage.<br>Default is 50."
 msgstr ""
+"Теги встречающиеся чаще, чем заданное число будут отображаться с "
+"максимальным размером шрифта. Настройте на основе частоты использования "
+"ваших тегов.<br>Значение по умолчанию - 50."
 
 #: themeoptions.php:613
+#, fuzzy
 msgid "Minimal tag count to include:"
-msgstr ""
+msgstr "Минимальное кол-во шрифта для тегов: "
 
 #: themeoptions.php:615
 msgid ""
 "Tags with tag count over this number will be included in Popular Tag list."
 "<br>Default is 1."
 msgstr ""
+"Теги встречающиеся чаще, чем заданное число будут отображены в Облаке Тегов. "
+"<br>Значение по умолчанию - 1."
 
 #: themeoptions.php:621
 msgid ""
@@ -1407,22 +1433,21 @@ msgstr ""
 
 #: themeoptions.php:624
 msgid "Main Footer menu"
-msgstr ""
+msgstr "Главное меню в \"подвале\""
 
 #: themeoptions.php:627
 msgid "Credits page"
-msgstr ""
+msgstr "Авторы"
 
 #: themeoptions.php:628
 msgid "Explore page"
-msgstr ""
+msgstr "Обзор"
 
 #: themeoptions.php:629
 msgid "Sitemap page"
 msgstr "Карта сайта"
 
 #: themeoptions.php:630
-#, fuzzy
 msgid ""
 "<p>Choose what extra pages to display in main Footer menu. Multi-choice.</"
 "p><p>Credits page - uses Copyright notice (see option for that above) to "
@@ -1432,39 +1457,46 @@ msgid ""
 "Albums.</p>"
 msgstr ""
 "<p>Выберите какие дополнительные страницы отображать в Меню в \"подвале\" "
-"сайта. Множественный выбор.</p><p>Credits page - uses Copyright notice (see "
-"option for that above) to inform visitors about authorship and your "
-"copyright policy + gives credit to Zenphoto and author of this Theme."
-"<br>Explore page - lists all tags, used throughout website.<br>Sitemap page "
-"- lists all News categories, Pages and Albums.</p>"
+"сайта. Множественный выбор.</p><p>Авторы - использует расширенное "
+"уведомление об авторских правах (см. опцию для этого выше) для "
+"информирования посетителей об авторе изображений и вашей политике авторских "
+"прав + отдает должное команде Zenphoto и авторам этой темы оформления."
+"<br>Обзор - перечисляет все теги, используемые на веб-сайте.<br>Карта сайта "
+"- выводит списки всех категории новостей, страниц и альбомов.</p>"
 
 #: themeoptions.php:631
 msgid "User menu in Footer"
-msgstr ""
+msgstr "Меню пользователя в \"подвале\" сайта"
 
 #: themeoptions.php:633
 msgid "Check to display User menu in Footer."
 msgstr ""
+"Отметьте, если хотите показывать Меню для зарегистрированных пользователей в "
+"\"подвале\" сайта."
 
 #: themeoptions.php:634
 msgid "Display RSS Links"
-msgstr ""
+msgstr "Отображать RSS-сслыки"
 
 #: themeoptions.php:636
 msgid ""
 "Check to display RSS Links in Footer. Channels are set in RSS plugins "
 "settings."
 msgstr ""
+"Отметьте, если хотите показывать ссылки на RSS-каналы в \"подвале\" сайта. "
+"Активные каналы выбираются в настройках плагина RSS."
 
 #: themeoptions.php:637
 msgid "Display Social profiles"
-msgstr ""
+msgstr "Отображать Соц.сети"
 
 #: themeoptions.php:639
 msgid ""
 "Check to display Social Links in Footer as linked in Links & Services "
 "section below."
 msgstr ""
+"Отметьте, если хотите показывать ссылки на социальные сети в \"подвале\" "
+"сайта (берутся из числа указанных в разделе \"Ссылки и сервисы\")."
 
 #: themeoptions.php:646
 msgid ""
@@ -1580,7 +1612,7 @@ msgstr ""
 
 #: themeoptions.php:689
 msgid "Remove Tags Pages from Index by search engines"
-msgstr ""
+msgstr "Отключить индексирование Тегов поисковиками"
 
 #: themeoptions.php:691
 msgid ""
@@ -1593,7 +1625,7 @@ msgstr ""
 
 #: themeoptions.php:692
 msgid "Remove Archive Pages from Index by search engines"
-msgstr ""
+msgstr "Отключить индексирование Архива поисковиками"
 
 #: themeoptions.php:694
 msgid ""
@@ -1605,7 +1637,7 @@ msgstr ""
 
 #: themeoptions.php:695
 msgid "Site preview for Open Graph/Twitter cards"
-msgstr ""
+msgstr "Картинка превью для карточек Open Graph/Twitter"
 
 #: themeoptions.php:697
 #, php-format
