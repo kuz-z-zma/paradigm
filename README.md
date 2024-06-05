@@ -1,4 +1,5 @@
 # Paradigm
+![preview-paradigm-homepage](https://github.com/kuz-z-zma/paradigm/assets/75898540/3f0dd009-8b46-440b-bc4f-1a2bded7b7aa)
 
 Paradigm is a responsive theme for Zenphoto CMS, based on the Bootstrap (version 3.3.5) framework. It’s optimised for SEO and works well on a variety of platforms, from desktops to laptops, tablets and mobile phones.
 
@@ -14,6 +15,29 @@ Originally this theme was created and developed by Olivier Ffrench, but seems to
 - [Full Changelog](https://www.blog.private-universe.net/web-and-tech/zenphoto-theme-paradigm/paradigm-changelog/)
 - [More screenshots](https://www.blog.private-universe.net/web-and-tech/zenphoto-theme-paradigm/paradigm-screenshots/)
 - [History of my Paradigm theme updates](https://www.blog.private-universe.net/series/zenphoto-paradigm-theme/) +[RSS feed for them](https://www.blog.private-universe.net/series/zenphoto-paradigm-theme/feed/)
+
+## Supported plugins
+- Zenpage
+- HTML_meta_tags
+- GoogleMap
+- OpenstreetMap
+- Image_album_statistics
+- Print_album_menu
+- Featured Images
+- Image-markup-generator
+- Rating
+- Hitcounter
+- reCaptcha
+- Comment_form
+- Contact_form
+- Class-video
+- favoritesHandler
+- Register users
+- User Login-Out
+- Related Items
+- RSS
+- Multiple_Layouts
+- FlickrFeed
 
 ## New in version 2.0
 
