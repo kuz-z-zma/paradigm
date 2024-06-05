@@ -55,14 +55,14 @@ if ((function_exists('printRegisterURL')||function_exists('printUserLogin_out'))
 <ul class="links-rss list-inline">
 <li><i class="glyphicon glyphicon-bullhorn"></i></li>
 <?php if (getOption('RSS_articles')) { ?>
-<li><?php	printRSSLink('News','','RSS News','',false); ?></li>
+<li><?php	printRSSLink('News','',gettext_th('RSS News'),'',false); ?></li>
 <?php }	?>
 <?php if (getOption('RSS_pages') && ($_zp_gallery_page == 'pages.php')){ ?>
-<li><?php	printRSSLink('Pages','','RSS Pages','',false); ?></li>
+<li><?php	printRSSLink('Pages','',gettext_th('RSS Pages'),'',false); ?></li>
 <?php }	?>
 <?php if (getOption('RSS_album_image')) { ?>
-<li><?php printRSSLink('AlbumsRSS','','RSS Albums','',false); ?></li>
-<li class="last"><?php printRSSLink('Gallery','','RSS Images','',false); ?></li>
+<li><?php printRSSLink('AlbumsRSS','',gettext_th('RSS Albums'),'',false); ?></li>
+<li class="last"><?php printRSSLink('Gallery','',gettext_th('RSS Images'),'',false); ?></li>
 <?php }	?>
 </ul>
 </div>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Paradigm v2.0\n"
-"POT-Creation-Date: 2024-06-05 19:17+0300\n"
-"PO-Revision-Date: 2024-06-05 19:17+0300\n"
+"POT-Creation-Date: 2024-06-05 20:52+0300\n"
+"PO-Revision-Date: 2024-06-05 20:53+0300\n"
 "Last-Translator: kuzzzma <kuzzzma@gmail.com>\n"
 "Language-Team: kuzzzma\n"
 "Language: ru_RU\n"
@@ -446,6 +446,22 @@ msgstr "Галерея"
 #: includes/_sidebar.php:16
 msgid "Register"
 msgstr "Регистрация"
+
+#: includes/_footer.php:58
+msgid "RSS News"
+msgstr "RSS Новости"
+
+#: includes/_footer.php:61
+msgid "RSS Pages"
+msgstr "RSS Страницы"
+
+#: includes/_footer.php:64
+msgid "RSS Albums"
+msgstr "RSS Альбомы"
+
+#: includes/_footer.php:65
+msgid "RSS Images"
+msgstr "RSS Изображения"
 
 #: includes/_head.php:25 includes/_head.php:69
 msgid "My favorites"
