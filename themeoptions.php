@@ -209,24 +209,14 @@ class ThemeOptions {
 					gettext('Latest by Publish Date') => 'latestbypdate',
 					gettext('Most Rated') => 'mostrated',
 					gettext('Top Rated') => 'toprated'),
-				'desc' => gettext('Select how the pictures will be chosen for the Homepage slideshow.')),
+				'desc' => gettext('Select how the images will be chosen for the Homepage slideshow.')),
 			gettext('Album to choose from') => array('key' => 'paradigm_homepage-slideshow-album', 'type' => OPTION_TYPE_SELECTOR,
 				'order' => 73,
 				'selections' => $albumlist,
-				'desc' => gettext('Choose a specific album to display its pictures. Album needs to be published, Dynamic albums work too.<br>Images should be preferably in panoramic format (or you can adjust styling via custom CSS*).<br>
-            *custom CSS: see file paradigm/css/! rename-to-custom.css for instructions.')),
-			gettext('Number of slides') => array('key' => 'paradigm_homepage-slideshow-number', 'type' => OPTION_TYPE_SELECTOR,
-				'order' => 74, 
-				'selections' => array(
-					gettext('3') => '3',
-					gettext('4') => '4',
-					gettext('5') => '5',
-					gettext('6') => '6',
-					gettext('7') => '7',
-					gettext('8') => '8',
-					gettext('9') => '9',
-					gettext('10') => '10'),
-				'desc' => gettext('Select how the pictures will be chosen for the Homepage slideshow.<br>Default is 5')),
+				'desc' => gettext('Choose a specific album to display its pictures. Album needs to be published, Dynamic albums work too.<br>Images should be preferably in panoramic format (or you can adjust styling via custom CSS*).<br>*Сustom CSS: option to enable one is in "Site options" section.')),
+			gettext('Number of slides') => array('key' => 'paradigm_homepage-slideshow-number', 'type' => OPTION_TYPE_CLEARTEXT,
+				'order' => 74,
+				'desc' => gettext('Specify number of images to be used for the Homepage slideshow.<br>Default is 5.')),
 
 /*--------------------- HOMEPAGE Blog */
 
@@ -247,10 +237,10 @@ class ThemeOptions {
 					gettext('10') => '10',
 					gettext('12') => '12',
 					gettext('14') => '14'),
-				'desc' => gettext('Select how many news items will be shown on the Homepage.<br>Default is 4')),
-			gettext('Number characters for Homepage news items to show') => array('key' => 'paradigm_homepage-blog-length', 'type' => OPTION_TYPE_CLEARTEXT,
+				'desc' => gettext('Select how many news items will be shown on the Homepage.<br>Default is 4.')),
+			gettext('Length of Homepage news items excerpt') => array('key' => 'paradigm_homepage-blog-length', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 83,
-				'desc' => gettext('Select default length for Homepage news items.<br>Default is 250 characters.')),
+				'desc' => gettext('Specify length (number of characters) for a News item excerpt to show on Homepage.<br>Default is 250 characters.')),
 
 /*--------------------- HOMEPAGE Content*/
 
@@ -271,10 +261,10 @@ class ThemeOptions {
 				'desc' => gettext('Choose what to display on the homepage.<br>Multi-choice.')),
 			gettext('Descriptions for Homepage albums') => array('key' => 'paradigm_homepage-albums-desc', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 92,
-				'desc' => gettext('Select to show description for Homepage albums.<br>If Album Custom Data is present - it is shown in full, if it is not available, Album Description is used.')),
+				'desc' => gettext('Check to show description for Homepage albums.<br>If Album Custom Data is present - it is shown in full, if it is not available, Album Description is used.')),
 			gettext('Length of Homepage albums descriptions') => array('key' => 'paradigm_homepage-albums-desc-length', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 93,
-				'desc' => gettext('Select default length for Homepage album descriptions.<br>Default is 250 characters.')),
+				'desc' => gettext('Specify length (number of characters) for Homepage album descriptions.<br>Default is 250 characters.')),
 			gettext('Number of images') => array('key' => 'paradigm_homepage-image-number', 'type' => OPTION_TYPE_SELECTOR,
 				'order' => 94, 
 				'selections' => array(
@@ -284,7 +274,7 @@ class ThemeOptions {
 					gettext('16') => '16',
 					gettext('20') => '20',
 					gettext('24') => '24'),
-				'desc' => gettext('Select how the pictures will be chosen for the Homepage display of images.<br>Default is 8.')),
+				'desc' => gettext('Select how many images will be chosen for the Homepage display of images.<br>Default is 8.')),
 
 /*================ Set of OPTIONS for the site ALBUM PAGES ================*/
 
@@ -325,7 +315,7 @@ class ThemeOptions {
 				'desc' => gettext('Choose what content to show among Related Items on Album pages.<br>Default is Albums.')),
 			gettext('Content description for Album Related Items (Length+Enable)') => array('key' => 'paradigm_album-related-length', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 129,
-				'desc' => gettext('Specify length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
+				'desc' => gettext('Specify length (number of characters) of item description to ENABLE.<br>If EMPTY, they are disabled.')),
 
 /*================ Set of OPTIONS for the site IMAGE PAGES ================*/
 
@@ -343,7 +333,7 @@ class ThemeOptions {
 				'desc' => gettext('Choose where to display Image Caption data: above or below Image on image pages.<br>Default is Below image.')),
 			gettext('Download Button') => array('key' => 'paradigm_image-download', 'type' => OPTION_TYPE_CHECKBOX, 
 				'order' => 132,
-				'desc' => gettext("Check to enable users ability to download original image from image details page.<br>If you want a save dialog, you will need to set the appropriate option in Options->Image as well (choose: protected, download).")),
+				'desc' => gettext("Check to enable users ability to download original image from image details page.<br>If you want a save dialog, you will need to set the appropriate option in Options->Image ->Full image protection as well (choose: Download).")),
 			gettext('Display Custom Data for Image') => array('key' => 'paradigm_image-custom', 'type' => OPTION_TYPE_CHECKBOX,
 				'order' => 133,
 				'desc' => gettext("Check to display info from Image Custom Data (if set).")),
@@ -377,7 +367,7 @@ class ThemeOptions {
 				'desc' => gettext('Choose what content to show among Related Items on Image pages.<br>Default is Images.')),
 			gettext('Content description for Image Related Items (Length+Enable)') => array('key' => 'paradigm_image-related-length', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 149,
-				'desc' => gettext('Specify length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
+				'desc' => gettext('Specify length (number of characters) of item description to ENABLE.<br>If EMPTY, they are disabled.')),
 
 /*================ Set of OPTIONS for the site ARCHIVE ================*/
 
@@ -451,10 +441,10 @@ class ThemeOptions {
 					gettext('Albums') => 'albums',
 					gettext('News') => 'news',
 					gettext('Pages') => 'pages'),
-				'desc' => gettext('Choose what content to show among Related Items in Pages.<br>Default is News.')),
+				'desc' => gettext('Choose what content to show among Related Items in News.<br>Default is News.')),
 			gettext('Content description in for News Related Items (Length+Enable)') => array('key' => 'paradigm_news-related-length', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 179,
-				'desc' => gettext('Specify length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
+				'desc' => gettext('Specify length (number of characters) of item description to ENABLE.<br>If EMPTY, they are disabled.')),
 
 /*================ Set of OPTIONS for the site PAGES ================*/
 
@@ -508,7 +498,7 @@ class ThemeOptions {
 				'desc' => gettext('Choose what content to show among Related Items in Pages.<br>Default is All.')),
 			gettext('Content description for Pages Related Items (Length+Enable)') => array('key' => 'paradigm_page-related-length', 'type' => OPTION_TYPE_CLEARTEXT,
 				'order' => 199, 
-				'desc' => gettext('Specify length of item description to ENABLE.<br>If EMPTY, they are disabled.')),
+				'desc' => gettext('Specify length (number of characters) of item description to ENABLE.<br>If EMPTY, they are disabled.')),
 
 /*================ Set of OPTIONS for the site SIDEBAR ================*/
 
