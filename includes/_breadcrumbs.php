@@ -4,13 +4,13 @@
 <?php if ($_zp_gallery_page == 'index.php') { ?><?php } ?>
 <?php if ($_zp_gallery_page == 'gallery.php') { ?>
 <li><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php echo gettext_th('Index'); ?>" itemprop="url"><i class="glyphicon glyphicon-home"></i></a></li>
-<li class="active"><?php echo gettext_th("Albums"); ?></li><?php } ?>
+<li class="active"><?php if (getOption('paradigm_nav_text-gallery')!='') {echo getOption('paradigm_nav_text-gallery');} else { echo gettext_th('Gallery');} ?></li><?php } ?>
 <?php if ($_zp_gallery_page == 'album.php') { ?>
 <li><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php echo gettext_th('Index'); ?>" itemprop="url"><i class="glyphicon glyphicon-home"></i></a></li>
-<li><?php printCustomPageURL(gettext_th('Albums'), 'gallery'); ?></li><?php printParentBreadcrumb_pd(); ?><li class="active"><?php printAlbumTitle(); ?></li><?php } ?>
+<li><?php if (getOption('paradigm_nav_text-gallery')!='') { printCustomPageURL(getOption('paradigm_nav_text-gallery'), 'gallery'); } else { printCustomPageURL(gettext_th('Gallery'), 'gallery'); } ?></li><?php printParentBreadcrumb_pd(); ?><li class="active"><?php printAlbumTitle(); ?></li><?php } ?>
 <?php if ($_zp_gallery_page == 'image.php') { ?>
 <li><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php echo gettext_th('Index'); ?>" itemprop="url"><i class="glyphicon glyphicon-home"></i></a></li>
-<li><?php printCustomPageURL(gettext_th('Albums'), 'gallery'); ?></li><?php printParentBreadcrumb_pd(); ?><?php printAlbumBreadcrumb_pd();?><li class="active"><?php printImageTitle(); ?></li><?php } ?>
+<li><?php if (getOption('paradigm_nav_text-gallery')!='') { printCustomPageURL(getOption('paradigm_nav_text-gallery'), 'gallery'); } else { printCustomPageURL(gettext_th('Gallery'), 'gallery'); } ?></li><?php printParentBreadcrumb_pd(); ?><?php printAlbumBreadcrumb_pd();?><li class="active"><?php printImageTitle(); ?></li><?php } ?>
 <?php if ($_zp_gallery_page == 'archive.php') { ?>
 <li><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php echo gettext_th('Index'); ?>" itemprop="url"><i class="glyphicon glyphicon-home"></i></a></li>
 <li class="active"><?php echo gettext_th("Archive View"); ?></li><?php } ?>
@@ -25,7 +25,7 @@
 <?php printParentBreadcrumb_pd(); ?><li class="active"><?php printAlbumTitle(); ?></li><?php } ?>
 <?php if ($_zp_gallery_page == 'news.php') { ?>
 <li><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php echo gettext_th('Index'); ?>" itemprop="url"><i class="glyphicon glyphicon-home"></i></a></li>
-<li><?php if (getOption('paradigm_nav_text-news')!='') {printNewsIndexURL(getOption('paradigm_nav_text-news'),''); } else { printNewsIndexURL('News','');	} ?></li>
+<li><?php if (getOption('paradigm_nav_text-news')!='') {printNewsIndexURL(getOption('paradigm_nav_text-news'),''); } else { printNewsIndexURL(gettext_th('News'),''); } ?></li>
 <?php printZenpageItemsBreadcrumb_pd();	printCurrentNewsCategory_pd(); ?>
 <?php if (is_NewsArticle()) { ?><li class="active"><?php printNewsTitle();	printCurrentNewsArchive(); ?></li><?php } ?>
 <?php } ?>
