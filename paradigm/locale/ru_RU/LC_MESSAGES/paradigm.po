@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Paradigm v2.0\n"
-"POT-Creation-Date: 2024-06-06 01:13+0300\n"
-"PO-Revision-Date: 2024-06-06 01:18+0300\n"
+"POT-Creation-Date: 2024-06-06 02:03+0300\n"
+"PO-Revision-Date: 2024-06-06 02:03+0300\n"
 "Last-Translator: kuzzzma <kuzzzma@gmail.com>\n"
 "Language-Team: kuzzzma\n"
 "Language: ru_RU\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-KeywordsList: gettext_th\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:20 includes/_head.php:22 includes/_head.php:66
+#: 404.php:19 includes/_head.php:22 includes/_head.php:66
 msgid "Object not found"
 msgstr "Объект не найден"
 

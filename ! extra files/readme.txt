@@ -7,4 +7,8 @@ Theme description & instructions: https://www.blog.private-universe.net/web-and-
 Latest version: https://github.com/kuz-z-zma/paradigm
 Demo site: https://demo.private-universe.net
 
+Instalation:
+- Upload "paradigm" folder into 'themes' directory of your Zenphoto install
+- Activate Paradigm theme in Options.
+
 Bugs and improvement ideas can be sent at: kuzzzma@gmail.com, please include "Paradigm" in your letter subject!
