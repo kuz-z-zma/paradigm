@@ -100,7 +100,7 @@
 <div class="form-group">
 <label for="website" class="col-sm-3 control-label"><?php printf(gettext_th("Website%s"), contactform::getRequiredFieldMark('contactform_website')); ?></label>
 <div class="col-sm-9">
-<input type="text" id="website" name="website"<?php contactForm::printAutocompleteAttr('url'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['website']); ?>"<?php contactForm::printAttributes('contactform_website'); ?> />
+<input type="url" id="website" name="website"<?php contactForm::printAutocompleteAttr('url'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['website']); ?>"<?php contactForm::printAttributes('contactform_website'); ?> />
 </div>
 </div>
 <?php } ?>
