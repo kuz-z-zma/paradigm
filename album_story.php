@@ -61,13 +61,13 @@ if (!empty($fullimage)) { ?>
 <?php } ?>
 
 
-<?php printPageListWithNav("« " . gettext("prev"), gettext("next") . " »"); ?>
+<?php printPageListWithNav("« " . gettext_th("prev"), gettext_th("next") . " »"); ?>
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_albumlist.php'); ?>
 
 <div id="album-details" class="row">
 <div id="album-info" class="col-sm-12">
-<h2><i class="glyphicon glyphicon-info-sign"></i>Album Info</h2>
+<h2><i class="glyphicon glyphicon-info-sign"></i><?php echo gettext_th('Album Info'); ?></h2>
 <?php if ((getAlbumCustomData()!='') && getOption('paradigm_album-custom')) { ?>
 <!-- Custom data -->
 <?php printAlbumCustomData(); ?>
@@ -86,25 +86,25 @@ if (!empty($fullimage)) { ?>
 <?php if (getTags()) { ?>
 <!-- Tags -->
 <div id="tags" class="block">
-<h3><i class="glyphicon glyphicon-tag"></i>Tags</h3>
+<h3><i class="glyphicon glyphicon-tag"></i><?php echo gettext_th('Tags'); ?></h3>
 <?php printTags_pd('links', '', 'taglist', ', ',getOption('paradigm_tags-nofollow')); ?>
 </div>
 <?php } ?>
 
 <?php if (function_exists('getHitCounter'))  { ?>
 <!-- Hitcounter -->
-<div id="hitcounter" class="block"><h3><i class="glyphicon glyphicon-eye-open"></i>Other info</h3>
-<p><strong>Views:</strong> <?php echo gethitcounter(); ?> views</p>
+<div id="hitcounter" class="block"><h3><i class="glyphicon glyphicon-eye-open"></i><?php echo gettext_th('Other info'); ?></h3>
+<p><strong><?php echo gettext_th('Views:'); ?></strong> <?php echo gethitcounter(); ?></p>
 </div>
 <?php } ?>
 
 <!-- Copyright -->
 <?php if (getOption('paradigm_copyright_message') != '') { ?>
-<div id="copyright" class="image-copy block" itemprop="copyrightHolder"><h3><i class="glyphicon glyphicon-copyright-mark"></i>Copyright</h3>
+<div id="copyright" class="image-copy block" itemprop="copyrightHolder"><h3><i class="glyphicon glyphicon-copyright-mark"></i><?php echo gettext_th('Copyright'); ?></h3>
 <?php echo getOption('paradigm_copyright_message'); ?>
 </div>
 <?php } else { ?>
-<div id="copyright" class="image-copy block"><h3><i class="glyphicon glyphicon-copyright-mark"></i>Copyright</h3>
+<div id="copyright" class="image-copy block"><h3><i class="glyphicon glyphicon-copyright-mark"></i><?php echo gettext_th('Copyright'); ?></h3>
 <p itemprop="copyrightHolder"><?php printCopyrightNotice ('','',false,'gallery'); ?></p>
 </div>
 <?php } ?>
@@ -115,7 +115,7 @@ if (!empty($fullimage)) { ?>
 
 <?php if (function_exists('printAddToFavorites') && ($_zp_gallery_page == 'album.php')) { ?>
 <!-- Favorites -->
-<div id="favorites" class="block"><h3><i class="glyphicon glyphicon-heart"></i>Favorites</h3>
+<div id="favorites" class="block"><h3><i class="glyphicon glyphicon-heart"></i><?php echo gettext_th('Favorites'); ?></h3>
 <?php printAddToFavorites($_zp_current_album); ?>
 </div>
 <?php } ?>
@@ -123,7 +123,7 @@ if (!empty($fullimage)) { ?>
 
 <?php if (extensionEnabled('rating')) { ?>
 <!-- Rating -->
-<div id="rating" class="block"><h3><i class="glyphicon glyphicon-star"></i>Rating</h3>
+<div id="rating" class="block"><h3><i class="glyphicon glyphicon-star"></i><?php echo gettext_th('Rating'); ?></h3>
 <?php printRating(); ?>
 </div>
 <?php } ?>
@@ -140,7 +140,7 @@ if (!empty($fullimage)) { ?>
 <?php if ((getAlbumLocation()!='')||function_exists('printGoogleMap')||function_exists('printOpenStreetMap')) { ?>
 <div id="location" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-3 col-lg-4 '; } ?>col-sm-12">
 <?php if (getAlbumLocation()!='') { ?>
-<h3><i class="glyphicon glyphicon-map-marker"></i>Map</h3>
+<h3><i class="glyphicon glyphicon-map-marker"></i><?php echo gettext_th('Map'); ?></h3>
 <p><strong>Location: </strong><span itemprop="contentLocation"><?php printAlbumLocation(); ?></span></p>
 <?php } ?>
 

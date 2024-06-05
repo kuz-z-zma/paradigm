@@ -48,7 +48,7 @@ echo '</div>';
 
 <?php if (class_exists('Zenpage') && getNumNews(true) && (getOption('paradigm_homepage-blog'))) { ?>
 <div id="news-homepage" class="col-sm-12">
-<h2 class="homepage-blog-heading"><i class="glyphicon glyphicon-pencil"></i><?php if (getOption('paradigm_nav_text-news')!='') {echo getOption('paradigm_nav_text-news');} else { echo gettext('News'); } ?></h2>
+<h2 class="homepage-blog-heading"><i class="glyphicon glyphicon-pencil"></i><?php if (getOption('paradigm_nav_text-news')!='') {echo getOption('paradigm_nav_text-news');} else { echo gettext_th('News'); } ?></h2>
 
 <div id="blog-style-homepage">
 <?php // news article loop
@@ -75,13 +75,13 @@ while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 
 <?php	if (getOption('paradigm_homepage-albums')) { ?>
 <div id="albums-homepage" class="col-sm-12">
-<h2><i class="glyphicon glyphicon-folder-close"></i><?php echo gettext("Albums"); ?></h2>
+<h2><i class="glyphicon glyphicon-folder-close"></i><?php echo gettext_th("Albums"); ?></h2>
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_albumlist.php'); ?>
 
 <div class="pagelist">
 <ul class="pagelist">
-<li><?php printCustomPageURL(gettext('All albums'), 'gallery'); ?></li>
+<li><?php printCustomPageURL(gettext_th('All albums'), 'gallery'); ?></li>
 </ul>
 </div>
 </div>
@@ -91,7 +91,7 @@ while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 <div id="images-homepage" class="col-sm-12">
 
 <?php if (getOption('paradigm_homepage-image-uploads')) { ?>
-<h2><i class="glyphicon glyphicon-upload"></i><?php echo gettext("Latest uploads"); ?></h2>
+<h2><i class="glyphicon glyphicon-upload"></i><?php echo gettext_th("Latest uploads"); ?></h2>
 <?php if (function_exists('getImageStatistic')) { ?>
 <?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"latest","",true,false,false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
@@ -100,7 +100,7 @@ while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 <?php } ?>
 
 <?php if (getOption('paradigm_homepage-image-recent')) { ?>
-<h2><i class="glyphicon glyphicon-time"></i><?php echo gettext("Recent images"); ?></h2>
+<h2><i class="glyphicon glyphicon-time"></i><?php echo gettext_th("Recent images"); ?></h2>
 <?php if (function_exists('getImageStatistic')) { ?>
 <?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"latest-date","",true,false,false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
@@ -109,7 +109,7 @@ while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 <?php } ?>
 
 <?php if (getOption('paradigm_homepage-image-popular')) { ?>
-<h2><i class="glyphicon glyphicon-fire"></i><?php echo gettext("Most popular"); ?></h2>
+<h2><i class="glyphicon glyphicon-fire"></i><?php echo gettext_th("Most popular"); ?></h2>
 <?php if (function_exists('getImageStatistic')) { ?>
 <?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"popular","",true,false,false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
@@ -118,7 +118,7 @@ while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 <?php } ?>
 
 <?php if (getOption('paradigm_homepage-image-rated')) { ?>
-<h2><i class="glyphicon glyphicon-star"></i><?php echo gettext("Top rated"); ?></h2>
+<h2><i class="glyphicon glyphicon-star"></i><?php echo gettext_th("Top rated"); ?></h2>
 <?php if (function_exists('getImageStatistic')) { ?>
 <?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"toprated","",true, false, false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
@@ -127,7 +127,7 @@ while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 <?php } ?>
 
 <?php if (getOption('paradigm_homepage-image-random')) { ?>
-<h2><i class="glyphicon glyphicon-random"></i><?php echo gettext("Random images"); ?></h2>					
+<h2><i class="glyphicon glyphicon-random"></i><?php echo gettext_th("Random images"); ?></h2>					
 <?php if (function_exists('getImageStatistic')) { ?>
 <?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"random","", true, false, false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>

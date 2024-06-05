@@ -20,7 +20,7 @@ if (function_exists('printRegistrationForm')) {
 <div id="center" class="row">
 <section id="main" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-10 '; } ?>col-lg-9 col-md-9 col-sm-9 col-xs-12" itemprop="mainContentOfPage">
 
-<h1><?php echo gettext('User Registration') ?></h1>
+<h1><?php echo gettext_th('User Registration') ?></h1>
 
 <?php printRegistrationForm(); ?>
 

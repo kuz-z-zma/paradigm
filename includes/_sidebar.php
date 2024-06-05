@@ -5,15 +5,15 @@
 <?php printcodeblock (1, $_zp_gallery);	?>
 <?php	} ?>  
 
-<h2 class="sidebar-header">Navigation</h2>
+<h2 class="sidebar-header"><?php echo gettext_th('Navigation'); ?></h2>
 
 <?php	if ((function_exists('printRegisterURL')||function_exists('printUserLogin_out')) && getOption('paradigm_sidebar-user-menu')) { ?>
 <!-- User menu in Sidebar -->
 <div class="panel panel-default nav-local">
-<div class="panel-heading"><h3 class="panel-title">User menu</h3></div>
+<div class="panel-heading"><h3 class="panel-title"><?php echo gettext_th('User menu'); ?></h3></div>
 <div class="panel-body">
 <ul id="nav-local-users">
-<?php if (!zp_loggedin() && function_exists('printRegisterURL')){ ?><li><?php printRegisterURL(gettext('Register'), '', ''); ?></li><?php } ?>
+<?php if (!zp_loggedin() && function_exists('printRegisterURL')){ ?><li><?php printRegisterURL(gettext_th('Register'), '', ''); ?></li><?php } ?>
 <?php if (function_exists('printUserLogin_out')&& ($_zp_gallery_page !== 'register.php')){ ?><li><?php printUserLogin_out('',''); ?></li><?php } ?>
 </ul>
 </div>
@@ -23,7 +23,7 @@
 <?php if (function_exists('printFavoritesURL')) { ?>
 <!-- Favorites menu in Gallery -->
 <div class="panel panel-default nav-local">
-<div class="panel-heading"><h3 class="panel-title">Collections</h3></div>
+<div class="panel-heading"><h3 class="panel-title"><?php echo gettext_th('Collections'); ?></h3></div>
 <div class="panel-body">
 <ul id="nav-local-favorites">
 <?php printFavoritesURL(NULL, '<li>', '</li><li>', '</li>'); ?>
@@ -35,7 +35,7 @@
 <?php if(function_exists("printAlbumMenu") && getOption('paradigm_sidebar-albums-gallery') && (($_zp_gallery_page == 'image.php')||($_zp_gallery_page == 'album.php')||($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'gallery.php')||($_zp_gallery_page == 'favorites.php')||($_zp_gallery_page == 'password.php')||($_zp_gallery_page == 'register.php'))) { ?>
 <!-- Album menu in Gallery -->
 <div class="panel panel-default nav-local">
-<div class="panel-heading"><h3 class="panel-title"><?php if (getOption('paradigm_nav_text-gallery')!='') {echo getOption('paradigm_nav_text-gallery');} else { echo gettext('Albums');} ?></h3></div>
+<div class="panel-heading"><h3 class="panel-title"><?php if (getOption('paradigm_nav_text-gallery')!='') {echo getOption('paradigm_nav_text-gallery');} else { echo gettext_th('Albums');} ?></h3></div>
 <div class="panel-body">
 <?php	printAlbumMenu("list", false, "nav-local-albums", "open", "submenu", "open", "", getOption('paradigm_sidebar-albums-depth'), false, false); ?>
 </div>
@@ -51,7 +51,7 @@
 ) { ?>
 <!-- News menus -->
 <div class="panel panel-default nav-local">
-<div class="panel-heading"><h3 class="panel-title"><?php if (getOption('paradigm_nav_text-news')!='') {echo getOption('paradigm_nav_text-news');} else { echo gettext('News');} ?></h3></div>
+<div class="panel-heading"><h3 class="panel-title"><?php if (getOption('paradigm_nav_text-news')!='') {echo getOption('paradigm_nav_text-news');} else { echo gettext_th('News');} ?></h3></div>
 <div class="panel-body">
 <?php printAllNewsCategories("",false,"nav-local-news","open",true,"submenu","open", "list", getOption('paradigm_sidebar-news-depth'),""); ?>						
 </div>
@@ -67,7 +67,7 @@
 ) { ?>
 <!-- Page menus -->
 <div class="panel panel-default nav-local">
-<div class="panel-heading"><h3 class="panel-title"><?php if (getOption('paradigm_nav_text-pages')!='') {echo getOption('paradigm_nav_text-pages');} else { echo gettext('Pages');} ?></h3></div>
+<div class="panel-heading"><h3 class="panel-title"><?php if (getOption('paradigm_nav_text-pages')!='') {echo getOption('paradigm_nav_text-pages');} else { echo gettext_th('Pages');} ?></h3></div>
 <div class="panel-body">
 <?php printPageMenu("list","nav-local-pages", "open", "submenu", "open", "",getOption('paradigm_sidebar-pages-depth'), true); ?>
 </div>
@@ -83,7 +83,7 @@
 ) { ?>
 <!-- Album menus -->
 <div class="panel panel-default nav-local">
-<div class="panel-heading"><h3 class="panel-title"><?php if (getOption('paradigm_nav_text-gallery')!='') {echo getOption('paradigm_nav_text-gallery');} else { echo gettext('Albums');} ?></h3></div>
+<div class="panel-heading"><h3 class="panel-title"><?php if (getOption('paradigm_nav_text-gallery')!='') {echo getOption('paradigm_nav_text-gallery');} else { echo gettext_th('Albums');} ?></h3></div>
 <div class="panel-body">
 <?php printAlbumMenu("list", false, "nav-local-albums", "open", "submenu", "open", "", 0 , false, false); ?>
 </div>
@@ -108,7 +108,7 @@
 <?php if (getAllTagsCount() && getOption('paradigm_sidebar-tags')) { ?>
 <!-- Tag cloud in Sidebar-->
 <div class="panel panel-default">
-<div class="panel-heading"><h3 class="panel-title"><?php echo gettext('Popular Tags'); ?></h3></div>
+<div class="panel-heading"><h3 class="panel-title"><?php echo gettext_th('Popular Tags'); ?></h3></div>
 <div id="tag_cloud" class="panel-body">
 <?php printAllTagsAs_pd('cloud','taglist','', false, true, getOption('paradigm_tags-maxfontsize'), getOption('paradigm_tags-maxcount'), getOption('paradigm_tags-mincount'), null, getOption('paradigm_tags-minfontsize'), false, false, getOption('paradigm_tags-nofollow')); ?>
 </div>

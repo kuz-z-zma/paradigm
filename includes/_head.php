@@ -18,24 +18,24 @@
 	else {
 	if ($_zp_gallery_page == 'album.php') {echo getBareAlbumTitle(); if ($_zp_page > 1) {echo ' (Page ' . $_zp_page . ')'; }echo ' | ';}
 	if (($_zp_gallery_page == 'gallery.php') && (getOption('paradigm_nav_text-gallery')!='')) {echo (getOption('paradigm_nav_text-gallery')); if ($_zp_page > 1) {echo ' (Page ' . $_zp_page . ')';}echo ' | '; }
-	if (($_zp_gallery_page == 'gallery.php') && (getOption('paradigm_nav_text-gallery') == '')) {echo gettext('Gallery'); if ($_zp_page > 1) {echo ' (Page ' . $_zp_page . ')';}echo ' | '; }
-	if ($_zp_gallery_page == '404.php') {echo gettext('Object not found'); echo ' | '; }
-	if ($_zp_gallery_page == 'archive.php') {echo gettext('Archive View'); echo ' | '; }
-	if ($_zp_gallery_page == 'contact.php') {echo gettext('Contact'); echo ' | '; }
-	if ($_zp_gallery_page == 'favorites.php') {echo gettext('My favorites'); if ($_zp_page > 1) {echo ' (Page ' . $_zp_page . ')'; }echo ' | '; }
+	if (($_zp_gallery_page == 'gallery.php') && (getOption('paradigm_nav_text-gallery') == '')) {echo gettext_th('Gallery'); if ($_zp_page > 1) {echo ' (Page ' . $_zp_page . ')';}echo ' | '; }
+	if ($_zp_gallery_page == '404.php') {echo gettext_th('Object not found'); echo ' | '; }
+	if ($_zp_gallery_page == 'archive.php') {echo gettext_th('Archive View'); echo ' | '; }
+	if ($_zp_gallery_page == 'contact.php') {echo gettext_th('Contact'); echo ' | '; }
+	if ($_zp_gallery_page == 'favorites.php') {echo gettext_th('My favorites'); if ($_zp_page > 1) {echo ' (Page ' . $_zp_page . ')'; }echo ' | '; }
 	if ($_zp_gallery_page == 'image.php') {echo getBareImageTitle() . ' - photo ' . imageNumber() . ' from album ' . getBareAlbumTitle(); echo ' | '; }
 	if (($_zp_gallery_page == 'news.php') && (is_NewsPage()) && (getOption('paradigm_nav_text-news')!='') && (!is_NewsCategory()) && (!is_NewsArticle())) {echo (getOption('paradigm_nav_text-news')); printCurrentPageAppendix(' (Page ', ')'); echo ' | '; }
-	if (($_zp_gallery_page == 'news.php') && (is_NewsPage()) && (getOption('paradigm_nav_text-news') =='') && (!is_NewsCategory()) && (!is_NewsArticle())) {echo gettext('News'); printCurrentPageAppendix(' (Page ', ')'); echo ' | ';}
+	if (($_zp_gallery_page == 'news.php') && (is_NewsPage()) && (getOption('paradigm_nav_text-news') =='') && (!is_NewsCategory()) && (!is_NewsArticle())) {echo gettext_th('News'); printCurrentPageAppendix(' (Page ', ')'); echo ' | ';}
 	if (($_zp_gallery_page == 'news.php') && (getOption('paradigm_nav_text-news')!='') && (is_NewsCategory())) {printCurrentNewsCategory(); echo ' | '; echo (getOption('paradigm_nav_text-news')); printCurrentPageAppendix(' (Page ', ')'); echo ' | '; }	
-	if (($_zp_gallery_page == 'news.php') && (getOption('paradigm_nav_text-news') =='') && (is_NewsCategory())) {printCurrentNewsCategory(); echo ' | '; echo gettext('News'); printCurrentPageAppendix(' (Page ', ')'); echo ' | '; }
+	if (($_zp_gallery_page == 'news.php') && (getOption('paradigm_nav_text-news') =='') && (is_NewsCategory())) {printCurrentNewsCategory(); echo ' | '; echo gettext_th('News'); printCurrentPageAppendix(' (Page ', ')'); echo ' | '; }
 	if (($_zp_gallery_page == 'news.php') && (getOption('paradigm_nav_text-news')!='') && (is_NewsArticle())) {echo getBareNewsTitle(); echo ' | '; echo (getOption('paradigm_nav_text-news')); echo ' | '; }
-	if (($_zp_gallery_page == 'news.php') && (getOption('paradigm_nav_text-news') =='') && (is_NewsArticle())) {echo getBareNewsTitle(); echo ' | '; echo gettext('News'); echo ' | '; }
+	if (($_zp_gallery_page == 'news.php') && (getOption('paradigm_nav_text-news') =='') && (is_NewsArticle())) {echo getBareNewsTitle(); echo ' | '; echo gettext_th('News'); echo ' | '; }
 	if ($_zp_gallery_page == 'pages.php') {echo getBarePageTitle(); echo ' | '; }
-	if ($_zp_gallery_page == 'password.php') {echo gettext('Password required'); echo ' | '; }
-	if ($_zp_gallery_page == 'register.php') {echo gettext('Register'); echo ' | '; }
-	if ($_zp_gallery_page == 'credits.php') {echo gettext('Credits'); echo ' | '; }
-	if ($_zp_gallery_page == 'explore.php') {echo gettext('Explore'); echo ' | '; }
-	if ($_zp_gallery_page == 'sitemap.php') {echo gettext('Sitemap'); echo ' | '; }	
+	if ($_zp_gallery_page == 'password.php') {echo gettext_th('Password required'); echo ' | '; }
+	if ($_zp_gallery_page == 'register.php') {echo gettext_th('Register'); echo ' | '; }
+	if ($_zp_gallery_page == 'credits.php') {echo gettext_th('Credits'); echo ' | '; }
+	if ($_zp_gallery_page == 'explore.php') {echo gettext_th('Explore'); echo ' | '; }
+	if ($_zp_gallery_page == 'sitemap.php') {echo gettext_th('Sitemap'); echo ' | '; }	
 	if ($_zp_gallery_page == 'search.php') {echo html_encode($searchwords); echo html_encode($searchdate); echo ' | '; }
 	echo getParentSiteTitle(); }	?></title>
 <?php	if (($_zp_gallery_page == 'image.php') && getImageCustomData()!='') { echo '<meta name="description" content="'; echo strip_tags(preg_replace( "/\r|\n/", "",(str_replace('<br>','. ',getImageCustomData())))); echo '"/>'; }
@@ -60,21 +60,21 @@ echo '<meta name="robots" content="noindex, follow">';
 	
 <!-- Open Graph -->
 
-<meta property="og:title" content="<?php if (($_zp_gallery_page == 'index.php')) {echo gettext('Home') . ' | '; }
+<meta property="og:title" content="<?php if (($_zp_gallery_page == 'index.php')) {echo gettext_th('Home') . ' | '; }
 if ($_zp_gallery_page == 'album.php') {echo getBareAlbumTitle(); if ($_zp_page > 1) {echo ' [' . $_zp_page . ']'; } echo ' | '; }
-if ($_zp_gallery_page == 'gallery.php') {echo gettext('Albums'); if ($_zp_page > 1) {echo ' [' . $_zp_page . ']'; } echo ' | '; }
-if ($_zp_gallery_page == '404.php') {echo gettext('Object not found'); echo ' | '; }
-if ($_zp_gallery_page == 'archive.php') {echo gettext('Archive View'); echo ' | '; }
-if ($_zp_gallery_page == 'contact.php') {echo gettext('Contact'); echo ' | '; }
-if ($_zp_gallery_page == 'favorites.php') {echo gettext('My favorites'); if ($_zp_page > 1) {echo ' [' . $_zp_page . ']'; } echo ' | '; }
+if ($_zp_gallery_page == 'gallery.php') {echo gettext_th('Albums'); if ($_zp_page > 1) {echo ' [' . $_zp_page . ']'; } echo ' | '; }
+if ($_zp_gallery_page == '404.php') {echo gettext_th('Object not found'); echo ' | '; }
+if ($_zp_gallery_page == 'archive.php') {echo gettext_th('Archive View'); echo ' | '; }
+if ($_zp_gallery_page == 'contact.php') {echo gettext_th('Contact'); echo ' | '; }
+if ($_zp_gallery_page == 'favorites.php') {echo gettext_th('My favorites'); if ($_zp_page > 1) {echo ' [' . $_zp_page . ']'; } echo ' | '; }
 if ($_zp_gallery_page == 'image.php') {echo getBareImageTitle() . ' | ' . getBareAlbumTitle(); echo ' | '; }
-if (($_zp_gallery_page == 'news.php') && (is_NewsPage())&& (!is_NewsCategory())&& (!is_NewsArticle())) {echo gettext('Blog'); echo ' | '; }	
-if (($_zp_gallery_page == 'news.php') && (is_NewsCategory())) {printCurrentNewsCategory(); echo ' | '; echo gettext('Blog'); echo ' | '; }	
-if (($_zp_gallery_page == 'news.php') && (is_NewsArticle())) {echo getBareNewsTitle(); echo ' | '; echo gettext('Blog'); echo ' | '; }
+if (($_zp_gallery_page == 'news.php') && (is_NewsPage())&& (!is_NewsCategory())&& (!is_NewsArticle())) {echo gettext_th('Blog'); echo ' | '; }	
+if (($_zp_gallery_page == 'news.php') && (is_NewsCategory())) {printCurrentNewsCategory(); echo ' | '; echo gettext_th('Blog'); echo ' | '; }	
+if (($_zp_gallery_page == 'news.php') && (is_NewsArticle())) {echo getBareNewsTitle(); echo ' | '; echo gettext_th('Blog'); echo ' | '; }
 if ($_zp_gallery_page == 'pages.php') {echo getBarePageTitle(); echo ' | ';}
-if ($_zp_gallery_page == 'password.php') {echo gettext('Password required'); echo ' | '; }
-if ($_zp_gallery_page == 'register.php') {echo gettext('Register'); echo ' | '; }
-if ($_zp_gallery_page == 'search.php') {echo gettext('Search'); if ($_zp_page > 1) {echo ' [' . $_zp_page . ']'; } echo ' | '; }
+if ($_zp_gallery_page == 'password.php') {echo gettext_th('Password required'); echo ' | '; }
+if ($_zp_gallery_page == 'register.php') {echo gettext_th('Register'); echo ' | '; }
+if ($_zp_gallery_page == 'search.php') {echo gettext_th('Search'); if ($_zp_page > 1) {echo ' [' . $_zp_page . ']'; } echo ' | '; }
 	echo getParentSiteTitle(); ?>" />	
 <meta property="og:type" content="article" /> 
 <meta property="og:url" content="<?php echo (PROTOCOL."://".$_SERVER['HTTP_HOST'].$_SERVER["REQUEST_URI"]); ?>" /> 
@@ -108,7 +108,7 @@ elseif ((($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'news.php')||
 <?php } ?>
 <?php if ($_zp_gallery_page == 'album.php') { ?>
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="<?php printAlbumTitle(); echo (' '); echo gettext('album');?>" />
+<meta name="twitter:title" content="<?php printAlbumTitle(); echo (' '); echo gettext_th('album');?>" />
 <meta name="twitter:description" content="<?php if (getAlbumCustomData()!='') { echo strip_tags(preg_replace( "/\r|\n/","",(str_replace('<br>','. ',getAlbumCustomData())))); } else {echo getBareAlbumDesc();} ?>" />
 <?php } ?>
 <?php if ((($_zp_gallery_page == 'news.php') && (is_NewsArticle()) )) { ?>
@@ -123,7 +123,7 @@ elseif ((($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'news.php')||
 <?php } ?>
 <?php if (($_zp_gallery_page == 'index.php')) { ?>
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="<?php echo gettext('Home') . ' | '; echo getParentSiteTitle(); ?>" />
+<meta name="twitter:title" content="<?php echo gettext_th('Home') . ' | '; echo getParentSiteTitle(); ?>" />
 <meta name="twitter:description" content="<?php printBareGalleryDesc(); ?>" />
 <?php } ?>
 

@@ -10,7 +10,7 @@
 
 <?php if (contactForm::isVisibleField('contactform_title')) { ?>
 <div class="form-group">
-<label for="title" class="col-sm-3 control-label"><?php printf(gettext("Title%s"), contactform::getRequiredFieldMark('contactform_title')); ?></label>
+<label for="title" class="col-sm-3 control-label"><?php printf(gettext_th("Title%s"), contactform::getRequiredFieldMark('contactform_title')); ?></label>
 <div class="col-sm-9">
 <input type="text" id="title" name="title"<?php contactForm::printAutocompleteAttr('honorific-prefix'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['title']); ?>"<?php contactForm::printAttributes('contactform_title'); ?> />
 </div>
@@ -19,7 +19,7 @@
 
 <?php if (contactForm::isVisibleField('contactform_name')) { ?>
 <div class="form-group">
-<label for="name" class="col-sm-3 control-label"><?php printf(gettext("Name%s"), contactform::getRequiredFieldMark('contactform_name')); ?></label>
+<label for="name" class="col-sm-3 control-label"><?php printf(gettext_th("Name%s"), contactform::getRequiredFieldMark('contactform_name')); ?></label>
 <div class="col-sm-9">
 <input type="text" id="name" name="name"<?php contactForm::printAutocompleteAttr('name'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['name']); ?>"<?php contactForm::printAttributes('contactform_name'); ?> />
 </div>
@@ -27,7 +27,7 @@
 <?php } ?>
 
 <div class="form-group" style="display:none;">
-<label for="username" class="col-sm-3 control-label"><?php echo gettext('Username:'); ?></label>
+<label for="username" class="col-sm-3 control-label"><?php echo gettext_th('Username:'); ?></label>
 <div class="col-sm-9">
 <input type="text" id="username" name="username"<?php contactForm::printAutocompleteAttr('username'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['honeypot']); ?>"<?php echo contactform::getProcessedFieldDisabledAttr(); ?> />
 </div>
@@ -35,7 +35,7 @@
 
 <?php if (contactForm::isVisibleField('contactform_company')) { ?>
 <div class="form-group">
-<label for="company" class="col-sm-3 control-label"><?php printf(gettext("Company%s"), contactform::getRequiredFieldMark('contactform_company')); ?></label>
+<label for="company" class="col-sm-3 control-label"><?php printf(gettext_th("Company%s"), contactform::getRequiredFieldMark('contactform_company')); ?></label>
 <div class="col-sm-9">
 <input type="text" id="company" name="company"<?php contactForm::printAutocompleteAttr('organization'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['company']); ?>"<?php contactForm::printAttributes('contactform_company'); ?> />
 </div>
@@ -44,7 +44,7 @@
 
 <?php if (contactForm::isVisibleField('contactform_street')) { ?>
 <div class="form-group">
-<label for="street" class="col-sm-3 control-label"><?php printf(gettext("Street%s"), contactform::getRequiredFieldMark('contactform_street')); ?></label>
+<label for="street" class="col-sm-3 control-label"><?php printf(gettext_th("Street%s"), contactform::getRequiredFieldMark('contactform_street')); ?></label>
 <div class="col-sm-9">
 <input type="text" id="street" name="street"<?php contactForm::printAutocompleteAttr('street-address'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['street']); ?>"<?php contactForm::printAttributes('contactform_street'); ?> />
 </div>
@@ -53,7 +53,7 @@
 
 <?php if (contactForm::isVisibleField('contactform_city')) { ?>
 <div class="form-group">
-<label for="city" class="col-sm-3 control-label"><?php printf(gettext("City%s"), contactform::getRequiredFieldMark('contactform_city')); ?></label>
+<label for="city" class="col-sm-3 control-label"><?php printf(gettext_th("City%s"), contactform::getRequiredFieldMark('contactform_city')); ?></label>
 <div class="col-sm-9">
 <input type="text" id="city" name="city"<?php contactForm::printAutocompleteAttr('address-level2'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['city']); ?>"<?php contactForm::printAttributes('contactform_city'); ?> />
 </div>
@@ -62,7 +62,7 @@
 
 <?php if (contactForm::isVisibleField('contactform_state')) { ?>
 <div class="form-group">
-<label for="state" class="col-sm-3 control-label"><?php printf(gettext("State%s"), contactform::getRequiredFieldMark('contactform_state')); ?></label>
+<label for="state" class="col-sm-3 control-label"><?php printf(gettext_th("State%s"), contactform::getRequiredFieldMark('contactform_state')); ?></label>
 <div class="col-sm-9">
 <input type="text" id="state" name="state"<?php contactForm::printAutocompleteAttr('address-level1'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['city']); ?>"<?php contactForm::printAttributes('contactform_state'); ?> />
 </div>
@@ -71,7 +71,7 @@
 
 <?php if (contactForm::isVisibleField('contactform_country')) { ?>
 <div class="form-group">
-<label for="country" class="col-sm-3 control-label"><?php printf(gettext("Country%s"), contactform::getRequiredFieldMark('contactform_country')); ?></label>
+<label for="country" class="col-sm-3 control-label"><?php printf(gettext_th("Country%s"), contactform::getRequiredFieldMark('contactform_country')); ?></label>
 <div class="col-sm-9">
 <input type="text" id="country" name="country"<?php contactForm::printAutocompleteAttr('country'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['country']); ?>"<?php contactForm::printAttributes('contactform_country'); ?> />
 </div>
@@ -80,7 +80,7 @@
 
 <?php if (contactForm::isVisibleField('contactform_postal')) { ?>
 <div class="form-group">
-<label for="postal" class="col-sm-3 control-label"><?php printf(gettext("Postal code%s"), contactform::getRequiredFieldMark('contactform_postal')); ?></label>
+<label for="postal" class="col-sm-3 control-label"><?php printf(gettext_th("Postal code%s"), contactform::getRequiredFieldMark('contactform_postal')); ?></label>
 <div class="col-sm-9">
 <input type="text" id="postal" name="postal"<?php contactForm::printAutocompleteAttr('postal-code'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['postal']); ?>"<?php contactForm::printAttributes('contactform_postal'); ?> />
 </div>
@@ -89,7 +89,7 @@
 
 <?php if (contactForm::isVisibleField('contactform_email')) { ?>
 <div class="form-group">
-<label for="email" class="col-sm-3 control-label"><?php printf(gettext("E-Mail%s"), contactform::getRequiredFieldMark('contactform_email')); ?></label>
+<label for="email" class="col-sm-3 control-label"><?php printf(gettext_th("E-Mail%s"), contactform::getRequiredFieldMark('contactform_email')); ?></label>
 <div class="col-sm-9">
 <input type="email" id="email" name="email" <?php contactForm::printAutocompleteAttr('email'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['email']); ?>"<?php contactForm::printAttributes('contactform_email'); ?> />
 </div>
@@ -98,7 +98,7 @@
 
 <?php if (contactForm::isVisibleField('contactform_website')) { ?>
 <div class="form-group">
-<label for="website" class="col-sm-3 control-label"><?php printf(gettext("Website%s"), contactform::getRequiredFieldMark('contactform_website')); ?></label>
+<label for="website" class="col-sm-3 control-label"><?php printf(gettext_th("Website%s"), contactform::getRequiredFieldMark('contactform_website')); ?></label>
 <div class="col-sm-9">
 <input type="text" id="website" name="website"<?php contactForm::printAutocompleteAttr('url'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['website']); ?>"<?php contactForm::printAttributes('contactform_website'); ?> />
 </div>
@@ -107,7 +107,7 @@
 
 <?php if (contactForm::isVisibleField('contactform_phone')) { ?>
 <div class="form-group">
-<label for="phone" class="col-sm-3 control-label"><?php printf(gettext("Phone%s"), contactform::getRequiredFieldMark('contactform_phone')); ?></label>
+<label for="phone" class="col-sm-3 control-label"><?php printf(gettext_th("Phone%s"), contactform::getRequiredFieldMark('contactform_phone')); ?></label>
 <div class="col-sm-9">
 <input type="tel" id="phone" name="phone"<?php contactForm::printAutocompleteAttr('tel'); ?> size="22" class="form-control" value="<?php echo html_encode($mailcontent['phone']); ?>"<?php contactForm::printAttributes('contactform_phone'); ?> />
 </div>
@@ -115,7 +115,7 @@
 <?php } ?>
 
 <?php if ($_zp_captcha->name && getOption("contactform_captcha") && !contactForm::isProcessingPost()) {
-		$captcha = $_zp_captcha->getCaptcha(gettext("Enter CAPTCHA<strong>*</strong>")); ?>
+		$captcha = $_zp_captcha->getCaptcha(gettext_th("Enter CAPTCHA<strong>*</strong>")); ?>
 <div class="form-group">
 <?php
 if (isset($captcha['html']))
@@ -130,14 +130,14 @@ echo '</div>'; ?>
 <?php } ?>
 
 <div class="form-group">
-<label for="subject" class="col-sm-3 control-label"><?php echo gettext("Subject<strong>*</strong>"); ?></label>
+<label for="subject" class="col-sm-3 control-label"><?php echo gettext_th("Subject<strong>*</strong>"); ?></label>
 <div class="col-sm-9">
 <input type="text" id="subject" name="subject" size="22" class="form-control" value="<?php echo html_encode($mailcontent['subject']); ?>"<?php echo contactForm::getProcessedFieldDisabledAttr(); ?> required />
 </div>
 </div>
 
 <div class="mailmessage form-group">
-<label for="message" class="col-sm-3 control-label"><?php echo gettext("Message<strong>*</strong>"); ?></label>
+<label for="message" class="col-sm-3 control-label"><?php echo gettext_th("Message<strong>*</strong>"); ?></label>
 <div class="col-sm-9">
 <textarea id="message" name="message" rows="6" cols="42" class="form-control" <?php echo contactform::getProcessedFieldDisabledAttr(); ?> required><?php echo $mailcontent['message']; ?></textarea>
 </div>
@@ -160,8 +160,8 @@ echo '</div>'; ?>
 
 <?php if (!contactForm::isProcessingPost()) { ?>
 <div class="col-sm-9 col-sm-offset-3">
-<input type="submit" class="button buttons" value="<?php echo gettext("Send e-mail"); ?>" />
-<input type="reset" class="button buttons" value="<?php echo gettext("Reset"); ?>" />
+<input type="submit" class="button buttons" value="<?php echo gettext_th("Send e-mail"); ?>" />
+<input type="reset" class="button buttons" value="<?php echo gettext_th("Reset"); ?>" />
 </div>
 <?php } ?>
 </form>

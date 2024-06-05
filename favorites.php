@@ -28,7 +28,7 @@ if (class_exists('favorites')) {
 <!-- Favourite images -->
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_imagethumbs.php'); ?>
 
-<?php printPageListWithNav("« " . gettext("prev"), gettext("next") . " »"); ?>
+<?php printPageListWithNav("« " . gettext_th("prev"), gettext_th("next") . " »"); ?>
 
 </section>
 

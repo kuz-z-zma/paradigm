@@ -45,7 +45,7 @@ $searchwords .= $searchdate;}
 if ($total > 0) {
 ?>
 <h1><i class="glyphicon glyphicon-search"></i>
-<?php printf(gettext('Results for')); echo ':&nbsp;'; echo html_encode($searchwords);	?>
+<?php printf(gettext_th('Results for')); echo ':&nbsp;'; echo html_encode($searchwords);	?>
 </h1>
 <?php
 }
@@ -56,7 +56,7 @@ $c = 0;
 ?>
 
 <div id="page-results" class="row col-sm-12">
-<h2><?php printf(gettext('Pages (%s)'), $numpages); ?> <small><?php printZDSearchShowMoreLink("pages", $number_to_show); ?></small></h2>
+<h2><?php printf(gettext_th('Pages (%s)'), $numpages); ?> <small><?php printZDSearchShowMoreLink("pages", $number_to_show); ?></small></h2>
 <ul class="searchresults">
 <?php while (next_page()) {	$c++ ;	?>
 <li<?php printZDToggleClass('pages', $c, $number_to_show); ?>>
@@ -81,7 +81,7 @@ $c = 0;
 ?>
 
 <div id="news-results" class="row col-sm-12">
-<h2><?php printf(gettext('Articles (%s)'), $numnews); ?> <small><?php printZDSearchShowMoreLink("news", $number_to_show); ?></small></h2>
+<h2><?php printf(gettext_th('Articles (%s)'), $numnews); ?> <small><?php printZDSearchShowMoreLink("news", $number_to_show); ?></small></h2>
 <ul class="searchresults">
 <?php while (next_news()) { $c++;	?>
 <li<?php printZDToggleClass('news', $c, $number_to_show); ?>>
@@ -101,12 +101,12 @@ $c = 0;
 
 <h2><?php if (getOption('search_no_albums')) {
 if (!getOption('search_no_images') && ($numpages + $numnews) > 0) {
-printf(gettext('Images (%s)'), $numimages); }
+printf(gettext_th('Images (%s)'), $numimages); }
 } else {
 if (getOption('search_no_images')) {
 if (($numpages + $numnews) > 0) {
-printf(gettext('Albums (%s)'), $numalbums); }
-} else {printf(gettext('Albums (%1$s) &amp; Images (%2$s)'), $numalbums, $numimages); }
+printf(gettext_th('Albums (%s)'), $numalbums); }
+} else {printf(gettext_th('Albums (%1$s) &amp; Images (%2$s)'), $numalbums, $numimages); }
 } ?></h2>
 
 <?php if (getNumAlbums() != 0) { ?>
@@ -119,7 +119,7 @@ printf(gettext('Albums (%s)'), $numalbums); }
 <div id="caption" class="content">Sorry, no matches found. Try refining your search.</div>
 <?php } ?>
 
-<?php printPageListWithNav("« " . gettext("prev"), gettext("next") . " »"); ?>
+<?php printPageListWithNav("« " . gettext_th("prev"), gettext_th("next") . " »"); ?>
 
 </section>
 

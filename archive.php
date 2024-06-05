@@ -23,11 +23,11 @@ if (!defined('WEBPATH'))
 <section id="main" class="col-xs-12"itemprop="mainContentOfPage">
 <?php } ?>
 
-<h1><i class="glyphicon glyphicon-calendar"></i><?php echo gettext('Archive'); ?></h1>
+<h1><i class="glyphicon glyphicon-calendar"></i><?php echo gettext_th('Archive'); ?></h1>
 
 <?php if (function_exists("printNewsArchive")) { ?>
 <div id="news-archive">
-<h2><?php echo gettext('News archive'); ?></h2>
+<h2><?php echo gettext_th('News archive'); ?></h2>
 <div class="columns">
 <?php printNewsArchive('archive','year','month','archive-active',false,'asc'); ?>
 </div>
@@ -35,7 +35,7 @@ if (!defined('WEBPATH'))
 <?php } ?>
 
 <div id="album-archive">
-<h2 itemprop="name"><?php echo gettext('Gallery archive'); ?></h2>
+<h2 itemprop="name"><?php echo gettext_th('Gallery archive'); ?></h2>
 <div class="columns">
 <?php printAllDates('archive','year','month','asc'); ?>
 </div>

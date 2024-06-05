@@ -18,7 +18,7 @@ die();
 <div id="center" class="row" itemscope itemtype="https://schema.org/AboutPage">
 <section id="main" class="col-xs-12" itemprop="mainContentOfPage">
 
-<h1 itemprop="name"><i class="glyphicon glyphicon-tags"></i>Tags</h1>
+<h1 itemprop="name"><i class="glyphicon glyphicon-tags"></i><?php echo gettext_th('Tags'); ?></h1>
 
 <?php if (getAllTagsCount() >0) { ?>
 <div id="sitemap-tags">

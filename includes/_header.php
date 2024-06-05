@@ -23,7 +23,7 @@
 <?php } elseif (getGalleryTitle() != '') { ?>
 <h1 id="logo-text"><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php printGalleryTitle(); ?>"><?php printGalleryTitle(); ?></a></h1>
 <?php } else { ?>
-<h1 id="logo-text"><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="Add Title">Add GalleryTitle in Options->Gallery!</a></h1>
+<h1 id="logo-text"><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="Add Title"><?php echo gettext_th('Add GalleryTitle in Options->Gallery!'); ?></a></h1>
 <?php } ?>
 
 <?php if (getOption('paradigm_tagline') == 'header') { ?>
@@ -39,7 +39,7 @@
 <li class="first level1 dropdown <?php if ($_zp_gallery_page == 'image.php' || $_zp_gallery_page == 'gallery.php' || $_zp_gallery_page == 'album.php') {echo 'active';} ?>">
 <?php if (getOption('paradigm_nav_text-gallery')!='') { ?>
 <?php printCustomPageURL(getOption('paradigm_nav_text-gallery'),'gallery'); ?>
-<?php }	else { printCustomPageURL(gettext('Gallery'),'gallery'); } ?>
+<?php }	else { printCustomPageURL(gettext_th('Gallery'),'gallery'); } ?>
 
 <?php if(function_exists("printAlbumMenu") && (getOption('paradigm_nav_menu-albums'))) { ?>
 <!-- Albums Dropdown-->
@@ -52,7 +52,7 @@
 <?php if (getOption('paradigm_nav_text-news')!='') { ?>
 <a href="<?php echo getNewsIndexURL(); ?>"><?php echo getOption('paradigm_nav_text-news'); ?></a>
 <?php }	else { ?>
-<a href=" <?php echo getNewsIndexURL(); ?>"><?php echo gettext('News'); ?></a><?php }	?>
+<a href=" <?php echo getNewsIndexURL(); ?>"><?php echo gettext_th('News'); ?></a><?php }	?>
 
 <?php if (getOption('paradigm_nav_menu-news')) { ?>
 <!-- News Dropdown-->
@@ -69,17 +69,17 @@
 
 <?php if (getOption('paradigm_nav_menu-archive')) { ?>
 <!-- Archive-->
-<li class="level1<?php if ($_zp_gallery_page == 'archive.php') {echo 'active';} ?>"><?php printCustomPageURL(gettext('Archive'), 'archive'); ?></li>
+<li class="level1<?php if ($_zp_gallery_page == 'archive.php') {echo 'active';} ?>"><?php printCustomPageURL(gettext_th('Archive'), 'archive'); ?></li>
 <?php } ?>
 
 <?php if (extensionEnabled('contact_form')) { ?>
 <!-- Contact page -->
-<li class="level1<?php if ($_zp_gallery_page == 'contact.php') {echo 'active';} ?>"><?php printCustomPageURL(gettext('Contact'), 'contact'); ?></li>
+<li class="level1<?php if ($_zp_gallery_page == 'contact.php') {echo 'active';} ?>"><?php printCustomPageURL(gettext_th('Contact'), 'contact'); ?></li>
 <?php } ?>
 </ul>
 
 <?php if (getOption('paradigm_search')) { ?>
-<?php printSearchForm('','navbar_search',$_zp_themeroot.'/img/magnifying_glass_16x16.png',gettext('Search'),$_zp_themeroot.'/img/list_12x11.png'); ?>
+<?php printSearchForm('','navbar_search',$_zp_themeroot.'/img/magnifying_glass_16x16.png',gettext_th('Search'),$_zp_themeroot.'/img/list_12x11.png'); ?>
 <?php } ?>
 
 </div><!-- /.navbar-collapse -->

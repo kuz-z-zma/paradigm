@@ -26,9 +26,9 @@ if (is_NewsArticle()) { ?>
 <div class="news-data">
 <span itemprop="datePublished"><?php printNewsDate(); ?></span>
 <?php if (function_exists('getCommentCount')) { ?>
-<?php echo ' | Comments: '; ?><span itemprop="commentCount"><?php echo getCommentCount(); ?></span>
+<?php echo ' | '; echo gettext_th('Comments'); echo ': '; ?><span itemprop="commentCount"><?php echo getCommentCount(); ?></span>
 <?php } ?>
-<?php echo ' | '; ?><span itemprop="articleSection"><?php printNewsCategories(',','Categories: ','list-inline news-info'); ?></span>
+<?php echo ' | '; ?><span itemprop="articleSection"><?php printNewsCategories(',',gettext_th('Categories:'),'list-inline news-info'); ?></span>
 </div>
 
 <div id="article-content" class="content" itemprop="articleBody">
@@ -62,7 +62,7 @@ if (is_NewsArticle()) { ?>
 
 <div id="article-details" class="row">
 <div id="article-info" class="col-sm-12">
-<h2><i class="glyphicon glyphicon-info-sign"></i>Info</h2>
+<h2><i class="glyphicon glyphicon-info-sign"></i><?php echo gettext_th('Info'); ?></h2>
 <?php if ((getNewsCustomData()!='') && getOption('paradigm_news-custom')){ ?>
 <!-- Custom data -->
 <div id="article-data" class="block">
@@ -82,7 +82,7 @@ if (is_NewsArticle()) { ?>
 <?php if (getTags()) { ?>
 <!-- Tags -->
 <div id="tags" class="block">
-<h3><i class="glyphicon glyphicon-tag"></i>Tags</h3>
+<h3><i class="glyphicon glyphicon-tag"></i><?php echo gettext_th('Tags'); ?></h3>
 <?php printTags_pd('links', '', 'taglist', ', ',getOption('paradigm_tags-nofollow')); ?>
 </div>
 <?php } ?>
@@ -90,7 +90,7 @@ if (is_NewsArticle()) { ?>
 <?php if (function_exists('getHitCounter') && getOption('paradigm_news-hitcounter')){ ?>
 <!-- Hitcounter -->
 <div id="hitcounter" class="block">
-<h3><i class="glyphicon glyphicon-eye-open"></i>Other info</h3>
+<h3><i class="glyphicon glyphicon-eye-open"></i><?php echo gettext_th('Other info'); ?></h3>
 <p><strong>Views:</strong> <?php echo gethitcounter(); ?> views</p>
 </div>
 <?php } ?>
@@ -102,7 +102,7 @@ if (is_NewsArticle()) { ?>
 <?php if (extensionEnabled('rating') && getOption('paradigm_news-rating')) { ?>
 <!-- Rating -->
 <div id="rating" class="block">
-<h3><i class="glyphicon glyphicon-star"></i>Rating</h3>
+<h3><i class="glyphicon glyphicon-star"></i><?php echo gettext_th('Rating'); ?></h3>
 <?php printRating(); ?>
 </div>
 <?php } ?>
@@ -137,9 +137,9 @@ if (is_NewsArticle()) { ?>
 
 <?php if (in_context(ZP_ZENPAGE_NEWS_CATEGORY)) { ?>
 <h1><i class="glyphicon glyphicon-pencil"></i>
-<?php if (getOption('paradigm_nav_text-news')!='') { echo (getOption('paradigm_nav_text-news')); echo gettext(' category:'); ?>
+<?php if (getOption('paradigm_nav_text-news')!='') { echo (getOption('paradigm_nav_text-news')); echo gettext_th(' category:'); ?>
 <?php } else { ?>
-<?php echo gettext('News category:');} ?> <?php printCurrentNewsCategory(); printCurrentPageAppendix(' (Page ',')'); ?></h1>
+<?php echo gettext_th('News category:');} ?> <?php printCurrentNewsCategory(); printCurrentPageAppendix(gettext_th(' (Page: '),')'); ?></h1>
 
 <div id="news-category-caption" class="content">	
 <?php if (function_exists('printFeaturedImageThumb')){ ?>
@@ -151,24 +151,24 @@ if (is_NewsArticle()) { ?>
 
 <?php if ((getNewsCategoryCustomData()!='') && getOption('paradigm_news-custom')) { ?>
 <div id="news-category-info" class="content">
-<h2><i class="glyphicon glyphicon-info-sign"></i>Info</h2>
+<h2><i class="glyphicon glyphicon-info-sign"></i><?php echo gettext_th('Info'); ?></h2>
 <!-- Custom data -->
 <?php printNewsCategoryCustomData(); ?>
 </div>
 <?php } ?>
 
-<h2><i class="glyphicon glyphicon-time"></i>Latest:</h2>
+<h2><i class="glyphicon glyphicon-time"></i><?php echo gettext_th('Latest:'); ?></h2>
 
 <?php } else if (in_context(ZP_ZENPAGE_NEWS_DATE)) { ?>
 
-<h1><i class="glyphicon glyphicon-pencil"></i><?php printCurrentNewsArchive('Archive for ','plain'); printCurrentPageAppendix('(Page ', ')'); ?></h1>
+<h1><i class="glyphicon glyphicon-pencil"></i><?php printCurrentNewsArchive(gettext_th('Archive for '),'plain'); printCurrentPageAppendix(gettext_th(' (Page: '),')'); ?></h1>
 
 <?php } else { ?>
 
 <h1><i class="glyphicon glyphicon-pencil"></i>
 <?php if (getOption('paradigm_nav_text-news')!='') { echo (getOption('paradigm_nav_text-news')); ?>
 <?php } else { ?>
-<?php echo gettext('News'); } ?><?php printCurrentPageAppendix(' (Page ',')'); ?></h1>
+<?php echo gettext_th('News'); } ?><?php printCurrentPageAppendix(gettext_th(' (Page: '),')'); ?></h1>
 
 <?php } ?>
 
@@ -181,13 +181,13 @@ if (is_NewsArticle()) { ?>
 <div class="news-data">
 <?php printNewsDate(); ?>
 <?php if (function_exists('getCommentCount')) { ?>
-<?php echo ' | Comments: '; ?><?php echo getCommentCount(); ?>
+<?php echo ' | '; echo gettext_th('Comments'); echo ': '; ?><?php echo getCommentCount(); ?>
 <?php } ?>
 
-<?php echo ' | '; ?><?php printNewsCategories(',','Categories: ','list-inline news-info'); ?>
+<?php echo ' | '; ?><?php printNewsCategories(',',gettext_th('Categories:'),'list-inline news-info'); ?>
 
 <?php if (getTags()) { ?>
-<?php echo ' | '; ?><?php printTags_pd("links", "Tags: ", "list-inline news-info", ",", getOption('paradigm_tags-nofollow')); ?>
+<?php echo ' | '; ?><?php printTags_pd('links', gettext_th('Tags:'), 'list-inline news-info', ',', getOption('paradigm_tags-nofollow')); ?>
 <?php } ?>
 </div>
 
@@ -201,7 +201,7 @@ if (is_NewsArticle()) { ?>
 <?php endwhile; ?>
 
 <!-- pagination -->
-<?php printNewsPageListWithNav_pd(gettext('next »'), gettext('« prev'), true, 'pagelist', true); ?>
+<?php printNewsPageListWithNav_pd(gettext_th('next »'), gettext_th('« prev'), true, 'pagelist', true); ?>
 <?php } ?>
 
 </section>

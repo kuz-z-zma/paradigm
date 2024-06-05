@@ -12,27 +12,27 @@
 <div id="footer-menu" class="col-sm-9" >
 <ul class="list-inline">
 <li><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>"><i class="glyphicon glyphicon-home"></i></a></li>
-<li><?php if (getOption('paradigm_nav_text-gallery')!=''){ printCustomPageURL(getOption('paradigm_nav_text-gallery'),'gallery');} else {printCustomPageURL(gettext('Gallery'),'gallery'); } ?></li>
+<li><?php if (getOption('paradigm_nav_text-gallery')!=''){ printCustomPageURL(getOption('paradigm_nav_text-gallery'),'gallery');} else {printCustomPageURL(gettext_th('Gallery'),'gallery'); } ?></li>
 <?php if (function_exists("printAllNewsCategories") && ((getNumNews(true)) > 0)) { ?>
-<li><?php if (getOption('paradigm_nav_text-news')!='') {printNewsIndexURL(getOption('paradigm_nav_text-news'),'',gettext('News')); } else {printNewsIndexURL(gettext('News'),'',gettext('News')); } ?></li>
+<li><?php if (getOption('paradigm_nav_text-news')!='') {printNewsIndexURL(getOption('paradigm_nav_text-news'),'',gettext_th('News')); } else {printNewsIndexURL(gettext_th('News'),'',gettext_th('News')); } ?></li>
 <?php } ?>
 <?php if (function_exists("printPageMenu") && ((getNumPages(true)) > 0)) { ?>
 <?php printPageMenu("list-top","","","","","","1",false); ?>
 <?php } ?>
 <?php if (getOption('paradigm_nav_footer-archive')) { ?>
-<li><?php printCustomPageURL(gettext('Archive'),'archive'); ?></li>
+<li><?php printCustomPageURL(gettext_th('Archive'),'archive'); ?></li>
 <?php } ?>
 <?php if (extensionEnabled('contact_form')) { ?>
-<li><?php printCustomPageURL(gettext('Contact'),'contact'); ?></li>
+<li><?php printCustomPageURL(gettext_th('Contact'),'contact'); ?></li>
 <?php } ?>
 <?php if (getOption('paradigm_footer_menu-credits')) { ?>
-<li><?php printCustomPageURL(gettext('Credits'),'credits'); ?></li>
+<li><?php printCustomPageURL(gettext_th('Credits'),'credits'); ?></li>
 <?php } ?>
 <?php if (getOption('paradigm_footer_menu-explore')) { ?>
-<li><?php printCustomPageURL(gettext('Explore'),'explore'); ?></li>
+<li><?php printCustomPageURL(gettext_th('Explore'),'explore'); ?></li>
 <?php } ?>
 <?php if (getOption('paradigm_footer_menu-sitemap')) { ?>
-<li class="last"><?php printCustomPageURL(gettext('Sitemap'),'sitemap'); ?></li>
+<li class="last"><?php printCustomPageURL(gettext_th('Sitemap'),'sitemap'); ?></li>
 <?php } ?>
 </ul>
 </div>
@@ -42,7 +42,7 @@ if ((function_exists('printRegisterURL')||function_exists('printUserLogin_out'))
 <div id="footer-user-menu" class="col-sm-3 text-right">
 <ul class="list-inline user-actions">
 <?php if (!zp_loggedin() && function_exists('printRegisterURL')){ ?>
-<li><?php printRegisterURL(gettext('Register'),'',''); ?></li><?php } ?>
+<li><?php printRegisterURL(gettext_th('Register'),'',''); ?></li><?php } ?>
 <?php if (function_exists("printUserLogin_out") && ($_zp_gallery_page !== 'register.php')){ ?>
 <li><?php printUserLogin_out('',''); ?></li>
 <li class="last"><i class="glyphicon glyphicon-user"></i></li><?php } ?>

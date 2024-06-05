@@ -17,11 +17,11 @@ die();
 
 <div id="center" class="row" itemscope itemtype="https://schema.org/ImageGallery">
 <section id="main" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-10 '; } ?>col-lg-9 col-md-9 col-sm-9 col-xs-12" itemprop="mainContentOfPage">
-<h1 itemprop="name"><i class="glyphicon glyphicon-folder-open"></i><?php echo gettext("Albums"); ?></h1>
+<h1 itemprop="name"><i class="glyphicon glyphicon-folder-open"></i><?php echo gettext_th("Albums"); ?></h1>
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_albumlist.php'); ?>
 
-<?php printPageListWithNav("« " . gettext("prev"), gettext("next") . " »"); ?>
+<?php printPageListWithNav("« " . gettext_th("prev"), gettext_th("next") . " »"); ?>
 
 </section>
 

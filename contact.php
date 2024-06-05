@@ -18,7 +18,7 @@ if (extensionEnabled('contact_form')) {
 
 <div id="center" class="row" itemscope itemtype="https://schema.org/ContactPage">
 <section id="main" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-10 '; } ?>col-lg-9 col-md-9 col-sm-9 col-xs-12" itemprop="mainContentOfPage">
-<h1><i class="glyphicon glyphicon-envelope"></i>Contact</h1>
+<h1><i class="glyphicon glyphicon-envelope"></i><?php echo gettext_th('Contact'); ?></h1>
 
 <?php contactForm::printContactForm(); ?>
 

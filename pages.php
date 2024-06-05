@@ -38,7 +38,7 @@ if (class_exists('Zenpage')) {
 
 <div id="page-details" class="row">
 <div id="page-info" class="col-sm-12">
-<h2><i class="glyphicon glyphicon-info-sign"></i>Page Info</h2>
+<h2><i class="glyphicon glyphicon-info-sign"></i><?php echo gettext_th('Page Info'); ?></h2>
 <?php if ((getPageCustomData()!='') && getOption('paradigm_page-custom')) { ?>
 <!-- Custom data -->
 <?php printPageCustomData(); ?>
@@ -57,14 +57,14 @@ if (class_exists('Zenpage')) {
 <?php if (getTags()) { ?>
 <!-- Tags -->
 <div id="tags" class="block">
-<h3><i class="glyphicon glyphicon-tag"></i>Tags</h3>
+<h3><i class="glyphicon glyphicon-tag"></i><?php echo gettext_th('Tags'); ?></h3>
 <?php printTags_pd('links', '', 'taglist', ', ',getOption('paradigm_tags-nofollow')); ?>
 </div>
 <?php } ?>
 
 <?php if (function_exists('getHitCounter') && getOption('paradigm_page-hitcounter')) { ?>
 <!-- Hitcounter -->
-<div id="hitcounter" class="block"><h3><i class="glyphicon glyphicon-eye-open"></i>Other info</h3>
+<div id="hitcounter" class="block"><h3><i class="glyphicon glyphicon-eye-open"></i><?php echo gettext_th('Other info'); ?></h3>
 <p><strong>Views:</strong> <?php echo gethitcounter(); ?> views</p>
 </div>
 <?php } ?>
@@ -74,7 +74,7 @@ if (class_exists('Zenpage')) {
 
 <?php if (extensionEnabled('rating') && getOption('paradigm_page-rating')) { ?>
 <!-- Rating -->
-<div id="rating" class="block"><h3><i class="glyphicon glyphicon-star"></i>Rating</h3>
+<div id="rating" class="block"><h3><i class="glyphicon glyphicon-star"></i><?php echo gettext_th('Rating'); ?></h3>
 <?php printRating(); ?>
 </div>
 <?php } ?>

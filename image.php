@@ -21,9 +21,9 @@ die();
 <!-- pagination -->
 <ul class="pagination pull-right">
 <?php if (hasPrevImage()) { ?>
-<li><a href="<?php echo html_encode(getPrevImageURL()); ?>" title="<?php echo gettext("Previous Image"); ?>"><?php echo gettext("« prev"); ?></a></li>
+<li><a href="<?php echo html_encode(getPrevImageURL()); ?>" title="<?php echo gettext_th("Previous Image"); ?>"><?php echo gettext_th("« prev"); ?></a></li>
 <?php } if (hasNextImage()) { ?>
-<li><a href="<?php echo html_encode(getNextImageURL()); ?>" title="<?php echo gettext("Next Image"); ?>"><?php echo gettext("next »"); ?></a></li>
+<li><a href="<?php echo html_encode(getNextImageURL()); ?>" title="<?php echo gettext_th("Next Image"); ?>"><?php echo gettext_th("next »"); ?></a></li>
 <?php } ?>
 </ul>
 
@@ -51,13 +51,13 @@ if (!empty($fullimage)) { ?>
 
 <div id="image-details" class="row">
 <?php if ((getImageDesc() != '') && (getOption('paradigm_image-caption') == 'below')) { ?>
-<div id="image-caption" class="col-sm-12 content" itemprop="caption"><h2><i class="glyphicon glyphicon-pencil"></i>Caption</h2>
+<div id="image-caption" class="col-sm-12 content" itemprop="caption"><h2><i class="glyphicon glyphicon-pencil"></i><?php echo gettext_th('Caption'); ?></h2>
 <?php printImageDesc(); ?>
 </div>
 <?php } ?>
 
 <div id="image-info" class="col-sm-12">
-<h2><i class="glyphicon glyphicon-info-sign"></i>Image Info</h2>
+<h2><i class="glyphicon glyphicon-info-sign"></i><?php echo gettext_th('Image Info'); ?></h2>
 <?php if ((getImageCustomData()!='') && getOption('paradigm_image-custom')) { ?>
 <!-- Custom data -->
 <?php printImageCustomData(); ?>
@@ -75,26 +75,26 @@ if (!empty($fullimage)) { ?>
 
 <!-- Tags -->
 <?php if (getTags()) { ?>
-<div id="tags" class="block"><h3><i class="glyphicon glyphicon-tag"></i>Tags</h3>
+<div id="tags" class="block"><h3><i class="glyphicon glyphicon-tag"></i><?php echo gettext_th('Tags'); ?></h3>
 <?php printTags_pd('links', '', 'taglist', ', ',getOption('paradigm_tags-nofollow')); ?>
 </div>
 <?php } ?>
 
 <!-- Copyright -->
 <?php if (getOption('paradigm_copyright_message') != '') { ?>
-<div id="copyright" class="image-copy block" itemprop="copyrightHolder"><h3><i class="glyphicon glyphicon-copyright-mark"></i>Copyright</h3>
+<div id="copyright" class="image-copy block" itemprop="copyrightHolder"><h3><i class="glyphicon glyphicon-copyright-mark"></i><?php echo gettext_th('Copyright'); ?></h3>
 <?php echo getOption('paradigm_copyright_message'); ?>
 </div>					
 <?php } else { ?>
 <?php (getImageData('copyright')!='') ?> 
-<div id="copyright" class="image-copy block"><h3><i class="glyphicon glyphicon-copyright-mark"></i>Copyright</h3>
+<div id="copyright" class="image-copy block"><h3><i class="glyphicon glyphicon-copyright-mark"></i><?php echo gettext_th('Copyright'); ?></h3>
 <p itemprop="copyrightHolder"><?php echo (getImageData('copyright')); ?></p>
 </div>
 <?php } ?>	
 
 <?php if (getImageMetaData()) { ?>
 <div id="image-metadata" class="block">
-<h3><i class="glyphicon glyphicon glyphicon-camera"></i>Metadata</h3>
+<h3><i class="glyphicon glyphicon glyphicon-camera"></i><?php echo gettext_th('Metadata'); ?></h3>
 <?php printImageMetadata_pd(); ?>
 </div>
 <?php } ?>
@@ -105,33 +105,33 @@ if (!empty($fullimage)) { ?>
 
 <?php if (function_exists('getHitCounter')) { ?>
 <!-- Hitcounter -->
-<div id="hitcounter" class="block"><h3><i class="glyphicon glyphicon-eye-open"></i>Other info</h3>
-<p><strong>Views:</strong> <?php echo gethitcounter(); ?> views</p>
+<div id="hitcounter" class="block"><h3><i class="glyphicon glyphicon-eye-open"></i><?php echo gettext_th('Other info'); ?></h3>
+<p><strong><?php echo gettext_th('Views:'); ?></strong> <?php echo gethitcounter(); ?></p>
 <?php } ?>
 </div>
 
 <!-- Favorites -->	
 <?php if (function_exists('printAddToFavorites')) { ?>
-<div id="favorites" class="block"><h3><i class="glyphicon glyphicon-heart"></i>Favorites</h3>
+<div id="favorites" class="block"><h3><i class="glyphicon glyphicon-heart"></i><?php echo gettext_th('Favorites'); ?></h3>
 <?php printAddToFavorites($_zp_current_image); ?></div>
 <?php } ?>
 
 <!-- Rating -->	
 <?php if (extensionEnabled('rating')) { ?>
-<div id="rating" class="block"><h3><i class="glyphicon glyphicon-star"></i>Rating</h3>
+<div id="rating" class="block"><h3><i class="glyphicon glyphicon-star"></i><?php echo gettext_th('Rating'); ?></h3>
 <?php printRating(); ?>
 </div>
 <?php } ?>
 
 <?php if (getOption('paradigm_image-download')) { ?>
-<div id="download" class="block"><h3><i class="glyphicon glyphicon-download"></i>Download</h3>	
+<div id="download" class="block"><h3><i class="glyphicon glyphicon-download"></i><?php echo gettext_th('Download'); ?></h3>	
 <a class="button buttons" href="<?php echo html_encode(getFullImageURL()); ?>" title="Download Original">Original (<?php echo getFullWidth();echo ' x '; echo getFullHeight(); ?>)</a>
 </div>
 <?php } ?>
 
 <?php if (function_exists('printImageMarkupFields') && (zp_loggedin() OR (getOption('imageMarkup_permission') == 'everyone'))) { ?>
-<div id="codecopy" class="markup-copy-field block"><h3><i class="glyphicon glyphicon-paste"></i>Image code</h3>
-<?php	printImageMarkupFields(gettext('Code')); ?>
+<div id="codecopy" class="markup-copy-field block"><h3><i class="glyphicon glyphicon-paste"></i><?php echo gettext_th('Image code'); ?></h3>
+<?php	printImageMarkupFields(gettext_th('Code')); ?>
 </div>
 <?php } ?>
 
@@ -147,7 +147,7 @@ if (!empty($fullimage)) { ?>
 <!-- Maps -->
 <?php if (((getImageData('location')!='') || (getImageData('city')!='') || (getImageData('state')!='') || (getImageData('country')!=''))||(function_exists('printGoogleMap') && (getImageData('EXIFGPSLatitude')!=''))||(function_exists('printOpenStreetMap') && (getImageData('EXIFGPSLatitude')!=''))) { ?>
 <div id="location" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-6 col-lg-4 '; } ?>col-sm-12">
-<h3><i class="glyphicon glyphicon-map-marker"></i>Map</h3>
+<h3><i class="glyphicon glyphicon-map-marker"></i><?php echo gettext_th('Map'); ?></h3>
 
 <?php if ((getImageData('location')!='') || (getImageData('city')!='') || (getImageData('state')!='') || (getImageData('country')!='')) { ?>
 <?php if (getImageData('location')!='') { ?>
@@ -156,17 +156,17 @@ if (!empty($fullimage)) { ?>
 </span></p>
 <?php } ?>
 <?php if (getImageData('city')!='') { ?>
-<p><strong>City:</strong>&nbsp;
+<p><strong><?php echo gettext_th('City:'); ?></strong>&nbsp;
 <?php echo get_language_string(getImageData('city')); ?>
 </p>
 <?php } ?>
 <?php if (getImageData('state')!='') { ?>
-<p><strong>State:</strong>&nbsp;
+<p><strong><?php echo gettext_th('State:'); ?></strong>&nbsp;
 <?php echo get_language_string(getImageData('state')); ?>
 </p>
 <?php } ?>
 <?php if (getImageData('country')!='') { ?>
-<p><strong>Country:</strong>&nbsp;
+<p><strong><?php echo gettext_th('Country:'); ?></strong>&nbsp;
 <?php echo get_language_string(getImageData('country')); ?>
 </p>
 <?php } ?>

@@ -158,7 +158,7 @@ function printAllTagsAs_pd ($option, $class = '', $sort = NULL, $counter = FALSE
 			} // while end
 		} else {
 			?>
-			<li><?php echo gettext('No popular tags'); ?></li>
+			<li><?php echo gettext_th('No popular tags'); ?></li>
 			<?php }	?>
 	</ul>
 	<?php
@@ -334,8 +334,8 @@ function printZDSearchShowMoreLink($option, $number_to_show) {
 	}
 	if ($num > $number_to_show) {
 		?>
-		<a class="<?php echo $option; ?>_showmore"href="javascript:toggleExtraElements('<?php echo $option; ?>',true);"><?php echo gettext('Show more results'); ?></a>
-		<a class="<?php echo $option; ?>_showless" style="display: none;"	href="javascript:toggleExtraElements('<?php echo $option; ?>',false);"><?php echo gettext('Show fewer results'); ?></a>
+		<a class="<?php echo $option; ?>_showmore"href="javascript:toggleExtraElements('<?php echo $option; ?>',true);"><?php echo gettext_th('Show more results'); ?></a>
+		<a class="<?php echo $option; ?>_showless" style="display: none;"	href="javascript:toggleExtraElements('<?php echo $option; ?>',false);"><?php echo gettext_th('Show fewer results'); ?></a>
 		<?php
 	}
 }
