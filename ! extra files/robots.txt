@@ -1,0 +1,18 @@
+# robots.txt for Zenphoto
+
+User-agent: *
+#Exclude system files
+Disallow: /plugins/
+Disallow: /themes/
+Disallow: /zp-core/
+Disallow: /zp-data/
+Disallow: /uploaded/
+Disallow: /backup/
+
+#Exclude thumbnails (wildcard)
+Disallow: /*_thumb.jpg
+
+#XML Sitemap path. 
+#Use the sitemap-extended extension and generate via the Sitemap tools on admin overview page.
+#Change it to your domain and uncomment the line to use it:
+#sitemap http://www.yourdomain.com/cache_html/sitemap/sitemapindex.xml
