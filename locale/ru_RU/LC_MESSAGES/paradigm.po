@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Paradigm v2.0\n"
-"POT-Creation-Date: 2024-06-05 20:52+0300\n"
-"PO-Revision-Date: 2024-06-05 20:53+0300\n"
+"POT-Creation-Date: 2024-06-06 01:13+0300\n"
+"PO-Revision-Date: 2024-06-06 01:18+0300\n"
 "Last-Translator: kuzzzma <kuzzzma@gmail.com>\n"
 "Language-Team: kuzzzma\n"
 "Language: ru_RU\n"
@@ -21,61 +21,65 @@ msgstr ""
 msgid "Object not found"
 msgstr "Объект не найден"
 
-#: album.php:29 album_story.php:64 favorites.php:31 gallery.php:24
-#: search.php:122
+#: album.php:28 album_story.php:62 favorites.php:31 gallery.php:23
+#: search.php:121
 msgid "prev"
 msgstr "назад"
 
-#: album.php:29 album_story.php:64 favorites.php:31 gallery.php:24
-#: search.php:122
+#: album.php:28 album_story.php:62 favorites.php:31 gallery.php:23
+#: search.php:121
 msgid "next"
 msgstr "далее"
 
-#: album.php:33 album_story.php:70
+#: album.php:32 album_story.php:68
 msgid "Album Info"
 msgstr "Информация"
 
-#: album.php:52 album_story.php:89 explore.php:21 image.php:78 news.php:85
+#: album.php:51 album_story.php:87 explore.php:20 image.php:77 news.php:85
 #: pages.php:60
 msgid "Tags"
 msgstr "Теги"
 
-#: album.php:59 album_story.php:96 image.php:108 news.php:93 pages.php:67
+#: album.php:58 album_story.php:94 image.php:107 news.php:93 pages.php:67
 msgid "Other info"
 msgstr "Другая информация"
 
-#: album.php:60 album_story.php:97 image.php:109
+#: album.php:59 album_story.php:95 image.php:108 news.php:94 pages.php:68
 msgid "Views:"
 msgstr "Просмотров:"
 
-#: album.php:66 album.php:70 album_story.php:103 album_story.php:107
-#: credits.php:22 image.php:85 image.php:90
+#: album.php:65 album.php:69 album_story.php:101 album_story.php:105
+#: credits.php:21 image.php:84 image.php:89
 msgid "Copyright"
 msgstr "Автор"
 
-#: album.php:81 album_story.php:118 image.php:115
+#: album.php:80 album_story.php:116 image.php:114
 msgid "Favorites"
 msgstr "Избранное"
 
-#: album.php:89 album_story.php:126 image.php:121 news.php:105 pages.php:77
+#: album.php:88 album_story.php:124 image.php:120 news.php:105 pages.php:77
 #: themeoptions.php:415 themeoptions.php:469
 msgid "Rating"
 msgstr "Рейтинг"
 
-#: album.php:106 album_story.php:143 image.php:150
+#: album.php:105 album_story.php:141 image.php:149
 msgid "Map"
 msgstr "Карта"
 
-#: archive.php:26 includes/_footer.php:23 includes/_header.php:72
+#: album.php:106 album_story.php:142 image.php:153
+msgid "Location: "
+msgstr "Локация: "
+
+#: archive.php:25 includes/_footer.php:23 includes/_header.php:72
 #: themeoptions.php:516 themeoptions.php:533 themeoptions.php:550
 msgid "Archive"
 msgstr "Архив"
 
-#: archive.php:30
+#: archive.php:29
 msgid "News archive"
 msgstr "Архив новостей"
 
-#: archive.php:38
+#: archive.php:37
 msgid "Gallery archive"
 msgstr "Архив галереи"
 
@@ -147,7 +151,7 @@ msgstr "Комментарии"
 msgid "Add Comment"
 msgstr "Добавить комментарий"
 
-#: contact.php:21 includes/_footer.php:26 includes/_head.php:24
+#: contact.php:20 includes/_footer.php:26 includes/_head.php:24
 #: includes/_head.php:68 includes/_header.php:77
 msgid "Contact"
 msgstr "Контакты"
@@ -187,16 +191,16 @@ msgstr "Отправить e-mail"
 msgid "Reset"
 msgstr "Очистить"
 
-#: credits.php:20 includes/_breadcrumbs.php:38 includes/_footer.php:29
+#: credits.php:19 includes/_breadcrumbs.php:38 includes/_footer.php:29
 #: includes/_head.php:36
 msgid "Credits"
 msgstr "Авторы"
 
-#: credits.php:29
+#: credits.php:28
 msgid "Copyright:"
 msgstr "Автор:"
 
-#: credits.php:34
+#: credits.php:33
 msgid ""
 "This website is based on <a href=\"https://www.zenphoto.org/\" "
 "rel=\"nofollow\" target=\"_blank\">Zenphoto</a>, the simple media website "
@@ -205,11 +209,11 @@ msgstr ""
 "Этот сайт работает на <a href=\"https://www.zenphoto.org/\" rel=\"nofollow\" "
 "target=\"_blank\">Zenphoto</a>."
 
-#: credits.php:35
+#: credits.php:34
 msgid "Theme used:"
 msgstr "Тема оформления:"
 
-#: credits.php:35
+#: credits.php:34
 msgid ""
 "<a href=\"https://www.blog.private-universe.net/web-and-tech/zenphoto-theme-"
 "paradigm/\" rel=\"nofollow\" target=\"_blank\" title=\"Paradigm Zenphoto "
@@ -219,7 +223,7 @@ msgstr ""
 "paradigm/\" rel=\"nofollow\" target=\"_blank\" title=\"тема оформления для "
 "Zenphoto Paradigm\">Paradigm</a>."
 
-#: credits.php:36
+#: credits.php:35
 msgid ""
 "This theme was originally created by Olivier Ffrench (<a href=\"http://www."
 "france-in-photos.com\" rel=\"nofollow\">France in Photos</a>)."
@@ -227,7 +231,7 @@ msgstr ""
 "Эта тема оформления была создана Olivier Ffrench (<a href=\"http://www."
 "france-in-photos.com\" rel=\"nofollow\">France in Photos</a>)."
 
-#: credits.php:37
+#: credits.php:36
 msgid ""
 "Since Paradigm v1.2 this theme is developed by kuzzzma (<a href=\"https://"
 "www.blog.private-universe.net/web-and-tech/zenphoto-theme-paradigm/\" "
@@ -315,74 +319,73 @@ msgstr "Альбом"
 msgid "Image"
 msgstr "Изображение"
 
-#: functions.php:695 includes/_footer.php:17 includes/_head.php:28
-#: includes/_head.php:30 includes/_head.php:32 includes/_header.php:55
-#: includes/_homepage.php:51 includes/_sidebar.php:54 news.php:171
-#: themeoptions.php:313 themeoptions.php:365 themeoptions.php:442
+#: functions.php:695 includes/_breadcrumbs.php:28 includes/_footer.php:17
+#: includes/_head.php:28 includes/_head.php:30 includes/_head.php:32
+#: includes/_header.php:55 includes/_homepage.php:52 includes/_sidebar.php:54
+#: news.php:171 themeoptions.php:313 themeoptions.php:365 themeoptions.php:442
 #: themeoptions.php:496 themeoptions.php:514 themeoptions.php:531
 #: themeoptions.php:548
 msgid "News"
 msgstr "Новости"
 
-#: gallery.php:20 includes/_breadcrumbs.php:7 includes/_breadcrumbs.php:10
-#: includes/_breadcrumbs.php:13 includes/_head.php:65 includes/_homepage.php:78
-#: includes/_sidebar.php:38 includes/_sidebar.php:86 sitemap.php:43
+#: gallery.php:19 includes/_head.php:65 includes/_homepage.php:79
+#: includes/_sidebar.php:38 includes/_sidebar.php:86 sitemap.php:42
 #: themeoptions.php:164 themeoptions.php:255 themeoptions.php:312
 #: themeoptions.php:364 themeoptions.php:441 themeoptions.php:495
 msgid "Albums"
 msgstr "Альбомы"
 
-#: image.php:24
+#: image.php:23
 msgid "Previous Image"
 msgstr "Предыдущее изображение"
 
-#: image.php:24 news.php:204
+#: image.php:23 news.php:204
 msgid "« prev"
 msgstr "« назад"
 
-#: image.php:26
+#: image.php:25
 msgid "Next Image"
 msgstr "Следующее изображение"
 
-#: image.php:26 news.php:204
+#: image.php:25 news.php:204
 msgid "next »"
 msgstr "далее »"
 
-#: image.php:54
+#: image.php:53
 msgid "Caption"
 msgstr "Описание"
 
-#: image.php:60
+#: image.php:59
 msgid "Image Info"
 msgstr "Информация"
 
-#: image.php:97
+#: image.php:96
 msgid "Metadata"
 msgstr "Метаданные"
 
-#: image.php:127
+#: image.php:126
 msgid "Download"
 msgstr "Загрузка"
 
-#: image.php:133
+#: image.php:132
 msgid "Image code"
 msgstr "Код для вставки"
 
-#: image.php:134
+#: image.php:133
 msgid "Code"
 msgstr "Код"
 
-#: image.php:159
-msgid "City:"
-msgstr "Город:"
+#: image.php:158
+msgid "City: "
+msgstr "Город: "
 
-#: image.php:164
-msgid "State:"
-msgstr "Область/Край/Регион/Штат:"
+#: image.php:163
+msgid "State: "
+msgstr "Область/Край/Регион/Штат: "
 
-#: image.php:169
-msgid "Country:"
-msgstr "Страна:"
+#: image.php:168
+msgid "Country: "
+msgstr "Страна: "
 
 #: includes/_albumlist.php:6
 msgid "View album:"
@@ -408,6 +411,13 @@ msgstr "Удалить"
 msgid "Index"
 msgstr "Главная"
 
+#: includes/_breadcrumbs.php:7 includes/_breadcrumbs.php:10
+#: includes/_breadcrumbs.php:13 includes/_footer.php:15 includes/_head.php:21
+#: includes/_header.php:42 themeoptions.php:513 themeoptions.php:530
+#: themeoptions.php:547
+msgid "Gallery"
+msgstr "Галерея"
+
 #: includes/_breadcrumbs.php:16 includes/_head.php:23 includes/_head.php:67
 msgid "Archive View"
 msgstr "Архив"
@@ -425,7 +435,7 @@ msgid "Explore"
 msgstr "Обзор"
 
 #: includes/_breadcrumbs.php:44 includes/_footer.php:35 includes/_head.php:38
-#: sitemap.php:21
+#: sitemap.php:20
 msgid "Sitemap"
 msgstr "Карта сайта"
 
@@ -433,14 +443,9 @@ msgstr "Карта сайта"
 msgid "Login"
 msgstr "Вход"
 
-#: includes/_breadcrumbs.php:50 register.php:23
+#: includes/_breadcrumbs.php:50 register.php:21
 msgid "User Registration"
 msgstr "Регистрация пользователя"
-
-#: includes/_footer.php:15 includes/_head.php:21 includes/_header.php:42
-#: themeoptions.php:513 themeoptions.php:530 themeoptions.php:547
-msgid "Gallery"
-msgstr "Галерея"
 
 #: includes/_footer.php:45 includes/_head.php:35 includes/_head.php:76
 #: includes/_sidebar.php:16
@@ -488,30 +493,36 @@ msgid "album"
 msgstr "альбом"
 
 #: includes/_header.php:26
-msgid "Add GalleryTitle in Options->Gallery!"
+msgid "Add Gallery Title in Options->Gallery!"
 msgstr "Добавьте Название галереи в Настройки -> Галерея!"
 
-#: includes/_homepage.php:84
+#: includes/_homepage.php:85
 msgid "All albums"
 msgstr "Все альбомы"
 
-#: includes/_homepage.php:94
+#: includes/_homepage.php:95
 msgid "Latest uploads"
 msgstr "Новые по дате загрузки"
 
-#: includes/_homepage.php:103
+#: includes/_homepage.php:99 includes/_homepage.php:108
+#: includes/_homepage.php:117 includes/_homepage.php:126
+#: includes/_homepage.php:135
+msgid "Enable the Image_Album_Statistics plugin to display images."
+msgstr "Активируйте плагин Image_Album_Statistics для отображения."
+
+#: includes/_homepage.php:104
 msgid "Recent images"
 msgstr "Последние изображения"
 
-#: includes/_homepage.php:112
+#: includes/_homepage.php:113
 msgid "Most popular"
 msgstr "Самые популярные"
 
-#: includes/_homepage.php:121
+#: includes/_homepage.php:122
 msgid "Top rated"
 msgstr "Топ-рейтинг"
 
-#: includes/_homepage.php:130 themeoptions.php:260
+#: includes/_homepage.php:131 themeoptions.php:260
 msgid "Random images"
 msgstr "Случайные изображения"
 
@@ -531,7 +542,7 @@ msgstr "Меню пользователя"
 msgid "Collections"
 msgstr "Коллекции"
 
-#: includes/_sidebar.php:70 sitemap.php:34 themeoptions.php:166
+#: includes/_sidebar.php:70 sitemap.php:33 themeoptions.php:166
 #: themeoptions.php:314 themeoptions.php:366 themeoptions.php:443
 #: themeoptions.php:497 themeoptions.php:515 themeoptions.php:532
 #: themeoptions.php:549
@@ -582,54 +593,54 @@ msgstr "Теги:"
 msgid "Page Info"
 msgstr "Информация"
 
-#: password.php:22
+#: password.php:20
 msgid "A password is required for the page you requested"
 msgstr "Для запрошенной вами страницы требуется пароль"
 
-#: password.php:27
+#: password.php:25
 msgid "Register for this site"
 msgstr "Регистрации на этом сайте"
 
-#: search.php:48
+#: search.php:47
 msgid "Results for"
 msgstr "Результаты поиска"
 
-#: search.php:59
+#: search.php:58
 #, php-format
 msgid "Pages (%s)"
 msgstr "Страницы (%s)"
 
-#: search.php:84
+#: search.php:83
 #, php-format
 msgid "Articles (%s)"
 msgstr "Статьи (%s)"
 
-#: search.php:104
+#: search.php:103
 #, php-format
 msgid "Images (%s)"
 msgstr "Изображения (%s)"
 
-#: search.php:108
+#: search.php:107
 #, php-format
 msgid "Albums (%s)"
 msgstr "Альбомы (%s)"
 
-#: search.php:109
+#: search.php:108
 #, php-format
 msgid "Albums (%1$s) &amp; Images (%2$s)"
 msgstr "Альбомы (%1$s) и Изображения (%2$s)"
 
-#: sitemap.php:25
+#: sitemap.php:24
 msgid "News categories"
 msgstr "Категории новостей"
 
-#: sitemap.php:49
+#: sitemap.php:48
 msgid "Enable <strong>Print Album Menu</strong> plugin to get list of albums."
 msgstr ""
 "Включите плагин <strong>Print Album Menu</strong> для отображения списка "
 "Альбомов."
 
-#: theme_description.php:10
+#: theme_description.php:8
 msgid ""
 "A responsive, Bootstrap-based, highly customizable Zenphoto theme (with more "
 "than 100 options), optimized for SEO and social sharing.<br>Latest version "
@@ -1926,6 +1937,10 @@ msgstr "* превью сайта не выбрано"
 #: themeoptions.php:712
 msgid "* no custom CSS"
 msgstr "* CSS-файл не выбран"
+
+#~ msgid ""
+#~ "Please enable the image_album_statistics plugin to display latest images."
+#~ msgstr "Активируйте плагин Image_Album_Statistics для отображения."
 
 #~ msgid "3"
 #~ msgstr "3"
