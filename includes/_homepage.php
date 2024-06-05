@@ -1,4 +1,4 @@
-<?php if (getOption('paradigm_homepage-slideshow'))	{ ?>	
+<?php if (getOption('paradigm_homepage-slideshow'))	{ ?>
 <div id="background-slideshow" class="background">
 <div class="container<?php if (getOption('paradigm_full-width')) {echo '-fluid'; } ?>">
 
@@ -19,12 +19,13 @@ echo '<p>' . $image->getTitle() .'</p>';
 echo '</div>';
 echo '</div>';
 } ?>
-</div><!-- Controls -->
+</div>
+<!-- Controls -->
 <a class="left carousel-control" href="#paradigm-carousel" role="button" data-slide="prev"><span class="sr-only">Previous</span></a>
 <a class="right carousel-control" href="#paradigm-carousel" role="button" data-slide="next"><span class="sr-only">Next</span></a>
 </div>
 </div>
-</div>	
+</div>
 <?php } ?>
 
 <div id="background-main" class="background">
@@ -73,9 +74,9 @@ while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 <?php } ?>
 
 
-<?php	if (getOption('paradigm_homepage-albums')) { ?>
+<?php if (getOption('paradigm_homepage-albums')) { ?>
 <div id="albums-homepage" class="col-sm-12">
-<h2><i class="glyphicon glyphicon-folder-close"></i><?php echo gettext_th("Albums"); ?></h2>
+<h2><i class="glyphicon glyphicon-folder-close"></i><?php echo gettext_th('Albums'); ?></h2>
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_albumlist.php'); ?>
 
@@ -91,48 +92,48 @@ while (next_news() && $cnt<(getOption('paradigm_homepage-blog-number'))):; ?>
 <div id="images-homepage" class="col-sm-12">
 
 <?php if (getOption('paradigm_homepage-image-uploads')) { ?>
-<h2><i class="glyphicon glyphicon-upload"></i><?php echo gettext_th("Latest uploads"); ?></h2>
+<h2><i class="glyphicon glyphicon-upload"></i><?php echo gettext_th('Latest uploads'); ?></h2>
 <?php if (function_exists('getImageStatistic')) { ?>
 <?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"latest","",true,false,false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
-<div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images.</div>
-<?php }	?>
+<div class="alert alert-warning" role="alert"><?php echo gettext_th('Enable the Image_Album_Statistics plugin to display images.'); ?></div>
+<?php } ?>
 <?php } ?>
 
 <?php if (getOption('paradigm_homepage-image-recent')) { ?>
-<h2><i class="glyphicon glyphicon-time"></i><?php echo gettext_th("Recent images"); ?></h2>
+<h2><i class="glyphicon glyphicon-time"></i><?php echo gettext_th('Recent images'); ?></h2>
 <?php if (function_exists('getImageStatistic')) { ?>
 <?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"latest-date","",true,false,false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
-<div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images.</div>
-<?php }	?>
+<div class="alert alert-warning" role="alert"><?php echo gettext_th('Enable the Image_Album_Statistics plugin to display images.'); ?></div>
+<?php } ?>
 <?php } ?>
 
 <?php if (getOption('paradigm_homepage-image-popular')) { ?>
-<h2><i class="glyphicon glyphicon-fire"></i><?php echo gettext_th("Most popular"); ?></h2>
+<h2><i class="glyphicon glyphicon-fire"></i><?php echo gettext_th('Most popular'); ?></h2>
 <?php if (function_exists('getImageStatistic')) { ?>
 <?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"popular","",true,false,false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
-<div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images.</div>
-<?php }	?>
+<div class="alert alert-warning" role="alert"><?php echo gettext_th('Enable the Image_Album_Statistics plugin to display images.'); ?></div>
+<?php } ?>
 <?php } ?>
 
 <?php if (getOption('paradigm_homepage-image-rated')) { ?>
-<h2><i class="glyphicon glyphicon-star"></i><?php echo gettext_th("Top rated"); ?></h2>
+<h2><i class="glyphicon glyphicon-star"></i><?php echo gettext_th('Top rated'); ?></h2>
 <?php if (function_exists('getImageStatistic')) { ?>
 <?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"toprated","",true, false, false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
-<div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images.</div>
-<?php }	?>
+<div class="alert alert-warning" role="alert"><?php echo gettext_th('Enable the Image_Album_Statistics plugin to display images.'); ?></div>
+<?php } ?>
 <?php } ?>
 
 <?php if (getOption('paradigm_homepage-image-random')) { ?>
-<h2><i class="glyphicon glyphicon-random"></i><?php echo gettext_th("Random images"); ?></h2>					
+<h2><i class="glyphicon glyphicon-random"></i><?php echo gettext_th('Random images'); ?></h2>
 <?php if (function_exists('getImageStatistic')) { ?>
 <?php printImageStatistic_pd(getOption('paradigm_homepage-image-number'),"random","", true, false, false,"",false,NULL,NULL,NULL,"", false); ?>
 <?php } else { ?>
-<div class="alert alert-warning" role="alert">Please enable the image_album_statistics plugin to display latest images.</div>
-<?php }	?>
+<div class="alert alert-warning" role="alert"><?php echo gettext_th('Enable the Image_Album_Statistics plugin to display images.'); ?></div>
+<?php } ?>
 <?php } ?>
 
 </div>

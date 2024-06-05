@@ -6,7 +6,7 @@
  * If it is not present, no theme options are displayed.
  *
  */
- 
+
 class ThemeOptions {
 
 	function __construct() {

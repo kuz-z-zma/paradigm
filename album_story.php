@@ -1,6 +1,5 @@
 <?php
 // force UTF-8 Ø
-
 if (!defined('WEBPATH'))
 die();
 ?>
@@ -22,13 +21,13 @@ die();
 
 <div id="album-caption" class="content" itemprop="description"><?php printAlbumDesc(); ?></div>
 
-<?php if (getNumImages() > 0)  { ?>
+<?php if (getNumImages() > 0) { ?>
 <div id="images" class="row">
 <?php while (next_image()): ?>
 <div class="content">
 <h2 class="media-heading col-xs-12" itemprop="name"><?php printBareImageTitle(); ?></h2>
 <div class="col-xs-12" itemscope itemtype="https://schema.org/ImageObject">
-	
+
 <?php if ((getImageDesc() != '') && (getOption('paradigm_image-caption') == 'above')) { ?>
 <div class="image-caption col-sm-12" itemprop="caption">
 <?php printImageDesc(); ?>
@@ -36,7 +35,7 @@ die();
 <?php } ?>
 
 <div class="full-image text-center">
-	<?php if ($_zp_current_image->isPhoto()) {
+<?php if ($_zp_current_image->isPhoto()) {
 $fullimage = getFullImageURL(); } else { $fullimage = NULL; }
 if (!empty($fullimage)) { ?>
 <?php } ?>
@@ -59,7 +58,6 @@ if (!empty($fullimage)) { ?>
 <?php endwhile; ?>
 </div>
 <?php } ?>
-
 
 <?php printPageListWithNav("« " . gettext_th("prev"), gettext_th("next") . " »"); ?>
 
@@ -91,7 +89,7 @@ if (!empty($fullimage)) { ?>
 </div>
 <?php } ?>
 
-<?php if (function_exists('getHitCounter'))  { ?>
+<?php if (function_exists('getHitCounter')) { ?>
 <!-- Hitcounter -->
 <div id="hitcounter" class="block"><h3><i class="glyphicon glyphicon-eye-open"></i><?php echo gettext_th('Other info'); ?></h3>
 <p><strong><?php echo gettext_th('Views:'); ?></strong> <?php echo gethitcounter(); ?></p>
@@ -141,7 +139,7 @@ if (!empty($fullimage)) { ?>
 <div id="location" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-3 col-lg-4 '; } ?>col-sm-12">
 <?php if (getAlbumLocation()!='') { ?>
 <h3><i class="glyphicon glyphicon-map-marker"></i><?php echo gettext_th('Map'); ?></h3>
-<p><strong>Location: </strong><span itemprop="contentLocation"><?php printAlbumLocation(); ?></span></p>
+<p><strong><?php echo gettext_th('Location: '); ?></strong><span itemprop="contentLocation"><?php printAlbumLocation(); ?></span></p>
 <?php } ?>
 
 <?php if (function_exists('printGoogleMap')) { ?>
@@ -165,7 +163,7 @@ if (!empty($fullimage)) { ?>
 <div id="album-related" class="col-sm-12">
 <?php printRelatedItems_pd(getOption('paradigm_album-related-number'),getOption('paradigm_album-related-type'),NULL,getOption('paradigm_album-related-length'),getOption('paradigm_album-related-thumb'),getOption('paradigm_album-related-date')); ?>
 </div>
-<?php	} ?>
+<?php } ?>
 
 </div>
 

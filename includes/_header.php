@@ -1,6 +1,6 @@
 <body>
 <?php zp_apply_filter('theme_body_open'); ?>
-<!-- page header -->	
+<!-- page header -->
 
 <header id="background-header" class="background">
 <div class="container<?php if (getOption('paradigm_full-width')) {echo '-fluid'; }?>">
@@ -23,7 +23,7 @@
 <?php } elseif (getGalleryTitle() != '') { ?>
 <h1 id="logo-text"><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="<?php printGalleryTitle(); ?>"><?php printGalleryTitle(); ?></a></h1>
 <?php } else { ?>
-<h1 id="logo-text"><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="Add Title"><?php echo gettext_th('Add GalleryTitle in Options->Gallery!'); ?></a></h1>
+<h1 id="logo-text"><a href="<?php echo html_encode(getStandardGalleryIndexURL()); ?>" title="Add Title"><?php echo gettext_th('Add Gallery Title in Options->Gallery!'); ?></a></h1>
 <?php } ?>
 
 <?php if (getOption('paradigm_tagline') == 'header') { ?>
@@ -51,8 +51,8 @@
 <li class="level1 dropdown<?php if ($_zp_gallery_page == 'news.php') {echo 'active';} ?>">
 <?php if (getOption('paradigm_nav_text-news')!='') { ?>
 <a href="<?php echo getNewsIndexURL(); ?>"><?php echo getOption('paradigm_nav_text-news'); ?></a>
-<?php }	else { ?>
-<a href=" <?php echo getNewsIndexURL(); ?>"><?php echo gettext_th('News'); ?></a><?php }	?>
+<?php } else { ?>
+<a href=" <?php echo getNewsIndexURL(); ?>"><?php echo gettext_th('News'); ?></a><?php } ?>
 
 <?php if (getOption('paradigm_nav_menu-news')) { ?>
 <!-- News Dropdown-->

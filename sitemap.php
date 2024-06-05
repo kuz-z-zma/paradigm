@@ -1,6 +1,5 @@
 <?php
 // force UTF-8 Ø
-
 if (!defined('WEBPATH'))
 die();
 ?>
@@ -24,7 +23,7 @@ die();
 <div id="news-results">
 <h2><i class="glyphicon glyphicon-pencil"></i><?php echo gettext_th("News categories"); ?></h2>
 <div id="sitemap-news-output">
-<?php printAllNewsCategories("",false,"nav-local-news","open",true,"submenu","open", "list", true,""); ?>						
+<?php printAllNewsCategories("",false,"nav-local-news","open",true,"submenu","open", "list", true,""); ?>
 </div>
 </div>
 <?php } ?>
@@ -46,7 +45,7 @@ die();
 </div>
 </div>
 <?php } else { ?>
-  <p><?php echo gettext_th('Enable <strong>Print Album Menu</strong> plugin to get list of albums.'); ?></p>
+<p><?php echo gettext_th('Enable <strong>Print Album Menu</strong> plugin to get list of albums.'); ?></p>
 <?php } ?>
 
 </section>

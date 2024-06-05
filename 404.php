@@ -1,6 +1,5 @@
 <?php
 // force UTF-8 Ø
-
 if (!defined('WEBPATH'))
 	die();
 ?>
@@ -25,6 +24,6 @@ if (!defined('WEBPATH'))
 
 </div>
 </div>
-</div>		
+</div>
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_footer.php'); ?>

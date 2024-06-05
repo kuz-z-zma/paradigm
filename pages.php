@@ -45,7 +45,7 @@ if (class_exists('Zenpage')) {
 <?php } ?>
 
 <?php if (getCodeBlock(1,$_zp_current_zenpage_page)!='') { ?>
-<!-- Page Codeblock 1 -->	
+<!-- Page Codeblock 1 -->
 <div class="codeblock-data block">
 <?php printCodeBlock(1,$_zp_current_zenpage_page); ?>
 </div>
@@ -65,7 +65,7 @@ if (class_exists('Zenpage')) {
 <?php if (function_exists('getHitCounter') && getOption('paradigm_page-hitcounter')) { ?>
 <!-- Hitcounter -->
 <div id="hitcounter" class="block"><h3><i class="glyphicon glyphicon-eye-open"></i><?php echo gettext_th('Other info'); ?></h3>
-<p><strong>Views:</strong> <?php echo gethitcounter(); ?> views</p>
+<p><strong><?php echo gettext_th('Views:'); ?></strong> <?php echo gethitcounter(); ?></p>
 </div>
 <?php } ?>
 </div>
@@ -98,7 +98,7 @@ if (class_exists('Zenpage')) {
 <div id="page-related" class="col-sm-12">
 <?php printRelatedItems_pd(getOption('paradigm_page-related-number'),getOption('paradigm_page-related-type'),NULL,getOption('paradigm_page-related-length'),getOption('paradigm_page-related-thumb'),getOption('paradigm_page-related-date')); ?>
 </div>
-<?php	} ?>
+<?php } ?>
 
 </div>
 

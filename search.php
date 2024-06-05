@@ -1,6 +1,5 @@
 <?php
 // force UTF-8 Ø
-
 if (!defined('WEBPATH'))
 die();
 ?>
@@ -45,7 +44,7 @@ $searchwords .= $searchdate;}
 if ($total > 0) {
 ?>
 <h1><i class="glyphicon glyphicon-search"></i>
-<?php printf(gettext_th('Results for')); echo ':&nbsp;'; echo html_encode($searchwords);	?>
+<?php printf(gettext_th('Results for')); echo ':&nbsp;'; echo html_encode($searchwords); ?>
 </h1>
 <?php
 }
@@ -86,12 +85,12 @@ $c = 0;
 <?php while (next_news()) { $c++;	?>
 <li<?php printZDToggleClass('news', $c, $number_to_show); ?>>
 <h3><?php printNewsURL(); ?></h3>
-<p class="excerpt"><?php if (getNewsCustomData()!='')	{ ?>
+<p class="excerpt"><?php if (getNewsCustomData()!='') { ?>
 <?php echo strip_tags(preg_replace( "/\r|\n/", "",(str_replace('<br>','. ',getNewsCustomData())))); ?>
 <?php echo ' '; ?><span class="readmorelink"><a href="<?php echo getNewsURL(); ?>" title="<?php echo getNewsReadMore(); ?>"><?php echo getNewsReadMore(); ?></a></span>
 <?php } else { ?>
 <?php echo shortenContent(strip_tags(preg_replace( "/\r|\n/", "",(str_replace('</p>',' ',getNewsContent())))),getOption('paradigm_homepage-blog-length'),'...'); ?>
-<?php echo ' '; ?><span class="readmorelink"><a href="<?php echo getNewsURL(); ?>" title="<?php echo getNewsReadMore(); ?>"><?php echo getNewsReadMore(); ?></a></span><?php }	?>
+<?php echo ' '; ?><span class="readmorelink"><a href="<?php echo getNewsURL(); ?>" title="<?php echo getNewsReadMore(); ?>"><?php echo getNewsReadMore(); ?></a></span><?php } ?>
 </p></li>
 <?php } ?>
 </ul>
@@ -125,7 +124,7 @@ printf(gettext_th('Albums (%s)'), $numalbums); }
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>
 </div>
-</div>	
-</div>		
+</div>
+</div>
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_footer.php'); ?>

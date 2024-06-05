@@ -5,7 +5,7 @@
  * Prints a list of tags, editable by admin. SEO version with nofollow removed.
  *
  * @param string $option links by default, if anything else the
- *               tags will not link to all other images with the same tag
+ * tags will not link to all other images with the same tag
  * @param string $preText text to go before the printed tags
  * @param string $class css class to apply to the div surrounding the UL list
  * @param string $separator what charactor shall separate the tags
@@ -293,7 +293,7 @@ function printImageMetadata_pd() {
 
 
 /**
- * Prints jQuery JS to enable the toggling of search results of Zenpage  items
+ * Prints jQuery JS to enable the toggling of search results of Zenpage items
  *
  */
 function printZDSearchToggleJS() {
@@ -425,8 +425,8 @@ if (!OFFSET_PATH) {
  * 		"latest" for the latest uploaded by id (Discovery)
  * 		"latest-date" for the latest by date
  * 		"latest-mtime" for the latest by mtime
- *   	"latest-publishdate" for the latest by publishdate
- *    "mostrated" for the most voted,
+ * 		"latest-publishdate" for the latest by publishdate
+ * 		"mostrated" for the most voted,
  * 		"toprated" for the best voted
  * 		"latestupdated" for the latest updated
  * 		"random" for random order (yes, strictly no statistical order...)
@@ -439,7 +439,7 @@ if (!OFFSET_PATH) {
  * 		"rating" for rating,
  * 		"rating+hitcounter" for both.
  * @param integer $width the width/cropwidth of the thumb if crop=true else $width is longest size. (Default 85px)
- * @param integer $height the height/cropheight of the thumb if crop=true else not used.  (Default 85px)
+ * @param integer $height the height/cropheight of the thumb if crop=true else not used. (Default 85px)
  * @param bool $crop 'true' (default) if the thumb should be cropped, 'false' if not
  * @param bool $collection only if $albumfolder is set: true if you want to get statistics from this album and all of its subalbums
  * @param bool $fullimagelink 'false' (default) for the image page link , 'true' for the unprotected full image link (to use Colorbox for example)
@@ -475,7 +475,7 @@ function printImageStatistic_pd($number, $option, $albumfolder = '', $showtitle 
 	echo "\n";
 	echo '<div class="thumbnail" itemtype="https://schema.org/image" itemscope>';
 	echo "\n";
-	echo '<a href="' . html_encode($imagelink) . '" title="' . html_encode($image->getTitle()) . '"';  
+	echo '<a href="' . html_encode($imagelink) . '" title="' . html_encode($image->getTitle()) . '"';
 		if ($fullimagelink) {
 			echo ' rel="lightbox-latest"';
 		}
@@ -599,7 +599,7 @@ function printNewsPageListWithNav_pd ($next, $prev, $nextprev = true, $class = '
 			echo "</li>\n";
 		}
 		if ($firstlast && $i <= $total) {
-			echo "\n  <li class=\"last\">";
+			echo "\n<li class=\"last\">";
 			if ($_zp_page == $total) {
 				echo $total;
 			} else {
@@ -631,7 +631,7 @@ function printNewsPageListWithNav_pd ($next, $prev, $nextprev = true, $class = '
  * 		"rating" for rating,
  * 		"rating+hitcounter" for both.
  * @param integer $width the width/cropwidth of the thumb if crop=true else $width is longest size. (Default 85px)
- * @param integer $height the height/cropheight of the thumb if crop=true else not used.  (Default 85px)
+ * @param integer $height the height/cropheight of the thumb if crop=true else not used. (Default 85px)
  * @param bool $crop 'true' (default) if the thumb should be cropped, 'false' if not
  * @param bool $collection only if $albumfolder is set: true if you want to get statistics from this album and all of its subalbums
  * @param bool $fullimagelink 'false' (default) for the image page link , 'true' for the unprotected full image link (to use Colorbox for example)

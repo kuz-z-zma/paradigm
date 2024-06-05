@@ -1,6 +1,5 @@
 <?php
 // force UTF-8 Ø
-
 if (!defined('WEBPATH'))
 die();
 ?>
@@ -84,13 +83,13 @@ if (!empty($fullimage)) { ?>
 <?php if (getOption('paradigm_copyright_message') != '') { ?>
 <div id="copyright" class="image-copy block" itemprop="copyrightHolder"><h3><i class="glyphicon glyphicon-copyright-mark"></i><?php echo gettext_th('Copyright'); ?></h3>
 <?php echo getOption('paradigm_copyright_message'); ?>
-</div>					
+</div>
 <?php } else { ?>
 <?php (getImageData('copyright')!='') ?> 
 <div id="copyright" class="image-copy block"><h3><i class="glyphicon glyphicon-copyright-mark"></i><?php echo gettext_th('Copyright'); ?></h3>
 <p itemprop="copyrightHolder"><?php echo (getImageData('copyright')); ?></p>
 </div>
-<?php } ?>	
+<?php } ?>
 
 <?php if (getImageMetaData()) { ?>
 <div id="image-metadata" class="block">
@@ -110,13 +109,13 @@ if (!empty($fullimage)) { ?>
 <?php } ?>
 </div>
 
-<!-- Favorites -->	
+<!-- Favorites -->
 <?php if (function_exists('printAddToFavorites')) { ?>
 <div id="favorites" class="block"><h3><i class="glyphicon glyphicon-heart"></i><?php echo gettext_th('Favorites'); ?></h3>
 <?php printAddToFavorites($_zp_current_image); ?></div>
 <?php } ?>
 
-<!-- Rating -->	
+<!-- Rating -->
 <?php if (extensionEnabled('rating')) { ?>
 <div id="rating" class="block"><h3><i class="glyphicon glyphicon-star"></i><?php echo gettext_th('Rating'); ?></h3>
 <?php printRating(); ?>
@@ -131,7 +130,7 @@ if (!empty($fullimage)) { ?>
 
 <?php if (function_exists('printImageMarkupFields') && (zp_loggedin() OR (getOption('imageMarkup_permission') == 'everyone'))) { ?>
 <div id="codecopy" class="markup-copy-field block"><h3><i class="glyphicon glyphicon-paste"></i><?php echo gettext_th('Image code'); ?></h3>
-<?php	printImageMarkupFields(gettext_th('Code')); ?>
+<?php printImageMarkupFields(gettext_th('Code')); ?>
 </div>
 <?php } ?>
 
@@ -151,22 +150,22 @@ if (!empty($fullimage)) { ?>
 
 <?php if ((getImageData('location')!='') || (getImageData('city')!='') || (getImageData('state')!='') || (getImageData('country')!='')) { ?>
 <?php if (getImageData('location')!='') { ?>
-<p><strong>Location:</strong>&nbsp;<span itemprop="contentLocation">
+<p><strong><?php echo gettext_th('Location: '); ?></strong><span itemprop="contentLocation">
 <?php echo get_language_string(getImageData('location')); ?>
 </span></p>
 <?php } ?>
 <?php if (getImageData('city')!='') { ?>
-<p><strong><?php echo gettext_th('City:'); ?></strong>&nbsp;
+<p><strong><?php echo gettext_th('City: '); ?></strong>
 <?php echo get_language_string(getImageData('city')); ?>
 </p>
 <?php } ?>
 <?php if (getImageData('state')!='') { ?>
-<p><strong><?php echo gettext_th('State:'); ?></strong>&nbsp;
+<p><strong><?php echo gettext_th('State: '); ?></strong>
 <?php echo get_language_string(getImageData('state')); ?>
 </p>
 <?php } ?>
 <?php if (getImageData('country')!='') { ?>
-<p><strong><?php echo gettext_th('Country:'); ?></strong>&nbsp;
+<p><strong><?php echo gettext_th('Country: '); ?></strong>
 <?php echo get_language_string(getImageData('country')); ?>
 </p>
 <?php } ?>
@@ -178,7 +177,7 @@ if (!empty($fullimage)) { ?>
 <?php } ?>
 
 <?php if (function_exists('printOpenStreetMap') && (getImageData('EXIFGPSLatitude')!='')) { ?>
-<?php openStreetMap::printOpenStreetMap(); ?>			
+<?php openStreetMap::printOpenStreetMap(); ?>
 <?php } ?>
 </div>
 <?php } ?>
@@ -186,15 +185,15 @@ if (!empty($fullimage)) { ?>
 <?php if (getCodeBlock(3,$_zp_current_image)!='') { ?>
 <!-- Image Codeblock 3 -->
 <div id="image-extras" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-6 col-lg-4 '; } ?>col-sm-12">
-<?php printCodeBlock(3,$_zp_current_image);	?>
+<?php printCodeBlock(3,$_zp_current_image); ?>
 </div>
-<?php	} ?>
+<?php } ?>
 
 <?php if (function_exists('printRelatedItems') && getOption('paradigm_image-related-enable')) { ?>
 <div id="image-related" class="row col-sm-12">
 <?php printRelatedItems_pd(getOption('paradigm_image-related-number'),getOption('paradigm_image-related-type'),NULL,getOption('paradigm_image-related-length'),getOption('paradigm_image-related-thumb'),getOption('paradigm_image-related-date')); ?>
 </div>
-<?php	} ?>
+<?php } ?>
 
 </div>
 

@@ -91,7 +91,7 @@ if (is_NewsArticle()) { ?>
 <!-- Hitcounter -->
 <div id="hitcounter" class="block">
 <h3><i class="glyphicon glyphicon-eye-open"></i><?php echo gettext_th('Other info'); ?></h3>
-<p><strong>Views:</strong> <?php echo gethitcounter(); ?> views</p>
+<p><strong><?php echo gettext_th('Views:'); ?></strong> <?php echo gethitcounter(); ?></p>
 </div>
 <?php } ?>
 
@@ -141,7 +141,7 @@ if (is_NewsArticle()) { ?>
 <?php } else { ?>
 <?php echo gettext_th('News category:');} ?> <?php printCurrentNewsCategory(); printCurrentPageAppendix(gettext_th(' (Page: '),')'); ?></h1>
 
-<div id="news-category-caption" class="content">	
+<div id="news-category-caption" class="content">
 <?php if (function_exists('printFeaturedImageThumb')){ ?>
 <?php if (getOption('paradigm_news-feat-image-size-cat') == 'thumb_size') { printFeaturedImageThumb(null,'feat-image',null,null,null); } ?>
 <?php if (getOption('paradigm_news-feat-image-size-cat') == 'image_size') { printSizedFeaturedImage(null,null,getOption('image_size'),null,null,null,null,null,null,'zenpage_fullimage',null,true,null); } ?>
@@ -172,7 +172,7 @@ if (is_NewsArticle()) { ?>
 
 <?php } ?>
 
-<!-- news article loop --> 
+<!-- news article loop -->
 <?php while (next_news()):; ?>
 
 <article class="news-excerpt">

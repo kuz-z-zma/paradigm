@@ -16,7 +16,7 @@
 <div class="media-body">
 <a href="<?php echo html_encode(getAlbumURL()); ?>" title="<?php echo gettext_th('View album: '); ?><?php printBareAlbumTitle(); ?>"><?php printAlbumThumbImage(getBareAlbumTitle(),"media-object"); ?></a>
 
-<?php	if (getOption('paradigm_homepage-albums-desc')) { ?>
+<?php if (getOption('paradigm_homepage-albums-desc')) { ?>
 <p><?php if (getAlbumCustomData()!='') { ?>
 <?php printAlbumCustomData(); ?>
 <?php } else { ?>

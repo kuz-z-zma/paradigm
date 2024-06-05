@@ -1,11 +1,9 @@
 <?php
 // force UTF-8 Ø
-
 if (!defined('WEBPATH'))
 die();
 if (function_exists('printRegistrationForm')) {	
 ?>
-
 <!DOCTYPE html>
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_head.php'); ?>
@@ -28,10 +26,10 @@ if (function_exists('printRegistrationForm')) {
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>
 
-</div
+</div>
 </div>
 </div>
 
-<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_footer.php'); ?>		
+<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_footer.php'); ?>
 
 <?php } else {include(SERVERPATH . '/' . ZENFOLDER . '/404.php'); } ?>

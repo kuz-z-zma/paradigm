@@ -1,6 +1,5 @@
 <?php
 // force UTF-8 Ø
-
 if (!defined('WEBPATH'))
 	die();
 ?>
@@ -45,10 +44,10 @@ if (!defined('WEBPATH'))
 
 <?php if (getOption('paradigm_archive-sidebar')) { ?>
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_sidebar.php'); ?>
-<?php } ?>	
+<?php } ?>
 
-</div>		
-</div>	
-</div>	
+</div>
+</div>
+</div>
 
 <?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_footer.php'); ?>

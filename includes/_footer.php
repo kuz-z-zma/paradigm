@@ -5,7 +5,7 @@
 
 <div id="footer-extras" class="row">
 <!-- Gallery Codeblock 4 -->
-<?php printcodeblock (4, $_zp_gallery);	?>
+<?php printcodeblock (4, $_zp_gallery); ?>
 </div>
 
 <div id="footer" class="row">
@@ -48,59 +48,57 @@ if ((function_exists('printRegisterURL')||function_exists('printUserLogin_out'))
 <li class="last"><i class="glyphicon glyphicon-user"></i></li><?php } ?>
 </ul>
 </div>
-<?php }	?>
+<?php } ?>
 
 <?php if (class_exists('RSS') && getOption('paradigm_footer_rss')) { ?>
 <div id="rss" class="col-sm-8" >
 <ul class="links-rss list-inline">
 <li><i class="glyphicon glyphicon-bullhorn"></i></li>
 <?php if (getOption('RSS_articles')) { ?>
-<li><?php	printRSSLink('News','',gettext_th('RSS News'),'',false); ?></li>
-<?php }	?>
+<li><?php printRSSLink('News','',gettext_th('RSS News'),'',false); ?></li>
+<?php } ?>
 <?php if (getOption('RSS_pages') && ($_zp_gallery_page == 'pages.php')){ ?>
-<li><?php	printRSSLink('Pages','',gettext_th('RSS Pages'),'',false); ?></li>
-<?php }	?>
+<li><?php printRSSLink('Pages','',gettext_th('RSS Pages'),'',false); ?></li>
+<?php } ?>
 <?php if (getOption('RSS_album_image')) { ?>
 <li><?php printRSSLink('AlbumsRSS','',gettext_th('RSS Albums'),'',false); ?></li>
 <li class="last"><?php printRSSLink('Gallery','',gettext_th('RSS Images'),'',false); ?></li>
-<?php }	?>
+<?php } ?>
 </ul>
 </div>
 <?php } ?>
 
-
-  
 <?php if (getOption('paradigm_footer_social')) { ?>
 <div id="social" class="col-sm-4 text-right">
 <ul class="links-social list-inline">
 <?php if (getOption('facebook_url')!=''){ ?>
 <li><a href="<?php echo getOption('facebook_url'); ?>" rel="me" target="_blank"><em class="social-icon-facebook"></em></a></li>
-<?php	}	?>
+<?php } ?>
 <?php if (getOption('twitter_profile')!=''){ ?>
 <li><a href="https://twitter.com/<?php echo getOption('twitter_profile'); ?>" rel="me" target="_blank"><em class="social-icon-twitter"></em></a></li>
-<?php	}	?>
+<?php } ?>
 <?php if (getOption('flickr_url')!=''){ ?>
 <li><a href="<?php echo getOption('flickr_url'); ?>" rel="me" target="_blank"><em class="social-icon-flickr"></em></a></li>
-<?php	}	?>
+<?php } ?>
 <?php if (getOption('500px_url')!=''){ ?>
 <li><a href="<?php echo getOption('500px_url'); ?>" rel="me" target="_blank"><em class="social-icon-500px"></em></a></li>
-<?php	}	?>
+<?php } ?>
 <?php if (getOption('instagram_url')!=''){ ?>
 <li><a href="<?php echo getOption('instagram_url'); ?>" rel="me" target="_blank"><em class="social-icon-instagram"></em></a></li>
-<?php	}	?>
+<?php } ?>
 <?php if (getOption('pinterest_url')!=''){ ?>
 <li><a href="<?php echo getOption('pinterest_url'); ?>" rel="me" target="_blank"><em class="social-icon-pinterest"></em></a></li>
-<?php	}	?>
+<?php } ?>
 <?php if (getOption('deviantart_url')!=''){ ?>
 <li><a href="<?php echo getOption('deviantart_url'); ?>" rel="me" target="_blank"><em class="social-icon-deviantart"></em></a></li>
-<?php	}	?>
+<?php } ?>
 <?php if (getOption('tumblr_url')!=''){ ?>
 <li><a href="<?php echo getOption('tumblr_url'); ?>" rel="me" target="_blank"><em class="social-icon-tumblr"></em></a></li>
-<?php	}	?>
+<?php } ?>
 </ul>
 </div>
 <?php } ?>
-  
+
 </div>
 </div>
 </footer>
@@ -115,4 +113,4 @@ if ((function_exists('printRegisterURL')||function_exists('printUserLogin_out'))
 
 </body>
 
-</html>	
+</html>

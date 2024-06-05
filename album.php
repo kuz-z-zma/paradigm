@@ -1,6 +1,5 @@
 <?php
 // force UTF-8 Ø
-
 if (!defined('WEBPATH'))
 die();
 ?>
@@ -54,7 +53,7 @@ die();
 </div>
 <?php } ?>
 
-<?php if (function_exists('getHitCounter'))  { ?>
+<?php if (function_exists('getHitCounter')) { ?>
 <!-- Hitcounter -->
 <div id="hitcounter" class="block"><h3><i class="glyphicon glyphicon-eye-open"></i><?php echo gettext_th('Other info'); ?></h3>
 <p><strong><?php echo gettext_th('Views:'); ?></strong> <?php echo gethitcounter(); ?></p>
@@ -104,7 +103,7 @@ die();
 <div id="location" class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-3 col-lg-4 '; } ?>col-sm-12">
 <?php if (getAlbumLocation()!='') { ?>
 <h3><i class="glyphicon glyphicon-map-marker"></i><?php echo gettext_th('Map'); ?></h3>
-<p><strong>Location: </strong><span itemprop="contentLocation"><?php printAlbumLocation(); ?></span></p>
+<p><strong><?php echo gettext_th('Location: '); ?></strong><span itemprop="contentLocation"><?php printAlbumLocation(); ?></span></p>
 <?php } ?>
 
 <?php if (function_exists('printGoogleMap')) { ?>
@@ -128,7 +127,7 @@ die();
 <div id="album-related" class="col-sm-12">
 <?php printRelatedItems_pd(getOption('paradigm_album-related-number'),getOption('paradigm_album-related-type'),NULL,getOption('paradigm_album-related-length'),getOption('paradigm_album-related-thumb'),getOption('paradigm_album-related-date')); ?>
 </div>
-<?php	} ?>
+<?php } ?>
 
 </div>
 

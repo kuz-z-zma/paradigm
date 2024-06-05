@@ -3,11 +3,11 @@
 <?php if (getcodeblock(1, $_zp_gallery)!='') { ?>
 <!-- Gallery Codeblock 1 -->
 <?php printcodeblock (1, $_zp_gallery);	?>
-<?php	} ?>  
+<?php } ?>
 
 <h2 class="sidebar-header"><?php echo gettext_th('Navigation'); ?></h2>
 
-<?php	if ((function_exists('printRegisterURL')||function_exists('printUserLogin_out')) && getOption('paradigm_sidebar-user-menu')) { ?>
+<?php if ((function_exists('printRegisterURL')||function_exists('printUserLogin_out')) && getOption('paradigm_sidebar-user-menu')) { ?>
 <!-- User menu in Sidebar -->
 <div class="panel panel-default nav-local">
 <div class="panel-heading"><h3 class="panel-title"><?php echo gettext_th('User menu'); ?></h3></div>
@@ -18,7 +18,7 @@
 </ul>
 </div>
 </div>
-<?php }	?>
+<?php } ?>
 
 <?php if (function_exists('printFavoritesURL')) { ?>
 <!-- Favorites menu in Gallery -->
@@ -30,21 +30,21 @@
 </ul>
 </div>
 </div>
-<?php }	?>
+<?php } ?>
 
 <?php if(function_exists("printAlbumMenu") && getOption('paradigm_sidebar-albums-gallery') && (($_zp_gallery_page == 'image.php')||($_zp_gallery_page == 'album.php')||($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'gallery.php')||($_zp_gallery_page == 'favorites.php')||($_zp_gallery_page == 'password.php')||($_zp_gallery_page == 'register.php'))) { ?>
 <!-- Album menu in Gallery -->
 <div class="panel panel-default nav-local">
 <div class="panel-heading"><h3 class="panel-title"><?php if (getOption('paradigm_nav_text-gallery')!='') {echo getOption('paradigm_nav_text-gallery');} else { echo gettext_th('Albums');} ?></h3></div>
 <div class="panel-body">
-<?php	printAlbumMenu("list", false, "nav-local-albums", "open", "submenu", "open", "", getOption('paradigm_sidebar-albums-depth'), false, false); ?>
+<?php printAlbumMenu("list", false, "nav-local-albums", "open", "submenu", "open", "", getOption('paradigm_sidebar-albums-depth'), false, false); ?>
 </div>
 </div>
 <?php } ?>
 
 
 <?php if (function_exists("printAllNewsCategories") && getNumNews(true)) { ?>
-<?php if  ((getOption('paradigm_sidebar-news-gallery') && (($_zp_gallery_page == 'image.php')||($_zp_gallery_page == 'album.php')||($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'gallery.php')||($_zp_gallery_page == 'favorites.php')))||
+<?php if ((getOption('paradigm_sidebar-news-gallery') && (($_zp_gallery_page == 'image.php')||($_zp_gallery_page == 'album.php')||($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'gallery.php')||($_zp_gallery_page == 'favorites.php')))||
 (getOption('paradigm_sidebar-news-news') && ($_zp_gallery_page == 'news.php'))||
 (getOption('paradigm_sidebar-news-pages') && ($_zp_gallery_page == 'pages.php'))||
 (getOption('paradigm_sidebar-news-archive') && (($_zp_gallery_page == 'archive.php')||($_zp_gallery_page == 'contact.php')||($_zp_gallery_page == 'credits.php')||($_zp_gallery_page == 'search.php')))
@@ -53,9 +53,9 @@
 <div class="panel panel-default nav-local">
 <div class="panel-heading"><h3 class="panel-title"><?php if (getOption('paradigm_nav_text-news')!='') {echo getOption('paradigm_nav_text-news');} else { echo gettext_th('News');} ?></h3></div>
 <div class="panel-body">
-<?php printAllNewsCategories("",false,"nav-local-news","open",true,"submenu","open", "list", getOption('paradigm_sidebar-news-depth'),""); ?>						
+<?php printAllNewsCategories("",false,"nav-local-news","open",true,"submenu","open", "list", getOption('paradigm_sidebar-news-depth'),""); ?>
 </div>
-</div>	
+</div>
 <?php } ?>
 <?php } ?>
 
@@ -71,7 +71,7 @@
 <div class="panel-body">
 <?php printPageMenu("list","nav-local-pages", "open", "submenu", "open", "",getOption('paradigm_sidebar-pages-depth'), true); ?>
 </div>
-</div>	
+</div>
 <?php } ?>
 <?php } ?> 
 
@@ -89,22 +89,22 @@
 </div>
 </div>
 <?php } ?>
-<?php } ?>	
+<?php } ?>
 
 <?php if (getcodeblock(2, $_zp_gallery)!='') { ?>
 <!-- Gallery Codeblock 2 -->
 <?php printcodeblock (2, $_zp_gallery);	?>
-<?php		} ?>
+<?php } ?>
 
 <?php if (getOption('paradigm_sidebar-flickr')) { ?>
 <div class="panel panel-default">
 <div class="panel-heading"><h3 class="panel-title">Flickr</h3></div>
 <div class="panel-body">
-	<?php flickrFeed::printFeed(6,'flickrfeed'); ?>
+<?php flickrFeed::printFeed(6,'flickrfeed'); ?>
 </div>
 </div>
 <?php } ?>
-	
+
 <?php if (getAllTagsCount() && getOption('paradigm_sidebar-tags')) { ?>
 <!-- Tag cloud in Sidebar-->
 <div class="panel panel-default">
@@ -120,6 +120,6 @@
 <?php if (getcodeblock(3, $_zp_gallery)!='') { ?>
 <!-- Gallery Codeblock 3 -->
 <?php printcodeblock (3, $_zp_gallery);	?>
-<?php		} ?>
+<?php } ?>
 
 </aside>

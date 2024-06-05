@@ -140,6 +140,6 @@
 
 	<div class="col-sm-9 col-sm-offset-3">	
 		<input type="submit" class="button buttons" value="<?php echo gettext_th('Add Comment'); ?>" />
-	</div>	
+	</div>
 
 </form>

@@ -1,7 +1,5 @@
 <?php
-
 // force UTF-8 Ø
-
 // Zenphoto theme definition file
 $theme_description['name'] = 'Paradigm';
 $theme_description['author'] = 'kuzzzma (since v1.2, original version by Olivier FFRENCH (offrench)';

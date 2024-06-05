@@ -9,11 +9,11 @@
 <?php while (next_image()): ?>
 <div class="<?php if (getOption('paradigm_full-width')) {echo 'col-xl-2 col-lg-3 '; } ?>col-md-4 col-sm-6 col-xs-12" itemscope itemtype="https://schema.org/ImageObject">
 <div class="thumbnail" itemprop="thumbnail">
-<?php	if ($_zp_current_image->isPhoto() && getOption('paradigm_lightbox')) { ?>
+<?php if ($_zp_current_image->isPhoto() && getOption('paradigm_lightbox')) { ?>
 <a href="<?php echo html_encode(getDefaultSizedImage()); ?>" rel="lightbox noopener nofollow" title="<?php printBareImageTitle(); ?>"><?php printImageThumb(getBareImageTitle()); ?></a>
-<?php	} else { ?>
+<?php } else { ?>
 <a href="<?php echo html_encode(getImageURL()); ?>" title="<?php printBareImageTitle(); ?>"><?php printImageThumb(getBareImageTitle()); ?></a>
-<?php	}	?>
+<?php } ?>
 
 <div class="caption">
 <a href="<?php echo html_encode(getImageURL()); ?>" title="<?php printBareImageTitle(); ?>"><p itemprop="name"><?php printBareImageTitle(); ?></p></a>
