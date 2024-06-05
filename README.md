@@ -8,6 +8,7 @@ Originally this theme was created and developed by Olivier Ffrench, but seems to
 
 ## Links
 - [Main page](https://www.blog.private-universe.net/web-and-tech/zenphoto-theme-paradigm/): About, plugins supported, how-to set up
+- [Latest working version](https://github.com/kuz-z-zma/paradigm) on GitHub
 - [Discussion thread](https://forum.zenphoto.org/discussion/1411123/my-update-for-paradigm-theme) at Zenphoto Forum
 - [Demo website](https://demo.private-universe.net/)
 - [Full Changelog](https://www.blog.private-universe.net/web-and-tech/zenphoto-theme-paradigm/paradigm-changelog/)
