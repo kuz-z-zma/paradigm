@@ -48,16 +48,16 @@
 
 	<?php if (getOption('comment_form_addresses')) { ?>
 		<div class="form-group">
-			<label for="0-comment_form_street" class="col-sm-3 control-label"><?php printf(gettext_th('Street%s'), getCommentFormRequiredFieldMark('comment_form_addresses')); ?></label>
+			<label for="comment_form_street" class="col-sm-3 control-label"><?php printf(gettext_th('Street%s'), getCommentFormRequiredFieldMark('comment_form_addresses')); ?></label>
 		<div class="col-sm-9">
-			<input<?php printCommentFormFieldAttributes('comment_form_addresses', $disabled['street']); ?> type="text" id="0-comment_form_street" name="0-comment_form_street"<?php printCommentformAutocompleteAttr('street-address'); ?> size="22" value="<?php echo html_encode($stored['street']); ?>" class="form-control" />
+			<input<?php printCommentFormFieldAttributes('comment_form_addresses', $disabled['street']); ?> type="text" id="comment_form_street" name="0-comment_form_street"<?php printCommentformAutocompleteAttr('street-address'); ?> size="22" value="<?php echo html_encode($stored['street']); ?>" class="form-control" />
 		</div>
 		</div>
 
 		<div class="form-group">
-			<label for="0-comment_form_city" class="col-sm-3 control-label"><?php printf(gettext_th('City%s'), getCommentFormRequiredFieldMark('comment_form_addresses')); ?></label>
+			<label for="comment_form_city" class="col-sm-3 control-label"><?php printf(gettext_th('City%s'), getCommentFormRequiredFieldMark('comment_form_addresses')); ?></label>
 		<div class="col-sm-9">
-			<input<?php printCommentFormFieldAttributes('comment_form_addresses', $disabled['city']); ?> type="text" id="0-comment_form_city" name="0-comment_form_city"<?php printCommentformAutocompleteAttr('address-level2'); ?> size="22" value="<?php echo html_encode($stored['city']); ?>" class="form-control" />
+			<input<?php printCommentFormFieldAttributes('comment_form_addresses', $disabled['city']); ?> type="text" id="comment_form_city" name="0-comment_form_city"<?php printCommentformAutocompleteAttr('address-level2'); ?> size="22" value="<?php echo html_encode($stored['city']); ?>" class="form-control" />
 		</div>
 		</div>
 
