@@ -53,7 +53,7 @@ You have to BACKUP all TEXT FIELDS and setup Paradigm from scratch if you're upd
 - Support for Comment and Contact forms changes introduced in Zenphoto 1.6.3.
 - Support for Featured Images plugin changes, introduced in Zenphoto 1.6.3.
 - Support for Multiple Layouts plugin changes (1 alternative layout for Albums, more to come).
-- Support for FlickrFeed plugin (please, update it to lates version!).
+- Support for FlickrFeed plugin (please, update it to the latest version!).
 - Changed placement for Custom logo files to 'UPLOAD FOLDER/design'.
 - Changed logic for support of custom user CSS files (they need to be placed in 'UPLOAD FOLDER/design' and selected via Options).
 - Added option to choose Preview image for OpenGraph/Twitter Cards (images need to be placed in 'UPLOAD FOLDER/design' and selected via Options).
