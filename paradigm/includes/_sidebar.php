@@ -2,7 +2,7 @@
 
 <?php if (getcodeblock(1, $_zp_gallery)!='') { ?>
 <!-- Gallery Codeblock 1 -->
-<?php printcodeblock (1, $_zp_gallery);	?>
+<?php printcodeblock (1, $_zp_gallery); ?>
 <?php } ?>
 
 <h2 class="sidebar-header"><?php echo gettext_th('Navigation'); ?></h2>
@@ -32,7 +32,7 @@
 </div>
 <?php } ?>
 
-<?php if(function_exists("printAlbumMenu") && getOption('paradigm_sidebar-albums-gallery') && (($_zp_gallery_page == 'image.php')||($_zp_gallery_page == 'album.php')||($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'gallery.php')||($_zp_gallery_page == 'favorites.php')||($_zp_gallery_page == 'password.php')||($_zp_gallery_page == 'register.php'))) { ?>
+<?php if(function_exists("printAlbumMenu") && getOption('paradigm_sidebar-albums-gallery') && (($_zp_gallery_page == 'image.php')||($_zp_gallery_page == 'album.php')||($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'gallery.php')||($_zp_gallery_page == 'favorites.php')||($_zp_gallery_page == 'password.php')||($_zp_gallery_page == 'register.php')||($_zp_gallery_page == '404.php'))) { ?>
 <!-- Album menu in Gallery -->
 <div class="panel panel-default nav-local">
 <div class="panel-heading"><h3 class="panel-title"><?php if (getOption('paradigm_nav_text-gallery')!='') {echo getOption('paradigm_nav_text-gallery');} else { echo gettext_th('Albums');} ?></h3></div>
@@ -44,7 +44,7 @@
 
 
 <?php if (function_exists("printAllNewsCategories") && getNumNews(true)) { ?>
-<?php if ((getOption('paradigm_sidebar-news-gallery') && (($_zp_gallery_page == 'image.php')||($_zp_gallery_page == 'album.php')||($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'gallery.php')||($_zp_gallery_page == 'favorites.php')))||
+<?php if ((getOption('paradigm_sidebar-news-gallery') && (($_zp_gallery_page == 'image.php')||($_zp_gallery_page == 'album.php')||($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'gallery.php')||($_zp_gallery_page == 'favorites.php')||($_zp_gallery_page == 'password.php')||($_zp_gallery_page == 'register.php')||($_zp_gallery_page == '404.php')))||
 (getOption('paradigm_sidebar-news-news') && ($_zp_gallery_page == 'news.php'))||
 (getOption('paradigm_sidebar-news-pages') && ($_zp_gallery_page == 'pages.php'))||
 (getOption('paradigm_sidebar-news-archive') && (($_zp_gallery_page == 'archive.php')||($_zp_gallery_page == 'contact.php')||($_zp_gallery_page == 'credits.php')||($_zp_gallery_page == 'search.php')))
@@ -60,7 +60,7 @@
 <?php } ?>
 
 <?php if (function_exists("printPageMenu") && (getNumPages(true) > 0)) { ?>
-<?php if ((getOption('paradigm_sidebar-pages-gallery') && (($_zp_gallery_page == 'image.php')||($_zp_gallery_page == 'album.php')||($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'gallery.php')||($_zp_gallery_page == 'favorites.php'))) ||
+<?php if ((getOption('paradigm_sidebar-pages-gallery') && (($_zp_gallery_page == 'image.php')||($_zp_gallery_page == 'album.php')||($_zp_gallery_page == 'index.php')||($_zp_gallery_page == 'gallery.php')||($_zp_gallery_page == 'favorites.php')||($_zp_gallery_page == 'password.php')||($_zp_gallery_page == 'register.php')||($_zp_gallery_page == '404.php'))) ||
 (getOption('paradigm_sidebar-pages-news') && ($_zp_gallery_page == 'news.php'))||
 (getOption('paradigm_sidebar-pages-pages') && ($_zp_gallery_page == 'pages.php'))||
 (getOption('paradigm_sidebar-pages-archive') && (($_zp_gallery_page == 'archive.php')||($_zp_gallery_page == 'contact.php')||($_zp_gallery_page == 'credits.php')||($_zp_gallery_page == 'search.php')))
@@ -93,7 +93,7 @@
 
 <?php if (getcodeblock(2, $_zp_gallery)!='') { ?>
 <!-- Gallery Codeblock 2 -->
-<?php printcodeblock (2, $_zp_gallery);	?>
+<?php printcodeblock (2, $_zp_gallery); ?>
 <?php } ?>
 
 <?php if (getOption('paradigm_sidebar-flickr')) { ?>
@@ -119,7 +119,7 @@
 
 <?php if (getcodeblock(3, $_zp_gallery)!='') { ?>
 <!-- Gallery Codeblock 3 -->
-<?php printcodeblock (3, $_zp_gallery);	?>
+<?php printcodeblock (3, $_zp_gallery); ?>
 <?php } ?>
 
 </aside>
