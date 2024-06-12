@@ -149,11 +149,21 @@ if (is_NewsArticle()) { ?>
 <?php printNewsCategoryDesc(); ?>
 </div>
 
-<?php if ((getNewsCategoryCustomData()!='') && getOption('paradigm_news-custom')) { ?>
+<?php if ((getNewsCategoryCustomData()!='')||(getCodeBlock(5,$_zp_current_category)!='')) { ?>
 <div id="news-category-info" class="content">
 <h2><i class="glyphicon glyphicon-info-sign"></i><?php echo gettext_th('Info'); ?></h2>
 <!-- Custom data -->
+<?php if ((getNewsCategoryCustomData()!='') && getOption('paradigm_news-custom')) { ?>
 <?php printNewsCategoryCustomData(); ?>
+<?php } ?>
+
+<?php if (getCodeBlock(5,$_zp_current_category)!='') { ?>
+<!-- News Codeblock 5 -->
+<div class="codeblock-data block">
+<?php printCodeBlock(5,$_zp_current_category); ?>
+</div>
+<?php } ?>
+
 </div>
 <?php } ?>
 
