@@ -279,15 +279,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ========== Main content ========== */
 
-.glyphicon: after {
+.glyphicon::after {
 	content: "\0020";
 	margin-right: 7px;
 }
-h1 >.glyphicon: after {
+h1 >.glyphicon::after {
 	content: "\0020";
 	margin-right: 10px;
 }
-
 
 .caption h3 {
 	margin-top: 0px;
@@ -427,7 +426,7 @@ div.pagelist {
 h2.related-items {
 }
 
-h2.related-items: : before {
+h2.related-items::before {
 
 }
 ul#related-items {
@@ -932,11 +931,11 @@ ul.taglist > li {
 #footer li {
 	padding: 0px;
 }
-#footer li: after {
+#footer li::after {
 	color: #ccc;
 	content: '\A0\A0\7C\A0\A0';
 }
-#footer li.last: after, #footer .links-social li: after {
+#footer li.last::after, #footer .links-social li::after {
 	content: none;
 }
 
@@ -1113,7 +1112,7 @@ textarea.form-control {
 
 /* Basic additional icons	*/
 
-.glyphicon-rss-fill: before {
+.glyphicon-rss-fill::before {
 	content: "\F521";
 }
 
