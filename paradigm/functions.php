@@ -279,7 +279,7 @@ function printImageMetadata_pd() {
 							if (!is_int($value) && strpos($value, 'T') !== false) {
 								$value = str_replace('T', ' ', substr($value, 0, 19));
 							}
-							echo zpFormattedDate(DATE_FORMAT, $value);
+							echo zpFormattedDate(DATETIME_DISPLAYFORMAT, $value);
 							break;
 						default:
 							echo html_encode($value);
@@ -507,7 +507,7 @@ function printImageStatistic_pd($number, $option, $albumfolder = '', $showtitle 
 		}
 
 		if ($showdate) {
-			echo '<p>' . zpFormattedDate(DATE_FORMAT, strtotime($image->getDateTime())) . '</p>';
+			echo '<p>' . zpFormattedDate(DATETIME_DISPLAYFORMAT, strtotime($image->getDateTime())) . '</p>';
 			echo "\n";
 		}
 
@@ -755,7 +755,7 @@ function printRelatedItems_pd($number = 5, $type = 'news', $specific = NULL, $ex
 									break;
 							} ?>
 							<p class="related-items_date">
-								<?php echo zpFormattedDate(DATE_FORMAT, strtotime($d)); ?>
+								<?php echo zpFormattedDate(DATETIME_DISPLAYFORMAT, strtotime($d)); ?>
 							</p>
 							<?php }	?>
 					
