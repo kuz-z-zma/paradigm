@@ -21,6 +21,8 @@ die();
 
 <div id="album-caption" class="content" itemprop="description"><?php printAlbumDesc(); ?></div>
 
+<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_albumlist.php'); ?>
+
 <?php if (getNumImages() > 0) { ?>
 <div id="images" class="row">
 <?php while (next_image()): ?>
@@ -60,8 +62,6 @@ if (!empty($fullimage)) { ?>
 <?php } ?>
 
 <?php printPageListWithNav("« " . gettext_th("prev"), gettext_th("next") . " »"); ?>
-
-<?php include(SERVERPATH . '/' . THEMEFOLDER . '/paradigm/includes/_albumlist.php'); ?>
 
 <div id="album-details" class="row">
 <div id="album-info" class="col-sm-12">
