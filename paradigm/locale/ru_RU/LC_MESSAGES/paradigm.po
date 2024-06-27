@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Paradigm v2.0\n"
-"POT-Creation-Date: 2024-06-06 02:03+0300\n"
-"PO-Revision-Date: 2024-06-06 02:03+0300\n"
+"Project-Id-Version: Paradigm v2.1\n"
+"POT-Creation-Date: 2024-06-27 15:07+0300\n"
+"PO-Revision-Date: 2024-06-27 15:08+0300\n"
 "Last-Translator: kuzzzma <kuzzzma@gmail.com>\n"
 "Language-Team: kuzzzma\n"
 "Language: ru_RU\n"
@@ -21,52 +21,52 @@ msgstr ""
 msgid "Object not found"
 msgstr "Объект не найден"
 
-#: album.php:28 album_story.php:62 favorites.php:31 gallery.php:23
+#: album.php:28 album_story.php:28 favorites.php:31 gallery.php:23
 #: search.php:121
 msgid "prev"
 msgstr "назад"
 
-#: album.php:28 album_story.php:62 favorites.php:31 gallery.php:23
+#: album.php:28 album_story.php:28 favorites.php:31 gallery.php:23
 #: search.php:121
 msgid "next"
 msgstr "далее"
 
-#: album.php:32 album_story.php:68
+#: album.php:32 album_story.php:32
 msgid "Album Info"
 msgstr "Информация"
 
-#: album.php:51 album_story.php:87 explore.php:20 image.php:77 news.php:85
+#: album.php:51 album_story.php:51 explore.php:20 image.php:77 news.php:85
 #: pages.php:60
 msgid "Tags"
 msgstr "Теги"
 
-#: album.php:58 album_story.php:94 image.php:107 news.php:93 pages.php:67
+#: album.php:58 album_story.php:58 image.php:107 news.php:93 pages.php:67
 msgid "Other info"
 msgstr "Другая информация"
 
-#: album.php:59 album_story.php:95 image.php:108 news.php:94 pages.php:68
+#: album.php:59 album_story.php:59 image.php:108 news.php:94 pages.php:68
 msgid "Views:"
 msgstr "Просмотров:"
 
-#: album.php:65 album.php:69 album_story.php:101 album_story.php:105
+#: album.php:65 album.php:69 album_story.php:65 album_story.php:69
 #: credits.php:21 image.php:84 image.php:89
 msgid "Copyright"
 msgstr "Автор"
 
-#: album.php:80 album_story.php:116 image.php:114
+#: album.php:80 album_story.php:80 image.php:114
 msgid "Favorites"
 msgstr "Избранное"
 
-#: album.php:88 album_story.php:124 image.php:120 news.php:105 pages.php:77
+#: album.php:88 album_story.php:88 image.php:120 news.php:105 pages.php:77
 #: themeoptions.php:415 themeoptions.php:469
 msgid "Rating"
 msgstr "Рейтинг"
 
-#: album.php:105 album_story.php:141 image.php:149
+#: album.php:105 album_story.php:105 image.php:149
 msgid "Map"
 msgstr "Карта"
 
-#: album.php:106 album_story.php:142 image.php:153
+#: album.php:106 album_story.php:106 image.php:153
 msgid "Location: "
 msgstr "Локация: "
 
@@ -135,19 +135,19 @@ msgstr "Введите CAPTCHA<strong>*</strong>"
 msgid "Private comment (do not publish)"
 msgstr "Приватный комментарий<br>(не публиковать)"
 
-#: comment_form/comment_form.php:114
+#: comment_form/comment_form.php:113
 msgid "Remember me"
 msgstr "Запомнить меня"
 
-#: comment_form/comment_form.php:129
+#: comment_form/comment_form.php:128
 msgid "<strong>*</strong> Required fields"
 msgstr "<strong>*</strong>Обязательные поля"
 
-#: comment_form/comment_form.php:132
+#: comment_form/comment_form.php:131
 msgid "Comment"
 msgstr "Комментарии"
 
-#: comment_form/comment_form.php:142
+#: comment_form/comment_form.php:141
 msgid "Add Comment"
 msgstr "Добавить комментарий"
 
@@ -322,7 +322,7 @@ msgstr "Изображение"
 #: functions.php:695 includes/_breadcrumbs.php:28 includes/_footer.php:17
 #: includes/_head.php:28 includes/_head.php:30 includes/_head.php:32
 #: includes/_header.php:55 includes/_homepage.php:52 includes/_sidebar.php:54
-#: news.php:171 themeoptions.php:313 themeoptions.php:365 themeoptions.php:442
+#: news.php:181 themeoptions.php:313 themeoptions.php:365 themeoptions.php:442
 #: themeoptions.php:496 themeoptions.php:514 themeoptions.php:531
 #: themeoptions.php:548
 msgid "News"
@@ -339,7 +339,7 @@ msgstr "Альбомы"
 msgid "Previous Image"
 msgstr "Предыдущее изображение"
 
-#: image.php:23 news.php:204
+#: image.php:23 news.php:214
 msgid "« prev"
 msgstr "« назад"
 
@@ -347,7 +347,7 @@ msgstr "« назад"
 msgid "Next Image"
 msgstr "Следующее изображение"
 
-#: image.php:25 news.php:204
+#: image.php:25 news.php:214
 msgid "next »"
 msgstr "далее »"
 
@@ -553,11 +553,11 @@ msgstr "Страницы"
 msgid "Popular Tags"
 msgstr "Популярные теги"
 
-#: news.php:29 news.php:184
+#: news.php:29 news.php:194
 msgid "Comments"
 msgstr "Комментарии"
 
-#: news.php:31 news.php:187
+#: news.php:31 news.php:197
 msgid "Categories:"
 msgstr "Категории:"
 
@@ -573,19 +573,19 @@ msgstr " :"
 msgid "News category:"
 msgstr "Категория:"
 
-#: news.php:142 news.php:164 news.php:171
+#: news.php:142 news.php:174 news.php:181
 msgid " (Page: "
 msgstr " (Страница: "
 
-#: news.php:160
+#: news.php:170
 msgid "Latest:"
 msgstr "Последние:"
 
-#: news.php:164
+#: news.php:174
 msgid "Archive for "
 msgstr "Архив за "
 
-#: news.php:190
+#: news.php:200
 msgid "Tags:"
 msgstr "Теги:"
 
