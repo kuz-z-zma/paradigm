@@ -51,6 +51,7 @@
 	if ($_zp_gallery_page == 'search.php') {echo '<meta name="description" content="Photos of '; echo html_encode($searchwords); echo html_encode($searchdate);echo '"/>'; } ?>
 
 <?php if (getOption ('paradigm_meta-tags-noindex') && $_zp_gallery_page == 'search.php') {echo '<meta name="robots" content="noindex, follow">'; }
+	elseif (getOption ('paradigm_meta-tags-noindex') && $_zp_gallery_page == 'explore.php') {echo '<meta name="robots" content="noindex, nofollow">'; }
 	elseif (getOption ('paradigm_meta-archive-noindex') && $_zp_gallery_page == 'archive.php') {echo '<meta name="robots" content="noindex, follow">'; }
 	elseif (isset($_GET["page"]) && $_zp_gallery_page == 'favorites.php' || $_zp_gallery_page == 'password.php' || $_zp_gallery_page == 'register.php' || $_zp_gallery_page == 'contact.php' || $_zp_gallery_page == '404.php') {
 	echo '<meta name="robots" content="noindex, follow">';
